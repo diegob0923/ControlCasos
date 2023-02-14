@@ -8,6 +8,7 @@ namespace ControlCasos.Constantes
 {
     class Rol
     {
+        public const byte UsuarioInvalido = 0;
         public const byte Administrador = 2;
         public const byte General = 3;
     }

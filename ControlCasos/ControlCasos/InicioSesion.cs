@@ -37,9 +37,10 @@ namespace ControlCasos
             }
             else
             {
-                MessageBox.Show(usuarioVlidado + "usuario o contraseña incorrectos");
+                VariablesGlobales.rolUsuarioLogueado = Rol.UsuarioInvalido;
+                MessageBox.Show(usuarioVlidado + "Usuario o contraseña incorrectos");
             }
-
+            
         }
     }
 }
