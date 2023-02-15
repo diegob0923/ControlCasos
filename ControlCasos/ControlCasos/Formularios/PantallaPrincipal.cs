@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using ControlCasos.Formularios;
 using ControlCasos.Formularios.Mantenimientos;
 using ControlCasos.Formularios.Seguridad;
+using ControlCasos.Formularios.Ayuda;
 
 namespace ControlCasos
 {
@@ -119,16 +120,19 @@ namespace ControlCasos
 
         private void btnCambioContrasena_Click(object sender, EventArgs e)
         {
+            abrirFormularioHijo(new frmCambiarContrasena());
             ocultarSubMenu();
         }
 
         private void btnManualUsuario_Click(object sender, EventArgs e)
         {
+            abrirFormularioHijo(new frmManualUsuario());
             ocultarSubMenu();
         }
 
         private void btnAcercaDe_Click(object sender, EventArgs e)
         {
+            abrirFormularioHijo(new frmAcercaDe());
             ocultarSubMenu();
         }
 #endregion
