@@ -102,6 +102,24 @@
     <Compile Include="Formularios\InicioSesion.Designer.cs">
       <DependentUpon>InicioSesion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Seguridad\Respaldos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Seguridad\Respaldos.Designer.cs">
+      <DependentUpon>Respaldos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Seguridad\Roles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Seguridad\Roles.Designer.cs">
+      <DependentUpon>Roles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Seguridad\Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Seguridad\Usuarios.Designer.cs">
+      <DependentUpon>Usuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modelos\ControlCasosModelo.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -142,6 +160,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\PantallaPrincipal.resx">
       <DependentUpon>PantallaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Seguridad\Respaldos.resx">
+      <DependentUpon>Respaldos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Seguridad\Roles.resx">
+      <DependentUpon>Roles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Seguridad\Usuarios.resx">
+      <DependentUpon>Usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

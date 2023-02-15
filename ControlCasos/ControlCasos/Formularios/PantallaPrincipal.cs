@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ControlCasos.Formularios;
 using ControlCasos.Formularios.Mantenimientos;
+using ControlCasos.Formularios.Seguridad;
 
 namespace ControlCasos
 {
@@ -93,16 +94,19 @@ namespace ControlCasos
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
+            abrirFormularioHijo(new frmUsuarios());
             ocultarSubMenu();
         }
 
         private void btnRoles_Click(object sender, EventArgs e)
         {
+            abrirFormularioHijo(new frmRoles());
             ocultarSubMenu();
         }
 
         private void btnRespaldos_Click(object sender, EventArgs e)
         {
+            abrirFormularioHijo(new frmRespaldos());
             ocultarSubMenu();
         }
         #endregion
