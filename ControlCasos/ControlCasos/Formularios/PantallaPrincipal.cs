@@ -19,12 +19,12 @@ namespace ControlCasos
 
         private void ocultarSubMenu()
         {
-            if (pnlSubMenuProductos.Visible == true)
-                pnlSubMenuProductos.Visible = false;
-            if (pnlSubMenuClientes.Visible == true)
-                pnlSubMenuClientes.Visible = false;
-            if (pnlSubMenuUsuarios.Visible == true)
-                pnlSubMenuUsuarios.Visible = false;
+            if (pnlSubMenuMantenimientos.Visible == true)
+                pnlSubMenuMantenimientos.Visible = false;
+            if (pnlSubMenuSeguridad.Visible == true)
+                pnlSubMenuSeguridad.Visible = false;
+            if (pnlSubMenuAyuda.Visible == true)
+                pnlSubMenuAyuda.Visible = false;
         }
 
         private void mostrarSubMenu(Panel subMenu)
@@ -40,10 +40,18 @@ namespace ControlCasos
             }
         }
 
-#region Productos
-        private void Productos_Click(object sender, EventArgs e)
+#region Mantenimientos
+        private void btnMantenimientos_Click(object sender, EventArgs e)
         {
-            mostrarSubMenu(pnlSubMenuProductos);
+            mostrarSubMenu(pnlSubMenuMantenimientos);
+        }
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            ocultarSubMenu();
+        }
+        private void btnDoctores_Click(object sender, EventArgs e)
+        {
+            ocultarSubMenu();
         }
 
         private void btnTipoProducto_Click(object sender, EventArgs e)
@@ -51,45 +59,22 @@ namespace ControlCasos
             ocultarSubMenu();
         }
 
-        private void btnColores_Click(object sender, EventArgs e)
+        private void btnMarca_Click(object sender, EventArgs e)
         {
             ocultarSubMenu();
         }
 
-        private void btnMarcas_Click(object sender, EventArgs e)
-        {
-            ocultarSubMenu();
-        }
-
-        #endregion
-
-#region Clientes
-        private void btnClientesMenu_Click(object sender, EventArgs e)
-        {
-            mostrarSubMenu(pnlSubMenuClientes);
-        }
-
-        private void btnClientes_Click(object sender, EventArgs e)
-        {
-            ocultarSubMenu();
-        }
-
-        private void btnDoctores_Click(object sender, EventArgs e)
-        {
-            ocultarSubMenu();
-        }
-
-        private void btnPacientes_Click(object sender, EventArgs e)
+        private void btnColor_Click(object sender, EventArgs e)
         {
             ocultarSubMenu();
         }
 
         #endregion
 
-#region Usuarios
-        private void btnUsuariosMenu_Click(object sender, EventArgs e)
+#region Seguridad
+        private void btnSeguridad_Click(object sender, EventArgs e)
         {
-            mostrarSubMenu(pnlSubMenuUsuarios);
+            mostrarSubMenu(pnlSubMenuSeguridad);
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e)
@@ -97,7 +82,7 @@ namespace ControlCasos
             ocultarSubMenu();
         }
 
-        private void btnCambioContrasena_Click(object sender, EventArgs e)
+        private void btnRoles_Click(object sender, EventArgs e)
         {
             ocultarSubMenu();
         }
@@ -106,12 +91,29 @@ namespace ControlCasos
         {
             ocultarSubMenu();
         }
+        #endregion
 
+#region Ayuda
         private void btnAyuda_Click(object sender, EventArgs e)
+        {
+            mostrarSubMenu(pnlSubMenuAyuda);
+        }
+
+        private void btnCambioContrasena_Click(object sender, EventArgs e)
         {
             ocultarSubMenu();
         }
-        #endregion
+
+        private void btnManualUsuario_Click(object sender, EventArgs e)
+        {
+            ocultarSubMenu();
+        }
+
+        private void btnAcercaDe_Click(object sender, EventArgs e)
+        {
+            ocultarSubMenu();
+        }
+#endregion
 
         private Form formularioAcivo = null;
 
