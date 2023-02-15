@@ -373,6 +373,7 @@
             this.btnCasos.Text = "Casos";
             this.btnCasos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCasos.UseVisualStyleBackColor = true;
+            this.btnCasos.Click += new System.EventHandler(this.btnCasos_Click);
             // 
             // panel1
             // 

@@ -54,6 +54,18 @@
   <ItemGroup>
     <Compile Include="Clases\VariablesGlobales.cs" />
     <Compile Include="Constantes\Rol.cs" />
+    <Compile Include="Formularios\Casos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Casos.Designer.cs">
+      <DependentUpon>Casos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Mantenimientos\Clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Mantenimientos\Clientes.Designer.cs">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\PantallaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,8 +95,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\Casos.resx">
+      <DependentUpon>Casos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\InicioSesion.resx">
       <DependentUpon>InicioSesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Mantenimientos\Clientes.resx">
+      <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\PantallaPrincipal.resx">
       <DependentUpon>PantallaPrincipal.cs</DependentUpon>

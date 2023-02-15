@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ControlCasos.Formularios;
+using ControlCasos.Formularios.Mantenimientos;
 
 namespace ControlCasos
 {
@@ -40,13 +42,21 @@ namespace ControlCasos
             }
         }
 
-#region Mantenimientos
+#region Casos
+        private void btnCasos_Click(object sender, EventArgs e)
+        {
+            abrirFormularioHijo(new frmCasos());
+        }
+#endregion
+
+        #region Mantenimientos
         private void btnMantenimientos_Click(object sender, EventArgs e)
         {
             mostrarSubMenu(pnlSubMenuMantenimientos);
         }
         private void btnClientes_Click(object sender, EventArgs e)
         {
+            abrirFormularioHijo(new frmClientes());
             ocultarSubMenu();
         }
         private void btnDoctores_Click(object sender, EventArgs e)
@@ -131,5 +141,6 @@ namespace ControlCasos
             formularioHijo.Show();
         }
 
+        
     }
 }
