@@ -66,6 +66,30 @@
     <Compile Include="Formularios\Mantenimientos\Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Mantenimientos\Colores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Mantenimientos\Colores.Designer.cs">
+      <DependentUpon>Colores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Mantenimientos\Doctores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Mantenimientos\Doctores.Designer.cs">
+      <DependentUpon>Doctores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Mantenimientos\Marcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Mantenimientos\Marcas.Designer.cs">
+      <DependentUpon>Marcas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Mantenimientos\TipoProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Mantenimientos\TipoProducto.Designer.cs">
+      <DependentUpon>TipoProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\PantallaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +127,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Mantenimientos\Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Mantenimientos\Colores.resx">
+      <DependentUpon>Colores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Mantenimientos\Doctores.resx">
+      <DependentUpon>Doctores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Mantenimientos\Marcas.resx">
+      <DependentUpon>Marcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Mantenimientos\TipoProducto.resx">
+      <DependentUpon>TipoProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\PantallaPrincipal.resx">
       <DependentUpon>PantallaPrincipal.cs</DependentUpon>

@@ -268,7 +268,7 @@
             this.btnColor.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnColor.Size = new System.Drawing.Size(179, 43);
             this.btnColor.TabIndex = 11;
-            this.btnColor.Text = "Color";
+            this.btnColor.Text = "Colores";
             this.btnColor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnColor.UseVisualStyleBackColor = true;
             this.btnColor.Click += new System.EventHandler(this.btnColor_Click);
@@ -285,7 +285,7 @@
             this.btnMarca.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnMarca.Size = new System.Drawing.Size(179, 43);
             this.btnMarca.TabIndex = 10;
-            this.btnMarca.Text = "Marca";
+            this.btnMarca.Text = "Marcas";
             this.btnMarca.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMarca.UseVisualStyleBackColor = true;
             this.btnMarca.Click += new System.EventHandler(this.btnMarca_Click);

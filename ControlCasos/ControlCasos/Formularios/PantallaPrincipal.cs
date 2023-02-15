@@ -61,21 +61,25 @@ namespace ControlCasos
         }
         private void btnDoctores_Click(object sender, EventArgs e)
         {
+            abrirFormularioHijo(new frmDoctores());
             ocultarSubMenu();
         }
 
         private void btnTipoProducto_Click(object sender, EventArgs e)
         {
+            abrirFormularioHijo(new frmTipoProducto());
             ocultarSubMenu();
         }
 
         private void btnMarca_Click(object sender, EventArgs e)
         {
+            abrirFormularioHijo(new frmMarcas());
             ocultarSubMenu();
         }
 
         private void btnColor_Click(object sender, EventArgs e)
         {
+            abrirFormularioHijo(new frmColores());
             ocultarSubMenu();
         }
 
