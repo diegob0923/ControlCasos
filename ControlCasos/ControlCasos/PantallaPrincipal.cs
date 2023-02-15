@@ -86,6 +86,7 @@ namespace ControlCasos
 
         #endregion
 
+#region Usuarios
         private void btnUsuariosMenu_Click(object sender, EventArgs e)
         {
             mostrarSubMenu(pnlSubMenuUsuarios);
@@ -110,5 +111,23 @@ namespace ControlCasos
         {
             ocultarSubMenu();
         }
+        #endregion
+
+        private Form formularioAcivo = null;
+
+        private void abrirFormularioHijo(Form formularioHijo)
+        {
+            if (formularioAcivo != null)
+                formularioAcivo.Close();
+            formularioAcivo = formularioHijo;
+            formularioHijo.TopLevel = false;
+            formularioHijo.FormBorderStyle = FormBorderStyle.None;
+            formularioHijo.Dock = DockStyle.Fill;
+            pnlFormularios.Controls.Add(formularioHijo); //se envía el formulario hijo al panel contenedor
+            pnlFormularios.Tag = formularioHijo; // se asocia el formularioHijo con el panel contenedor
+            formularioHijo.BringToFront();
+            formularioHijo.Show();
+        }
+
     }
 }

@@ -47,6 +47,7 @@
             this.btnProductosMenu = new System.Windows.Forms.Button();
             this.btnCasos = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlFormularios = new System.Windows.Forms.Panel();
             this.PnlMenuLateral.SuspendLayout();
             this.pnlSubMenuUsuarios.SuspendLayout();
             this.pnlSubMenuClientes.SuspendLayout();
@@ -356,11 +357,20 @@
             this.panel1.Size = new System.Drawing.Size(200, 100);
             this.panel1.TabIndex = 0;
             // 
+            // pnlFormularios
+            // 
+            this.pnlFormularios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlFormularios.Location = new System.Drawing.Point(200, 0);
+            this.pnlFormularios.Name = "pnlFormularios";
+            this.pnlFormularios.Size = new System.Drawing.Size(860, 764);
+            this.pnlFormularios.TabIndex = 2;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1060, 764);
+            this.Controls.Add(this.pnlFormularios);
             this.Controls.Add(this.PnlMenuLateral);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -395,6 +405,7 @@
         private System.Windows.Forms.Button btnCambioContrasena;
         private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Button btnUsuariosMenu;
+        private System.Windows.Forms.Panel pnlFormularios;
     }
 }
 
