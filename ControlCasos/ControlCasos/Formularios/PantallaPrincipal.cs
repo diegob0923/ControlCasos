@@ -19,6 +19,7 @@ namespace ControlCasos
         public frmPrincipal()
         {
             InitializeComponent();
+            abrirFormularioHijo(new frmInicioSesion());
         }
 
         private void ocultarSubMenu()
