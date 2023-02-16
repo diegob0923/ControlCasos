@@ -48,7 +48,7 @@
             this.btnMantenimientos = new System.Windows.Forms.Button();
             this.btnCasos = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pnlContenedorIzquierdo = new System.Windows.Forms.Panel();
+            this.pnlContenedorDerecho = new System.Windows.Forms.Panel();
             this.pnlFormularios = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -57,7 +57,7 @@
             this.pnlSubMenuAyuda.SuspendLayout();
             this.pnlSubMenuSeguridad.SuspendLayout();
             this.pnlSubMenuMantenimientos.SuspendLayout();
-            this.pnlContenedorIzquierdo.SuspendLayout();
+            this.pnlContenedorDerecho.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,7 +88,7 @@
             this.pnlSubMenuAyuda.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSubMenuAyuda.Location = new System.Drawing.Point(0, 651);
             this.pnlSubMenuAyuda.Name = "pnlSubMenuAyuda";
-            this.pnlSubMenuAyuda.Size = new System.Drawing.Size(179, 166);
+            this.pnlSubMenuAyuda.Size = new System.Drawing.Size(179, 151);
             this.pnlSubMenuAyuda.TabIndex = 8;
             this.pnlSubMenuAyuda.Visible = false;
             // 
@@ -383,16 +383,16 @@
             this.panel1.Size = new System.Drawing.Size(179, 100);
             this.panel1.TabIndex = 0;
             // 
-            // pnlContenedorIzquierdo
+            // pnlContenedorDerecho
             // 
-            this.pnlContenedorIzquierdo.Controls.Add(this.pnlFormularios);
-            this.pnlContenedorIzquierdo.Controls.Add(this.panel3);
-            this.pnlContenedorIzquierdo.Controls.Add(this.panel2);
-            this.pnlContenedorIzquierdo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContenedorIzquierdo.Location = new System.Drawing.Point(200, 0);
-            this.pnlContenedorIzquierdo.Name = "pnlContenedorIzquierdo";
-            this.pnlContenedorIzquierdo.Size = new System.Drawing.Size(860, 764);
-            this.pnlContenedorIzquierdo.TabIndex = 3;
+            this.pnlContenedorDerecho.Controls.Add(this.pnlFormularios);
+            this.pnlContenedorDerecho.Controls.Add(this.panel3);
+            this.pnlContenedorDerecho.Controls.Add(this.panel2);
+            this.pnlContenedorDerecho.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContenedorDerecho.Location = new System.Drawing.Point(200, 0);
+            this.pnlContenedorDerecho.Name = "pnlContenedorDerecho";
+            this.pnlContenedorDerecho.Size = new System.Drawing.Size(860, 764);
+            this.pnlContenedorDerecho.TabIndex = 3;
             // 
             // pnlFormularios
             // 
@@ -437,17 +437,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1060, 764);
-            this.Controls.Add(this.pnlContenedorIzquierdo);
+            this.Controls.Add(this.pnlContenedorDerecho);
             this.Controls.Add(this.PnlMenuLateral);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmPrincipal";
-            this.Text = "Form1";
+            this.Text = "Sistema de control de casos";
             this.PnlMenuLateral.ResumeLayout(false);
             this.pnlSubMenuAyuda.ResumeLayout(false);
             this.pnlSubMenuSeguridad.ResumeLayout(false);
             this.pnlSubMenuMantenimientos.ResumeLayout(false);
-            this.pnlContenedorIzquierdo.ResumeLayout(false);
+            this.pnlContenedorDerecho.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -461,7 +461,7 @@
         private System.Windows.Forms.Button btnCasos;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnlSubMenuMantenimientos;
-        private System.Windows.Forms.Panel pnlContenedorIzquierdo;
+        private System.Windows.Forms.Panel pnlContenedorDerecho;
         private System.Windows.Forms.Panel pnlFormularios;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;

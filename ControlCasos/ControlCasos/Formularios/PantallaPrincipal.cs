@@ -11,6 +11,8 @@ using ControlCasos.Formularios;
 using ControlCasos.Formularios.Mantenimientos;
 using ControlCasos.Formularios.Seguridad;
 using ControlCasos.Formularios.Ayuda;
+using ControlCasos.Clases;
+using ControlCasos.Constantes;
 
 namespace ControlCasos
 {
@@ -19,7 +21,8 @@ namespace ControlCasos
         public frmPrincipal()
         {
             InitializeComponent();
-            abrirFormularioHijo(new frmInicioSesion());
+            if (VariablesGlobales.rolUsuarioLogueado == Rol.General)
+                btnSeguridad.Visible = false;
         }
 
         private void ocultarSubMenu()
@@ -152,8 +155,6 @@ namespace ControlCasos
             pnlFormularios.Tag = formularioHijo; // se asocia el formularioHijo con el panel contenedor
             formularioHijo.BringToFront();
             formularioHijo.Show();
-        }
-
-        
+        }  
     }
 }
