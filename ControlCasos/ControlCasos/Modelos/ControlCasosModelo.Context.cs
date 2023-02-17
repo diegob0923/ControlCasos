@@ -41,5 +41,14 @@ namespace ControlCasos.Modelos
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<byte>>("sp_ValidarUsuario", usuarioParameter, contrasenaParameter);
         }
+    
+        public virtual ObjectResult<sp_Cliente_Consultar_Result> sp_Cliente_Consultar(string nombreCliente)
+        {
+            var nombreClienteParameter = nombreCliente != null ?
+                new ObjectParameter("NombreCliente", nombreCliente) :
+                new ObjectParameter("NombreCliente", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_Cliente_Consultar_Result>("sp_Cliente_Consultar", nombreClienteParameter);
+        }
     }
 }
