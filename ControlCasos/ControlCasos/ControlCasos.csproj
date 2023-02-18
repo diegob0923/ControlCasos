@@ -209,6 +209,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EntityDeploy Include="Modelos\ControlCasosModelo.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -232,6 +233,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Imagenes\buscar.png" />
+    <Content Include="Imagenes\cancelar.png" />
     <Content Include="Modelos\ControlCasosModelo.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ControlCasosModelo.Context.cs</LastGenOutput>

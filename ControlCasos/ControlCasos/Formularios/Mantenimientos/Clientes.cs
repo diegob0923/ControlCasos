@@ -40,5 +40,18 @@ namespace ControlCasos.Formularios.Mantenimientos
             txtBuscar.Text = "";
             cargarDatosEnGrid();
         }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text != "")
+            {
+                btnCancelar.Visible = true;
+            }
+            else
+            {
+                btnCancelar.Visible = false;
+            }
+                
+        }
     }
 }
