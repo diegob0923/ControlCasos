@@ -27,7 +27,18 @@ namespace ControlCasos.Formularios.Mantenimientos
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            BLClientes.insertarCliente(txtNombreCliente.Text);
+            try
+            {
+                if (!BLClientes.insertarCliente(txtNombreCliente.Text))
+                {
+                    MessageBox.Show("Error al agregar cliente");
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+            
             recargarGridEnFormularioPrincipal();
             this.Dispose();
         }
