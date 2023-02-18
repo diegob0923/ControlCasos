@@ -79,6 +79,12 @@
     <Compile Include="Formularios\Casos.Designer.cs">
       <DependentUpon>Casos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Mantenimientos\NuevoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Mantenimientos\NuevoCliente.Designer.cs">
+      <DependentUpon>NuevoCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Mantenimientos\Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Mantenimientos\Marcas.resx">
       <DependentUpon>Marcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Mantenimientos\NuevoCliente.resx">
+      <DependentUpon>NuevoCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Mantenimientos\TipoProducto.resx">
       <DependentUpon>TipoProducto.cs</DependentUpon>

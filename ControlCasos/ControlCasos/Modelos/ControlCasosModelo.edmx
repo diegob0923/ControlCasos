@@ -8,6 +8,9 @@
         <Function Name="sp_Cliente_Consultar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="NombreCliente" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="sp_Cliente_Insertar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Cliente" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="sp_ValidarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Usuario" Type="varchar" Mode="In" />
           <Parameter Name="Contrasena" Type="varchar" Mode="In" />
@@ -23,7 +26,10 @@
             <Parameter Name="Contrasena" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_Cliente_Consultar" ReturnType="Collection(ControlCasosModel.sp_Cliente_Consultar_Result)">
-            <Parameter Name="NombreCliente" Mode="In" Type="String" />
+          <Parameter Name="NombreCliente" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Cliente_Insertar">
+            <Parameter Name="Cliente" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_Cliente_Consultar_Result">
@@ -47,6 +53,7 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Cliente_Insertar" FunctionName="ControlCasosModel.Store.sp_Cliente_Insertar" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

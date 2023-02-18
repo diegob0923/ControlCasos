@@ -21,7 +21,7 @@ namespace ControlCasos.Formularios.Mantenimientos
             cargarDatosEnGrid();
         }
 
-        private void cargarDatosEnGrid()
+        public void cargarDatosEnGrid()
         {
             IList<sp_Cliente_Consultar_Result> fuenteDatos = clientes.consultarClientes(null);//null es para que consulte todos
             dgvListaClientes.AutoGenerateColumns = false;
@@ -52,6 +52,12 @@ namespace ControlCasos.Formularios.Mantenimientos
                 btnCancelar.Visible = false;
             }
                 
+        }
+
+        private void lnkNuevoCliente_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmNuevoCliente formularioNuevoCliente = new frmNuevoCliente(this);//como la instancia es de tipo frmCliente se envía él mismo
+            formularioNuevoCliente.Visible = true;
         }
     }
 }

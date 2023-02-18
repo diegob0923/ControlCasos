@@ -50,5 +50,14 @@ namespace ControlCasos.Modelos
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_Cliente_Consultar_Result>("sp_Cliente_Consultar", nombreClienteParameter);
         }
+    
+        public virtual int sp_Cliente_Insertar(string cliente)
+        {
+            var clienteParameter = cliente != null ?
+                new ObjectParameter("Cliente", cliente) :
+                new ObjectParameter("Cliente", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_Cliente_Insertar", clienteParameter);
+        }
     }
 }

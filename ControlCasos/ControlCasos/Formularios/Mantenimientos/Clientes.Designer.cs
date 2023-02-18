@@ -35,6 +35,8 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.pnlFiltro = new System.Windows.Forms.Panel();
+            this.lnkNuevoCliente = new System.Windows.Forms.LinkLabel();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaClientes)).BeginInit();
             this.pnlFiltro.SuspendLayout();
             this.SuspendLayout();
@@ -46,7 +48,7 @@
             this.dgvListaClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Cliente,
             this.Estado});
-            this.dgvListaClientes.Location = new System.Drawing.Point(87, 104);
+            this.dgvListaClientes.Location = new System.Drawing.Point(70, 177);
             this.dgvListaClientes.Name = "dgvListaClientes";
             this.dgvListaClientes.RowHeadersWidth = 51;
             this.dgvListaClientes.RowTemplate.Height = 24;
@@ -110,16 +112,39 @@
             this.pnlFiltro.Controls.Add(this.txtBuscar);
             this.pnlFiltro.Controls.Add(this.btnBuscar);
             this.pnlFiltro.Controls.Add(this.btnCancelar);
-            this.pnlFiltro.Location = new System.Drawing.Point(87, 39);
+            this.pnlFiltro.Location = new System.Drawing.Point(70, 117);
             this.pnlFiltro.Name = "pnlFiltro";
             this.pnlFiltro.Size = new System.Drawing.Size(371, 36);
             this.pnlFiltro.TabIndex = 4;
+            // 
+            // lnkNuevoCliente
+            // 
+            this.lnkNuevoCliente.AutoSize = true;
+            this.lnkNuevoCliente.Location = new System.Drawing.Point(626, 345);
+            this.lnkNuevoCliente.Name = "lnkNuevoCliente";
+            this.lnkNuevoCliente.Size = new System.Drawing.Size(110, 20);
+            this.lnkNuevoCliente.TabIndex = 5;
+            this.lnkNuevoCliente.TabStop = true;
+            this.lnkNuevoCliente.Text = "Nuevo cliente";
+            this.lnkNuevoCliente.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkNuevoCliente_LinkClicked);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(331, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(172, 31);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Lista clientes";
             // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 666);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lnkNuevoCliente);
             this.Controls.Add(this.pnlFiltro);
             this.Controls.Add(this.dgvListaClientes);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -131,6 +156,7 @@
             this.pnlFiltro.ResumeLayout(false);
             this.pnlFiltro.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -143,5 +169,7 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Panel pnlFiltro;
+        private System.Windows.Forms.LinkLabel lnkNuevoCliente;
+        private System.Windows.Forms.Label label1;
     }
 }
