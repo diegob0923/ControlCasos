@@ -11,6 +11,12 @@
         <Function Name="sp_Cliente_Insertar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Cliente" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="sp_Marca_Consultar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Marca" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_Marca_Insertar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Marca" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="sp_ValidarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Usuario" Type="varchar" Mode="In" />
           <Parameter Name="Contrasena" Type="varchar" Mode="In" />
@@ -29,13 +35,23 @@
           <Parameter Name="NombreCliente" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_Cliente_Insertar">
-            <Parameter Name="Cliente" Mode="In" Type="String" />
+          <Parameter Name="Cliente" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Marca_Consultar" ReturnType="Collection(ControlCasosModel.sp_Marca_Consultar_Result)">
+            <Parameter Name="Marca" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Marca_Insertar">
+            <Parameter Name="Marca" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_Cliente_Consultar_Result">
           <Property Type="Int32" Name="IdCliente" Nullable="false" />
           <Property Type="String" Name="Cliente" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="Estado" Nullable="true" MaxLength="8" />
+        </ComplexType>
+        <ComplexType Name="sp_Marca_Consultar_Result">
+          <Property Type="Byte" Name="IdMarca" Nullable="false" />
+          <Property Type="String" Name="Marca" Nullable="false" MaxLength="50" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -54,6 +70,15 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_Cliente_Insertar" FunctionName="ControlCasosModel.Store.sp_Cliente_Insertar" />
+          <FunctionImportMapping FunctionImportName="sp_Marca_Consultar" FunctionName="ControlCasosModel.Store.sp_Marca_Consultar">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ControlCasosModel.sp_Marca_Consultar_Result">
+                <ScalarProperty Name="IdMarca" ColumnName="IdMarca" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Marca_Insertar" FunctionName="ControlCasosModel.Store.sp_Marca_Insertar" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

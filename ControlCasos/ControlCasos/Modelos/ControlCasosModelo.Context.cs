@@ -59,5 +59,23 @@ namespace ControlCasos.Modelos
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_Cliente_Insertar", clienteParameter);
         }
+    
+        public virtual ObjectResult<sp_Marca_Consultar_Result> sp_Marca_Consultar(string marca)
+        {
+            var marcaParameter = marca != null ?
+                new ObjectParameter("Marca", marca) :
+                new ObjectParameter("Marca", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_Marca_Consultar_Result>("sp_Marca_Consultar", marcaParameter);
+        }
+    
+        public virtual int sp_Marca_Insertar(string marca)
+        {
+            var marcaParameter = marca != null ?
+                new ObjectParameter("Marca", marca) :
+                new ObjectParameter("Marca", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_Marca_Insertar", marcaParameter);
+        }
     }
 }
