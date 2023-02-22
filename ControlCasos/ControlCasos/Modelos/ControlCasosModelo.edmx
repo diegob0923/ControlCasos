@@ -17,6 +17,12 @@
         <Function Name="sp_Marca_Insertar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Marca" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="sp_TipoProducto_Consultar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TipoProducto" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_TipoProducto_Insertar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TipoProducto" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="sp_ValidarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Usuario" Type="varchar" Mode="In" />
           <Parameter Name="Contrasena" Type="varchar" Mode="In" />
@@ -38,10 +44,16 @@
           <Parameter Name="Cliente" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_Marca_Consultar" ReturnType="Collection(ControlCasosModel.sp_Marca_Consultar_Result)">
-            <Parameter Name="Marca" Mode="In" Type="String" />
+          <Parameter Name="Marca" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_Marca_Insertar">
-            <Parameter Name="Marca" Mode="In" Type="String" />
+          <Parameter Name="Marca" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_TipoProducto_Consultar" ReturnType="Collection(ControlCasosModel.sp_TipoProducto_Consultar_Result)">
+            <Parameter Name="TipoProducto" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_TipoProducto_Insertar">
+            <Parameter Name="TipoProducto" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_Cliente_Consultar_Result">
@@ -52,6 +64,10 @@
         <ComplexType Name="sp_Marca_Consultar_Result">
           <Property Type="Byte" Name="IdMarca" Nullable="false" />
           <Property Type="String" Name="Marca" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_TipoProducto_Consultar_Result">
+          <Property Type="Byte" Name="IdTipoProducto" Nullable="false" />
+          <Property Type="String" Name="TipoProducto" Nullable="false" MaxLength="50" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -79,6 +95,15 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_Marca_Insertar" FunctionName="ControlCasosModel.Store.sp_Marca_Insertar" />
+          <FunctionImportMapping FunctionImportName="sp_TipoProducto_Consultar" FunctionName="ControlCasosModel.Store.sp_TipoProducto_Consultar">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ControlCasosModel.sp_TipoProducto_Consultar_Result">
+                <ScalarProperty Name="IdTipoProducto" ColumnName="IdTipoProducto" />
+                <ScalarProperty Name="TipoProducto" ColumnName="TipoProducto" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_TipoProducto_Insertar" FunctionName="ControlCasosModel.Store.sp_TipoProducto_Insertar" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

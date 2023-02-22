@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="BL\BLCliente.cs" />
     <Compile Include="BL\BLMarca.cs" />
+    <Compile Include="BL\BLTipoProducto.cs" />
     <Compile Include="Clases\VariablesGlobales.cs" />
     <Compile Include="Constantes\Rol.cs" />
     <Compile Include="Formularios\Ayuda\AcercaDe.cs">
@@ -165,6 +166,9 @@
       <DependentUpon>ControlCasosModelo.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelos\sp_Marca_Consultar_Result.cs">
+      <DependentUpon>ControlCasosModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\sp_TipoProducto_Consultar_Result.cs">
       <DependentUpon>ControlCasosModelo.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />

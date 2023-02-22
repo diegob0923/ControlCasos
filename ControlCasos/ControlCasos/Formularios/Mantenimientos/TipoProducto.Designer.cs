@@ -28,22 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.dgvListaTipoProductos = new System.Windows.Forms.DataGridView();
+            this.TipoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaTipoProductos)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dgvListaTipoProductos
+            // 
+            this.dgvListaTipoProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvListaTipoProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaTipoProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TipoProducto});
+            this.dgvListaTipoProductos.Location = new System.Drawing.Point(96, 159);
+            this.dgvListaTipoProductos.Name = "dgvListaTipoProductos";
+            this.dgvListaTipoProductos.RowHeadersWidth = 51;
+            this.dgvListaTipoProductos.RowTemplate.Height = 24;
+            this.dgvListaTipoProductos.Size = new System.Drawing.Size(666, 150);
+            this.dgvListaTipoProductos.TabIndex = 1;
+            // 
+            // TipoProducto
+            // 
+            this.TipoProducto.DataPropertyName = "TipoProducto";
+            this.TipoProducto.HeaderText = "Tipo de producto";
+            this.TipoProducto.MinimumWidth = 6;
+            this.TipoProducto.Name = "TipoProducto";
             // 
             // frmTipoProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 666);
+            this.Controls.Add(this.dgvListaTipoProductos);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmTipoProducto";
             this.Text = "TipoProducto";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaTipoProductos)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dgvListaTipoProductos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoProducto;
     }
 }
