@@ -95,5 +95,31 @@ namespace ControlCasos.Modelos
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_TipoProducto_Insertar", tipoProductoParameter);
         }
+    
+        public virtual ObjectResult<sp_Color_Consultar_Result> sp_Color_Consultar(string color, string guia)
+        {
+            var colorParameter = color != null ?
+                new ObjectParameter("Color", color) :
+                new ObjectParameter("Color", typeof(string));
+    
+            var guiaParameter = guia != null ?
+                new ObjectParameter("Guia", guia) :
+                new ObjectParameter("Guia", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_Color_Consultar_Result>("sp_Color_Consultar", colorParameter, guiaParameter);
+        }
+    
+        public virtual int sp_Color_Insertar(string color, string guia)
+        {
+            var colorParameter = color != null ?
+                new ObjectParameter("Color", color) :
+                new ObjectParameter("Color", typeof(string));
+    
+            var guiaParameter = guia != null ?
+                new ObjectParameter("Guia", guia) :
+                new ObjectParameter("Guia", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_Color_Insertar", colorParameter, guiaParameter);
+        }
     }
 }

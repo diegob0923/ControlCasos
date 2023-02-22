@@ -28,22 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.dgvListaColores = new System.Windows.Forms.DataGridView();
+            this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Guia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaColores)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dgvListaColores
+            // 
+            this.dgvListaColores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvListaColores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaColores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Color,
+            this.Guia});
+            this.dgvListaColores.Location = new System.Drawing.Point(98, 189);
+            this.dgvListaColores.Name = "dgvListaColores";
+            this.dgvListaColores.RowHeadersWidth = 51;
+            this.dgvListaColores.RowTemplate.Height = 24;
+            this.dgvListaColores.Size = new System.Drawing.Size(666, 150);
+            this.dgvListaColores.TabIndex = 1;
+            // 
+            // Color
+            // 
+            this.Color.DataPropertyName = "Color";
+            this.Color.HeaderText = "Color";
+            this.Color.MinimumWidth = 6;
+            this.Color.Name = "Color";
+            // 
+            // Guia
+            // 
+            this.Guia.DataPropertyName = "Guia";
+            this.Guia.HeaderText = "Guía";
+            this.Guia.MinimumWidth = 6;
+            this.Guia.Name = "Guia";
             // 
             // frmColores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 666);
+            this.Controls.Add(this.dgvListaColores);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmColores";
             this.Text = "Colores";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaColores)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dgvListaColores;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Color;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Guia;
     }
 }

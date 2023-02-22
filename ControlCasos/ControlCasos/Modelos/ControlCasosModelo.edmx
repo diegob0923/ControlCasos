@@ -11,6 +11,14 @@
         <Function Name="sp_Cliente_Insertar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Cliente" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="sp_Color_Consultar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Color" Type="varchar" Mode="In" />
+          <Parameter Name="Guia" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_Color_Insertar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Color" Type="varchar" Mode="In" />
+          <Parameter Name="Guia" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="sp_Marca_Consultar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Marca" Type="varchar" Mode="In" />
         </Function>
@@ -50,10 +58,18 @@
           <Parameter Name="Marca" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_TipoProducto_Consultar" ReturnType="Collection(ControlCasosModel.sp_TipoProducto_Consultar_Result)">
-            <Parameter Name="TipoProducto" Mode="In" Type="String" />
+          <Parameter Name="TipoProducto" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_TipoProducto_Insertar">
-            <Parameter Name="TipoProducto" Mode="In" Type="String" />
+          <Parameter Name="TipoProducto" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Color_Consultar" ReturnType="Collection(ControlCasosModel.sp_Color_Consultar_Result)">
+            <Parameter Name="Color" Mode="In" Type="String" />
+            <Parameter Name="Guia" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Color_Insertar">
+            <Parameter Name="Color" Mode="In" Type="String" />
+            <Parameter Name="Guia" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_Cliente_Consultar_Result">
@@ -68,6 +84,11 @@
         <ComplexType Name="sp_TipoProducto_Consultar_Result">
           <Property Type="Byte" Name="IdTipoProducto" Nullable="false" />
           <Property Type="String" Name="TipoProducto" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_Color_Consultar_Result">
+          <Property Type="Byte" Name="IdColor" Nullable="false" />
+          <Property Type="String" Name="Color" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Guia" Nullable="true" MaxLength="50" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -104,6 +125,16 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_TipoProducto_Insertar" FunctionName="ControlCasosModel.Store.sp_TipoProducto_Insertar" />
+          <FunctionImportMapping FunctionImportName="sp_Color_Consultar" FunctionName="ControlCasosModel.Store.sp_Color_Consultar">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ControlCasosModel.sp_Color_Consultar_Result">
+                <ScalarProperty Name="IdColor" ColumnName="IdColor" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Guia" ColumnName="Guia" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Color_Insertar" FunctionName="ControlCasosModel.Store.sp_Color_Insertar" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
