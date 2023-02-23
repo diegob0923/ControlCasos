@@ -31,6 +31,7 @@
             this.dgvListaColores = new System.Windows.Forms.DataGridView();
             this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Guia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lnkNuevoColor = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaColores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,11 +63,23 @@
             this.Guia.MinimumWidth = 6;
             this.Guia.Name = "Guia";
             // 
+            // lnkNuevoColor
+            // 
+            this.lnkNuevoColor.AutoSize = true;
+            this.lnkNuevoColor.Location = new System.Drawing.Point(654, 362);
+            this.lnkNuevoColor.Name = "lnkNuevoColor";
+            this.lnkNuevoColor.Size = new System.Drawing.Size(98, 20);
+            this.lnkNuevoColor.TabIndex = 6;
+            this.lnkNuevoColor.TabStop = true;
+            this.lnkNuevoColor.Text = "Nuevo color";
+            this.lnkNuevoColor.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkNuevoColor_LinkClicked);
+            // 
             // frmColores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 666);
+            this.Controls.Add(this.lnkNuevoColor);
             this.Controls.Add(this.dgvListaColores);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -75,6 +88,7 @@
             this.Text = "Colores";
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaColores)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -83,5 +97,6 @@
         private System.Windows.Forms.DataGridView dgvListaColores;
         private System.Windows.Forms.DataGridViewTextBoxColumn Color;
         private System.Windows.Forms.DataGridViewTextBoxColumn Guia;
+        private System.Windows.Forms.LinkLabel lnkNuevoColor;
     }
 }

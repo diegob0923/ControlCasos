@@ -29,18 +29,16 @@ namespace ControlCasos.Formularios.Mantenimientos
         {
             try
             {
-                if (!BLClientes.insertarCliente(txtNombreCliente.Text))
+                if (BLClientes.insertarCliente(txtNombreCliente.Text))
                 {
-                    MessageBox.Show("Error al agregar cliente");
+                    recargarGridEnFormularioPrincipal();
+                    this.Dispose();
                 }
             }
             catch (Exception)
             {
-
+                MessageBox.Show("Error al agregar cliente");
             }
-            
-            recargarGridEnFormularioPrincipal();
-            this.Dispose();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

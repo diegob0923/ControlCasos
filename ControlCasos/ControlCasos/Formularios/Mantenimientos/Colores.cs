@@ -27,5 +27,11 @@ namespace ControlCasos.Formularios.Mantenimientos
             dgvListaColores.AutoGenerateColumns = false;
             dgvListaColores.DataSource = fuenteDatos;
         }
+
+        private void lnkNuevoColor_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmNuevoColor formularioNuevoColor = new frmNuevoColor(this);//como la instancia es de tipo frmColor se envía él mismo
+            formularioNuevoColor.Visible = true;
+        }
     }
 }

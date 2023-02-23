@@ -17,7 +17,7 @@ namespace ControlCasos.BL
             return listaMarcas;
         }
 
-        public bool insertarMarca(string color,string guia)
+        public bool insertarColor(string color,string guia)
         {
             int registrosAfectados = modeloBD.sp_Color_Insertar(color,guia);
 
