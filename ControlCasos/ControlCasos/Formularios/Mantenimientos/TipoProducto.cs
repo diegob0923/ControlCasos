@@ -32,5 +32,26 @@ namespace ControlCasos.Formularios.Mantenimientos
             frmNuevoTipoProducto formularioNuevoTipoProducto = new frmNuevoTipoProducto(this);//como la instancia es de tipo frmCliente se envía él mismo
             formularioNuevoTipoProducto.Visible = true;
         }
+        #region Filtro
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            txtBuscar.Text = "";
+            cargarDatosEnGrid();
+        }
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text != "")
+                btnCancelar.Visible = true;
+            else
+                btnCancelar.Visible = false;
+        }      
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            IList<sp_TipoProducto_Consultar_Result> fuenteDatos = tipoProductos.consultarTipoProductos(txtBuscar.Text);
+            dgvListaTipoProductos.AutoGenerateColumns = false;
+            dgvListaTipoProductos.DataSource = fuenteDatos;
+        }
+        #endregion
     }
 }
