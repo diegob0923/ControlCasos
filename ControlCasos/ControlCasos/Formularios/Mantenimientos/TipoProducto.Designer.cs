@@ -30,6 +30,7 @@
         {
             this.dgvListaTipoProductos = new System.Windows.Forms.DataGridView();
             this.TipoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lnkNuevoTipoProducto = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaTipoProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,11 +54,23 @@
             this.TipoProducto.MinimumWidth = 6;
             this.TipoProducto.Name = "TipoProducto";
             // 
+            // lnkNuevoTipoProducto
+            // 
+            this.lnkNuevoTipoProducto.AutoSize = true;
+            this.lnkNuevoTipoProducto.Location = new System.Drawing.Point(581, 341);
+            this.lnkNuevoTipoProducto.Name = "lnkNuevoTipoProducto";
+            this.lnkNuevoTipoProducto.Size = new System.Drawing.Size(181, 20);
+            this.lnkNuevoTipoProducto.TabIndex = 6;
+            this.lnkNuevoTipoProducto.TabStop = true;
+            this.lnkNuevoTipoProducto.Text = "Nuevo tipo de producto";
+            this.lnkNuevoTipoProducto.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkNuevoTipoProducto_LinkClicked);
+            // 
             // frmTipoProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 666);
+            this.Controls.Add(this.lnkNuevoTipoProducto);
             this.Controls.Add(this.dgvListaTipoProductos);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -66,6 +79,7 @@
             this.Text = "TipoProducto";
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaTipoProductos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -73,5 +87,6 @@
 
         private System.Windows.Forms.DataGridView dgvListaTipoProductos;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoProducto;
+        private System.Windows.Forms.LinkLabel lnkNuevoTipoProducto;
     }
 }

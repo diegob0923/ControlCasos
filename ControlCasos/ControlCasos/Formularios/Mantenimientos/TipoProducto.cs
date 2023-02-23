@@ -26,5 +26,11 @@ namespace ControlCasos.Formularios.Mantenimientos
             dgvListaTipoProductos.AutoGenerateColumns = false;
             dgvListaTipoProductos.DataSource = fuenteDatos;
         }
+
+        private void lnkNuevoTipoProducto_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmNuevoTipoProducto formularioNuevoTipoProducto = new frmNuevoTipoProducto(this);//como la instancia es de tipo frmCliente se envía él mismo
+            formularioNuevoTipoProducto.Visible = true;
+        }
     }
 }

@@ -228,6 +228,9 @@
     <EmbeddedResource Include="Formularios\Mantenimientos\NuevoColor.resx">
       <DependentUpon>NuevoColor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Mantenimientos\NuevoTipoProducto.resx">
+      <DependentUpon>NuevoTipoProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Mantenimientos\TipoProducto.resx">
       <DependentUpon>TipoProducto.cs</DependentUpon>
     </EmbeddedResource>
