@@ -27,5 +27,28 @@ namespace ControlCasos.Formularios.Mantenimientos
             dgvListaMarcas.AutoGenerateColumns = false;
             dgvListaMarcas.DataSource = fuenteDatos;
         }
+
+        #region Filtro
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text != "")
+                btnCancelar.Visible = true;
+            else
+                btnCancelar.Visible = false;
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            txtBuscar.Text = "";
+            cargarDatosEnGrid();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            IList<sp_Marca_Consultar_Result> fuenteDatos = marcas.consultarMarcas(txtBuscar.Text);
+            dgvListaMarcas.AutoGenerateColumns = false;
+            dgvListaMarcas.DataSource = fuenteDatos;
+        }
+        #endregion
     }
 }
