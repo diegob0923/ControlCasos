@@ -28,6 +28,7 @@ namespace ControlCasos.Formularios.Mantenimientos
             dgvListaClientes.DataSource= fuenteDatos;
         }
 
+        #region Filtro
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             IList<sp_Cliente_Consultar_Result> fuenteDatos = clientes.consultarClientes(txtBuscar.Text);
@@ -40,20 +41,15 @@ namespace ControlCasos.Formularios.Mantenimientos
             txtBuscar.Text = "";
             cargarDatosEnGrid();
         }
-
+        
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             if (txtBuscar.Text != "")
-            {
                 btnCancelar.Visible = true;
-            }
             else
-            {
-                btnCancelar.Visible = false;
-            }
-                
+                btnCancelar.Visible = false;   
         }
-
+        #endregion
         private void lnkNuevoCliente_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmNuevoCliente formularioNuevoCliente = new frmNuevoCliente(this);//como la instancia es de tipo frmCliente se envía él mismo
