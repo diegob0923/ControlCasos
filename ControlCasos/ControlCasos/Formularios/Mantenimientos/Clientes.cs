@@ -52,7 +52,7 @@ namespace ControlCasos.Formularios.Mantenimientos
         #endregion
         private void lnkNuevoCliente_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmNuevoCliente formularioNuevoCliente = new frmNuevoCliente(this);//como la instancia es de tipo frmCliente se envía él mismo
+            frmNuevoCliente formularioNuevoCliente = new frmNuevoCliente(this);//el constructor recibe un tipo frmCliente por eso se envía él mismo
             formularioNuevoCliente.Visible = true;
         }
     }

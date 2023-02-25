@@ -30,7 +30,7 @@ namespace ControlCasos.Formularios.Mantenimientos
 
         private void lnkNuevoColor_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmNuevoColor formularioNuevoColor = new frmNuevoColor(this);//como la instancia es de tipo frmColor se envía él mismo
+            frmNuevoColor formularioNuevoColor = new frmNuevoColor(this);//el constructor recibe un tipo frmColor por eso se envía él mismo
             formularioNuevoColor.Visible = true;
         }
 

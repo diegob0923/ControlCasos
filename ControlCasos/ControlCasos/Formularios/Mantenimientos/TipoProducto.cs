@@ -29,7 +29,7 @@ namespace ControlCasos.Formularios.Mantenimientos
 
         private void lnkNuevoTipoProducto_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmNuevoTipoProducto formularioNuevoTipoProducto = new frmNuevoTipoProducto(this);//como la instancia es de tipo frmCliente se envía él mismo
+            frmNuevoTipoProducto formularioNuevoTipoProducto = new frmNuevoTipoProducto(this);//el constructor recibe un tipo frmTipoProducto por eso se envía él mismo
             formularioNuevoTipoProducto.Visible = true;
         }
         #region Filtro
