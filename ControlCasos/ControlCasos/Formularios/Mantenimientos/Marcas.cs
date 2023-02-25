@@ -50,5 +50,11 @@ namespace ControlCasos.Formularios.Mantenimientos
             dgvListaMarcas.DataSource = fuenteDatos;
         }
         #endregion
+
+        private void lnkNuevaMarca_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmNuevaMarca formularioNuevaMarca = new frmNuevaMarca(this);//como la instancia es de tipo frmCliente se envía él mismo
+            formularioNuevaMarca.Visible = true;
+        }
     }
 }

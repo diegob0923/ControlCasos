@@ -34,6 +34,7 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.lnkNuevaMarca = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaMarcas)).BeginInit();
             this.pnlFiltro.SuspendLayout();
             this.SuspendLayout();
@@ -106,11 +107,23 @@
             this.btnCancelar.Visible = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // lnkNuevaMarca
+            // 
+            this.lnkNuevaMarca.AutoSize = true;
+            this.lnkNuevaMarca.Location = new System.Drawing.Point(646, 323);
+            this.lnkNuevaMarca.Name = "lnkNuevaMarca";
+            this.lnkNuevaMarca.Size = new System.Drawing.Size(108, 20);
+            this.lnkNuevaMarca.TabIndex = 7;
+            this.lnkNuevaMarca.TabStop = true;
+            this.lnkNuevaMarca.Text = "Nueva Marca";
+            this.lnkNuevaMarca.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkNuevaMarca_LinkClicked);
+            // 
             // frmMarcas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 666);
+            this.Controls.Add(this.lnkNuevaMarca);
             this.Controls.Add(this.pnlFiltro);
             this.Controls.Add(this.dgvListaMarcas);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -122,6 +135,7 @@
             this.pnlFiltro.ResumeLayout(false);
             this.pnlFiltro.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -133,5 +147,6 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.LinkLabel lnkNuevaMarca;
     }
 }

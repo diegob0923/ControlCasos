@@ -222,6 +222,9 @@
     <EmbeddedResource Include="Formularios\Mantenimientos\Marcas.resx">
       <DependentUpon>Marcas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Mantenimientos\NuevaMarca.resx">
+      <DependentUpon>NuevaMarca.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Mantenimientos\NuevoCliente.resx">
       <DependentUpon>NuevoCliente.cs</DependentUpon>
     </EmbeddedResource>
