@@ -19,6 +19,18 @@
           <Parameter Name="Color" Type="varchar" Mode="In" />
           <Parameter Name="Guia" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="sp_Doctor_Consultar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NombreDoctor" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_Doctor_Insertar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Cedula" Type="varchar" Mode="In" />
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+          <Parameter Name="Apellido1" Type="varchar" Mode="In" />
+          <Parameter Name="Apellido2" Type="varchar" Mode="In" />
+          <Parameter Name="Correo" Type="varchar" Mode="In" />
+          <Parameter Name="Telefono" Type="varchar" Mode="In" />
+          <Parameter Name="IdCliente" Type="int" Mode="In" />
+        </Function>
         <Function Name="sp_Marca_Consultar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Marca" Type="varchar" Mode="In" />
         </Function>
@@ -71,6 +83,18 @@
             <Parameter Name="Color" Mode="In" Type="String" />
             <Parameter Name="Guia" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="sp_Doctor_Consultar" ReturnType="Collection(ControlCasosModel.sp_Doctor_Consultar_Result)">
+            <Parameter Name="NombreDoctor" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Doctor_Insertar">
+            <Parameter Name="Cedula" Mode="In" Type="String" />
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="Apellido1" Mode="In" Type="String" />
+            <Parameter Name="Apellido2" Mode="In" Type="String" />
+            <Parameter Name="Correo" Mode="In" Type="String" />
+            <Parameter Name="Telefono" Mode="In" Type="String" />
+            <Parameter Name="IdCliente" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_Cliente_Consultar_Result">
           <Property Type="Int32" Name="IdCliente" Nullable="false" />
@@ -89,6 +113,16 @@
           <Property Type="Byte" Name="IdColor" Nullable="false" />
           <Property Type="String" Name="Color" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="Guia" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_Doctor_Consultar_Result">
+          <Property Type="Int32" Name="iddoctor" Nullable="false" />
+          <Property Type="String" Name="cedula" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Doctor" Nullable="false" MaxLength="152" />
+          <Property Type="String" Name="correo" Nullable="true" MaxLength="70" />
+          <Property Type="String" Name="telefono" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Estado" Nullable="true" MaxLength="8" />
+          <Property Type="String" Name="Cliente" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="IdCliente" Nullable="false" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -135,6 +169,21 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_Color_Insertar" FunctionName="ControlCasosModel.Store.sp_Color_Insertar" />
+          <FunctionImportMapping FunctionImportName="sp_Doctor_Consultar" FunctionName="ControlCasosModel.Store.sp_Doctor_Consultar">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ControlCasosModel.sp_Doctor_Consultar_Result">
+                <ScalarProperty Name="iddoctor" ColumnName="iddoctor" />
+                <ScalarProperty Name="cedula" ColumnName="cedula" />
+                <ScalarProperty Name="Doctor" ColumnName="Doctor" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+                <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Doctor_Insertar" FunctionName="ControlCasosModel.Store.sp_Doctor_Insertar" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
