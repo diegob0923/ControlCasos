@@ -37,6 +37,7 @@
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlFiltro = new System.Windows.Forms.Panel();
             this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.lnkNuevoCliente = new System.Windows.Forms.LinkLabel();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaDoctores)).BeginInit();
@@ -136,6 +137,17 @@
             this.txtBuscar.TabIndex = 1;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
+            // lnkNuevoCliente
+            // 
+            this.lnkNuevoCliente.AutoSize = true;
+            this.lnkNuevoCliente.Location = new System.Drawing.Point(706, 338);
+            this.lnkNuevoCliente.Name = "lnkNuevoCliente";
+            this.lnkNuevoCliente.Size = new System.Drawing.Size(108, 20);
+            this.lnkNuevoCliente.TabIndex = 6;
+            this.lnkNuevoCliente.TabStop = true;
+            this.lnkNuevoCliente.Text = "Nuevo doctor";
+            this.lnkNuevoCliente.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkNuevoCliente_LinkClicked);
+            // 
             // btnBuscar
             // 
             this.btnBuscar.FlatAppearance.BorderSize = 0;
@@ -168,6 +180,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 666);
+            this.Controls.Add(this.lnkNuevoCliente);
             this.Controls.Add(this.pnlFiltro);
             this.Controls.Add(this.dgvListaDoctores);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -179,6 +192,7 @@
             this.pnlFiltro.ResumeLayout(false);
             this.pnlFiltro.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -195,5 +209,6 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.LinkLabel lnkNuevoCliente;
     }
 }

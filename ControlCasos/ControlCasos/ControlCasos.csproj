@@ -125,6 +125,12 @@
     <Compile Include="Formularios\Mantenimientos\NuevoColor.Designer.cs">
       <DependentUpon>NuevoColor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Mantenimientos\NuevoDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Mantenimientos\NuevoDoctor.Designer.cs">
+      <DependentUpon>NuevoDoctor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Mantenimientos\NuevoTipoProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Mantenimientos\NuevoColor.resx">
       <DependentUpon>NuevoColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Mantenimientos\NuevoDoctor.resx">
+      <DependentUpon>NuevoDoctor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Mantenimientos\NuevoTipoProducto.resx">
       <DependentUpon>NuevoTipoProducto.cs</DependentUpon>

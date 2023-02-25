@@ -52,5 +52,11 @@ namespace ControlCasos.Formularios.Mantenimientos
             dgvListaDoctores.AutoGenerateColumns = false;
             dgvListaDoctores.DataSource = fuenteDatos;
         }
+
+        private void lnkNuevoCliente_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmNuevoDoctor formularioNuevoDoctor = new frmNuevoDoctor(this);//el constructor recibe un tipo frmDoctor por eso se envía él mismo
+            formularioNuevoDoctor.Visible = true;
+        }
     }
 }
