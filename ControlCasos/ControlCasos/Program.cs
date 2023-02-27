@@ -16,7 +16,7 @@ namespace ControlCasos
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmInicioSesion());
+            Application.Run(new frmPrincipal());
         }
     }
 }

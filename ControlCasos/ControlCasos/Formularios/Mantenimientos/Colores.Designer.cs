@@ -29,13 +29,15 @@
         private void InitializeComponent()
         {
             this.dgvListaColores = new System.Windows.Forms.DataGridView();
-            this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Guia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lnkNuevoColor = new System.Windows.Forms.LinkLabel();
             this.pnlFiltro = new System.Windows.Forms.Panel();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Guia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaColores)).BeginInit();
             this.pnlFiltro.SuspendLayout();
             this.SuspendLayout();
@@ -46,27 +48,15 @@
             this.dgvListaColores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaColores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Color,
-            this.Guia});
+            this.Guia,
+            this.Editar,
+            this.Eliminar});
             this.dgvListaColores.Location = new System.Drawing.Point(98, 189);
             this.dgvListaColores.Name = "dgvListaColores";
             this.dgvListaColores.RowHeadersWidth = 51;
-            this.dgvListaColores.RowTemplate.Height = 24;
+            this.dgvListaColores.RowTemplate.Height = 27;
             this.dgvListaColores.Size = new System.Drawing.Size(666, 150);
             this.dgvListaColores.TabIndex = 1;
-            // 
-            // Color
-            // 
-            this.Color.DataPropertyName = "Color";
-            this.Color.HeaderText = "Color";
-            this.Color.MinimumWidth = 6;
-            this.Color.Name = "Color";
-            // 
-            // Guia
-            // 
-            this.Guia.DataPropertyName = "Guia";
-            this.Guia.HeaderText = "Guía";
-            this.Guia.MinimumWidth = 6;
-            this.Guia.Name = "Guia";
             // 
             // lnkNuevoColor
             // 
@@ -127,6 +117,36 @@
             this.btnCancelar.Visible = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // Color
+            // 
+            this.Color.DataPropertyName = "Color";
+            this.Color.HeaderText = "Color";
+            this.Color.MinimumWidth = 6;
+            this.Color.Name = "Color";
+            // 
+            // Guia
+            // 
+            this.Guia.DataPropertyName = "Guia";
+            this.Guia.HeaderText = "Guía";
+            this.Guia.MinimumWidth = 6;
+            this.Guia.Name = "Guia";
+            // 
+            // Editar
+            // 
+            this.Editar.FillWeight = 25F;
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = global::ControlCasos.Properties.Resources.editar;
+            this.Editar.MinimumWidth = 6;
+            this.Editar.Name = "Editar";
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.FillWeight = 25F;
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Image = global::ControlCasos.Properties.Resources.borrar;
+            this.Eliminar.MinimumWidth = 6;
+            this.Eliminar.Name = "Eliminar";
+            // 
             // frmColores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -151,12 +171,14 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvListaColores;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Color;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Guia;
         private System.Windows.Forms.LinkLabel lnkNuevoColor;
         private System.Windows.Forms.Panel pnlFiltro;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Color;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Guia;
+        private System.Windows.Forms.DataGridViewImageColumn Editar;
+        private System.Windows.Forms.DataGridViewImageColumn Eliminar;
     }
 }

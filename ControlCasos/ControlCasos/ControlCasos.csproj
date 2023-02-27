@@ -294,8 +294,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Imagenes\borrar.png" />
     <Content Include="Imagenes\buscar.png" />
     <Content Include="Imagenes\cancelar.png" />
+    <Content Include="Imagenes\editar.png" />
     <Content Include="Modelos\ControlCasosModelo.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ControlCasosModelo.Context.cs</LastGenOutput>

@@ -28,36 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvListaMarcas = new System.Windows.Forms.DataGridView();
-            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlFiltro = new System.Windows.Forms.Panel();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lnkNuevaMarca = new System.Windows.Forms.LinkLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListaMarcas)).BeginInit();
+            this.dgvListaMarcas = new System.Windows.Forms.DataGridView();
+            this.TipoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnlFiltro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaMarcas)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvListaMarcas
-            // 
-            this.dgvListaMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListaMarcas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Marca});
-            this.dgvListaMarcas.Location = new System.Drawing.Point(88, 150);
-            this.dgvListaMarcas.Name = "dgvListaMarcas";
-            this.dgvListaMarcas.RowHeadersWidth = 51;
-            this.dgvListaMarcas.RowTemplate.Height = 24;
-            this.dgvListaMarcas.Size = new System.Drawing.Size(666, 150);
-            this.dgvListaMarcas.TabIndex = 0;
-            // 
-            // Marca
-            // 
-            this.Marca.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Marca.DataPropertyName = "Marca";
-            this.Marca.HeaderText = "Marca";
-            this.Marca.MinimumWidth = 6;
-            this.Marca.Name = "Marca";
             // 
             // pnlFiltro
             // 
@@ -118,35 +100,75 @@
             this.lnkNuevaMarca.Text = "Nueva Marca";
             this.lnkNuevaMarca.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkNuevaMarca_LinkClicked);
             // 
+            // dgvListaMarcas
+            // 
+            this.dgvListaMarcas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvListaMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaMarcas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TipoProducto,
+            this.dataGridViewImageColumn1,
+            this.dataGridViewImageColumn2});
+            this.dgvListaMarcas.Location = new System.Drawing.Point(88, 150);
+            this.dgvListaMarcas.Name = "dgvListaMarcas";
+            this.dgvListaMarcas.RowHeadersWidth = 51;
+            this.dgvListaMarcas.RowTemplate.Height = 27;
+            this.dgvListaMarcas.Size = new System.Drawing.Size(666, 150);
+            this.dgvListaMarcas.TabIndex = 8;
+            // 
+            // TipoProducto
+            // 
+            this.TipoProducto.DataPropertyName = "Marca";
+            this.TipoProducto.FillWeight = 140F;
+            this.TipoProducto.HeaderText = "Marca";
+            this.TipoProducto.MinimumWidth = 6;
+            this.TipoProducto.Name = "TipoProducto";
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.FillWeight = 20F;
+            this.dataGridViewImageColumn1.HeaderText = "Editar";
+            this.dataGridViewImageColumn1.Image = global::ControlCasos.Properties.Resources.editar;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.FillWeight = 20F;
+            this.dataGridViewImageColumn2.HeaderText = "Eliminar";
+            this.dataGridViewImageColumn2.Image = global::ControlCasos.Properties.Resources.borrar;
+            this.dataGridViewImageColumn2.MinimumWidth = 6;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            // 
             // frmMarcas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 666);
+            this.Controls.Add(this.dgvListaMarcas);
             this.Controls.Add(this.lnkNuevaMarca);
             this.Controls.Add(this.pnlFiltro);
-            this.Controls.Add(this.dgvListaMarcas);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMarcas";
             this.Text = "Marcas";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListaMarcas)).EndInit();
             this.pnlFiltro.ResumeLayout(false);
             this.pnlFiltro.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaMarcas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvListaMarcas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
         private System.Windows.Forms.Panel pnlFiltro;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.LinkLabel lnkNuevaMarca;
+        private System.Windows.Forms.DataGridView dgvListaMarcas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoProducto;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
     }
 }
