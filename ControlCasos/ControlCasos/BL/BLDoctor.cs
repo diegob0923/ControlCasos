@@ -17,17 +17,24 @@ namespace ControlCasos.BL
             return listaDoctores;
         }
 
-        public bool insertarDoctor(string cedula, string nombre, string apellido1, 
+        public void insertarDoctor(string cedula, string nombre, string apellido1, 
                                     string apellido2, int idCliente, string correo = null, 
                                     string telefono = null)
         {
-            int registrosAfectados = modeloBD.sp_Doctor_Insertar(cedula,nombre,apellido1,apellido2,
-                                                                correo,telefono, idCliente);
+            modeloBD.sp_Doctor_Insertar(cedula,nombre,apellido1,apellido2,correo,telefono,idCliente);
+        }
 
-            if (registrosAfectados > 0)
-                return true;
+        public void editarDoctor(int idDoctor, string cedula, string nombre, string apellido1,
+                                    string apellido2, bool estado, int idCliente, string correo = null,
+                                    string telefono = null)
+        {
+            modeloBD.sp_Doctor_Editar(idDoctor, cedula, nombre,apellido1,apellido2,correo,telefono,
+                                        estado,idCliente);
+        }
 
-            return false;
+        public void eliminarTipoProducto(int idDoctor)
+        {
+            modeloBD.sp_Doctor_Eliminar(idDoctor);
         }
     }
 }

@@ -30,11 +30,10 @@ namespace ControlCasos.Formularios.Mantenimientos
         {
             try
             {
-                if (BLTipoProducto.insertarTipoProducto(txtTipoProducto.Text))
-                {
-                    recargarGridEnFormularioPrincipal();
-                    this.Dispose();
-                }
+                BLTipoProducto.insertarTipoProducto(txtTipoProducto.Text);
+                
+                recargarGridEnFormularioPrincipal();
+                this.Dispose();
             }
             catch (Exception)
             {

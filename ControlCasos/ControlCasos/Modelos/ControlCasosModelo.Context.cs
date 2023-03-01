@@ -235,11 +235,11 @@ namespace ControlCasos.Modelos
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_Cliente_Eliminar", idParameter);
         }
     
-        public virtual int sp_Color_Editar(Nullable<byte> id, string color, string guia)
+        public virtual int sp_Color_Editar(Nullable<int> id, string color, string guia)
         {
             var idParameter = id.HasValue ?
                 new ObjectParameter("id", id) :
-                new ObjectParameter("id", typeof(byte));
+                new ObjectParameter("id", typeof(int));
     
             var colorParameter = color != null ?
                 new ObjectParameter("Color", color) :

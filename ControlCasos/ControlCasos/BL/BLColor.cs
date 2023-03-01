@@ -17,14 +17,19 @@ namespace ControlCasos.BL
             return listaMarcas;
         }
 
-        public bool insertarColor(string color,string guia)
+        public void insertarColor(string color,string guia)
         {
-            int registrosAfectados = modeloBD.sp_Color_Insertar(color,guia);
+            modeloBD.sp_Color_Insertar(color,guia);
+        }
 
-            if (registrosAfectados > 0)
-                return true;
+        public void editarColor(int idColor, string color, string guia)
+        {
+            modeloBD.sp_Color_Editar(idColor, color, guia);
+        }
 
-            return false;
+        public void eliminarColor(int idColor)
+        {
+            modeloBD.sp_Cliente_Eliminar(idColor);
         }
     }
 }

@@ -30,15 +30,14 @@ namespace ControlCasos.Formularios.Mantenimientos
         {
             try
             {
-                if (BLColores.insertarColor(txtColor.Text, txtGuia.Text))
-                {
-                    recargarGridEnFormularioPrincipal();
-                    this.Dispose();
-                }
+                BLColores.insertarColor(txtColor.Text, txtGuia.Text);
+                
+                recargarGridEnFormularioPrincipal();
+                this.Dispose();
             }
             catch (Exception)
             {
-                MessageBox.Show("Error al agregar cliente");
+                MessageBox.Show("Error al agregar color");
             }
         }
 

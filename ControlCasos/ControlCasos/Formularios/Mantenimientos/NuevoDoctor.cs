@@ -43,13 +43,12 @@ namespace ControlCasos.Formularios.Mantenimientos
         {
             try
             {
-                if (BLDoctor.insertarDoctor(txtCedula.Text,txtNombre.Text,txtApellido1.Text,
-                                            txtApellido2.Text,int.Parse(cmbCliente.SelectedValue.ToString()), txtCorreo.Text, 
-                                            txtTelefono.Text ))
-                {
+                BLDoctor.insertarDoctor(txtCedula.Text, txtNombre.Text, txtApellido1.Text,
+                                            txtApellido2.Text, int.Parse(cmbCliente.SelectedValue.ToString()), 
+                                            txtCorreo.Text, txtTelefono.Text);
+                
                     recargarGridEnFormularioPrincipal();
                     this.Dispose();
-                }
             }
             catch (Exception)
             {

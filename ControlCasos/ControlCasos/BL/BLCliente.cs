@@ -30,7 +30,11 @@ namespace ControlCasos.BL
         public void editarCliente(int idCliente, string cliente, bool estado)
         {
             modeloBD.sp_Cliente_Editar(idCliente,cliente, estado);
+        }
 
+        public void eliminarCliente(int idCliente)
+        {
+            modeloBD.sp_Cliente_Eliminar(idCliente);
         }
     }
 }

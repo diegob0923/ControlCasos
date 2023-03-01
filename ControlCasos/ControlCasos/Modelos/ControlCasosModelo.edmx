@@ -27,7 +27,7 @@
           <Parameter Name="Guia" Type="varchar" Mode="In" />
         </Function>
         <Function Name="sp_Color_Editar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="id" Type="tinyint" Mode="In" />
+          <Parameter Name="id" Type="int" Mode="In" />
           <Parameter Name="Color" Type="varchar" Mode="In" />
           <Parameter Name="Guia" Type="varchar" Mode="In" />
         </Function>
@@ -175,15 +175,15 @@
             <Parameter Name="estado" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="sp_Cliente_Eliminar">
-            <Parameter Name="id" Mode="In" Type="Int32" />
+          <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_Color_Editar">
-            <Parameter Name="id" Mode="In" Type="Byte" />
+            <Parameter Name="id" Mode="In" Type="Int32" />
             <Parameter Name="Color" Mode="In" Type="String" />
             <Parameter Name="Guia" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_Color_Eliminar">
-            <Parameter Name="id" Mode="In" Type="Int32" />
+          <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_Doctor_Editar">
             <Parameter Name="id" Mode="In" Type="Int32" />
@@ -197,21 +197,21 @@
             <Parameter Name="IdCliente" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_Doctor_Eliminar">
-            <Parameter Name="id" Mode="In" Type="Int32" />
+          <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_Marca_Editar">
             <Parameter Name="id" Mode="In" Type="Int32" />
             <Parameter Name="Marca" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_Marca_Eliminar">
-            <Parameter Name="id" Mode="In" Type="Int32" />
+          <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_TipoProducto_Editar">
             <Parameter Name="id" Mode="In" Type="Int32" />
             <Parameter Name="TipoProducto" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_TipoProducto_Eliminar">
-            <Parameter Name="id" Mode="In" Type="Int32" />
+          <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_Cliente_Consultar_Result">

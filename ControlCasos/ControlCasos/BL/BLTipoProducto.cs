@@ -17,14 +17,18 @@ namespace ControlCasos.BL
             return listaTipoProductos;
         }
 
-        public bool insertarTipoProducto(string tipoProducto)
+        public void insertarTipoProducto(string tipoProducto)
         {
-            int registrosAfectados = modeloBD.sp_TipoProducto_Insertar(tipoProducto);
+            modeloBD.sp_TipoProducto_Insertar(tipoProducto);
+        }
+        public void editarTipoProducto(int idTipoProducto, string tipoProducto)
+        {
+            modeloBD.sp_TipoProducto_Editar(idTipoProducto, tipoProducto);
+        }
 
-            if (registrosAfectados > 0)
-                return true;
-
-            return false;
+        public void eliminarTipoProducto(int idTipoProducto)
+        {
+            modeloBD.sp_TipoProducto_Eliminar(idTipoProducto);
         }
     }
 }

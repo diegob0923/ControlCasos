@@ -17,14 +17,19 @@ namespace ControlCasos.BL
             return listaMarcas;
         }
 
-        public bool insertarMarca(string marca)
+        public void insertarMarca(string marca)
         {
-            int registrosAfectados = modeloBD.sp_Marca_Insertar(marca);
+            modeloBD.sp_Marca_Insertar(marca);
+        }
 
-            if (registrosAfectados > 0)
-                return true;
+        public void editarMarca(int idMarca, string marca)
+        {
+            modeloBD.sp_Marca_Editar(idMarca, marca);
+        }
 
-            return false;
+        public void eliminarMarca(int idMarca)
+        {
+            modeloBD.sp_Marca_Eliminar(idMarca);
         }
     }
 }
