@@ -19,6 +19,7 @@ namespace ControlCasos.Formularios.Mantenimientos
         {
             InitializeComponent();
             cargarDatosEnGrid();
+  
         }
 
         public void cargarDatosEnGrid()
@@ -54,6 +55,17 @@ namespace ControlCasos.Formularios.Mantenimientos
         {
             frmNuevoCliente formularioNuevoCliente = new frmNuevoCliente(this);//el constructor recibe un tipo frmCliente por eso se envía él mismo
             formularioNuevoCliente.Visible = true;
+        }
+
+        private void dgvListaClientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvListaClientes.Columns[e.ColumnIndex].Name == "Editar")
+            {
+
+                frmEditarCliente formularioEditarCliente = new frmEditarCliente(this, int.Parse(dgvListaClientes.CurrentRow.Cells["Id"].Value.ToString()));
+                formularioEditarCliente.Visible = true;
+            }
+
         }
     }
 }

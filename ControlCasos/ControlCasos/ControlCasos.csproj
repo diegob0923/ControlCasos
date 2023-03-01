@@ -58,6 +58,7 @@
     <Compile Include="BL\BLMarca.cs" />
     <Compile Include="BL\BLTipoProducto.cs" />
     <Compile Include="Clases\VariablesGlobales.cs" />
+    <Compile Include="Constantes\Estado.cs" />
     <Compile Include="Constantes\Rol.cs" />
     <Compile Include="Formularios\Ayuda\AcercaDe.cs">
       <SubType>Form</SubType>
@@ -82,6 +83,12 @@
     </Compile>
     <Compile Include="Formularios\Casos.Designer.cs">
       <DependentUpon>Casos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Mantenimientos\EditarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Mantenimientos\EditarCliente.Designer.cs">
+      <DependentUpon>EditarCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Mantenimientos\NuevaMarca.cs">
       <SubType>Form</SubType>
@@ -188,16 +195,31 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ControlCasosModelo.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Modelos\sp_ClienteID_Consultar_Result.cs">
+      <DependentUpon>ControlCasosModelo.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modelos\sp_Cliente_Consultar_Result.cs">
+      <DependentUpon>ControlCasosModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\sp_ColorID_Consultar_Result.cs">
       <DependentUpon>ControlCasosModelo.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelos\sp_Color_Consultar_Result.cs">
       <DependentUpon>ControlCasosModelo.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modelos\sp_DoctorID_Consultar_Result.cs">
+      <DependentUpon>ControlCasosModelo.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modelos\sp_Doctor_Consultar_Result.cs">
       <DependentUpon>ControlCasosModelo.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modelos\sp_MarcaID_Consultar_Result.cs">
+      <DependentUpon>ControlCasosModelo.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modelos\sp_Marca_Consultar_Result.cs">
+      <DependentUpon>ControlCasosModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\sp_TipoProductoID_Consultar_Result.cs">
       <DependentUpon>ControlCasosModelo.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelos\sp_TipoProducto_Consultar_Result.cs">
@@ -228,6 +250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Mantenimientos\Doctores.resx">
       <DependentUpon>Doctores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Mantenimientos\EditarCliente.resx">
+      <DependentUpon>EditarCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Mantenimientos\Marcas.resx">
       <DependentUpon>Marcas.cs</DependentUpon>

@@ -163,5 +163,67 @@ namespace ControlCasos.Modelos
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_Doctor_Insertar", cedulaParameter, nombreParameter, apellido1Parameter, apellido2Parameter, correoParameter, telefonoParameter, idClienteParameter);
         }
+    
+        public virtual ObjectResult<sp_ClienteID_Consultar_Result> sp_ClienteID_Consultar(Nullable<int> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("Id", id) :
+                new ObjectParameter("Id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_ClienteID_Consultar_Result>("sp_ClienteID_Consultar", idParameter);
+        }
+    
+        public virtual ObjectResult<sp_ColorID_Consultar_Result> sp_ColorID_Consultar(Nullable<int> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_ColorID_Consultar_Result>("sp_ColorID_Consultar", idParameter);
+        }
+    
+        public virtual ObjectResult<sp_DoctorID_Consultar_Result> sp_DoctorID_Consultar(Nullable<int> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_DoctorID_Consultar_Result>("sp_DoctorID_Consultar", idParameter);
+        }
+    
+        public virtual ObjectResult<sp_MarcaID_Consultar_Result> sp_MarcaID_Consultar(Nullable<int> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_MarcaID_Consultar_Result>("sp_MarcaID_Consultar", idParameter);
+        }
+    
+        public virtual ObjectResult<sp_TipoProductoID_Consultar_Result> sp_TipoProductoID_Consultar(Nullable<int> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_TipoProductoID_Consultar_Result>("sp_TipoProductoID_Consultar", idParameter);
+        }
+    
+        public virtual int sp_Cliente_Editar(Nullable<int> idCliente, string cliente, Nullable<bool> estado)
+        {
+            var idClienteParameter = idCliente.HasValue ?
+                new ObjectParameter("idCliente", idCliente) :
+                new ObjectParameter("idCliente", typeof(int));
+    
+            var clienteParameter = cliente != null ?
+                new ObjectParameter("cliente", cliente) :
+                new ObjectParameter("cliente", typeof(string));
+    
+            var estadoParameter = estado.HasValue ?
+                new ObjectParameter("estado", estado) :
+                new ObjectParameter("estado", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_Cliente_Editar", idClienteParameter, clienteParameter, estadoParameter);
+        }
     }
 }

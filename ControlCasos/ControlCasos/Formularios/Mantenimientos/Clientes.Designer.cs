@@ -31,16 +31,17 @@
             this.dgvListaClientes = new System.Windows.Forms.DataGridView();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.pnlFiltro = new System.Windows.Forms.Panel();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.lnkNuevoCliente = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaClientes)).BeginInit();
             this.pnlFiltro.SuspendLayout();
             this.SuspendLayout();
@@ -53,13 +54,15 @@
             this.Cliente,
             this.Estado,
             this.Editar,
-            this.Eliminar});
+            this.Eliminar,
+            this.Id});
             this.dgvListaClientes.Location = new System.Drawing.Point(70, 177);
             this.dgvListaClientes.Name = "dgvListaClientes";
             this.dgvListaClientes.RowHeadersWidth = 51;
             this.dgvListaClientes.RowTemplate.Height = 27;
             this.dgvListaClientes.Size = new System.Drawing.Size(666, 150);
             this.dgvListaClientes.TabIndex = 0;
+            this.dgvListaClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaClientes_CellClick);
             // 
             // txtBuscar
             // 
@@ -81,6 +84,33 @@
             this.pnlFiltro.Name = "pnlFiltro";
             this.pnlFiltro.Size = new System.Drawing.Size(371, 36);
             this.pnlFiltro.TabIndex = 4;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Image = global::ControlCasos.Properties.Resources.buscar;
+            this.btnBuscar.Location = new System.Drawing.Point(330, -2);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(34, 34);
+            this.btnBuscar.TabIndex = 2;
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Image = global::ControlCasos.Properties.Resources.cancelar;
+            this.btnCancelar.Location = new System.Drawing.Point(290, -2);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(34, 34);
+            this.btnCancelar.TabIndex = 3;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Visible = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // lnkNuevoCliente
             // 
@@ -121,33 +151,6 @@
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 102;
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.FlatAppearance.BorderSize = 0;
-            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Image = global::ControlCasos.Properties.Resources.buscar;
-            this.btnBuscar.Location = new System.Drawing.Point(330, -2);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(34, 34);
-            this.btnBuscar.TabIndex = 2;
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Image = global::ControlCasos.Properties.Resources.cancelar;
-            this.btnCancelar.Location = new System.Drawing.Point(290, -2);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(34, 34);
-            this.btnCancelar.TabIndex = 3;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Visible = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
             // Cliente
             // 
             this.Cliente.DataPropertyName = "Cliente";
@@ -178,6 +181,15 @@
             this.Eliminar.Image = global::ControlCasos.Properties.Resources.borrar;
             this.Eliminar.MinimumWidth = 6;
             this.Eliminar.Name = "Eliminar";
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "idCliente";
+            this.Id.FillWeight = 10F;
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
             // 
             // frmClientes
             // 
@@ -216,5 +228,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
     }
 }

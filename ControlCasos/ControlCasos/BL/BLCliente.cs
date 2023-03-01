@@ -16,6 +16,12 @@ namespace ControlCasos.BL
             return listaClientes;
         }
 
+        public sp_ClienteID_Consultar_Result consultarClienteID(int idCliente)
+        {
+            sp_ClienteID_Consultar_Result datosCliente = modeloBD.sp_ClienteID_Consultar(idCliente).FirstOrDefault();
+            return datosCliente;
+        }
+
         public bool insertarCliente(string cliente)
         {
             int registrosAfectados = modeloBD.sp_Cliente_Insertar(cliente);
@@ -23,6 +29,16 @@ namespace ControlCasos.BL
             if (registrosAfectados>0)
                 return true;
             
+            return false;
+        }
+
+        public bool editarCliente(int idCliente, string cliente, bool estado)
+        {
+            int registrosAfectados = modeloBD.sp_Cliente_Editar(idCliente,cliente, estado);
+
+            if (registrosAfectados > 0)
+                return true;
+
             return false;
         }
     }
