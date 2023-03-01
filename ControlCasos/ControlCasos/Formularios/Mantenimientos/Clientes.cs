@@ -59,13 +59,26 @@ namespace ControlCasos.Formularios.Mantenimientos
 
         private void dgvListaClientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            int idCliente = int.Parse(dgvListaClientes.CurrentRow.Cells["Id"].Value.ToString());
+
             if (dgvListaClientes.Columns[e.ColumnIndex].Name == "Editar")
             {
-
-                frmEditarCliente formularioEditarCliente = new frmEditarCliente(this, int.Parse(dgvListaClientes.CurrentRow.Cells["Id"].Value.ToString()));
+                frmEditarCliente formularioEditarCliente = new frmEditarCliente(this, idCliente);
                 formularioEditarCliente.Visible = true;
             }
-
+            if (dgvListaClientes.Columns[e.ColumnIndex].Name == "Eliminar")
+            {
+                if (MessageBox.Show("Está a punto de eliminar el cliente: \" " + dgvListaClientes.CurrentRow.Cells["Cliente"].Value.ToString() + "\". ¿Desea continuar?", "Eliminar cliente", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    try
+                    {
+                        clientes.eliminarCliente(idCliente);
+                        cargarDatosEnGrid();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Ocurrio un error al eliminar el cliente");
+                    }
+            }
         }
     }
 }

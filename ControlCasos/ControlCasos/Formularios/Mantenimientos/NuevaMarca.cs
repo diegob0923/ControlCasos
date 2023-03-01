@@ -29,11 +29,10 @@ namespace ControlCasos.Formularios.Mantenimientos
         {
             try
             {
-                if (BLMarca.insertarMarca(txtMarca.Text))
-                {
-                    recargarGridEnFormularioPrincipal();
-                    this.Dispose();
-                }
+                BLMarca.insertarMarca(txtMarca.Text);
+                
+                recargarGridEnFormularioPrincipal();
+                this.Dispose();
             }
             catch (Exception)
             {
