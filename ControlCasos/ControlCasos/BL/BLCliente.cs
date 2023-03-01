@@ -22,24 +22,15 @@ namespace ControlCasos.BL
             return datosCliente;
         }
 
-        public bool insertarCliente(string cliente)
+        public void insertarCliente(string cliente)
         {
-            int registrosAfectados = modeloBD.sp_Cliente_Insertar(cliente);
-
-            if (registrosAfectados>0)
-                return true;
-            
-            return false;
+             modeloBD.sp_Cliente_Insertar(cliente);
         }
 
-        public bool editarCliente(int idCliente, string cliente, bool estado)
+        public void editarCliente(int idCliente, string cliente, bool estado)
         {
-            int registrosAfectados = modeloBD.sp_Cliente_Editar(idCliente,cliente, estado);
+            modeloBD.sp_Cliente_Editar(idCliente,cliente, estado);
 
-            if (registrosAfectados > 0)
-                return true;
-
-            return false;
         }
     }
 }

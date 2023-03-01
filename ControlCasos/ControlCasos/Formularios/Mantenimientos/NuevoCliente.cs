@@ -29,11 +29,11 @@ namespace ControlCasos.Formularios.Mantenimientos
         {
             try
             {
-                if (BLClientes.insertarCliente(txtNombreCliente.Text))
-                {
-                    recargarGridEnFormularioPrincipal();
-                    this.Dispose();
-                }
+                BLClientes.insertarCliente(txtNombreCliente.Text);
+                
+                recargarGridEnFormularioPrincipal();
+                this.Dispose();
+                
             }
             catch (Exception)
             {
