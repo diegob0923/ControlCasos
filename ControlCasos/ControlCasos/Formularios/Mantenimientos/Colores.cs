@@ -55,5 +55,30 @@ namespace ControlCasos.Formularios.Mantenimientos
                 btnCancelar.Visible = false;
         }
         #endregion
+
+        private void dgvListaColores_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int idColor = int.Parse(dgvListaColores.CurrentRow.Cells["Id"].Value.ToString());
+
+            if (dgvListaColores.Columns[e.ColumnIndex].Name == "Editar")
+            {
+                frmEditarColor formularioEditarColor = new frmEditarColor(this, idColor);
+                formularioEditarColor.Visible = true;
+            }
+
+            if (dgvListaColores.Columns[e.ColumnIndex].Name == "Eliminar")
+            {
+                if (MessageBox.Show("Está a punto de eliminar el color: \""+ dgvListaColores.CurrentRow.Cells["Color"].Value.ToString() + "\" de la guía \"" + dgvListaColores.CurrentRow.Cells["Guia"].Value.ToString() + "\". ¿Desea continuar?", "Eliminar cliente", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    try
+                    {
+                        colores.eliminarColor(idColor);
+                        cargarDatosEnGrid();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Ocurrio un error al eliminar el color");
+                    }
+            }
+        }
     }
 }

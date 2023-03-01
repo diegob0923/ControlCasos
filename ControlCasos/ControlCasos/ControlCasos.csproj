@@ -90,6 +90,12 @@
     <Compile Include="Formularios\Mantenimientos\EditarCliente.Designer.cs">
       <DependentUpon>EditarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Mantenimientos\EditarColor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Mantenimientos\EditarColor.Designer.cs">
+      <DependentUpon>EditarColor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Mantenimientos\NuevaMarca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -253,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Mantenimientos\EditarCliente.resx">
       <DependentUpon>EditarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Mantenimientos\EditarColor.resx">
+      <DependentUpon>EditarColor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Mantenimientos\Marcas.resx">
       <DependentUpon>Marcas.cs</DependentUpon>

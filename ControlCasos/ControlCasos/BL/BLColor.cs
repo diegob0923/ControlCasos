@@ -17,6 +17,12 @@ namespace ControlCasos.BL
             return listaMarcas;
         }
 
+        public sp_ColorID_Consultar_Result consultarColorID(int idColor)
+        {
+            sp_ColorID_Consultar_Result datosColor = modeloBD.sp_ColorID_Consultar(idColor).FirstOrDefault();
+            return datosColor;
+        }
+
         public void insertarColor(string color,string guia)
         {
             modeloBD.sp_Color_Insertar(color,guia);
@@ -29,7 +35,7 @@ namespace ControlCasos.BL
 
         public void eliminarColor(int idColor)
         {
-            modeloBD.sp_Cliente_Eliminar(idColor);
+            modeloBD.sp_Color_Eliminar(idColor);
         }
     }
 }

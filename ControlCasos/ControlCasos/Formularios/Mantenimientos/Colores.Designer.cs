@@ -38,6 +38,7 @@
             this.Guia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaColores)).BeginInit();
             this.pnlFiltro.SuspendLayout();
             this.SuspendLayout();
@@ -50,13 +51,15 @@
             this.Color,
             this.Guia,
             this.Editar,
-            this.Eliminar});
+            this.Eliminar,
+            this.Id});
             this.dgvListaColores.Location = new System.Drawing.Point(98, 189);
             this.dgvListaColores.Name = "dgvListaColores";
             this.dgvListaColores.RowHeadersWidth = 51;
             this.dgvListaColores.RowTemplate.Height = 27;
             this.dgvListaColores.Size = new System.Drawing.Size(666, 150);
             this.dgvListaColores.TabIndex = 1;
+            this.dgvListaColores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaColores_CellClick);
             // 
             // lnkNuevoColor
             // 
@@ -147,6 +150,14 @@
             this.Eliminar.MinimumWidth = 6;
             this.Eliminar.Name = "Eliminar";
             // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "IdColor";
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
+            // 
             // frmColores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -180,5 +191,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Guia;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
     }
 }
