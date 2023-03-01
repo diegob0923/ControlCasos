@@ -23,15 +23,19 @@ namespace ControlCasos.Formularios.Mantenimientos
 
         public void cargarDatosEnGrid()
         {
-            IList<sp_Doctor_Consultar_Result> fuenteDatos = doctores.consultarDoctores(null);//null es para que consulte todos
-            dgvListaDoctores.AutoGenerateColumns = false;
-            dgvListaDoctores.DataSource = fuenteDatos;
+            try
+            {
+                IList<sp_Doctor_Consultar_Result> fuenteDatos = doctores.consultarDoctores(null);//null es para que consulte todos
+                dgvListaDoctores.AutoGenerateColumns = false;
+                dgvListaDoctores.DataSource = fuenteDatos;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocurrio un error al cargar los doctores");
+            }
         }
 
         #region Filtro
-
-        #endregion
-
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             if (txtBuscar.Text != "")
@@ -48,10 +52,18 @@ namespace ControlCasos.Formularios.Mantenimientos
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            IList<sp_Doctor_Consultar_Result> fuenteDatos = doctores.consultarDoctores(txtBuscar.Text);
-            dgvListaDoctores.AutoGenerateColumns = false;
-            dgvListaDoctores.DataSource = fuenteDatos;
+            try
+            {
+                IList<sp_Doctor_Consultar_Result> fuenteDatos = doctores.consultarDoctores(txtBuscar.Text);
+                dgvListaDoctores.AutoGenerateColumns = false;
+                dgvListaDoctores.DataSource = fuenteDatos;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocurrio un error al buscar doctores");
+            }
         }
+        #endregion
 
         private void lnkNuevoCliente_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

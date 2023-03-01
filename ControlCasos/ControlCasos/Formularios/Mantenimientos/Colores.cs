@@ -23,9 +23,16 @@ namespace ControlCasos.Formularios.Mantenimientos
 
         public void cargarDatosEnGrid()
         {
-            IList<sp_Color_Consultar_Result> fuenteDatos = colores.consultarColores();//null es para que consulte todos
-            dgvListaColores.AutoGenerateColumns = false;
-            dgvListaColores.DataSource = fuenteDatos;
+            try
+            {
+                IList<sp_Color_Consultar_Result> fuenteDatos = colores.consultarColores();//null es para que consulte todos
+                dgvListaColores.AutoGenerateColumns = false;
+                dgvListaColores.DataSource = fuenteDatos;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocurrio un error al cargar los colores");
+            }
         }
 
         private void lnkNuevoColor_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -37,9 +44,17 @@ namespace ControlCasos.Formularios.Mantenimientos
         #region Filtro
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            IList<sp_Color_Consultar_Result> fuenteDatos = colores.consultarColores(txtBuscar.Text,txtBuscar.Text);
-            dgvListaColores.AutoGenerateColumns = false;
-            dgvListaColores.DataSource = fuenteDatos;
+            try
+            {
+                IList<sp_Color_Consultar_Result> fuenteDatos = colores.consultarColores(txtBuscar.Text, txtBuscar.Text);
+                dgvListaColores.AutoGenerateColumns = false;
+                dgvListaColores.DataSource = fuenteDatos;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocurrio un error al buscar colores");
+            }
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

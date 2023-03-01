@@ -23,9 +23,16 @@ namespace ControlCasos.Formularios.Mantenimientos
 
         public void cargarDatosEnGrid()
         {
-            IList<sp_Marca_Consultar_Result> fuenteDatos = marcas.consultarMarcas(null);//null es para que consulte todos
-            dgvListaMarcas.AutoGenerateColumns = false;
-            dgvListaMarcas.DataSource = fuenteDatos;
+            try
+            {
+                IList<sp_Marca_Consultar_Result> fuenteDatos = marcas.consultarMarcas(null);//null es para que consulte todos
+                dgvListaMarcas.AutoGenerateColumns = false;
+                dgvListaMarcas.DataSource = fuenteDatos;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocurrio un error al cargar las marcas");
+            }
         }
 
         #region Filtro
@@ -45,9 +52,16 @@ namespace ControlCasos.Formularios.Mantenimientos
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            IList<sp_Marca_Consultar_Result> fuenteDatos = marcas.consultarMarcas(txtBuscar.Text);
-            dgvListaMarcas.AutoGenerateColumns = false;
-            dgvListaMarcas.DataSource = fuenteDatos;
+            try
+            {
+                IList<sp_Marca_Consultar_Result> fuenteDatos = marcas.consultarMarcas(txtBuscar.Text);
+                dgvListaMarcas.AutoGenerateColumns = false;
+                dgvListaMarcas.DataSource = fuenteDatos;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocurrio un error al buscar marcas");
+            }
         }
         #endregion
 

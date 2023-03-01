@@ -24,17 +24,31 @@ namespace ControlCasos.Formularios.Mantenimientos
 
         public void cargarDatosEnGrid()
         {
-            IList<sp_Cliente_Consultar_Result> fuenteDatos = clientes.consultarClientes(null);//null es para que consulte todos
-            dgvListaClientes.AutoGenerateColumns = false;
-            dgvListaClientes.DataSource= fuenteDatos;
+            try
+            {
+                IList<sp_Cliente_Consultar_Result> fuenteDatos = clientes.consultarClientes(null);//null es para que consulte todos
+                dgvListaClientes.AutoGenerateColumns = false;
+                dgvListaClientes.DataSource = fuenteDatos;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocurrio un error al cargar los clientes");
+            }
         }
 
         #region Filtro
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            IList<sp_Cliente_Consultar_Result> fuenteDatos = clientes.consultarClientes(txtBuscar.Text);
-            dgvListaClientes.AutoGenerateColumns = false;
-            dgvListaClientes.DataSource = fuenteDatos;
+            try
+            {
+                IList<sp_Cliente_Consultar_Result> fuenteDatos = clientes.consultarClientes(txtBuscar.Text);
+                dgvListaClientes.AutoGenerateColumns = false;
+                dgvListaClientes.DataSource = fuenteDatos;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocurrio un error al buscar clientes");
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

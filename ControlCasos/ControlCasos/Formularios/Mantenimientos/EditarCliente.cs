@@ -22,7 +22,7 @@ namespace ControlCasos.Formularios.Mantenimientos
         public frmEditarCliente(frmClientes formularioClientes, int idCliente)
         {
             InitializeComponent();
-            consultarDatosCliente(idCliente); 
+            cargarDatosCliente(idCliente); 
             IdCliente = idCliente;
             this.formularioClientes = formularioClientes;
         }
@@ -31,11 +31,18 @@ namespace ControlCasos.Formularios.Mantenimientos
             formularioClientes.cargarDatosEnGrid();
         }
 
-        private void consultarDatosCliente(int idCliente)
+        private void cargarDatosCliente(int idCliente)
         {
-            sp_ClienteID_Consultar_Result datosCliente = BLClientes.consultarClienteID(idCliente);
-            txtNombreCliente.Text = datosCliente.Cliente;
-            cmbEstado.Text = datosCliente.Estado;
+            try
+            {
+                sp_ClienteID_Consultar_Result datosCliente = BLClientes.consultarClienteID(idCliente);
+                txtNombreCliente.Text = datosCliente.Cliente;
+                cmbEstado.Text = datosCliente.Estado;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al cargar cliente");
+            }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

@@ -22,9 +22,16 @@ namespace ControlCasos.Formularios.Mantenimientos
         }
         public void cargarDatosEnGrid()
         {
-            IList<sp_TipoProducto_Consultar_Result> fuenteDatos = tipoProductos.consultarTipoProductos(null);//null es para que consulte todos
-            dgvListaTipoProductos.AutoGenerateColumns = false;
-            dgvListaTipoProductos.DataSource = fuenteDatos;
+            try
+            {
+                IList<sp_TipoProducto_Consultar_Result> fuenteDatos = tipoProductos.consultarTipoProductos(null);//null es para que consulte todos
+                dgvListaTipoProductos.AutoGenerateColumns = false;
+                dgvListaTipoProductos.DataSource = fuenteDatos;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocurrio un error al cargar los tipos de producto");
+            }
         }
 
         private void lnkNuevoTipoProducto_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -48,9 +55,16 @@ namespace ControlCasos.Formularios.Mantenimientos
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            IList<sp_TipoProducto_Consultar_Result> fuenteDatos = tipoProductos.consultarTipoProductos(txtBuscar.Text);
-            dgvListaTipoProductos.AutoGenerateColumns = false;
-            dgvListaTipoProductos.DataSource = fuenteDatos;
+            try
+            {
+                IList<sp_TipoProducto_Consultar_Result> fuenteDatos = tipoProductos.consultarTipoProductos(txtBuscar.Text);
+                dgvListaTipoProductos.AutoGenerateColumns = false;
+                dgvListaTipoProductos.DataSource = fuenteDatos;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocurrio un error al buscar tipos de producto");
+            }
         }
         #endregion
     }
