@@ -96,6 +96,12 @@
     <Compile Include="Formularios\Mantenimientos\EditarColor.Designer.cs">
       <DependentUpon>EditarColor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Mantenimientos\EditarDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Mantenimientos\EditarDoctor.Designer.cs">
+      <DependentUpon>EditarDoctor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Mantenimientos\EditarMarca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,6 +280,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Mantenimientos\EditarColor.resx">
       <DependentUpon>EditarColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Mantenimientos\EditarDoctor.resx">
+      <DependentUpon>EditarDoctor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Mantenimientos\EditarMarca.resx">
       <DependentUpon>EditarMarca.cs</DependentUpon>

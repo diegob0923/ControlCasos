@@ -26,12 +26,19 @@ namespace ControlCasos.Formularios.Mantenimientos
 
         private void cargarComboBoxClientes()
         {
-            sp_Cliente_Consultar_Result opcionDefault = new sp_Cliente_Consultar_Result();
-            opcionDefault.Cliente = "Seleccione un cliente";
+            try
+            {
+                sp_Cliente_Consultar_Result opcionDefault = new sp_Cliente_Consultar_Result();
+                opcionDefault.Cliente = "Seleccione un cliente";
             
-            IList<sp_Cliente_Consultar_Result> fuenteDatos = BLClientes.consultarClientes(null);//null es para que consulte todos
-            fuenteDatos.Insert(0,opcionDefault);
-            cmbCliente.DataSource = fuenteDatos; 
+                IList<sp_Cliente_Consultar_Result> fuenteDatos = BLClientes.consultarClientes(null);//null es para que consulte todos
+                fuenteDatos.Insert(0,opcionDefault);
+                cmbCliente.DataSource = fuenteDatos; 
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al cargar lista desplegable de clientes");
+            }
         }
 
         private void recargarGridEnFormularioPrincipal()
@@ -43,9 +50,13 @@ namespace ControlCasos.Formularios.Mantenimientos
         {
             try
             {
+                string apellido2 = txtApellido2.Text.Equals("") ? null : txtApellido2.Text;
+                string correo = txtCorreo.Text.Equals("") ? null : txtCorreo.Text;
+                string telefono = txtTelefono.Text.Equals("") ? null : txtTelefono.Text;
+
                 BLDoctor.insertarDoctor(txtCedula.Text, txtNombre.Text, txtApellido1.Text,
-                                            txtApellido2.Text, int.Parse(cmbCliente.SelectedValue.ToString()), 
-                                            txtCorreo.Text, txtTelefono.Text);
+                                            int.Parse(cmbCliente.SelectedValue.ToString()),
+                                            apellido2, correo, telefono);
                 
                     recargarGridEnFormularioPrincipal();
                     this.Dispose();

@@ -42,6 +42,7 @@
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaDoctores)).BeginInit();
             this.pnlFiltro.SuspendLayout();
             this.SuspendLayout();
@@ -58,13 +59,15 @@
             this.Telefono,
             this.Estado,
             this.Editar,
-            this.Eliminar});
+            this.Eliminar,
+            this.Id});
             this.dgvListaDoctores.Location = new System.Drawing.Point(45, 167);
             this.dgvListaDoctores.Name = "dgvListaDoctores";
             this.dgvListaDoctores.RowHeadersWidth = 51;
             this.dgvListaDoctores.RowTemplate.Height = 27;
             this.dgvListaDoctores.Size = new System.Drawing.Size(769, 150);
             this.dgvListaDoctores.TabIndex = 1;
+            this.dgvListaDoctores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaDoctores_CellClick);
             // 
             // pnlFiltro
             // 
@@ -195,6 +198,14 @@
             this.Eliminar.MinimumWidth = 6;
             this.Eliminar.Name = "Eliminar";
             // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "idDoctor";
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
+            // 
             // frmDoctores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -232,5 +243,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
     }
 }
