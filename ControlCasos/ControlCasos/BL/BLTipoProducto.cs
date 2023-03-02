@@ -17,10 +17,17 @@ namespace ControlCasos.BL
             return listaTipoProductos;
         }
 
+        public sp_TipoProductoID_Consultar_Result consultarTipoProductoID(int idTipoProducto)
+        {
+            sp_TipoProductoID_Consultar_Result datosTipoProducto = modeloBD.sp_TipoProductoID_Consultar(idTipoProducto).FirstOrDefault();
+            return datosTipoProducto;
+        }
+
         public void insertarTipoProducto(string tipoProducto)
         {
             modeloBD.sp_TipoProducto_Insertar(tipoProducto);
         }
+
         public void editarTipoProducto(int idTipoProducto, string tipoProducto)
         {
             modeloBD.sp_TipoProducto_Editar(idTipoProducto, tipoProducto);

@@ -70,5 +70,30 @@ namespace ControlCasos.Formularios.Mantenimientos
             frmNuevaMarca formularioNuevaMarca = new frmNuevaMarca(this); //el constructor recibe un tipo frmMarca por eso se envía él mismo
             formularioNuevaMarca.Visible = true;
         }
+
+        private void dgvListaMarcas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int idMarca = int.Parse(dgvListaMarcas.CurrentRow.Cells["Id"].Value.ToString());
+
+            if (dgvListaMarcas.Columns[e.ColumnIndex].Name == "Editar")
+            {
+                frmEditarMarca formularioEditarMarca = new frmEditarMarca(this, idMarca);
+                formularioEditarMarca.Visible = true;
+            }
+
+            if (dgvListaMarcas.Columns[e.ColumnIndex].Name == "Eliminar")
+            {
+                if (MessageBox.Show("Está a punto de eliminar la marca: \"" + dgvListaMarcas.CurrentRow.Cells["Marca"].Value.ToString() + "\". ¿Desea continuar?", "Eliminar Marca", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    try
+                    {
+                        marcas.eliminarMarca(idMarca);
+                        cargarDatosEnGrid();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Ocurrio un error al eliminar el color");
+                    }
+            }
+        }
     }
 }

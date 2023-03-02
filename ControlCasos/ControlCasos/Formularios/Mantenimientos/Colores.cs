@@ -83,7 +83,7 @@ namespace ControlCasos.Formularios.Mantenimientos
 
             if (dgvListaColores.Columns[e.ColumnIndex].Name == "Eliminar")
             {
-                if (MessageBox.Show("Está a punto de eliminar el color: \""+ dgvListaColores.CurrentRow.Cells["Color"].Value.ToString() + "\" de la guía \"" + dgvListaColores.CurrentRow.Cells["Guia"].Value.ToString() + "\". ¿Desea continuar?", "Eliminar cliente", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Está a punto de eliminar el color: \""+ dgvListaColores.CurrentRow.Cells["Color"].Value.ToString() + "\" de la guía \"" + dgvListaColores.CurrentRow.Cells["Guia"].Value.ToString() + "\". ¿Desea continuar?", "Eliminar Color", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     try
                     {
                         colores.eliminarColor(idColor);

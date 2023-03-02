@@ -32,11 +32,14 @@
             this.lnkNuevoTipoProducto = new System.Windows.Forms.LinkLabel();
             this.pnlFiltro = new System.Windows.Forms.Panel();
             this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.TipoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaTipoProductos)).BeginInit();
             this.pnlFiltro.SuspendLayout();
             this.SuspendLayout();
@@ -48,13 +51,15 @@
             this.dgvListaTipoProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TipoProducto,
             this.Editar,
-            this.Eliminar});
+            this.Eliminar,
+            this.Id});
             this.dgvListaTipoProductos.Location = new System.Drawing.Point(96, 159);
             this.dgvListaTipoProductos.Name = "dgvListaTipoProductos";
             this.dgvListaTipoProductos.RowHeadersWidth = 51;
             this.dgvListaTipoProductos.RowTemplate.Height = 27;
             this.dgvListaTipoProductos.Size = new System.Drawing.Size(666, 150);
             this.dgvListaTipoProductos.TabIndex = 1;
+            this.dgvListaTipoProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaTipoProductos_CellClick);
             // 
             // lnkNuevoTipoProducto
             // 
@@ -87,6 +92,24 @@
             this.txtBuscar.Size = new System.Drawing.Size(279, 19);
             this.txtBuscar.TabIndex = 1;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.FillWeight = 20F;
+            this.dataGridViewImageColumn1.HeaderText = "Editar";
+            this.dataGridViewImageColumn1.Image = global::ControlCasos.Properties.Resources.editar;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 68;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.FillWeight = 20F;
+            this.dataGridViewImageColumn2.HeaderText = "Eliminar";
+            this.dataGridViewImageColumn2.Image = global::ControlCasos.Properties.Resources.borrar;
+            this.dataGridViewImageColumn2.MinimumWidth = 6;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Width = 68;
             // 
             // btnBuscar
             // 
@@ -139,6 +162,14 @@
             this.Eliminar.MinimumWidth = 6;
             this.Eliminar.Name = "Eliminar";
             // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "IdTipoProducto";
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
+            // 
             // frmTipoProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -171,5 +202,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoProducto;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
     }
 }

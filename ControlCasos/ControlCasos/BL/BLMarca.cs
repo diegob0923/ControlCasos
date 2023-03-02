@@ -17,6 +17,12 @@ namespace ControlCasos.BL
             return listaMarcas;
         }
 
+        public sp_MarcaID_Consultar_Result consultarMarcaId(int idMarca)
+        {
+            sp_MarcaID_Consultar_Result datosMarca = modeloBD.sp_MarcaID_Consultar(idMarca).FirstOrDefault();
+            return datosMarca;
+        }
+
         public void insertarMarca(string marca)
         {
             modeloBD.sp_Marca_Insertar(marca);

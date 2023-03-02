@@ -96,6 +96,18 @@
     <Compile Include="Formularios\Mantenimientos\EditarColor.Designer.cs">
       <DependentUpon>EditarColor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Mantenimientos\EditarMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Mantenimientos\EditarMarca.Designer.cs">
+      <DependentUpon>EditarMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Mantenimientos\EditarTipoProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Mantenimientos\EditarTipoProducto.Designer.cs">
+      <DependentUpon>EditarTipoProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Mantenimientos\NuevaMarca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,6 +274,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Mantenimientos\EditarColor.resx">
       <DependentUpon>EditarColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Mantenimientos\EditarMarca.resx">
+      <DependentUpon>EditarMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Mantenimientos\EditarTipoProducto.resx">
+      <DependentUpon>EditarTipoProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Mantenimientos\Marcas.resx">
       <DependentUpon>Marcas.cs</DependentUpon>
