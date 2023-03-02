@@ -52,7 +52,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BL\BLCliente.cs" />
+    <Compile Include="BL\BLColor.cs" />
+    <Compile Include="BL\BLDoctor.cs" />
+    <Compile Include="BL\BLMarca.cs" />
+    <Compile Include="BL\BLTipoProducto.cs" />
     <Compile Include="Clases\VariablesGlobales.cs" />
+    <Compile Include="Constantes\Estado.cs" />
     <Compile Include="Constantes\Rol.cs" />
     <Compile Include="Formularios\Ayuda\AcercaDe.cs">
       <SubType>Form</SubType>
@@ -78,6 +84,48 @@
     <Compile Include="Formularios\Casos.Designer.cs">
       <DependentUpon>Casos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Mantenimientos\EditarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Mantenimientos\EditarCliente.Designer.cs">
+      <DependentUpon>EditarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Mantenimientos\EditarColor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Mantenimientos\EditarColor.Designer.cs">
+      <DependentUpon>EditarColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Mantenimientos\EditarDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Mantenimientos\EditarDoctor.Designer.cs">
+      <DependentUpon>EditarDoctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Mantenimientos\EditarMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Mantenimientos\EditarMarca.Designer.cs">
+      <DependentUpon>EditarMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Mantenimientos\EditarTipoProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Mantenimientos\EditarTipoProducto.Designer.cs">
+      <DependentUpon>EditarTipoProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Mantenimientos\NuevaMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Mantenimientos\NuevaMarca.Designer.cs">
+      <DependentUpon>NuevaMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Mantenimientos\NuevoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Mantenimientos\NuevoCliente.Designer.cs">
+      <DependentUpon>NuevoCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Mantenimientos\Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +149,24 @@
     </Compile>
     <Compile Include="Formularios\Mantenimientos\Marcas.Designer.cs">
       <DependentUpon>Marcas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Mantenimientos\NuevoColor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Mantenimientos\NuevoColor.Designer.cs">
+      <DependentUpon>NuevoColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Mantenimientos\NuevoDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Mantenimientos\NuevoDoctor.Designer.cs">
+      <DependentUpon>NuevoDoctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Mantenimientos\NuevoTipoProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Mantenimientos\NuevoTipoProducto.Designer.cs">
+      <DependentUpon>NuevoTipoProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Mantenimientos\TipoProducto.cs">
       <SubType>Form</SubType>
@@ -153,6 +219,36 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ControlCasosModelo.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Modelos\sp_ClienteID_Consultar_Result.cs">
+      <DependentUpon>ControlCasosModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\sp_Cliente_Consultar_Result.cs">
+      <DependentUpon>ControlCasosModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\sp_ColorID_Consultar_Result.cs">
+      <DependentUpon>ControlCasosModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\sp_Color_Consultar_Result.cs">
+      <DependentUpon>ControlCasosModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\sp_DoctorID_Consultar_Result.cs">
+      <DependentUpon>ControlCasosModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\sp_Doctor_Consultar_Result.cs">
+      <DependentUpon>ControlCasosModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\sp_MarcaID_Consultar_Result.cs">
+      <DependentUpon>ControlCasosModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\sp_Marca_Consultar_Result.cs">
+      <DependentUpon>ControlCasosModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\sp_TipoProductoID_Consultar_Result.cs">
+      <DependentUpon>ControlCasosModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\sp_TipoProducto_Consultar_Result.cs">
+      <DependentUpon>ControlCasosModelo.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\Ayuda\AcercaDe.resx">
@@ -179,8 +275,38 @@
     <EmbeddedResource Include="Formularios\Mantenimientos\Doctores.resx">
       <DependentUpon>Doctores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Mantenimientos\EditarCliente.resx">
+      <DependentUpon>EditarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Mantenimientos\EditarColor.resx">
+      <DependentUpon>EditarColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Mantenimientos\EditarDoctor.resx">
+      <DependentUpon>EditarDoctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Mantenimientos\EditarMarca.resx">
+      <DependentUpon>EditarMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Mantenimientos\EditarTipoProducto.resx">
+      <DependentUpon>EditarTipoProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Mantenimientos\Marcas.resx">
       <DependentUpon>Marcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Mantenimientos\NuevaMarca.resx">
+      <DependentUpon>NuevaMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Mantenimientos\NuevoCliente.resx">
+      <DependentUpon>NuevoCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Mantenimientos\NuevoColor.resx">
+      <DependentUpon>NuevoColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Mantenimientos\NuevoDoctor.resx">
+      <DependentUpon>NuevoDoctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Mantenimientos\NuevoTipoProducto.resx">
+      <DependentUpon>NuevoTipoProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Mantenimientos\TipoProducto.resx">
       <DependentUpon>TipoProducto.cs</DependentUpon>
@@ -205,6 +331,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EntityDeploy Include="Modelos\ControlCasosModelo.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -228,6 +355,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Imagenes\borrar.png" />
+    <Content Include="Imagenes\buscar.png" />
+    <Content Include="Imagenes\cancelar.png" />
+    <Content Include="Imagenes\editar.png" />
     <Content Include="Modelos\ControlCasosModelo.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ControlCasosModelo.Context.cs</LastGenOutput>
