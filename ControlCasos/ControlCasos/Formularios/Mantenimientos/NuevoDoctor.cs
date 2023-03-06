@@ -50,12 +50,13 @@ namespace ControlCasos.Formularios.Mantenimientos
         {
             try
             {
+                string cedula = txtCedula.Text.Equals("")? null: txtCedula.Text;
                 string apellido2 = txtApellido2.Text.Equals("") ? null : txtApellido2.Text;
                 string correo = txtCorreo.Text.Equals("") ? null : txtCorreo.Text;
                 string telefono = txtTelefono.Text.Equals("") ? null : txtTelefono.Text;
 
-                BLDoctor.insertarDoctor(txtCedula.Text, txtNombre.Text, txtApellido1.Text,
-                                            int.Parse(cmbCliente.SelectedValue.ToString()),
+                BLDoctor.insertarDoctor(txtNombre.Text, txtApellido1.Text,
+                                            int.Parse(cmbCliente.SelectedValue.ToString()), cedula,
                                             apellido2, correo, telefono);
                 
                     recargarGridEnFormularioPrincipal();
