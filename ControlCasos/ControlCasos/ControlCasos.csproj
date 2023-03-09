@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BL\BLCaso.cs" />
     <Compile Include="BL\BLCliente.cs" />
     <Compile Include="BL\BLColor.cs" />
     <Compile Include="BL\BLDoctor.cs" />
@@ -218,6 +219,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ControlCasosModelo.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\sp_Caso_Consultar_Result.cs">
+      <DependentUpon>ControlCasosModelo.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelos\sp_ClienteID_Consultar_Result.cs">
       <DependentUpon>ControlCasosModelo.tt</DependentUpon>

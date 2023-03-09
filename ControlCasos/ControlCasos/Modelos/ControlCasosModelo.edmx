@@ -5,6 +5,9 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="ControlCasosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="sp_Caso_Consultar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="buscar" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="sp_Cliente_Consultar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="NombreCliente" Type="varchar" Mode="In" />
         </Function>
@@ -213,6 +216,9 @@
           <FunctionImport Name="sp_TipoProducto_Eliminar">
           <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="sp_Caso_Consultar" ReturnType="Collection(ControlCasosModel.sp_Caso_Consultar_Result)">
+            <Parameter Name="buscar" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_Cliente_Consultar_Result">
           <Property Type="Int32" Name="IdCliente" Nullable="false" />
@@ -269,6 +275,13 @@
         <ComplexType Name="sp_TipoProductoID_Consultar_Result">
           <Property Type="Byte" Name="IdTipoProducto" Nullable="false" />
           <Property Type="String" Name="TipoProducto" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_Caso_Consultar_Result">
+          <Property Type="DateTime" Name="fecha" Nullable="false" />
+          <Property Type="Int32" Name="IdDoctor" Nullable="false" />
+          <Property Type="String" Name="Doctor" Nullable="false" MaxLength="152" />
+          <Property Type="String" Name="Paciente" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="IdCaso" Nullable="false" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -388,6 +401,17 @@
           <FunctionImportMapping FunctionImportName="sp_Marca_Eliminar" FunctionName="ControlCasosModel.Store.sp_Marca_Eliminar" />
           <FunctionImportMapping FunctionImportName="sp_TipoProducto_Editar" FunctionName="ControlCasosModel.Store.sp_TipoProducto_Editar" />
           <FunctionImportMapping FunctionImportName="sp_TipoProducto_Eliminar" FunctionName="ControlCasosModel.Store.sp_TipoProducto_Eliminar" />
+          <FunctionImportMapping FunctionImportName="sp_Caso_Consultar" FunctionName="ControlCasosModel.Store.sp_Caso_Consultar">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ControlCasosModel.sp_Caso_Consultar_Result">
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="IdDoctor" ColumnName="IdDoctor" />
+                <ScalarProperty Name="Doctor" ColumnName="Doctor" />
+                <ScalarProperty Name="Paciente" ColumnName="Paciente" />
+                <ScalarProperty Name="IdCaso" ColumnName="IdCaso" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

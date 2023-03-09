@@ -354,5 +354,14 @@ namespace ControlCasos.Modelos
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_TipoProducto_Eliminar", idParameter);
         }
+    
+        public virtual ObjectResult<sp_Caso_Consultar_Result> sp_Caso_Consultar(string buscar)
+        {
+            var buscarParameter = buscar != null ?
+                new ObjectParameter("buscar", buscar) :
+                new ObjectParameter("buscar", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_Caso_Consultar_Result>("sp_Caso_Consultar", buscarParameter);
+        }
     }
 }
