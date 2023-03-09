@@ -43,8 +43,17 @@ namespace ControlCasos.Formularios
 
         private IList<sp_Caso_Consultar_Result> consultarCasos()
         {
-            IList<sp_Caso_Consultar_Result> listaCasos = BLCaso.consultarCasos(null);
-            return listaCasos;
+            try
+            {
+                IList<sp_Caso_Consultar_Result> listaCasos = BLCaso.consultarCasos(null);
+                return listaCasos;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al cargar casos");
+                return null;
+            }
+            
         }
 
         private void cargarComboPaciente()
@@ -83,9 +92,26 @@ namespace ControlCasos.Formularios
             
         }
 
+        private void cargarGridCasos()
+        {
+            if (int.Parse(cmbDoctor.SelectedValue.ToString()) != 0 && cmbPaciente.SelectedValue != null)
+            {
+                var casosFiltrados = listaCasos.Where((x => x.IdDoctor == int.Parse(cmbDoctor.SelectedValue.ToString()) && x.Paciente.Equals(cmbPaciente.SelectedValue.ToString()))).ToList();
+                dgvListaCasos.AutoGenerateColumns = false;
+                dgvListaCasos.DataSource = casosFiltrados;
+            }
+
+            if(cmbPaciente.Text.Equals(""))
+                dgvListaCasos.DataSource = null;
+        }
         private void cmbDoctor_SelectedIndexChanged(object sender, EventArgs e)
         {
             cargarComboPaciente();
+        }
+
+        private void cmbPaciente_SelectedValueChanged(object sender, EventArgs e)
+        {
+            cargarGridCasos();
         }
     }
 }

@@ -217,7 +217,7 @@
           <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_Caso_Consultar" ReturnType="Collection(ControlCasosModel.sp_Caso_Consultar_Result)">
-            <Parameter Name="buscar" Mode="In" Type="String" />
+          <Parameter Name="buscar" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_Cliente_Consultar_Result">
