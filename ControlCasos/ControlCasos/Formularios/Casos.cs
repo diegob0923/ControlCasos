@@ -22,6 +22,7 @@ namespace ControlCasos.Formularios
             InitializeComponent();
             cargarComboDoctor();
             listaCasos = consultarCasos();
+            eliminarImagenDefaultEnColumnaDetallesCuandoNoHayDatos();
         }
 
         private void cargarComboDoctor()
@@ -53,7 +54,6 @@ namespace ControlCasos.Formularios
                 MessageBox.Show("Error al cargar casos");
                 return null;
             }
-            
         }
 
         private void cargarComboPaciente()
@@ -89,7 +89,6 @@ namespace ControlCasos.Formularios
             {
                 MessageBox.Show("Ocurrio un error al cargar los pacientes"+ e);
             }
-            
         }
 
         private void cargarGridCasos()
@@ -101,8 +100,12 @@ namespace ControlCasos.Formularios
                 dgvListaCasos.DataSource = casosFiltrados;
             }
 
-            if(cmbPaciente.Text.Equals(""))
+            if (cmbPaciente.Text.Equals(""))
+            {
                 dgvListaCasos.DataSource = null;
+                eliminarImagenDefaultEnColumnaDetallesCuandoNoHayDatos();
+            }
+                
         }
         private void cmbDoctor_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -112,6 +115,11 @@ namespace ControlCasos.Formularios
         private void cmbPaciente_SelectedValueChanged(object sender, EventArgs e)
         {
             cargarGridCasos();
+        }
+
+        private void eliminarImagenDefaultEnColumnaDetallesCuandoNoHayDatos()
+        {
+            dgvListaCasos.Rows[0].Cells["Detalles"].Value = new Bitmap(1,1);
         }
     }
 }

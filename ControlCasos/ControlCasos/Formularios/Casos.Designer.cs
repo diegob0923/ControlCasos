@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cmbDoctor = new System.Windows.Forms.ComboBox();
             this.cmbPaciente = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,7 +38,7 @@
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Doctor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Paciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Detalles = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Detalles = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaCasos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -129,11 +130,13 @@
             // 
             // Detalles
             // 
-            this.Detalles.DataPropertyName = "Ver detalles";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.NullValue = "System.Drawing.Bitmap";
+            this.Detalles.DefaultCellStyle = dataGridViewCellStyle1;
             this.Detalles.HeaderText = "Detalles";
+            this.Detalles.Image = global::ControlCasos.Properties.Resources.buscar;
             this.Detalles.MinimumWidth = 6;
             this.Detalles.Name = "Detalles";
-            this.Detalles.Text = "";
             // 
             // frmCasos
             // 
@@ -167,6 +170,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn Doctor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Paciente;
-        private System.Windows.Forms.DataGridViewLinkColumn Detalles;
+        private System.Windows.Forms.DataGridViewImageColumn Detalles;
     }
 }
