@@ -16,5 +16,11 @@ namespace ControlCasos.BL
             IList<sp_Caso_Consultar_Result> listaCasos = modeloBD.sp_Caso_Consultar(criterioBusqueda).ToList();
             return listaCasos;
         }
+
+        public IList<sp_ProductosPorCaso_Consultar_Result> consultarProductosPorCaso(int idCaso)
+        {
+            IList<sp_ProductosPorCaso_Consultar_Result> listaProductosPorCaso = modeloBD.sp_ProductosPorCaso_Consultar(idCaso).ToList();
+            return listaProductosPorCaso;
+        }
     }
 }

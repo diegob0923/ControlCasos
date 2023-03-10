@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ControlCasos.Formularios
+namespace ControlCasos.Formularios.Casos
 {
     public partial class frmCasos : Form
     {
@@ -60,7 +60,8 @@ namespace ControlCasos.Formularios
         {
             try
             {
-                if (int.Parse(cmbDoctor.SelectedValue.ToString()) == 0) {
+                if (int.Parse(cmbDoctor.SelectedValue.ToString()) == 0)
+                {
                     // aquí entra la primera vez que el grid carga
                     cmbPaciente.Text = "";
                     return;
@@ -71,8 +72,8 @@ namespace ControlCasos.Formularios
                     cmbPaciente.DataSource = null;
 
                     var pacientesPorDoctor = listaCasos.Where(x => x.IdDoctor == int.Parse(cmbDoctor.SelectedValue.ToString())).ToList();
-                    
-                    if(pacientesPorDoctor.Count != 0)
+
+                    if (pacientesPorDoctor.Count != 0)
                     {
                         cmbPaciente.DataSource = pacientesPorDoctor;
                         cmbPaciente.DisplayMember = "Paciente";
@@ -82,12 +83,12 @@ namespace ControlCasos.Formularios
                     {
                         cmbPaciente.Text = "No hay pacientes asociados";
                     }
-                        
+
                 }
             }
             catch (Exception e)
             {
-                MessageBox.Show("Ocurrio un error al cargar los pacientes"+ e);
+                MessageBox.Show("Ocurrio un error al cargar los pacientes" + e);
             }
         }
 
@@ -105,21 +106,38 @@ namespace ControlCasos.Formularios
                 dgvListaCasos.DataSource = null;
                 eliminarImagenDefaultEnColumnaDetallesCuandoNoHayDatos();
             }
-                
-        }
-        private void cmbDoctor_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cargarComboPaciente();
-        }
 
-        private void cmbPaciente_SelectedValueChanged(object sender, EventArgs e)
-        {
-            cargarGridCasos();
         }
 
         private void eliminarImagenDefaultEnColumnaDetallesCuandoNoHayDatos()
         {
-            dgvListaCasos.Rows[0].Cells["Detalles"].Value = new Bitmap(1,1);
+            dgvListaCasos.Rows[0].Cells["Detalles"].Value = new Bitmap(1, 1);
         }
+
+        #region Eventos
+        private void cmbDoctor_SelectedValueChanged(object sender, EventArgs e)
+        {
+            cargarComboPaciente();
+        }
+        private void cmbPaciente_SelectedValueChanged(object sender, EventArgs e)
+        {
+            cargarGridCasos();
+        }
+        private void dgvListaCasos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvListaCasos.Columns[e.ColumnIndex].Name == "Detalles")
+            {
+                if(dgvListaCasos.CurrentRow.Cells["idCaso"].Value != null) {
+                    
+                    int idCaso = int.Parse(dgvListaCasos.CurrentRow.Cells["idCaso"].Value.ToString());
+
+                    frmProductos formularioEditarColor = new frmProductos(idCaso);
+                    formularioEditarColor.Visible = true;
+                }  
+            }
+        }
+        #endregion
+
+
     }
 }

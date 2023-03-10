@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ControlCasos.Formularios;
+using ControlCasos.Formularios.Casos;
 using ControlCasos.Formularios.Mantenimientos;
 using ControlCasos.Formularios.Seguridad;
 using ControlCasos.Formularios.Ayuda;

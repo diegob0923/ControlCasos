@@ -363,5 +363,14 @@ namespace ControlCasos.Modelos
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_Caso_Consultar_Result>("sp_Caso_Consultar", buscarParameter);
         }
+    
+        public virtual ObjectResult<sp_ProductosPorCaso_Consultar_Result> sp_ProductosPorCaso_Consultar(Nullable<int> idCaso)
+        {
+            var idCasoParameter = idCaso.HasValue ?
+                new ObjectParameter("idCaso", idCaso) :
+                new ObjectParameter("idCaso", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_ProductosPorCaso_Consultar_Result>("sp_ProductosPorCaso_Consultar", idCasoParameter);
+        }
     }
 }

@@ -79,11 +79,17 @@
     <Compile Include="Formularios\Ayuda\ManualUsuario.Designer.cs">
       <DependentUpon>ManualUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Casos.cs">
+    <Compile Include="Formularios\Casos\Casos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Casos.Designer.cs">
+    <Compile Include="Formularios\Casos\Casos.Designer.cs">
       <DependentUpon>Casos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Casos\Productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Casos\Productos.Designer.cs">
+      <DependentUpon>Productos.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Mantenimientos\EditarCliente.cs">
       <SubType>Form</SubType>
@@ -247,6 +253,9 @@
     <Compile Include="Modelos\sp_Marca_Consultar_Result.cs">
       <DependentUpon>ControlCasosModelo.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modelos\sp_ProductosPorCaso_Consultar_Result.cs">
+      <DependentUpon>ControlCasosModelo.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modelos\sp_TipoProductoID_Consultar_Result.cs">
       <DependentUpon>ControlCasosModelo.tt</DependentUpon>
     </Compile>
@@ -264,8 +273,11 @@
     <EmbeddedResource Include="Formularios\Ayuda\ManualUsuario.resx">
       <DependentUpon>ManualUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Casos.resx">
+    <EmbeddedResource Include="Formularios\Casos\Casos.resx">
       <DependentUpon>Casos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Casos\Productos.resx">
+      <DependentUpon>Productos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\InicioSesion.resx">
       <DependentUpon>InicioSesion.cs</DependentUpon>
