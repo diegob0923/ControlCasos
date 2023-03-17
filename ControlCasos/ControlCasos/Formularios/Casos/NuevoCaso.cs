@@ -1,5 +1,6 @@
 ﻿using ControlCasos.BL;
 using ControlCasos.Modelos;
+using ControlCasos.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -99,16 +100,19 @@ namespace ControlCasos.Formularios.Casos
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Producto nuevoProducto = new Producto();
-            nuevoProducto.Tamano = txtTamano.Text;
-            nuevoProducto.Diametro = txtDiametro.Text;
-            nuevoProducto.Cantidad = byte.Parse(txtCantidad.Text);
-            nuevoProducto.IdColor = byte.Parse(cmbColor.SelectedValue.ToString());
-            nuevoProducto.IdMarca = byte.Parse(cmbMarca.SelectedValue.ToString());
-            nuevoProducto.IdTipoProducto = byte.Parse(cmbTipoProducto.SelectedValue.ToString());
-            nuevoProducto.Comentario = txtComentario.Text;
+            nuevoProducto.tamano = txtTamano.Text;
+            nuevoProducto.diametro = txtDiametro.Text;
+            nuevoProducto.cantidad = byte.Parse(txtCantidad.Text);
+            nuevoProducto.idColor = byte.Parse(cmbColor.SelectedValue.ToString());
+            nuevoProducto.color = cmbColor.Text;
+            nuevoProducto.idMarca = byte.Parse(cmbMarca.SelectedValue.ToString());
+            nuevoProducto.marca = cmbMarca.Text;
+            nuevoProducto.idTipoProducto = byte.Parse(cmbTipoProducto.SelectedValue.ToString());
+            nuevoProducto.tipoProducto = cmbTipoProducto.Text;
+            nuevoProducto.comentario = txtComentario.Text;
 
             listaProducto.Add(nuevoProducto);
-            //cargarDatosEnGrid();
+            cargarDatosEnGrid();
         }
 
         public void cargarDatosEnGrid()

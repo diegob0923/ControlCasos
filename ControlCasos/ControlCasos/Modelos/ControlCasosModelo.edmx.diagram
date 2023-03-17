@@ -5,7 +5,6 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="8c116fa913ab42eea7b19298b3fdc5b2" Name="Diagram1" >
-        <EntityTypeShape EntityType="ControlCasosModel.Producto" Width="1.5" PointX="0.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

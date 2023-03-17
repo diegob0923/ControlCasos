@@ -5,20 +5,6 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="ControlCasosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Producto">
-          <Key>
-            <PropertyRef Name="IdProducto" />
-          </Key>
-          <Property Name="IdProducto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Tamano" Type="varchar" MaxLength="50" />
-          <Property Name="Diametro" Type="varchar" MaxLength="50" />
-          <Property Name="Cantidad" Type="tinyint" />
-          <Property Name="IdColor" Type="tinyint" Nullable="false" />
-          <Property Name="IdMarca" Type="tinyint" Nullable="false" />
-          <Property Name="IdTipoProducto" Type="tinyint" Nullable="false" />
-          <Property Name="Comentario" Type="varchar" MaxLength="300" />
-          <Property Name="IdCaso" Type="int" Nullable="false" />
-        </EntityType>
         <Function Name="sp_Caso_Consultar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="buscar" Type="varchar" Mode="In" />
         </Function>
@@ -127,7 +113,6 @@
           <Parameter Name="Contrasena" Type="varchar" Mode="In" />
         </Function>
         <EntityContainer Name="ControlCasosModelStoreContainer">
-          <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -234,7 +219,6 @@
           <FunctionImport Name="sp_Caso_Consultar" ReturnType="Collection(ControlCasosModel.sp_Caso_Consultar_Result)">
           <Parameter Name="buscar" Mode="In" Type="String" />
           </FunctionImport>
-          <EntitySet Name="Producto" EntityType="ControlCasosModel.Producto" />
           <FunctionImport Name="sp_Color_Consultar" ReturnType="Collection(ControlCasosModel.sp_Color_Consultar_Result)">
             <Parameter Name="Color" Mode="In" Type="String" />
             <Parameter Name="Guia" Mode="In" Type="String" />
@@ -301,20 +285,6 @@
           <Property Type="String" Name="Paciente" Nullable="false" MaxLength="50" />
           <Property Type="Int32" Name="IdCaso" Nullable="false" />
         </ComplexType>
-        <EntityType Name="Producto">
-          <Key>
-            <PropertyRef Name="IdProducto" />
-          </Key>
-          <Property Name="IdProducto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Tamano" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Diametro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Cantidad" Type="Byte" />
-          <Property Name="IdColor" Type="Byte" Nullable="false" />
-          <Property Name="IdMarca" Type="Byte" Nullable="false" />
-          <Property Name="IdTipoProducto" Type="Byte" Nullable="false" />
-          <Property Name="Comentario" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
-          <Property Name="IdCaso" Type="Int32" Nullable="false" />
-        </EntityType>
         <ComplexType Name="sp_Color_Consultar_Result">
           <Property Type="Byte" Name="IdColor" Nullable="false" />
           <Property Type="String" Name="Color" Nullable="false" MaxLength="50" />
@@ -455,21 +425,6 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <EntitySetMapping Name="Producto">
-            <EntityTypeMapping TypeName="ControlCasosModel.Producto">
-              <MappingFragment StoreEntitySet="Producto">
-                <ScalarProperty Name="IdCaso" ColumnName="IdCaso" />
-                <ScalarProperty Name="Comentario" ColumnName="Comentario" />
-                <ScalarProperty Name="IdTipoProducto" ColumnName="IdTipoProducto" />
-                <ScalarProperty Name="IdMarca" ColumnName="IdMarca" />
-                <ScalarProperty Name="IdColor" ColumnName="IdColor" />
-                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
-                <ScalarProperty Name="Diametro" ColumnName="Diametro" />
-                <ScalarProperty Name="Tamano" ColumnName="Tamano" />
-                <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="sp_Color_Consultar" FunctionName="ControlCasosModel.Store.sp_Color_Consultar">
             <ResultMapping>
               <ComplexTypeMapping TypeName="ControlCasosModel.sp_Color_Consultar_Result">

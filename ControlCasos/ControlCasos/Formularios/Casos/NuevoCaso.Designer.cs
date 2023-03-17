@@ -49,6 +49,13 @@
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.txtPaciente = new System.Windows.Forms.TextBox();
             this.dgvResumenProductos = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.pnlCaso = new System.Windows.Forms.Panel();
+            this.pnlProducto = new System.Windows.Forms.Panel();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.Tamano = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Diametro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,13 +64,6 @@
             this.TipoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Comentario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.label5 = new System.Windows.Forms.Label();
-            this.pnlCaso = new System.Windows.Forms.Panel();
-            this.pnlProducto = new System.Windows.Forms.Panel();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.btnGuardar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResumenProductos)).BeginInit();
             this.pnlCaso.SuspendLayout();
             this.pnlProducto.SuspendLayout();
@@ -207,6 +207,7 @@
             this.cmbColor.Size = new System.Drawing.Size(186, 28);
             this.cmbColor.TabIndex = 15;
             this.cmbColor.Text = " ";
+            this.cmbColor.ValueMember = "idColor";
             // 
             // cmbMarca
             // 
@@ -257,6 +258,7 @@
             // 
             // dgvResumenProductos
             // 
+            this.dgvResumenProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvResumenProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvResumenProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Tamano,
@@ -273,62 +275,6 @@
             this.dgvResumenProductos.RowTemplate.Height = 24;
             this.dgvResumenProductos.Size = new System.Drawing.Size(1053, 126);
             this.dgvResumenProductos.TabIndex = 21;
-            // 
-            // Tamano
-            // 
-            this.Tamano.HeaderText = "Tamaño";
-            this.Tamano.MinimumWidth = 6;
-            this.Tamano.Name = "Tamano";
-            this.Tamano.Width = 125;
-            // 
-            // Diametro
-            // 
-            this.Diametro.HeaderText = "Diámentro";
-            this.Diametro.MinimumWidth = 6;
-            this.Diametro.Name = "Diametro";
-            this.Diametro.Width = 125;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.MinimumWidth = 6;
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.Width = 125;
-            // 
-            // Color
-            // 
-            this.Color.HeaderText = "Color";
-            this.Color.MinimumWidth = 6;
-            this.Color.Name = "Color";
-            this.Color.Width = 125;
-            // 
-            // Marca
-            // 
-            this.Marca.HeaderText = "Marca";
-            this.Marca.MinimumWidth = 6;
-            this.Marca.Name = "Marca";
-            this.Marca.Width = 125;
-            // 
-            // TipoProducto
-            // 
-            this.TipoProducto.HeaderText = "Tipo Producto";
-            this.TipoProducto.MinimumWidth = 6;
-            this.TipoProducto.Name = "TipoProducto";
-            this.TipoProducto.Width = 125;
-            // 
-            // Comentario
-            // 
-            this.Comentario.HeaderText = "Comentario";
-            this.Comentario.MinimumWidth = 6;
-            this.Comentario.Name = "Comentario";
-            this.Comentario.Width = 125;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.MinimumWidth = 6;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.Width = 125;
             // 
             // label5
             // 
@@ -415,6 +361,70 @@
             this.btnGuardar.TabIndex = 26;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            // 
+            // Tamano
+            // 
+            this.Tamano.DataPropertyName = "tamano";
+            this.Tamano.FillWeight = 50F;
+            this.Tamano.HeaderText = "Tamaño";
+            this.Tamano.MinimumWidth = 6;
+            this.Tamano.Name = "Tamano";
+            // 
+            // Diametro
+            // 
+            this.Diametro.DataPropertyName = "diametro";
+            this.Diametro.FillWeight = 50F;
+            this.Diametro.HeaderText = "Diámentro";
+            this.Diametro.MinimumWidth = 6;
+            this.Diametro.Name = "Diametro";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.DataPropertyName = "cantidad";
+            this.Cantidad.FillWeight = 50F;
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.MinimumWidth = 6;
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // Color
+            // 
+            this.Color.DataPropertyName = "color";
+            this.Color.FillWeight = 75F;
+            this.Color.HeaderText = "Color";
+            this.Color.MinimumWidth = 6;
+            this.Color.Name = "Color";
+            // 
+            // Marca
+            // 
+            this.Marca.DataPropertyName = "marca";
+            this.Marca.FillWeight = 75F;
+            this.Marca.HeaderText = "Marca";
+            this.Marca.MinimumWidth = 6;
+            this.Marca.Name = "Marca";
+            // 
+            // TipoProducto
+            // 
+            this.TipoProducto.DataPropertyName = "tipoProducto";
+            this.TipoProducto.FillWeight = 75F;
+            this.TipoProducto.HeaderText = "Tipo Producto";
+            this.TipoProducto.MinimumWidth = 6;
+            this.TipoProducto.Name = "TipoProducto";
+            // 
+            // Comentario
+            // 
+            this.Comentario.DataPropertyName = "comentario";
+            this.Comentario.FillWeight = 150F;
+            this.Comentario.HeaderText = "Comentario";
+            this.Comentario.MinimumWidth = 6;
+            this.Comentario.Name = "Comentario";
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.FillWeight = 40F;
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Image = global::ControlCasos.Properties.Resources.borrar;
+            this.Eliminar.MinimumWidth = 6;
+            this.Eliminar.Name = "Eliminar";
             // 
             // frmNuevoCaso
             // 

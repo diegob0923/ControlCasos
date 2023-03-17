@@ -28,7 +28,6 @@ namespace ControlCasos.Modelos
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<Producto> Producto { get; set; }
     
         public virtual ObjectResult<Nullable<byte>> sp_ValidarUsuario(string usuario, string contrasena)
         {
