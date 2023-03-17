@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvListaCasos = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cmbPaciente = new System.Windows.Forms.ComboBox();
-            this.cmbDoctor = new System.Windows.Forms.ComboBox();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.label3 = new System.Windows.Forms.Label();
             this.IdCaso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Doctor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Paciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Detalles = new System.Windows.Forms.DataGridViewImageColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbPaciente = new System.Windows.Forms.ComboBox();
+            this.cmbDoctor = new System.Windows.Forms.ComboBox();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.lnkNuevoCaso = new System.Windows.Forms.LinkLabel();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaCasos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +56,7 @@
             this.Doctor,
             this.Paciente,
             this.Detalles});
-            this.dgvListaCasos.Location = new System.Drawing.Point(41, 275);
+            this.dgvListaCasos.Location = new System.Drawing.Point(40, 323);
             this.dgvListaCasos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvListaCasos.Name = "dgvListaCasos";
             this.dgvListaCasos.RowHeadersWidth = 51;
@@ -63,6 +64,45 @@
             this.dgvListaCasos.Size = new System.Drawing.Size(739, 150);
             this.dgvListaCasos.TabIndex = 9;
             this.dgvListaCasos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaCasos_CellClick);
+            // 
+            // IdCaso
+            // 
+            this.IdCaso.DataPropertyName = "idCaso";
+            this.IdCaso.FillWeight = 50F;
+            this.IdCaso.HeaderText = "ID";
+            this.IdCaso.MinimumWidth = 6;
+            this.IdCaso.Name = "IdCaso";
+            // 
+            // Fecha
+            // 
+            this.Fecha.DataPropertyName = "Fecha";
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.MinimumWidth = 6;
+            this.Fecha.Name = "Fecha";
+            // 
+            // Doctor
+            // 
+            this.Doctor.DataPropertyName = "Doctor";
+            this.Doctor.HeaderText = "Doctor";
+            this.Doctor.MinimumWidth = 6;
+            this.Doctor.Name = "Doctor";
+            // 
+            // Paciente
+            // 
+            this.Paciente.DataPropertyName = "Paciente";
+            this.Paciente.HeaderText = "Paciente";
+            this.Paciente.MinimumWidth = 6;
+            this.Paciente.Name = "Paciente";
+            // 
+            // Detalles
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.NullValue = "System.Drawing.Bitmap";
+            this.Detalles.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Detalles.HeaderText = "Detalles";
+            this.Detalles.Image = global::ControlCasos.Properties.Resources.btnAbrir;
+            this.Detalles.MinimumWidth = 6;
+            this.Detalles.Name = "Detalles";
             // 
             // label2
             // 
@@ -110,69 +150,45 @@
             // 
             // dataGridViewImageColumn1
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.NullValue = "System.Drawing.Bitmap";
-            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.NullValue = "System.Drawing.Bitmap";
+            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewImageColumn1.HeaderText = "Detalles";
             this.dataGridViewImageColumn1.Image = global::ControlCasos.Properties.Resources.buscar;
             this.dataGridViewImageColumn1.MinimumWidth = 6;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Width = 152;
             // 
-            // label3
+            // lnkNuevoCaso
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(300, 41);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 20);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "label3";
+            this.lnkNuevoCaso.AutoSize = true;
+            this.lnkNuevoCaso.Location = new System.Drawing.Point(679, 287);
+            this.lnkNuevoCaso.Name = "lnkNuevoCaso";
+            this.lnkNuevoCaso.Size = new System.Drawing.Size(100, 20);
+            this.lnkNuevoCaso.TabIndex = 11;
+            this.lnkNuevoCaso.TabStop = true;
+            this.lnkNuevoCaso.Text = "Nuevo Caso";
+            this.lnkNuevoCaso.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkNuevoCaso_LinkClicked);
             // 
-            // IdCaso
+            // label4
             // 
-            this.IdCaso.DataPropertyName = "idCaso";
-            this.IdCaso.FillWeight = 50F;
-            this.IdCaso.HeaderText = "ID";
-            this.IdCaso.MinimumWidth = 6;
-            this.IdCaso.Name = "IdCaso";
-            // 
-            // Fecha
-            // 
-            this.Fecha.DataPropertyName = "Fecha";
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.MinimumWidth = 6;
-            this.Fecha.Name = "Fecha";
-            // 
-            // Doctor
-            // 
-            this.Doctor.DataPropertyName = "Doctor";
-            this.Doctor.HeaderText = "Doctor";
-            this.Doctor.MinimumWidth = 6;
-            this.Doctor.Name = "Doctor";
-            // 
-            // Paciente
-            // 
-            this.Paciente.DataPropertyName = "Paciente";
-            this.Paciente.HeaderText = "Paciente";
-            this.Paciente.MinimumWidth = 6;
-            this.Paciente.Name = "Paciente";
-            // 
-            // Detalles
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.NullValue = "System.Drawing.Bitmap";
-            this.Detalles.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Detalles.HeaderText = "Detalles";
-            this.Detalles.Image = global::ControlCasos.Properties.Resources.btnAbrir;
-            this.Detalles.MinimumWidth = 6;
-            this.Detalles.Name = "Detalles";
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(374, 33);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(92, 31);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Casos";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // frmCasos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 666);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lnkNuevoCaso);
             this.Controls.Add(this.dgvListaCasos);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -197,11 +213,12 @@
         private System.Windows.Forms.ComboBox cmbPaciente;
         private System.Windows.Forms.ComboBox cmbDoctor;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdCaso;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn Doctor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Paciente;
         private System.Windows.Forms.DataGridViewImageColumn Detalles;
+        private System.Windows.Forms.LinkLabel lnkNuevoCaso;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -96,7 +96,7 @@ namespace ControlCasos.Formularios.Casos
         {
             if (int.Parse(cmbDoctor.SelectedValue.ToString()) != 0 && cmbPaciente.SelectedValue != null)
             {
-                var casosFiltrados = listaCasos.Where((x => x.IdDoctor == int.Parse(cmbDoctor.SelectedValue.ToString()) && x.Paciente.Equals(cmbPaciente.SelectedValue.ToString()))).ToList();
+                var casosFiltrados = listaCasos.Where((x => x.IdDoctor == int.Parse(cmbDoctor.SelectedValue.ToString()) && x.Paciente.Contains(cmbPaciente.SelectedValue.ToString()))).ToList();
                 dgvListaCasos.AutoGenerateColumns = false;
                 dgvListaCasos.DataSource = casosFiltrados;
             }
@@ -106,7 +106,6 @@ namespace ControlCasos.Formularios.Casos
                 dgvListaCasos.DataSource = null;
                 eliminarImagenDefaultEnColumnaDetallesCuandoNoHayDatos();
             }
-
         }
 
         private void eliminarImagenDefaultEnColumnaDetallesCuandoNoHayDatos()
@@ -138,6 +137,10 @@ namespace ControlCasos.Formularios.Casos
         }
         #endregion
 
-
+        private void lnkNuevoCaso_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmNuevoCaso formularioNuevoCaso = new frmNuevoCaso();
+            formularioNuevoCaso.Visible = true;
+        }
     }
 }

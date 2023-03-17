@@ -85,6 +85,12 @@
     <Compile Include="Formularios\Casos\Casos.Designer.cs">
       <DependentUpon>Casos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Casos\NuevoCaso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Casos\NuevoCaso.Designer.cs">
+      <DependentUpon>NuevoCaso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Casos\Productos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +232,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ControlCasosModelo.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Modelos\Producto.cs">
+      <DependentUpon>ControlCasosModelo.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modelos\sp_Caso_Consultar_Result.cs">
       <DependentUpon>ControlCasosModelo.tt</DependentUpon>
     </Compile>
@@ -275,6 +284,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Casos\Casos.resx">
       <DependentUpon>Casos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Casos\NuevoCaso.resx">
+      <DependentUpon>NuevoCaso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Casos\Productos.resx">
       <DependentUpon>Productos.cs</DependentUpon>
