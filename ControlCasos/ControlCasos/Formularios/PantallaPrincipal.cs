@@ -52,6 +52,7 @@ namespace ControlCasos
 #region Casos
         private void btnCasos_Click(object sender, EventArgs e)
         {
+            ocultarSubMenu();
             abrirFormularioHijo(new frmCasos());
         }
 #endregion
@@ -63,31 +64,31 @@ namespace ControlCasos
         }
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            abrirFormularioHijo(new frmClientes());
             ocultarSubMenu();
+            abrirFormularioHijo(new frmClientes());
         }
         private void btnDoctores_Click(object sender, EventArgs e)
         {
-            abrirFormularioHijo(new frmDoctores());
             ocultarSubMenu();
+            abrirFormularioHijo(new frmDoctores());
         }
 
         private void btnTipoProducto_Click(object sender, EventArgs e)
         {
-            abrirFormularioHijo(new frmTipoProducto());
             ocultarSubMenu();
+            abrirFormularioHijo(new frmTipoProducto());
         }
 
         private void btnMarca_Click(object sender, EventArgs e)
         {
-            abrirFormularioHijo(new frmMarcas());
             ocultarSubMenu();
+            abrirFormularioHijo(new frmMarcas());
         }
 
         private void btnColor_Click(object sender, EventArgs e)
         {
-            abrirFormularioHijo(new frmColores());
             ocultarSubMenu();
+            abrirFormularioHijo(new frmColores());
         }
 
         #endregion
@@ -100,20 +101,19 @@ namespace ControlCasos
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-            abrirFormularioHijo(new frmUsuarios());
             ocultarSubMenu();
-        }
+            abrirFormularioHijo(new frmUsuarios());        }
 
         private void btnRoles_Click(object sender, EventArgs e)
         {
-            abrirFormularioHijo(new frmRoles());
             ocultarSubMenu();
+            abrirFormularioHijo(new frmRoles());
         }
 
         private void btnRespaldos_Click(object sender, EventArgs e)
         {
-            abrirFormularioHijo(new frmRespaldos());
             ocultarSubMenu();
+            abrirFormularioHijo(new frmRespaldos());
         }
         #endregion
 
@@ -125,20 +125,20 @@ namespace ControlCasos
 
         private void btnCambioContrasena_Click(object sender, EventArgs e)
         {
-            abrirFormularioHijo(new frmCambiarContrasena());
             ocultarSubMenu();
+            abrirFormularioHijo(new frmCambiarContrasena());
         }
 
         private void btnManualUsuario_Click(object sender, EventArgs e)
         {
-            abrirFormularioHijo(new frmManualUsuario());
             ocultarSubMenu();
+            abrirFormularioHijo(new frmManualUsuario());
         }
 
         private void btnAcercaDe_Click(object sender, EventArgs e)
         {
-            abrirFormularioHijo(new frmAcercaDe());
             ocultarSubMenu();
+            abrirFormularioHijo(new frmAcercaDe());
         }
 #endregion
 
