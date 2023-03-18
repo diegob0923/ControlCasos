@@ -119,6 +119,7 @@ namespace ControlCasos.Formularios.Casos
         {
             try
             {
+                dgvResumenProductos.DataSource = null;
                 dgvResumenProductos.AutoGenerateColumns = false;
                 dgvResumenProductos.DataSource = listaProducto;
             }
@@ -131,6 +132,22 @@ namespace ControlCasos.Formularios.Casos
         private void eliminarImagenDefaultEnColumnaEliminarCuandoNoHayDatos()
         {
             dgvResumenProductos.Rows[0].Cells["Eliminar"].Value = new Bitmap(1, 1);
+        }
+
+        private void dgvResumenProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvResumenProductos.Columns[e.ColumnIndex].Name == "Eliminar")
+            {
+                try
+                {
+                    listaProducto.RemoveAt(dgvResumenProductos.CurrentRow.Index);//el currentRow index es equivalente al index de listaProductos
+                    cargarDatosEnGrid();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Ocurrio un error al eliminar prducto");
+                }
+            }
         }
     }
 }
