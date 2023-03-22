@@ -21,7 +21,7 @@ namespace ControlCasos.Formularios.Casos
         {
             InitializeComponent();
             cargarComboDoctor();
-            listaCasos = consultarCasos();
+            consultarCasos();
             eliminarImagenDefaultEnColumnaDetallesCuandoNoHayDatos();
         }
 
@@ -42,11 +42,11 @@ namespace ControlCasos.Formularios.Casos
             }
         }
 
-        private IList<sp_Caso_Consultar_Result> consultarCasos()
+        public IList<sp_Caso_Consultar_Result> consultarCasos()
         {
             try
             {
-                IList<sp_Caso_Consultar_Result> listaCasos = BLCaso.consultarCasos(null);
+                listaCasos = BLCaso.consultarCasos(null);
                 return listaCasos;
             }
             catch (Exception)
@@ -108,6 +108,11 @@ namespace ControlCasos.Formularios.Casos
             }
         }
 
+        public void recargarComboPacienteLuegoDeInsertarNuevoCaso()
+        {
+            consultarCasos();//para actulaizar la lista de casos
+            cargarComboPaciente();//volver a cargar el comboPaciente para que aparezca el nuevo paciente en la lista
+        }
         private void eliminarImagenDefaultEnColumnaDetallesCuandoNoHayDatos()
         {
             dgvListaCasos.Rows[0].Cells["Detalles"].Value = new Bitmap(1, 1);
@@ -139,7 +144,7 @@ namespace ControlCasos.Formularios.Casos
 
         private void lnkNuevoCaso_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmNuevoCaso formularioNuevoCaso = new frmNuevoCaso();
+            frmNuevoCaso formularioNuevoCaso = new frmNuevoCaso(this);
             formularioNuevoCaso.Visible = true;
         }
     }

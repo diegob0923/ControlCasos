@@ -18,7 +18,6 @@ namespace ControlCasos.Clases
         public byte idTipoProducto { get; set; }
         public string tipoProducto { get; set; }
         public string comentario { get; set; }
-        public int idCaso { get; set; }
 
         public Producto()
         {
@@ -32,7 +31,6 @@ namespace ControlCasos.Clases
             idTipoProducto = 0;
             tipoProducto = null;
             comentario = null;
-            idCaso = 0;
         }
     }
 }
