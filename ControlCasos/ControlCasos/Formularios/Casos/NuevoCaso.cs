@@ -36,7 +36,7 @@ namespace ControlCasos.Formularios.Casos
             cargarComboBoxColor();
         }
 
-#region Cargar ComboBoxes
+        #region Cargar ComboBoxes
         private void cargarComboBoxDoctores()
         {
             try
@@ -135,6 +135,7 @@ namespace ControlCasos.Formularios.Casos
             }
         }
 
+        #region LimpiarCampos
         private void limpiarDatosProducto()
         {
             txtTamano.Text = "";
@@ -145,6 +146,17 @@ namespace ControlCasos.Formularios.Casos
             cmbTipoProducto.SelectedIndex = 0;
             txtComentario.Text = "";
         }
+
+        private void limpiarTodoSiError()
+        {
+            cmbDoctor.SelectedIndex = 0;
+            txtPaciente.Text = "";
+            dtpFecha.Value = DateTime.Now;
+            limpiarDatosProducto();
+            listaProductos.Clear();//limpia los posibles datos en la lista de productos
+            dgvResumenProductos.DataSource = null; // dejar el grid resumenProductos vacío
+        }
+        #endregion
         private void eliminarImagenDefaultEnColumnaEliminarCuandoNoHayDatos()
         {
             dgvResumenProductos.Rows[0].Cells["Eliminar"].Value = new Bitmap(1, 1);
@@ -168,65 +180,75 @@ namespace ControlCasos.Formularios.Casos
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            try
+            if (listaProductos.Count != 0 && cmbDoctor.SelectedIndex != 0 && txtPaciente.Text != "")
             {
-                IList<int> listaRegistrosInsertados = new List<int>();
-                int idNuevoRegistro = 0;
-                int maxCasoId = 0;
-
-                if (BLCasos.insertarCaso(dtpFecha.Value,int.Parse(cmbDoctor.SelectedValue.ToString()), 
-                                        darFormatoDeTituloAlStringPaciente(txtPaciente.Text))) 
+                try
                 {
-                    
-                    maxCasoId = BLCasos.consultarCasoMaxID();//aquí el caso ya se creo exitosamente, recuperamos el id de ese caso recien insertado para asignar los productos con este caso
+                    IList<int> listaRegistrosInsertados = new List<int>();
+                    int idNuevoRegistro = 0;
+                    int maxCasoId = 0;
 
-                    try
+                    if(BLCasos.insertarCaso(dtpFecha.Value, int.Parse(cmbDoctor.SelectedValue.ToString()),
+                                            darFormatoDeTituloAlStringPaciente(txtPaciente.Text)))
                     {
-                       
-                        foreach (Producto producto in listaProductos)
-                        {
-                            idNuevoRegistro = BLCasos.insertarProducto(producto.idColor,producto.idMarca,producto.idTipoProducto, maxCasoId, producto.tamano,producto.diametro,producto.cantidad,producto.comentario);
 
-                            if(idNuevoRegistro != ErrorAlInsertarProducto)
+                        maxCasoId = BLCasos.consultarCasoMaxID();//aquí el caso ya se creo exitosamente, recuperamos el id de ese caso recien insertado para asignar los productos con este caso
+
+                        try
+                        {
+                            foreach (Producto producto in listaProductos)
                             {
-                                listaRegistrosInsertados.Add(idNuevoRegistro);
+                                idNuevoRegistro = BLCasos.insertarProducto(producto.idColor, producto.idMarca, producto.idTipoProducto, maxCasoId, producto.tamano, producto.diametro, producto.cantidad, producto.comentario);
+
+                                if (idNuevoRegistro != ErrorAlInsertarProducto)
+                                {
+                                    listaRegistrosInsertados.Add(idNuevoRegistro);
+                                }
+                                else
+                                {
+                                    throw new Exception();
+                                }
                             }
-                            else
+                        }
+                        catch (Exception)
+                        {
+                            //eliminar posibles productos que se hayan creado
+                            if (listaRegistrosInsertados.Count != 0)//si la lista tiene registros se empiezan a eliminar
                             {
-                                throw new Exception();
+                                foreach (int idProducto in listaRegistrosInsertados)
+                                {
+                                    BLCasos.eliminarProducto(idProducto);
+                                }
                             }
+
+                            //eliminar ultimo caso creado
+                            if (maxCasoId != 0)
+                            {
+                                BLCasos.eliminarCaso(maxCasoId);
+                            }
+
+                            limpiarTodoSiError();
+                            throw new Exception();
                         }
                     }
-                    catch (Exception)
-                    {
-                        //eliminar posibles productos que se hayan creado
-                        if (listaRegistrosInsertados.Count != 0)//si la lista tiene registros se empiezan a eliminar
-                        {
-                            foreach (int idProducto in listaRegistrosInsertados)
-                            {
-                                BLCasos.eliminarProducto(idProducto);
-                            }
-                        }
 
-                        //eliminar ultimo caso creado
-                        if (maxCasoId != 0)
-                        {
-                            BLCasos.eliminarCaso(maxCasoId);
-                        }
+                    MessageBox.Show("Nuevo caso creado satisfactoriamente");
+                    this.Dispose();
+                    formularioCasos.recargarComboPacienteLuegoDeInsertarNuevoCaso();//esto va a actualizar la lista de casos para que los nuevos registros sean visibles
 
-                        throw new Exception();
-                    }
                 }
-
-                MessageBox.Show("Nuevo caso creado satisfactoriamente");
-                this.Dispose();
-                formularioCasos.recargarComboPacienteLuegoDeInsertarNuevoCaso();//esto va a actualizar la lista de casos para que los nuevos registros sean visibles
-                
+                catch (Exception)
+                {
+                    MessageBox.Show("Ocurrio un error al crear el caso");
+                }
             }
-            catch (Exception)
+            else
             {
-                MessageBox.Show("Ocurrio un error al crear el caso");
-            }
+                if (listaProductos.Count == 0)
+                    MessageBox.Show("Por favor agregue al menos un producto");
+                if (cmbDoctor.SelectedIndex == 0 || txtPaciente.Text == "")
+                    MessageBox.Show("Por favor ingrese un doctor y un paciente ");
+            } 
         }
         /// <summary>
         /// cambia el formato del nombre para que sea tipo título
