@@ -23,15 +23,15 @@ namespace ControlCasos.BL
             return datosColor;
         }
 
-        public void insertarDoctor(string cedula, string nombre, string apellido1, int idCliente,
+        public void insertarDoctor(string nombre, string apellido1, int idCliente, string cedula = null,
                                     string apellido2 = null, string correo = null, string telefono = null)
         {
             modeloBD.sp_Doctor_Insertar(cedula,nombre,apellido1,apellido2,correo,telefono,idCliente);
         }
 
-        public void editarDoctor(int idDoctor, string cedula, string nombre, string apellido1,
-                                    bool estado, int idCliente, string apellido2, string correo = null,
-                                    string telefono = null)
+        public void editarDoctor(int idDoctor, string nombre, string apellido1,bool estado, 
+                                int idCliente, string cedula = null, string apellido2 =null, 
+                                string correo = null, string telefono = null)
         {
             modeloBD.sp_Doctor_Editar(idDoctor, cedula, nombre,apellido1,apellido2,correo,telefono,
                                         estado,idCliente);

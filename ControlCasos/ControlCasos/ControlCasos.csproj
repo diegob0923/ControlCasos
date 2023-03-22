@@ -52,11 +52,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BL\BLCaso.cs" />
     <Compile Include="BL\BLCliente.cs" />
     <Compile Include="BL\BLColor.cs" />
     <Compile Include="BL\BLDoctor.cs" />
     <Compile Include="BL\BLMarca.cs" />
     <Compile Include="BL\BLTipoProducto.cs" />
+    <Compile Include="Clases\Producto.cs" />
     <Compile Include="Clases\VariablesGlobales.cs" />
     <Compile Include="Constantes\Estado.cs" />
     <Compile Include="Constantes\Rol.cs" />
@@ -78,11 +80,23 @@
     <Compile Include="Formularios\Ayuda\ManualUsuario.Designer.cs">
       <DependentUpon>ManualUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Casos.cs">
+    <Compile Include="Formularios\Casos\Casos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Casos.Designer.cs">
+    <Compile Include="Formularios\Casos\Casos.Designer.cs">
       <DependentUpon>Casos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Casos\NuevoCaso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Casos\NuevoCaso.Designer.cs">
+      <DependentUpon>NuevoCaso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Casos\Productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Casos\Productos.Designer.cs">
+      <DependentUpon>Productos.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Mantenimientos\EditarCliente.cs">
       <SubType>Form</SubType>
@@ -219,6 +233,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ControlCasosModelo.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Modelos\sp_Caso_Consultar_Result.cs">
+      <DependentUpon>ControlCasosModelo.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modelos\sp_ClienteID_Consultar_Result.cs">
       <DependentUpon>ControlCasosModelo.tt</DependentUpon>
     </Compile>
@@ -243,6 +260,9 @@
     <Compile Include="Modelos\sp_Marca_Consultar_Result.cs">
       <DependentUpon>ControlCasosModelo.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modelos\sp_ProductosPorCaso_Consultar_Result.cs">
+      <DependentUpon>ControlCasosModelo.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modelos\sp_TipoProductoID_Consultar_Result.cs">
       <DependentUpon>ControlCasosModelo.tt</DependentUpon>
     </Compile>
@@ -260,8 +280,14 @@
     <EmbeddedResource Include="Formularios\Ayuda\ManualUsuario.resx">
       <DependentUpon>ManualUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Casos.resx">
+    <EmbeddedResource Include="Formularios\Casos\Casos.resx">
       <DependentUpon>Casos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Casos\NuevoCaso.resx">
+      <DependentUpon>NuevoCaso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Casos\Productos.resx">
+      <DependentUpon>Productos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\InicioSesion.resx">
       <DependentUpon>InicioSesion.cs</DependentUpon>
@@ -356,6 +382,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Imagenes\borrar.png" />
+    <Content Include="Imagenes\btnAbrir.png" />
     <Content Include="Imagenes\buscar.png" />
     <Content Include="Imagenes\cancelar.png" />
     <Content Include="Imagenes\editar.png" />

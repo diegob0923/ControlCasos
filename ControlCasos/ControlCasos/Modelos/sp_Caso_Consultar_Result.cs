@@ -11,11 +11,12 @@ namespace ControlCasos.Modelos
 {
     using System;
     
-    public partial class sp_Color_Consultar_Result
+    public partial class sp_Caso_Consultar_Result
     {
-        public byte IdColor { get; set; }
-        public string Color { get; set; }
-        public string Guia { get; set; }
-        public string ColorGuia { get; set; }
+        public System.DateTime fecha { get; set; }
+        public int IdDoctor { get; set; }
+        public string Doctor { get; set; }
+        public string Paciente { get; set; }
+        public int IdCaso { get; set; }
     }
 }
