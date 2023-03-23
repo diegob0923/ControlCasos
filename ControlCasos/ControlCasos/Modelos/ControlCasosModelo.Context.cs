@@ -449,5 +449,14 @@ namespace ControlCasos.Modelos
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_ValidarUsuario_Result>("sp_ValidarUsuario", usuarioParameter, contrasenaParameter);
         }
+    
+        public virtual ObjectResult<sp_UsuarioSistema_Consultar_Result> sp_UsuarioSistema_Consultar(string buscar)
+        {
+            var buscarParameter = buscar != null ?
+                new ObjectParameter("buscar", buscar) :
+                new ObjectParameter("buscar", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_UsuarioSistema_Consultar_Result>("sp_UsuarioSistema_Consultar", buscarParameter);
+        }
     }
 }

@@ -270,6 +270,9 @@
     <Compile Include="Modelos\sp_TipoProducto_Consultar_Result.cs">
       <DependentUpon>ControlCasosModelo.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modelos\sp_UsuarioSistema_Consultar_Result.cs">
+      <DependentUpon>ControlCasosModelo.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modelos\sp_ValidarUsuario_Result.cs">
       <DependentUpon>ControlCasosModelo.tt</DependentUpon>
     </Compile>

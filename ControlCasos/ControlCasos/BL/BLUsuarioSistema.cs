@@ -16,5 +16,10 @@ namespace ControlCasos.BL
             return modeloBD.sp_ValidarUsuario(usuario, contrasena).FirstOrDefault();
         }
 
+        public IList<sp_UsuarioSistema_Consultar_Result> consultarUsuarios(string buscar = null)
+        {
+            IList<sp_UsuarioSistema_Consultar_Result> listaUsuarios = modeloBD.sp_UsuarioSistema_Consultar(buscar).ToList();
+            return listaUsuarios;
+        }
     }
 }
