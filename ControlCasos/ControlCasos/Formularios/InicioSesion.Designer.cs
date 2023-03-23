@@ -34,8 +34,8 @@
             this.txtContrasena = new System.Windows.Forms.TextBox();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,7 +43,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(259, 79);
+            this.label1.Location = new System.Drawing.Point(179, 74);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 20);
@@ -54,7 +54,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(241, 177);
+            this.label2.Location = new System.Drawing.Point(163, 153);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 20);
@@ -64,7 +64,7 @@
             // txtUsuario
             // 
             this.txtUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtUsuario.Location = new System.Drawing.Point(205, 103);
+            this.txtUsuario.Location = new System.Drawing.Point(125, 98);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(175, 26);
@@ -74,7 +74,7 @@
             // 
             this.txtContrasena.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtContrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContrasena.Location = new System.Drawing.Point(205, 201);
+            this.txtContrasena.Location = new System.Drawing.Point(127, 177);
             this.txtContrasena.Margin = new System.Windows.Forms.Padding(4);
             this.txtContrasena.Name = "txtContrasena";
             this.txtContrasena.PasswordChar = '*';
@@ -84,7 +84,7 @@
             // btnIngresar
             // 
             this.btnIngresar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnIngresar.Location = new System.Drawing.Point(205, 283);
+            this.btnIngresar.Location = new System.Drawing.Point(127, 242);
             this.btnIngresar.Margin = new System.Windows.Forms.Padding(4);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(175, 29);
@@ -100,34 +100,34 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(571, 43);
+            this.panel1.Size = new System.Drawing.Size(411, 43);
             this.panel1.TabIndex = 5;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 393);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(571, 43);
-            this.panel2.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(99, 9);
+            this.label3.Location = new System.Drawing.Point(11, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(400, 31);
             this.label3.TabIndex = 0;
             this.label3.Text = "Sistema de control de inventario";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 311);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(411, 43);
+            this.panel2.TabIndex = 6;
+            // 
             // frmInicioSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(571, 436);
+            this.ClientSize = new System.Drawing.Size(411, 354);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnIngresar);

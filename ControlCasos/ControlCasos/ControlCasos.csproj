@@ -58,8 +58,9 @@
     <Compile Include="BL\BLDoctor.cs" />
     <Compile Include="BL\BLMarca.cs" />
     <Compile Include="BL\BLTipoProducto.cs" />
+    <Compile Include="BL\BLUsuarioSistema.cs" />
     <Compile Include="Clases\Producto.cs" />
-    <Compile Include="Clases\VariablesGlobales.cs" />
+    <Compile Include="Clases\UsuarioLogueado.cs" />
     <Compile Include="Constantes\Estado.cs" />
     <Compile Include="Constantes\Rol.cs" />
     <Compile Include="Formularios\Ayuda\AcercaDe.cs">
@@ -267,6 +268,9 @@
       <DependentUpon>ControlCasosModelo.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelos\sp_TipoProducto_Consultar_Result.cs">
+      <DependentUpon>ControlCasosModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\sp_ValidarUsuario_Result.cs">
       <DependentUpon>ControlCasosModelo.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />

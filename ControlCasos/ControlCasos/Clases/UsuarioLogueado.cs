@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace ControlCasos.Clases
 {
-    static class VariablesGlobales
+    static class UsuarioLogueado
     {
         public static byte rolUsuarioLogueado { get; set; }
+        public static string usuarioLogueado { get; set; }
     }
 }

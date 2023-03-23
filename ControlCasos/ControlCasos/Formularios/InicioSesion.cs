@@ -10,12 +10,12 @@ using System.Windows.Forms;
 using ControlCasos.Modelos;
 using ControlCasos.Constantes;
 using ControlCasos.Clases;
-using ControlCasos;
+using ControlCasos.BL;
 namespace ControlCasos
 {
     public partial class frmInicioSesion : Form
     {
-        private ControlCasosEntities modeloControlCasos = new ControlCasosEntities();
+        BLUsuarioSistema usuarioSistema = new BLUsuarioSistema();
         public frmInicioSesion()
         {
             InitializeComponent();
@@ -23,25 +23,32 @@ namespace ControlCasos
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            var usuarioVlidado = modeloControlCasos.sp_ValidarUsuario(txtUsuario.Text, txtContrasena.Text).FirstOrDefault();
-            
-            if (usuarioVlidado == Rol.Administrador)
+            //sp_ValidarUsuario_Result usuarioValidado = modeloControlCasos.sp_ValidarUsuario(txtUsuario.Text, txtContrasena.Text).FirstOrDefault();
+            sp_ValidarUsuario_Result usuarioValidado = usuarioSistema.validarUsuario(txtUsuario.Text, txtContrasena.Text);
+
+            if(usuarioValidado == null)
             {
-                VariablesGlobales.rolUsuarioLogueado = Rol.Administrador;
-                abrirFormularioPrincipal();
-                this.Hide();
-            }
-            else if (usuarioVlidado == Rol.General)
-            {
-                VariablesGlobales.rolUsuarioLogueado = Rol.General;
-                abrirFormularioPrincipal();
-                this.Hide();
+                MessageBox.Show(usuarioValidado + "Usuario o contraseña incorrectos");
+                limpiarTextBoxUsuarioContrasena();
+                UsuarioLogueado.rolUsuarioLogueado = Rol.UsuarioInvalido;
+                UsuarioLogueado.usuarioLogueado = "";
             }
             else
             {
-                VariablesGlobales.rolUsuarioLogueado = Rol.UsuarioInvalido;
-                MessageBox.Show(usuarioVlidado + "Usuario o contraseña incorrectos");
-                limpiarTextBoxUsuarioContrasena();
+                if (usuarioValidado.IdRol == Rol.Administrador)
+                {
+                    UsuarioLogueado.rolUsuarioLogueado = Rol.Administrador;
+                    UsuarioLogueado.usuarioLogueado = usuarioValidado.Usuario;
+                    abrirFormularioPrincipal();
+                    this.Hide();
+                }
+                else if (usuarioValidado.IdRol == Rol.General)
+                {
+                    UsuarioLogueado.rolUsuarioLogueado = Rol.General;
+                    UsuarioLogueado.usuarioLogueado = usuarioValidado.Usuario;
+                    abrirFormularioPrincipal();
+                    this.Hide();
+                }
             }
         }
 

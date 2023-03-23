@@ -29,19 +29,6 @@ namespace ControlCasos.Modelos
         }
     
     
-        public virtual ObjectResult<Nullable<byte>> sp_ValidarUsuario(string usuario, string contrasena)
-        {
-            var usuarioParameter = usuario != null ?
-                new ObjectParameter("Usuario", usuario) :
-                new ObjectParameter("Usuario", typeof(string));
-    
-            var contrasenaParameter = contrasena != null ?
-                new ObjectParameter("Contrasena", contrasena) :
-                new ObjectParameter("Contrasena", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<byte>>("sp_ValidarUsuario", usuarioParameter, contrasenaParameter);
-        }
-    
         public virtual ObjectResult<sp_Cliente_Consultar_Result> sp_Cliente_Consultar(string nombreCliente)
         {
             var nombreClienteParameter = nombreCliente != null ?
@@ -448,6 +435,19 @@ namespace ControlCasos.Modelos
                 new ObjectParameter("id", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_Producto_Eliminar", idParameter);
+        }
+    
+        public virtual ObjectResult<sp_ValidarUsuario_Result> sp_ValidarUsuario(string usuario, string contrasena)
+        {
+            var usuarioParameter = usuario != null ?
+                new ObjectParameter("Usuario", usuario) :
+                new ObjectParameter("Usuario", typeof(string));
+    
+            var contrasenaParameter = contrasena != null ?
+                new ObjectParameter("Contrasena", contrasena) :
+                new ObjectParameter("Contrasena", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_ValidarUsuario_Result>("sp_ValidarUsuario", usuarioParameter, contrasenaParameter);
         }
     }
 }

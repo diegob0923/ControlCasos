@@ -140,10 +140,6 @@
     <edmx:ConceptualModels>
       <Schema Namespace="ControlCasosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="ControlCasosEntities" annotation:LazyLoadingEnabled="true" >
-          <FunctionImport Name="sp_ValidarUsuario" ReturnType="Collection(Byte)">
-            <Parameter Name="Usuario" Mode="In" Type="String" />
-            <Parameter Name="Contrasena" Mode="In" Type="String" />
-          </FunctionImport>
           <FunctionImport Name="sp_Cliente_Consultar" ReturnType="Collection(ControlCasosModel.sp_Cliente_Consultar_Result)">
           <Parameter Name="NombreCliente" Mode="In" Type="String" />
           </FunctionImport>
@@ -264,10 +260,14 @@
             <Parameter Name="IdCaso" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_Caso_Eliminar">
-            <Parameter Name="id" Mode="In" Type="Int32" />
+          <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_Producto_Eliminar">
-            <Parameter Name="id" Mode="In" Type="Int32" />
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_ValidarUsuario" ReturnType="Collection(ControlCasosModel.sp_ValidarUsuario_Result)">
+            <Parameter Name="Usuario" Mode="In" Type="String" />
+            <Parameter Name="Contrasena" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_Cliente_Consultar_Result">
@@ -348,13 +348,16 @@
           <Property Type="String" Name="Marca" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="TipoProducto" Nullable="false" MaxLength="50" />
         </ComplexType>
+        <ComplexType Name="sp_ValidarUsuario_Result">
+          <Property Type="Byte" Name="IdRol" Nullable="false" />
+          <Property Type="String" Name="Usuario" Nullable="false" MaxLength="50" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="ControlCasosModelStoreContainer" CdmEntityContainer="ControlCasosEntities" >
-          <FunctionImportMapping FunctionImportName="sp_ValidarUsuario" FunctionName="ControlCasosModel.Store.sp_ValidarUsuario" />
           <FunctionImportMapping FunctionImportName="sp_Cliente_Consultar" FunctionName="ControlCasosModel.Store.sp_Cliente_Consultar">
             <ResultMapping>
               <ComplexTypeMapping TypeName="ControlCasosModel.sp_Cliente_Consultar_Result">
@@ -501,6 +504,14 @@
           <FunctionImportMapping FunctionImportName="sp_Producto_Insertar" FunctionName="ControlCasosModel.Store.sp_Producto_Insertar" />
           <FunctionImportMapping FunctionImportName="sp_Caso_Eliminar" FunctionName="ControlCasosModel.Store.sp_Caso_Eliminar" />
           <FunctionImportMapping FunctionImportName="sp_Producto_Eliminar" FunctionName="ControlCasosModel.Store.sp_Producto_Eliminar" />
+          <FunctionImportMapping FunctionImportName="sp_ValidarUsuario" FunctionName="ControlCasosModel.Store.sp_ValidarUsuario">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ControlCasosModel.sp_ValidarUsuario_Result">
+                <ScalarProperty Name="IdRol" ColumnName="IdRol" />
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
