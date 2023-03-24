@@ -41,5 +41,10 @@ namespace ControlCasos.Formularios.Seguridad
                 MessageBox.Show("Ocurrió un error al agregar usuario. \nPosibles causas:\nPuede que el usuario \""+txtUsuario.Text+"\" ya exista. Por favor intente con otro.");
             }
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }
