@@ -38,7 +38,7 @@ namespace ControlCasos.Formularios.Seguridad
             }
             catch (Exception)
             {
-                MessageBox.Show("Ocurrió un error al agregar usuario. \nPosibles causas:\nPuede que el usuario \""+txtUsuario.Text+"\" ya exista. Por favor intente con otro.");
+                MessageBox.Show("Ocurrió un error al agregar usuario.\nPosibles causas:\nPuede que ya exista un usuario \"" + txtUsuario.Text + "\"");
             }
         }
 
