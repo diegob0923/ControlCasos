@@ -533,5 +533,14 @@ namespace ControlCasos.Modelos
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_UsuarioSistemaID_Consultar_Result>("sp_UsuarioSistemaID_Consultar", idUsuarioParameter);
         }
+    
+        public virtual int sp_UsuarioSistema_Eliminar(Nullable<byte> idUsuario)
+        {
+            var idUsuarioParameter = idUsuario.HasValue ?
+                new ObjectParameter("idUsuario", idUsuario) :
+                new ObjectParameter("idUsuario", typeof(byte));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_UsuarioSistema_Eliminar", idUsuarioParameter);
+        }
     }
 }

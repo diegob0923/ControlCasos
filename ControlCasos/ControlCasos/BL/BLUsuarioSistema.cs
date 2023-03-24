@@ -34,5 +34,9 @@ namespace ControlCasos.BL
         {
             modeloBD.sp_UsuarioSistema_Editar(idUsuario, usuario, nombre, apellido1, apellido2, estado, idRol);
         }
+        public void eliminarUsuario(byte idUsuario)
+        {
+            modeloBD.sp_UsuarioSistema_Eliminar(idUsuario);
+        }
     }
 }
