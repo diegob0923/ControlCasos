@@ -133,6 +133,15 @@
         <Function Name="sp_UsuarioSistema_Consultar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="buscar" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="sp_UsuarioSistema_Editar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idUsuario" Type="tinyint" Mode="In" />
+          <Parameter Name="Usuario" Type="varchar" Mode="In" />
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+          <Parameter Name="Apellido1" Type="varchar" Mode="In" />
+          <Parameter Name="Apellido2" Type="varchar" Mode="In" />
+          <Parameter Name="Estado" Type="bit" Mode="In" />
+          <Parameter Name="IdRol" Type="int" Mode="In" />
+        </Function>
         <Function Name="sp_UsuarioSistema_Insertar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Usuario" Type="varchar" Mode="In" />
           <Parameter Name="Nombre" Type="varchar" Mode="In" />
@@ -141,6 +150,9 @@
           <Parameter Name="Fecha" Type="date" Mode="In" />
           <Parameter Name="Creador" Type="varchar" Mode="In" />
           <Parameter Name="IdRol" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_UsuarioSistemaID_Consultar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idUsuario" Type="tinyint" Mode="In" />
         </Function>
         <Function Name="sp_ValidarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Usuario" Type="varchar" Mode="In" />
@@ -293,6 +305,18 @@
             <Parameter Name="Creador" Mode="In" Type="String" />
             <Parameter Name="IdRol" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="sp_UsuarioSistema_Editar">
+            <Parameter Name="idUsuario" Mode="In" Type="Byte" />
+            <Parameter Name="Usuario" Mode="In" Type="String" />
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="Apellido1" Mode="In" Type="String" />
+            <Parameter Name="Apellido2" Mode="In" Type="String" />
+            <Parameter Name="Estado" Mode="In" Type="Boolean" />
+            <Parameter Name="IdRol" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_UsuarioSistemaID_Consultar" ReturnType="Collection(ControlCasosModel.sp_UsuarioSistemaID_Consultar_Result)">
+          <Parameter Name="idUsuario" Mode="In" Type="Byte" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_Cliente_Consultar_Result">
           <Property Type="Int32" Name="IdCliente" Nullable="false" />
@@ -385,6 +409,17 @@
           <Property Type="String" Name="NombreCompleto" Nullable="false" MaxLength="152" />
           <Property Type="DateTime" Name="FechaRegistro" Nullable="false" />
           <Property Type="String" Name="Creador" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Estado" Nullable="true" MaxLength="8" />
+          <Property Type="Byte" Name="IdRol" Nullable="false" />
+          <Property Type="String" Name="Rol" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_UsuarioSistemaID_Consultar_Result">
+          <Property Type="Byte" Name="IdUsuario" Nullable="false" />
+          <Property Type="String" Name="Usuario" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Apellido1" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Apellido2" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="NombreCompleto" Nullable="false" MaxLength="152" />
           <Property Type="String" Name="Estado" Nullable="true" MaxLength="8" />
           <Property Type="Byte" Name="IdRol" Nullable="false" />
           <Property Type="String" Name="Rol" Nullable="false" MaxLength="50" />
@@ -567,6 +602,22 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_UsuarioSistema_Insertar" FunctionName="ControlCasosModel.Store.sp_UsuarioSistema_Insertar" />
+          <FunctionImportMapping FunctionImportName="sp_UsuarioSistema_Editar" FunctionName="ControlCasosModel.Store.sp_UsuarioSistema_Editar" />
+          <FunctionImportMapping FunctionImportName="sp_UsuarioSistemaID_Consultar" FunctionName="ControlCasosModel.Store.sp_UsuarioSistemaID_Consultar">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ControlCasosModel.sp_UsuarioSistemaID_Consultar_Result">
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido1" ColumnName="Apellido1" />
+                <ScalarProperty Name="Apellido2" ColumnName="Apellido2" />
+                <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="IdRol" ColumnName="IdRol" />
+                <ScalarProperty Name="Rol" ColumnName="Rol" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

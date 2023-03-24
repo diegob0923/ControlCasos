@@ -39,5 +39,30 @@ namespace ControlCasos.Formularios.Seguridad
             frmNuevoUsuario formularioNuevoUsuario = new frmNuevoUsuario(this);
             formularioNuevoUsuario.Visible = true;
         }
+
+        private void dgvListaUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            byte idUsuario = byte.Parse(dgvListaUsuarios.CurrentRow.Cells["Id"].Value.ToString());
+
+            if (dgvListaUsuarios.Columns[e.ColumnIndex].Name == "Editar")
+            {
+                frmEditarUsuario formularioEditarMarca = new frmEditarUsuario(this, idUsuario);
+                formularioEditarMarca.Visible = true;
+            }
+            /*
+            if (dgvListaUsuarios.Columns[e.ColumnIndex].Name == "Eliminar")
+            {
+                if (MessageBox.Show("Está a punto de eliminar la marca: \"" + dgvListaMarcas.CurrentRow.Cells["Marca"].Value.ToString() + "\". ¿Desea continuar?", "Eliminar Marca", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    try
+                    {
+                        marcas.eliminarMarca(idUsuario);
+                        cargarDatosEnGrid();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Ocurrio un error al eliminar el color");
+                    }
+            }*/
+        }
     }
 }
