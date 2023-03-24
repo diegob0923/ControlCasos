@@ -88,7 +88,7 @@ namespace ControlCasos.Formularios.Mantenimientos
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show("Ocurrio un error al eliminar el color");
+                        MessageBox.Show("Ocurrio un error al eliminar el tipo de producto.\nPosibles causas:\n Puede existan otros registros asociados al elemento que intenta borrar");
                     }
             }
         }
