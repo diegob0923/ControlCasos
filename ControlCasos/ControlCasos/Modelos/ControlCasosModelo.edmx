@@ -133,6 +133,15 @@
         <Function Name="sp_UsuarioSistema_Consultar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="buscar" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="sp_UsuarioSistema_Insertar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Usuario" Type="varchar" Mode="In" />
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+          <Parameter Name="Apellido1" Type="varchar" Mode="In" />
+          <Parameter Name="Apellido2" Type="varchar" Mode="In" />
+          <Parameter Name="Fecha" Type="date" Mode="In" />
+          <Parameter Name="Creador" Type="varchar" Mode="In" />
+          <Parameter Name="IdRol" Type="int" Mode="In" />
+        </Function>
         <Function Name="sp_ValidarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Usuario" Type="varchar" Mode="In" />
           <Parameter Name="Contrasena" Type="varchar" Mode="In" />
@@ -273,7 +282,16 @@
             <Parameter Name="Contrasena" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_UsuarioSistema_Consultar" ReturnType="Collection(ControlCasosModel.sp_UsuarioSistema_Consultar_Result)">
-            <Parameter Name="buscar" Mode="In" Type="String" />
+          <Parameter Name="buscar" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_UsuarioSistema_Insertar">
+            <Parameter Name="Usuario" Mode="In" Type="String" />
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="Apellido1" Mode="In" Type="String" />
+            <Parameter Name="Apellido2" Mode="In" Type="String" />
+            <Parameter Name="Fecha" Mode="In" Type="DateTime" />
+            <Parameter Name="Creador" Mode="In" Type="String" />
+            <Parameter Name="IdRol" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_Cliente_Consultar_Result">
@@ -548,6 +566,7 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_UsuarioSistema_Insertar" FunctionName="ControlCasosModel.Store.sp_UsuarioSistema_Insertar" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

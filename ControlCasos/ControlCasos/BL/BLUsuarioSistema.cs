@@ -21,5 +21,10 @@ namespace ControlCasos.BL
             IList<sp_UsuarioSistema_Consultar_Result> listaUsuarios = modeloBD.sp_UsuarioSistema_Consultar(buscar).ToList();
             return listaUsuarios;
         }
+
+        public void insertarUsuario(string usuario, string nombre, string apellido1,DateTime fecha, string creador,int idRol, string apellido2 = null)
+        {
+            modeloBD.sp_UsuarioSistema_Insertar(usuario, nombre, apellido1, apellido2, fecha, creador, idRol);
+        }
     }
 }

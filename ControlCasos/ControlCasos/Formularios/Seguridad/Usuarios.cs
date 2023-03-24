@@ -33,5 +33,11 @@ namespace ControlCasos.Formularios.Seguridad
                 MessageBox.Show("Ocurrio un error al cargar los usuarios");
             }
         }
+
+        private void lnkNuevoUsuario_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmNuevoUsuario formularioNuevoUsuario = new frmNuevoUsuario(this);
+            formularioNuevoUsuario.Visible = true;
+        }
     }
 }
