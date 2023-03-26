@@ -54,7 +54,6 @@ namespace ControlCasos.Formularios.Mantenimientos
             {
                 MessageBox.Show("Ocurrio un error al buscar colores");
             }
-            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

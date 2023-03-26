@@ -321,7 +321,7 @@
           <Parameter Name="idUsuario" Mode="In" Type="Byte" />
           </FunctionImport>
           <FunctionImport Name="sp_UsuarioSistema_Eliminar">
-            <Parameter Name="idUsuario" Mode="In" Type="Byte" />
+          <Parameter Name="idUsuario" Mode="In" Type="Byte" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_Cliente_Consultar_Result">

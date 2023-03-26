@@ -64,5 +64,35 @@ namespace ControlCasos.Formularios.Seguridad
                     }
             }
         }
+
+        #region Filtro
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                IList<sp_UsuarioSistema_Consultar_Result> fuenteDatos = usuarios.consultarUsuarios(txtBuscar.Text);
+                dgvListaUsuarios.AutoGenerateColumns = false;
+                dgvListaUsuarios.DataSource = fuenteDatos;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocurrio un error al buscar usuarios");
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            txtBuscar.Text = "";
+            cargarDatosEnGrid();
+        }
+        #endregion
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text != "")
+                btnCancelar.Visible = true;
+            else
+                btnCancelar.Visible = false;
+        }
     }
 }
