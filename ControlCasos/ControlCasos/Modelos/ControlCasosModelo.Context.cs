@@ -29,19 +29,6 @@ namespace ControlCasos.Modelos
         }
     
     
-        public virtual ObjectResult<Nullable<byte>> sp_ValidarUsuario(string usuario, string contrasena)
-        {
-            var usuarioParameter = usuario != null ?
-                new ObjectParameter("Usuario", usuario) :
-                new ObjectParameter("Usuario", typeof(string));
-    
-            var contrasenaParameter = contrasena != null ?
-                new ObjectParameter("Contrasena", contrasena) :
-                new ObjectParameter("Contrasena", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<byte>>("sp_ValidarUsuario", usuarioParameter, contrasenaParameter);
-        }
-    
         public virtual ObjectResult<sp_Cliente_Consultar_Result> sp_Cliente_Consultar(string nombreCliente)
         {
             var nombreClienteParameter = nombreCliente != null ?
@@ -448,6 +435,112 @@ namespace ControlCasos.Modelos
                 new ObjectParameter("id", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_Producto_Eliminar", idParameter);
+        }
+    
+        public virtual ObjectResult<sp_ValidarUsuario_Result> sp_ValidarUsuario(string usuario, string contrasena)
+        {
+            var usuarioParameter = usuario != null ?
+                new ObjectParameter("Usuario", usuario) :
+                new ObjectParameter("Usuario", typeof(string));
+    
+            var contrasenaParameter = contrasena != null ?
+                new ObjectParameter("Contrasena", contrasena) :
+                new ObjectParameter("Contrasena", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_ValidarUsuario_Result>("sp_ValidarUsuario", usuarioParameter, contrasenaParameter);
+        }
+    
+        public virtual ObjectResult<sp_UsuarioSistema_Consultar_Result> sp_UsuarioSistema_Consultar(string buscar)
+        {
+            var buscarParameter = buscar != null ?
+                new ObjectParameter("buscar", buscar) :
+                new ObjectParameter("buscar", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_UsuarioSistema_Consultar_Result>("sp_UsuarioSistema_Consultar", buscarParameter);
+        }
+    
+        public virtual int sp_UsuarioSistema_Insertar(string usuario, string nombre, string apellido1, string apellido2, Nullable<System.DateTime> fecha, string creador, Nullable<int> idRol)
+        {
+            var usuarioParameter = usuario != null ?
+                new ObjectParameter("Usuario", usuario) :
+                new ObjectParameter("Usuario", typeof(string));
+    
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("Nombre", nombre) :
+                new ObjectParameter("Nombre", typeof(string));
+    
+            var apellido1Parameter = apellido1 != null ?
+                new ObjectParameter("Apellido1", apellido1) :
+                new ObjectParameter("Apellido1", typeof(string));
+    
+            var apellido2Parameter = apellido2 != null ?
+                new ObjectParameter("Apellido2", apellido2) :
+                new ObjectParameter("Apellido2", typeof(string));
+    
+            var fechaParameter = fecha.HasValue ?
+                new ObjectParameter("Fecha", fecha) :
+                new ObjectParameter("Fecha", typeof(System.DateTime));
+    
+            var creadorParameter = creador != null ?
+                new ObjectParameter("Creador", creador) :
+                new ObjectParameter("Creador", typeof(string));
+    
+            var idRolParameter = idRol.HasValue ?
+                new ObjectParameter("IdRol", idRol) :
+                new ObjectParameter("IdRol", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_UsuarioSistema_Insertar", usuarioParameter, nombreParameter, apellido1Parameter, apellido2Parameter, fechaParameter, creadorParameter, idRolParameter);
+        }
+    
+        public virtual int sp_UsuarioSistema_Editar(Nullable<byte> idUsuario, string usuario, string nombre, string apellido1, string apellido2, Nullable<bool> estado, Nullable<int> idRol)
+        {
+            var idUsuarioParameter = idUsuario.HasValue ?
+                new ObjectParameter("idUsuario", idUsuario) :
+                new ObjectParameter("idUsuario", typeof(byte));
+    
+            var usuarioParameter = usuario != null ?
+                new ObjectParameter("Usuario", usuario) :
+                new ObjectParameter("Usuario", typeof(string));
+    
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("Nombre", nombre) :
+                new ObjectParameter("Nombre", typeof(string));
+    
+            var apellido1Parameter = apellido1 != null ?
+                new ObjectParameter("Apellido1", apellido1) :
+                new ObjectParameter("Apellido1", typeof(string));
+    
+            var apellido2Parameter = apellido2 != null ?
+                new ObjectParameter("Apellido2", apellido2) :
+                new ObjectParameter("Apellido2", typeof(string));
+    
+            var estadoParameter = estado.HasValue ?
+                new ObjectParameter("Estado", estado) :
+                new ObjectParameter("Estado", typeof(bool));
+    
+            var idRolParameter = idRol.HasValue ?
+                new ObjectParameter("IdRol", idRol) :
+                new ObjectParameter("IdRol", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_UsuarioSistema_Editar", idUsuarioParameter, usuarioParameter, nombreParameter, apellido1Parameter, apellido2Parameter, estadoParameter, idRolParameter);
+        }
+    
+        public virtual ObjectResult<sp_UsuarioSistemaID_Consultar_Result> sp_UsuarioSistemaID_Consultar(Nullable<byte> idUsuario)
+        {
+            var idUsuarioParameter = idUsuario.HasValue ?
+                new ObjectParameter("idUsuario", idUsuario) :
+                new ObjectParameter("idUsuario", typeof(byte));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_UsuarioSistemaID_Consultar_Result>("sp_UsuarioSistemaID_Consultar", idUsuarioParameter);
+        }
+    
+        public virtual int sp_UsuarioSistema_Eliminar(Nullable<byte> idUsuario)
+        {
+            var idUsuarioParameter = idUsuario.HasValue ?
+                new ObjectParameter("idUsuario", idUsuario) :
+                new ObjectParameter("idUsuario", typeof(byte));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_UsuarioSistema_Eliminar", idUsuarioParameter);
         }
     }
 }

@@ -58,8 +58,9 @@
     <Compile Include="BL\BLDoctor.cs" />
     <Compile Include="BL\BLMarca.cs" />
     <Compile Include="BL\BLTipoProducto.cs" />
+    <Compile Include="BL\BLUsuarioSistema.cs" />
     <Compile Include="Clases\Producto.cs" />
-    <Compile Include="Clases\VariablesGlobales.cs" />
+    <Compile Include="Clases\UsuarioLogueado.cs" />
     <Compile Include="Constantes\Estado.cs" />
     <Compile Include="Constantes\Rol.cs" />
     <Compile Include="Formularios\Ayuda\AcercaDe.cs">
@@ -200,6 +201,18 @@
     <Compile Include="Formularios\InicioSesion.Designer.cs">
       <DependentUpon>InicioSesion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Seguridad\EditarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Seguridad\EditarUsuario.Designer.cs">
+      <DependentUpon>EditarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Seguridad\NuevoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Seguridad\NuevoUsuario.Designer.cs">
+      <DependentUpon>NuevoUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Seguridad\Respaldos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,6 +280,15 @@
       <DependentUpon>ControlCasosModelo.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelos\sp_TipoProducto_Consultar_Result.cs">
+      <DependentUpon>ControlCasosModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\sp_UsuarioSistemaID_Consultar_Result.cs">
+      <DependentUpon>ControlCasosModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\sp_UsuarioSistema_Consultar_Result.cs">
+      <DependentUpon>ControlCasosModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\sp_ValidarUsuario_Result.cs">
       <DependentUpon>ControlCasosModelo.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -339,6 +361,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\PantallaPrincipal.resx">
       <DependentUpon>PantallaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Seguridad\EditarUsuario.resx">
+      <DependentUpon>EditarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Seguridad\NuevoUsuario.resx">
+      <DependentUpon>NuevoUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Seguridad\Respaldos.resx">
       <DependentUpon>Respaldos.cs</DependentUpon>

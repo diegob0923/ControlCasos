@@ -22,7 +22,7 @@ namespace ControlCasos
         public frmPrincipal()
         {
             InitializeComponent();
-            if (VariablesGlobales.rolUsuarioLogueado == Rol.General)
+            if (UsuarioLogueado.rolUsuarioLogueado == Rol.General)
                 btnSeguridad.Visible = false;
         }
 
