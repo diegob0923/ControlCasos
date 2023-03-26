@@ -154,6 +154,10 @@
           <Parameter Name="Creador" Type="varchar" Mode="In" />
           <Parameter Name="IdRol" Type="int" Mode="In" />
         </Function>
+        <Function Name="sp_UsuarioSistemaCambioContrasena_Editar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Usuario" Type="varchar" Mode="In" />
+          <Parameter Name="Contrasena" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="sp_UsuarioSistemaID_Consultar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="idUsuario" Type="tinyint" Mode="In" />
         </Function>
@@ -322,6 +326,10 @@
           </FunctionImport>
           <FunctionImport Name="sp_UsuarioSistema_Eliminar">
           <Parameter Name="idUsuario" Mode="In" Type="Byte" />
+          </FunctionImport>
+          <FunctionImport Name="sp_UsuarioSistemaCambioContrasena_Editar">
+            <Parameter Name="Usuario" Mode="In" Type="String" />
+            <Parameter Name="Contrasena" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_Cliente_Consultar_Result">
@@ -625,6 +633,7 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_UsuarioSistema_Eliminar" FunctionName="ControlCasosModel.Store.sp_UsuarioSistema_Eliminar" />
+          <FunctionImportMapping FunctionImportName="sp_UsuarioSistemaCambioContrasena_Editar" FunctionName="ControlCasosModel.Store.sp_UsuarioSistemaCambioContrasena_Editar" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

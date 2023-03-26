@@ -542,5 +542,18 @@ namespace ControlCasos.Modelos
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_UsuarioSistema_Eliminar", idUsuarioParameter);
         }
+    
+        public virtual int sp_UsuarioSistemaCambioContrasena_Editar(string usuario, string contrasena)
+        {
+            var usuarioParameter = usuario != null ?
+                new ObjectParameter("Usuario", usuario) :
+                new ObjectParameter("Usuario", typeof(string));
+    
+            var contrasenaParameter = contrasena != null ?
+                new ObjectParameter("Contrasena", contrasena) :
+                new ObjectParameter("Contrasena", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_UsuarioSistemaCambioContrasena_Editar", usuarioParameter, contrasenaParameter);
+        }
     }
 }
