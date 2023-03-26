@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ControlCasos.BL;
+using ControlCasos.Clases;
 using ControlCasos.Constantes;
 using ControlCasos.Modelos;
 
@@ -18,12 +19,14 @@ namespace ControlCasos.Formularios.Seguridad
         private frmUsuarios formularioUsuarios;
         private readonly BLUsuarioSistema BLUsuario = new BLUsuarioSistema();
         private readonly byte idUsuario;
+        private bool usuarioEditadoEsElLogueado;
         public frmEditarUsuario(frmUsuarios formularioUsuarios, byte idUsuario)
         {
             InitializeComponent();
             cargarDatosTipoProducto(idUsuario);
             this.idUsuario = idUsuario;
             this.formularioUsuarios = formularioUsuarios;
+            usuarioEditadoEsElLogueado = varificarUsuarioAEditarEsMiUsuario(txtUsuario.Text);
         }
         private void recargarGridEnFormularioPrincipal()
         {
@@ -46,7 +49,14 @@ namespace ControlCasos.Formularios.Seguridad
                 MessageBox.Show("Error al cargar datos del tipo de producto");
             }
         }
-
+        private bool varificarUsuarioAEditarEsMiUsuario(string usuario)
+        {
+            if (usuario.Equals(UsuarioLogueado.usuarioLogueado))
+                return true;
+            
+            return false;
+        }
+        #region Eventos
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
@@ -56,6 +66,10 @@ namespace ControlCasos.Formularios.Seguridad
                 int idRol = cmbRol.Text.Equals("Administrador") ? Rol.Administrador : Rol.General;
 
                 BLUsuario.editarUsuario(idUsuario, txtUsuario.Text,txtNombre.Text,txtApellido1.Text,estado,idRol,txtApellido2.Text);
+                
+                if (usuarioEditadoEsElLogueado)
+                    UsuarioLogueado.usuarioLogueado = txtUsuario.Text;//actualiza usuarioLogueado con el nuevo usuario
+                        
                 recargarGridEnFormularioPrincipal();
                 this.Dispose();
             }
@@ -69,5 +83,6 @@ namespace ControlCasos.Formularios.Seguridad
         {
             this.Dispose();
         }
+        #endregion
     }
 }
