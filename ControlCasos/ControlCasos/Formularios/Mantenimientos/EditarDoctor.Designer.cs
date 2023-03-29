@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cmbEstado = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.cmbCliente = new System.Windows.Forms.ComboBox();
@@ -46,8 +48,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtCedula = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,6 +78,28 @@
             this.panel1.Size = new System.Drawing.Size(509, 438);
             this.panel1.TabIndex = 4;
             // 
+            // cmbEstado
+            // 
+            this.cmbEstado.DisplayMember = "cliente";
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
+            this.cmbEstado.Location = new System.Drawing.Point(278, 344);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(202, 24);
+            this.cmbEstado.TabIndex = 16;
+            this.cmbEstado.ValueMember = "idcliente";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(272, 311);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(52, 17);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Estado";
+            // 
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(149, 392);
@@ -100,6 +122,8 @@
             // 
             // cmbCliente
             // 
+            this.cmbCliente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbCliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbCliente.DisplayMember = "cliente";
             this.cmbCliente.FormattingEnabled = true;
             this.cmbCliente.Location = new System.Drawing.Point(278, 272);
@@ -230,28 +254,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Cédula";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(272, 311);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(52, 17);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "Estado";
-            // 
-            // cmbEstado
-            // 
-            this.cmbEstado.DisplayMember = "cliente";
-            this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
-            this.cmbEstado.Location = new System.Drawing.Point(278, 344);
-            this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(202, 24);
-            this.cmbEstado.TabIndex = 16;
-            this.cmbEstado.ValueMember = "idcliente";
             // 
             // frmEditarDoctor
             // 
