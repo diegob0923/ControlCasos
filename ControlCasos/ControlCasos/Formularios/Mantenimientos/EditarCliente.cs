@@ -45,27 +45,54 @@ namespace ControlCasos.Formularios.Mantenimientos
             }
         }
 
+        #region Eventos
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            
-            try
+            if (ValidateChildren(ValidationConstraints.Enabled))
             {
-                bool estado = cmbEstado.Text.Equals("Activo") ? Estado.Activo : Estado.Inactivo;
+                try
+                {
+                    bool estado = cmbEstado.Text.Equals("Activo") ? Estado.Activo : Estado.Inactivo;
 
-                BLClientes.editarCliente(IdCliente, txtNombreCliente.Text, estado);
-                recargarGridEnFormularioPrincipal();
-                this.Dispose();   
+                    BLClientes.editarCliente(IdCliente, txtNombreCliente.Text, estado);
+                    recargarGridEnFormularioPrincipal();
+                    this.Dispose();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Error al editar cliente");
+                }
             }
-            catch (Exception)
-            {
-                MessageBox.Show("Error al editar cliente");
-            }
-
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
+        #endregion
+
+        #region Validación campos
+        /// <summary>
+        /// Evita que se active el errorProvider al hacer click en la X para cerrar el formulario
+        /// </summary>
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            e.Cancel = false;
+        }
+        private void txtNombreCliente_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtNombreCliente.Text))
+            {
+                e.Cancel = true;
+                txtNombreCliente.Focus();
+                epNombreValidar.SetError(txtNombreCliente, "Campo requerido");
+            }
+            else
+            {
+                e.Cancel = false;
+                epNombreValidar.SetError(txtNombreCliente, "");
+            }
+        }
+        #endregion
     }
 }
