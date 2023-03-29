@@ -28,13 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtTipoProducto = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.epTipoProductoValidar = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epTipoProductoValidar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -88,6 +91,7 @@
             this.txtTipoProducto.Name = "txtTipoProducto";
             this.txtTipoProducto.Size = new System.Drawing.Size(204, 22);
             this.txtTipoProducto.TabIndex = 1;
+            this.txtTipoProducto.Validating += new System.ComponentModel.CancelEventHandler(this.txtTipoProducto_Validating);
             // 
             // label1
             // 
@@ -99,6 +103,11 @@
             this.label1.Text = "Tipo de producto";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // epTipoProductoValidar
+            // 
+            this.epTipoProductoValidar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epTipoProductoValidar.ContainerControl = this;
+            // 
             // frmNuevoTipoProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -109,6 +118,7 @@
             this.Text = "Agregar tipo de producto";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epTipoProductoValidar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -121,5 +131,6 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.TextBox txtTipoProducto;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider epTipoProductoValidar;
     }
 }
