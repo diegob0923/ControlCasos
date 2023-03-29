@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -48,7 +49,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtCedula = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.epNombreValidar = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epApellido1Validar = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epClienteValidar = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epNombreValidar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epApellido1Validar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epClienteValidar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -81,6 +88,7 @@
             // cmbEstado
             // 
             this.cmbEstado.DisplayMember = "cliente";
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstado.FormattingEnabled = true;
             this.cmbEstado.Items.AddRange(new object[] {
             "Activo",
@@ -131,6 +139,7 @@
             this.cmbCliente.Size = new System.Drawing.Size(202, 24);
             this.cmbCliente.TabIndex = 12;
             this.cmbCliente.ValueMember = "idcliente";
+            this.cmbCliente.Validating += new System.ComponentModel.CancelEventHandler(this.cmbCliente_Validating);
             // 
             // label8
             // 
@@ -198,6 +207,7 @@
             this.txtApellido1.Name = "txtApellido1";
             this.txtApellido1.Size = new System.Drawing.Size(204, 22);
             this.txtApellido1.TabIndex = 6;
+            this.txtApellido1.Validating += new System.ComponentModel.CancelEventHandler(this.txtApellido1_Validating);
             // 
             // label4
             // 
@@ -215,6 +225,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(204, 22);
             this.txtNombre.TabIndex = 4;
+            this.txtNombre.Validating += new System.ComponentModel.CancelEventHandler(this.txtNombre_Validating);
             // 
             // label3
             // 
@@ -255,6 +266,21 @@
             this.label1.Text = "Cédula";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // epNombreValidar
+            // 
+            this.epNombreValidar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epNombreValidar.ContainerControl = this;
+            // 
+            // epApellido1Validar
+            // 
+            this.epApellido1Validar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epApellido1Validar.ContainerControl = this;
+            // 
+            // epClienteValidar
+            // 
+            this.epClienteValidar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epClienteValidar.ContainerControl = this;
+            // 
             // frmEditarDoctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -265,6 +291,9 @@
             this.Text = "Editar doctor";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epNombreValidar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epApellido1Validar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epClienteValidar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -291,5 +320,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbEstado;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ErrorProvider epNombreValidar;
+        private System.Windows.Forms.ErrorProvider epApellido1Validar;
+        private System.Windows.Forms.ErrorProvider epClienteValidar;
     }
 }
