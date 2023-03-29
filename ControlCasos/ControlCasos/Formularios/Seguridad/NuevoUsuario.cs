@@ -17,11 +17,11 @@ namespace ControlCasos.Formularios.Seguridad
     {
         private frmUsuarios formularioUsuarios;
         BLUsuarioSistema usuarios = new BLUsuarioSistema();
-        private const int UsuarioRepetido = -1;
         public frmNuevoUsuario(frmUsuarios formularioUsuarios)
         {
             InitializeComponent();
             this.formularioUsuarios = formularioUsuarios;
+            cmbRol.Text = "Seleccione:";
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
