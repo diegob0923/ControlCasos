@@ -21,37 +21,6 @@ namespace ControlCasos
             InitializeComponent();
         }
 
-        private void btnIngresar_Click(object sender, EventArgs e)
-        {
-            //sp_ValidarUsuario_Result usuarioValidado = modeloControlCasos.sp_ValidarUsuario(txtUsuario.Text, txtContrasena.Text).FirstOrDefault();
-            sp_ValidarUsuario_Result usuarioValidado = usuarioSistema.validarUsuario(txtUsuario.Text, txtContrasena.Text);
-
-            if(usuarioValidado == null)
-            {
-                MessageBox.Show(usuarioValidado + "Usuario o contraseña incorrectos");
-                limpiarTextBoxUsuarioContrasena();
-                UsuarioLogueado.rolUsuarioLogueado = Rol.UsuarioInvalido;
-                UsuarioLogueado.usuarioLogueado = "";
-            }
-            else
-            {
-                if (usuarioValidado.IdRol == Rol.Administrador)
-                {
-                    UsuarioLogueado.rolUsuarioLogueado = Rol.Administrador;
-                    UsuarioLogueado.usuarioLogueado = usuarioValidado.Usuario;
-                    abrirFormularioPrincipal();
-                    this.Hide();
-                }
-                else if (usuarioValidado.IdRol == Rol.General)
-                {
-                    UsuarioLogueado.rolUsuarioLogueado = Rol.General;
-                    UsuarioLogueado.usuarioLogueado = usuarioValidado.Usuario;
-                    abrirFormularioPrincipal();
-                    this.Hide();
-                }
-            }
-        }
-
         private void abrirFormularioPrincipal()
         {
             frmPrincipal pantallaPrincipal = new frmPrincipal();
@@ -62,5 +31,80 @@ namespace ControlCasos
             txtUsuario.Text = "";
             txtContrasena.Text = "";
         }
+
+        #region Eventos
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            if (ValidateChildren(ValidationConstraints.Enabled))
+            {
+                sp_ValidarUsuario_Result usuarioValidado = usuarioSistema.validarUsuario(txtUsuario.Text, txtContrasena.Text);
+
+                if (usuarioValidado == null)
+                {
+                    MessageBox.Show(usuarioValidado + "Usuario o contraseña incorrectos");
+                    limpiarTextBoxUsuarioContrasena();
+                    UsuarioLogueado.rolUsuarioLogueado = Rol.UsuarioInvalido;
+                    UsuarioLogueado.usuarioLogueado = "";
+                }
+                else
+                {
+                    if (usuarioValidado.IdRol == Rol.Administrador)
+                    {
+                        UsuarioLogueado.rolUsuarioLogueado = Rol.Administrador;
+                        UsuarioLogueado.usuarioLogueado = usuarioValidado.Usuario;
+                        abrirFormularioPrincipal();
+                        this.Hide();
+                    }
+                    else if (usuarioValidado.IdRol == Rol.General)
+                    {
+                        UsuarioLogueado.rolUsuarioLogueado = Rol.General;
+                        UsuarioLogueado.usuarioLogueado = usuarioValidado.Usuario;
+                        abrirFormularioPrincipal();
+                        this.Hide();
+                    }
+                }
+            }
+        }
+        #endregion
+
+        #region Validación campos
+        /// <summary>
+        /// Evita que se active el errorProvider al hacer click en la X para cerrar el formulario
+        /// </summary>
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            e.Cancel = false;
+        }
+        
+        private void txtUsuario_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtUsuario.Text))
+            {
+                e.Cancel = true;
+                txtUsuario.Focus();
+                epUsuarioValidar.SetError(txtUsuario, "Campo requerido");
+            }
+            else
+            {
+                e.Cancel = false;
+                epUsuarioValidar.SetError(txtUsuario, "");
+            }
+        }
+
+        private void txtContrasena_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtContrasena.Text))
+            {
+                e.Cancel = true;
+                txtUsuario.Focus();
+                epContrasenaValidar.SetError(txtContrasena, "Campo requerido");
+            }
+            else
+            {
+                e.Cancel = false;
+                epContrasenaValidar.SetError(txtContrasena, "");
+            }
+        }
+        #endregion
     }
 }
