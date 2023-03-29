@@ -28,12 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtNuevaContrasena = new System.Windows.Forms.TextBox();
             this.txtConfirmarContrasena = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.epNuevaContrasenaValidar = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epConfirmarContrasenaValidar = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.epNuevaContrasenaValidar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epConfirmarContrasenaValidar)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNuevaContrasena
@@ -43,6 +48,7 @@
             this.txtNuevaContrasena.PasswordChar = '*';
             this.txtNuevaContrasena.Size = new System.Drawing.Size(227, 26);
             this.txtNuevaContrasena.TabIndex = 0;
+            this.txtNuevaContrasena.Validating += new System.ComponentModel.CancelEventHandler(this.txtNuevaContrasena_Validating);
             // 
             // txtConfirmarContrasena
             // 
@@ -51,6 +57,7 @@
             this.txtConfirmarContrasena.PasswordChar = '*';
             this.txtConfirmarContrasena.Size = new System.Drawing.Size(227, 26);
             this.txtConfirmarContrasena.TabIndex = 1;
+            this.txtConfirmarContrasena.Validating += new System.ComponentModel.CancelEventHandler(this.txtConfirmarContrasena_Validating);
             // 
             // label1
             // 
@@ -93,6 +100,16 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // epNuevaContrasenaValidar
+            // 
+            this.epNuevaContrasenaValidar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epNuevaContrasenaValidar.ContainerControl = this;
+            // 
+            // epConfirmarContrasenaValidar
+            // 
+            this.epConfirmarContrasenaValidar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epConfirmarContrasenaValidar.ContainerControl = this;
+            // 
             // frmCambiarContrasena
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -109,6 +126,8 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmCambiarContrasena";
             this.Text = "CambiarContrasena";
+            ((System.ComponentModel.ISupportInitialize)(this.epNuevaContrasenaValidar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epConfirmarContrasenaValidar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,5 +141,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.ErrorProvider epNuevaContrasenaValidar;
+        private System.Windows.Forms.ErrorProvider epConfirmarContrasenaValidar;
     }
 }
