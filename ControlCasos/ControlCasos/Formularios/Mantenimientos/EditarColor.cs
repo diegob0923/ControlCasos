@@ -42,17 +42,21 @@ namespace ControlCasos.Formularios.Mantenimientos
             }
         }
 
+        #region Eventos
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            try
+            if (ValidateChildren(ValidationConstraints.Enabled))
             {
-                BLColor.editarColor(IdColor, txtColor.Text, txtGuia.Text);
-                recargarGridEnFormularioPrincipal();
-                this.Dispose();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error al editar color");
+                try
+                {
+                    BLColor.editarColor(IdColor, txtColor.Text, txtGuia.Text);
+                    recargarGridEnFormularioPrincipal();
+                    this.Dispose();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Error al editar color");
+                }
             }
         }
 
@@ -60,5 +64,30 @@ namespace ControlCasos.Formularios.Mantenimientos
         {
             this.Dispose();
         }
+        #endregion
+
+        #region Validar campos
+        /// <summary>
+        /// Evita que se active el errorProvider al hacer click en la X para cerrar el formulario
+        /// </summary>
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            e.Cancel = false;
+        }
+        private void txtColor_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtColor.Text))
+            {
+                e.Cancel = true;
+                txtColor.Focus();
+                epColorValidar.SetError(txtColor, "Campo requerido");
+            }
+            else
+            {
+                e.Cancel = false;
+                epColorValidar.SetError(txtColor, "");
+            }
+        }
+        #endregion
     }
 }

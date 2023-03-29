@@ -28,15 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtGuia = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtColor = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtGuia = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.epColorValidar = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epColorValidar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -53,6 +56,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(272, 280);
             this.panel1.TabIndex = 3;
+            // 
+            // txtGuia
+            // 
+            this.txtGuia.Location = new System.Drawing.Point(36, 181);
+            this.txtGuia.Name = "txtGuia";
+            this.txtGuia.Size = new System.Drawing.Size(204, 22);
+            this.txtGuia.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(32, 148);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 17);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Guia";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
@@ -92,6 +112,7 @@
             this.txtColor.Name = "txtColor";
             this.txtColor.Size = new System.Drawing.Size(204, 22);
             this.txtColor.TabIndex = 1;
+            this.txtColor.Validating += new System.ComponentModel.CancelEventHandler(this.txtColor_Validating);
             // 
             // label1
             // 
@@ -103,22 +124,10 @@
             this.label1.Text = "Color";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtGuia
+            // epColorValidar
             // 
-            this.txtGuia.Location = new System.Drawing.Point(36, 181);
-            this.txtGuia.Name = "txtGuia";
-            this.txtGuia.Size = new System.Drawing.Size(204, 22);
-            this.txtGuia.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(32, 148);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 17);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Guia";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.epColorValidar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epColorValidar.ContainerControl = this;
             // 
             // frmNuevoColor
             // 
@@ -130,6 +139,7 @@
             this.Text = "Agregar color";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epColorValidar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -144,5 +154,6 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.TextBox txtColor;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider epColorValidar;
     }
 }
