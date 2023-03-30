@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
@@ -36,7 +37,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.epUsuarioValidar = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epContrasenaValidar = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epUsuarioValidar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epContrasenaValidar)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -69,6 +74,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(175, 26);
             this.txtUsuario.TabIndex = 2;
+            this.txtUsuario.Validating += new System.ComponentModel.CancelEventHandler(this.txtUsuario_Validating);
             // 
             // txtContrasena
             // 
@@ -80,6 +86,7 @@
             this.txtContrasena.PasswordChar = '*';
             this.txtContrasena.Size = new System.Drawing.Size(175, 26);
             this.txtContrasena.TabIndex = 3;
+            this.txtContrasena.Validating += new System.ComponentModel.CancelEventHandler(this.txtContrasena_Validating);
             // 
             // btnIngresar
             // 
@@ -123,6 +130,16 @@
             this.panel2.Size = new System.Drawing.Size(411, 43);
             this.panel2.TabIndex = 6;
             // 
+            // epUsuarioValidar
+            // 
+            this.epUsuarioValidar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epUsuarioValidar.ContainerControl = this;
+            // 
+            // epContrasenaValidar
+            // 
+            this.epContrasenaValidar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epContrasenaValidar.ContainerControl = this;
+            // 
             // frmInicioSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -141,6 +158,8 @@
             this.Text = "InicioSesion";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epUsuarioValidar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epContrasenaValidar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,5 +175,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ErrorProvider epUsuarioValidar;
+        private System.Windows.Forms.ErrorProvider epContrasenaValidar;
     }
 }

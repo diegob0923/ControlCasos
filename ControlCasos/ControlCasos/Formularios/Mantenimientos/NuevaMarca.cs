@@ -25,18 +25,23 @@ namespace ControlCasos.Formularios.Mantenimientos
         {
             formularioMarcas.cargarDatosEnGrid();
         }
+
+        #region Eventos
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            try
+            if (ValidateChildren(ValidationConstraints.Enabled))
             {
-                BLMarca.insertarMarca(txtMarca.Text);
-                
-                recargarGridEnFormularioPrincipal();
-                this.Dispose();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error al agregar cliente");
+                try
+                {
+                    BLMarca.insertarMarca(txtMarca.Text);
+
+                    recargarGridEnFormularioPrincipal();
+                    this.Dispose();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Error al agregar cliente");
+                }
             }
         }
 
@@ -44,5 +49,30 @@ namespace ControlCasos.Formularios.Mantenimientos
         {
             this.Dispose();
         }
+        #endregion
+
+        #region Validación campos
+        /// <summary>
+        /// Evita que se active el errorProvider al hacer click en la X para cerrar el formulario
+        /// </summary>
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            e.Cancel = false;
+        }
+        private void txtMarca_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtMarca.Text))
+            {
+                e.Cancel = true;
+                txtMarca.Focus();
+                epMarcaValidar.SetError(txtMarca, "Campo requerido");
+            }
+            else
+            {
+                e.Cancel = false;
+                epMarcaValidar.SetError(txtMarca, "");
+            }
+        }
+        #endregion
     }
 }

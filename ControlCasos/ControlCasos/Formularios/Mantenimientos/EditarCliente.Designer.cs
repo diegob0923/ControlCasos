@@ -28,15 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cmbEstado = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtNombreCliente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cmbEstado = new System.Windows.Forms.ComboBox();
+            this.epNombreValidar = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epNombreValidar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -53,6 +56,28 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(272, 294);
             this.panel1.TabIndex = 3;
+            // 
+            // cmbEstado
+            // 
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
+            this.cmbEstado.Location = new System.Drawing.Point(36, 186);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(149, 24);
+            this.cmbEstado.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(32, 157);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 17);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Estado";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
@@ -92,6 +117,7 @@
             this.txtNombreCliente.Name = "txtNombreCliente";
             this.txtNombreCliente.Size = new System.Drawing.Size(204, 22);
             this.txtNombreCliente.TabIndex = 1;
+            this.txtNombreCliente.Validating += new System.ComponentModel.CancelEventHandler(this.txtNombreCliente_Validating);
             // 
             // label1
             // 
@@ -103,26 +129,10 @@
             this.label1.Text = "Nombre";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label3
+            // epNombreValidar
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(32, 157);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 17);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Estado";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cmbEstado
-            // 
-            this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
-            this.cmbEstado.Location = new System.Drawing.Point(36, 186);
-            this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(149, 24);
-            this.cmbEstado.TabIndex = 6;
+            this.epNombreValidar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epNombreValidar.ContainerControl = this;
             // 
             // frmEditarCliente
             // 
@@ -134,6 +144,7 @@
             this.Text = "Editar cliente";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epNombreValidar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -148,5 +159,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbEstado;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ErrorProvider epNombreValidar;
     }
 }

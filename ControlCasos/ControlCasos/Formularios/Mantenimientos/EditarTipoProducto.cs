@@ -42,23 +42,52 @@ namespace ControlCasos.Formularios.Mantenimientos
             }
         }
 
+        #region Eventos
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            try
+            if (ValidateChildren(ValidationConstraints.Enabled)) 
             {
-                BLTipoProducto.editarTipoProducto(IdTipoProducto, txtTipoProducto.Text);
-                recargarGridEnFormularioPrincipal();
-                this.Dispose();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error al editar color");
-            }
+                try
+                {
+                    BLTipoProducto.editarTipoProducto(IdTipoProducto, txtTipoProducto.Text);
+                    recargarGridEnFormularioPrincipal();
+                    this.Dispose();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Error al editar color");
+                }
+            }   
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
+        #endregion
+
+        #region Validación campos
+        /// <summary>
+        /// Evita que se active el errorProvider al hacer click en la X para cerrar el formulario
+        /// </summary>
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            e.Cancel = false;
+        }
+        private void txtTipoProducto_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtTipoProducto.Text))
+            {
+                e.Cancel = true;
+                txtTipoProducto.Focus();
+                epTipoProductoValidar.SetError(txtTipoProducto, "Campo requerido");
+            }
+            else
+            {
+                e.Cancel = false;
+                epTipoProductoValidar.SetError(txtTipoProducto, "");
+            }
+        }
+        #endregion
     }
 }

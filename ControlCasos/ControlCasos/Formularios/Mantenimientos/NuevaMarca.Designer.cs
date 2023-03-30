@@ -28,13 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtMarca = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.epMarcaValidar = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epMarcaValidar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -88,6 +91,7 @@
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(204, 22);
             this.txtMarca.TabIndex = 1;
+            this.txtMarca.Validating += new System.ComponentModel.CancelEventHandler(this.txtMarca_Validating);
             // 
             // label1
             // 
@@ -99,6 +103,11 @@
             this.label1.Text = "Marca";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // epMarcaValidar
+            // 
+            this.epMarcaValidar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epMarcaValidar.ContainerControl = this;
+            // 
             // frmNuevaMarca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -109,6 +118,7 @@
             this.Text = "NuevaMarca";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epMarcaValidar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -121,5 +131,6 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider epMarcaValidar;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtGuia = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -36,7 +37,9 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtColor = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.epColorValidar = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epColorValidar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -109,6 +112,7 @@
             this.txtColor.Name = "txtColor";
             this.txtColor.Size = new System.Drawing.Size(204, 22);
             this.txtColor.TabIndex = 1;
+            this.txtColor.Validating += new System.ComponentModel.CancelEventHandler(this.txtColor_Validating);
             // 
             // label1
             // 
@@ -120,6 +124,11 @@
             this.label1.Text = "Color";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // epColorValidar
+            // 
+            this.epColorValidar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epColorValidar.ContainerControl = this;
+            // 
             // frmEditarColor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -130,6 +139,7 @@
             this.Text = "Editar color";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epColorValidar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -144,5 +154,6 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.TextBox txtColor;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider epColorValidar;
     }
 }

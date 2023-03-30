@@ -24,20 +24,23 @@ namespace ControlCasos.Formularios.Mantenimientos
         {
             formularioClientes.cargarDatosEnGrid();  
         }
-
+        
+        #region Eventos
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            try
+            if (ValidateChildren(ValidationConstraints.Enabled))
             {
-                BLClientes.insertarCliente(txtNombreCliente.Text);
+                try
+                {
+                    BLClientes.insertarCliente(txtNombreCliente.Text);
                 
-                recargarGridEnFormularioPrincipal();
-                this.Dispose();
-                
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error al agregar cliente");
+                    recargarGridEnFormularioPrincipal();
+                    this.Dispose();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Error al agregar cliente");
+                }
             }
         }
 
@@ -45,5 +48,30 @@ namespace ControlCasos.Formularios.Mantenimientos
         {
             this.Dispose();
         }
+        #endregion
+
+        #region Validación campos
+        /// <summary>
+        /// Evita que se active el errorProvider al hacer click en la X para cerrar el formulario
+        /// </summary>
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            e.Cancel = false;
+        }
+        private void txtNombreCliente_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtNombreCliente.Text))
+            {
+                e.Cancel = true;
+                txtNombreCliente.Focus();
+                epNombreValidar.SetError(txtNombreCliente, "Campo requerido");
+            }
+            else
+            {
+                e.Cancel = false;
+                epNombreValidar.SetError(txtNombreCliente, "");
+            }
+        }
+        #endregion
     }
 }

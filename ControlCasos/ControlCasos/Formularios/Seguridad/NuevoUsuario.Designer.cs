@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmbRol = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -42,7 +43,15 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.epUsuarioValidar = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epNombreValidar = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epApellido1Validar = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epRolValidar = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epUsuarioValidar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epNombreValidar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epApellido1Validar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epRolValidar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -69,8 +78,10 @@
             // 
             // cmbRol
             // 
+            this.cmbRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRol.FormattingEnabled = true;
             this.cmbRol.Items.AddRange(new object[] {
+            "Seleccione:",
             "Administrador",
             "General"});
             this.cmbRol.Location = new System.Drawing.Point(293, 209);
@@ -78,6 +89,7 @@
             this.cmbRol.Name = "cmbRol";
             this.cmbRol.Size = new System.Drawing.Size(213, 28);
             this.cmbRol.TabIndex = 13;
+            this.cmbRol.Validating += new System.ComponentModel.CancelEventHandler(this.cmbRol_Validating);
             // 
             // label7
             // 
@@ -116,6 +128,7 @@
             this.txtApellido1.Name = "txtApellido1";
             this.txtApellido1.Size = new System.Drawing.Size(213, 26);
             this.txtApellido1.TabIndex = 9;
+            this.txtApellido1.Validating += new System.ComponentModel.CancelEventHandler(this.txtApellido1_Validating);
             // 
             // label5
             // 
@@ -135,6 +148,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(213, 26);
             this.txtNombre.TabIndex = 7;
+            this.txtNombre.Validating += new System.ComponentModel.CancelEventHandler(this.txtNombre_Validating);
             // 
             // label4
             // 
@@ -189,6 +203,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(213, 26);
             this.txtUsuario.TabIndex = 1;
+            this.txtUsuario.Validating += new System.ComponentModel.CancelEventHandler(this.txtUsuario_Validating);
             // 
             // label1
             // 
@@ -200,6 +215,26 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Usuario";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // epUsuarioValidar
+            // 
+            this.epUsuarioValidar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epUsuarioValidar.ContainerControl = this;
+            // 
+            // epNombreValidar
+            // 
+            this.epNombreValidar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epNombreValidar.ContainerControl = this;
+            // 
+            // epApellido1Validar
+            // 
+            this.epApellido1Validar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epApellido1Validar.ContainerControl = this;
+            // 
+            // epRolValidar
+            // 
+            this.epRolValidar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epRolValidar.ContainerControl = this;
             // 
             // frmNuevoUsuario
             // 
@@ -213,6 +248,10 @@
             this.Text = "Nuvevo Usuario";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epUsuarioValidar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epNombreValidar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epApellido1Validar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epRolValidar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -233,5 +272,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtApellido2;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ErrorProvider epUsuarioValidar;
+        private System.Windows.Forms.ErrorProvider epNombreValidar;
+        private System.Windows.Forms.ErrorProvider epApellido1Validar;
+        private System.Windows.Forms.ErrorProvider epRolValidar;
     }
 }

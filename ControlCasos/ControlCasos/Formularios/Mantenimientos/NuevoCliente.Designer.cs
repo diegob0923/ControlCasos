@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNombreCliente = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -35,8 +36,10 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.epNombreValidar = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epNombreValidar)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -55,6 +58,7 @@
             this.txtNombreCliente.Name = "txtNombreCliente";
             this.txtNombreCliente.Size = new System.Drawing.Size(204, 26);
             this.txtNombreCliente.TabIndex = 1;
+            this.txtNombreCliente.Validating += new System.ComponentModel.CancelEventHandler(this.txtNombreCliente_Validating);
             // 
             // panel1
             // 
@@ -110,6 +114,11 @@
             this.panel2.Size = new System.Drawing.Size(272, 235);
             this.panel2.TabIndex = 3;
             // 
+            // epNombreValidar
+            // 
+            this.epNombreValidar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epNombreValidar.ContainerControl = this;
+            // 
             // frmNuevoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -123,6 +132,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.epNombreValidar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -136,5 +146,6 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ErrorProvider epNombreValidar;
     }
 }
