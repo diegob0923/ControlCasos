@@ -391,6 +391,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ControlCasosModelo.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="Documentos\Manual Usuario.pdf" />
     <None Include="Modelos\ControlCasosModelo.edmx.diagram">
       <DependentUpon>ControlCasosModelo.edmx</DependentUpon>
     </None>
