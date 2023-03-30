@@ -14,6 +14,7 @@ using ControlCasos.Formularios.Seguridad;
 using ControlCasos.Formularios.Ayuda;
 using ControlCasos.Clases;
 using ControlCasos.Constantes;
+using System.IO;
 
 namespace ControlCasos
 {
@@ -49,13 +50,13 @@ namespace ControlCasos
             }
         }
 
-#region Casos
+        #region Casos
         private void btnCasos_Click(object sender, EventArgs e)
         {
             ocultarSubMenu();
             abrirFormularioHijo(new frmCasos());
         }
-#endregion
+        #endregion
 
         #region Mantenimientos
         private void btnMantenimientos_Click(object sender, EventArgs e)
@@ -93,7 +94,7 @@ namespace ControlCasos
 
         #endregion
 
-#region Seguridad
+        #region Seguridad
         private void btnSeguridad_Click(object sender, EventArgs e)
         {
             mostrarSubMenu(pnlSubMenuSeguridad);
@@ -102,7 +103,8 @@ namespace ControlCasos
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             ocultarSubMenu();
-            abrirFormularioHijo(new frmUsuarios());        }
+            abrirFormularioHijo(new frmUsuarios());        
+        }
 
         private void btnRoles_Click(object sender, EventArgs e)
         {
@@ -117,7 +119,7 @@ namespace ControlCasos
         }
         #endregion
 
-#region Ayuda
+        #region Ayuda
         private void btnAyuda_Click(object sender, EventArgs e)
         {
             mostrarSubMenu(pnlSubMenuAyuda);
@@ -131,8 +133,40 @@ namespace ControlCasos
 
         private void btnManualUsuario_Click(object sender, EventArgs e)
         {
-            ocultarSubMenu();
-            abrirFormularioHijo(new frmManualUsuario());
+            try
+            {
+                const string LocalizacionManualUsuario = "\\Documentos\\Manual Usuario.pdf";//ubicación del pdf en el proyecto, luego se añade a la ruta para descargarlo
+
+                SaveFileDialog dialogoGuardar = new SaveFileDialog();
+                dialogoGuardar.FileName = "ManualUsuario.pdf";//nombre predeterminado para el pdf (igual se puede cambiar en el saveDialog)
+                dialogoGuardar.Filter = "PDF (*.pdf)|*.pdf";
+
+                if (dialogoGuardar.ShowDialog() == DialogResult.OK)
+                {
+                    string nombreArchivo = dialogoGuardar.FileName;//nombre del archivo
+
+                    string rutaArchivoEnProyecto = Application.StartupPath;
+
+                    // La ruta de donde arranca el proyecto se ve así por ejemplo: C:\Users\usuario\Documents\ControlCasos\ControlCasos\bin\Debug\
+                    //Procedemos a eliminar lo que está después de \bin\ y asignamos en ese campo donde está el documento en el proyecto es decir \Documentos\Manual Usuario.pdf
+                    //La nueva ruta queda así C:\Users\usuario\Documents\ControlCasos\ControlCasos\Documentos\Manual Usuario.pdf
+                    //Todo eso porque si solo se deja la ruta que viene del Application.StartupPath da error porque no se encuentra el pdf
+
+                    int indice = rutaArchivoEnProyecto.IndexOf("\\bin\\");
+
+                    if (indice != -1)
+                    {
+                        rutaArchivoEnProyecto = rutaArchivoEnProyecto.Substring(0, indice) + LocalizacionManualUsuario;
+                    }
+
+                    File.Copy(rutaArchivoEnProyecto, nombreArchivo, true);
+                    MessageBox.Show("Manual de usuario descargado");
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al descargar el manual de usuario");
+            }
         }
 
         private void btnAcercaDe_Click(object sender, EventArgs e)
@@ -140,7 +174,7 @@ namespace ControlCasos
             ocultarSubMenu();
             abrirFormularioHijo(new frmAcercaDe());
         }
-#endregion
+        #endregion
 
         private Form formularioAcivo = null;
 

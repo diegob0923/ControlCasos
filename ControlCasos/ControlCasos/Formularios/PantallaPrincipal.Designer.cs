@@ -88,7 +88,7 @@
             this.pnlSubMenuAyuda.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSubMenuAyuda.Location = new System.Drawing.Point(0, 651);
             this.pnlSubMenuAyuda.Name = "pnlSubMenuAyuda";
-            this.pnlSubMenuAyuda.Size = new System.Drawing.Size(179, 151);
+            this.pnlSubMenuAyuda.Size = new System.Drawing.Size(179, 139);
             this.pnlSubMenuAyuda.TabIndex = 8;
             this.pnlSubMenuAyuda.Visible = false;
             // 
