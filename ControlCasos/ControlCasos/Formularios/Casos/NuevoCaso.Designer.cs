@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@
             this.txtComentario = new System.Windows.Forms.TextBox();
             this.txtTamano = new System.Windows.Forms.TextBox();
             this.txtDiametro = new System.Windows.Forms.TextBox();
-            this.txtCantidad = new System.Windows.Forms.TextBox();
             this.cmbColor = new System.Windows.Forms.ComboBox();
             this.cmbMarca = new System.Windows.Forms.ComboBox();
             this.cmbTipoProducto = new System.Windows.Forms.ComboBox();
@@ -60,13 +60,25 @@
             this.label5 = new System.Windows.Forms.Label();
             this.pnlCaso = new System.Windows.Forms.Panel();
             this.pnlProducto = new System.Windows.Forms.Panel();
+            this.nudCantidad = new System.Windows.Forms.NumericUpDown();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.epDoctorValidar = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epPacienteValidar = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epTipoProductoValidar = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epMarcaValidar = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epColorValidar = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvResumenProductos)).BeginInit();
             this.pnlCaso.SuspendLayout();
             this.pnlProducto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epDoctorValidar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epPacienteValidar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epTipoProductoValidar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epMarcaValidar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epColorValidar)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -191,13 +203,6 @@
             this.txtDiametro.Size = new System.Drawing.Size(186, 26);
             this.txtDiametro.TabIndex = 13;
             // 
-            // txtCantidad
-            // 
-            this.txtCantidad.Location = new System.Drawing.Point(133, 220);
-            this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(186, 26);
-            this.txtCantidad.TabIndex = 14;
-            // 
             // cmbColor
             // 
             this.cmbColor.DisplayMember = "ColorGuia";
@@ -208,6 +213,7 @@
             this.cmbColor.TabIndex = 15;
             this.cmbColor.Text = " ";
             this.cmbColor.ValueMember = "idColor";
+            this.cmbColor.Validating += new System.ComponentModel.CancelEventHandler(this.cmbColor_Validating);
             // 
             // cmbMarca
             // 
@@ -219,6 +225,7 @@
             this.cmbMarca.TabIndex = 16;
             this.cmbMarca.Text = " ";
             this.cmbMarca.ValueMember = "idMarca";
+            this.cmbMarca.Validating += new System.ComponentModel.CancelEventHandler(this.cmbMarca_Validating);
             // 
             // cmbTipoProducto
             // 
@@ -230,32 +237,35 @@
             this.cmbTipoProducto.TabIndex = 17;
             this.cmbTipoProducto.Text = " ";
             this.cmbTipoProducto.ValueMember = "IdTipoProducto";
+            this.cmbTipoProducto.Validating += new System.ComponentModel.CancelEventHandler(this.cmbTipoProducto_Validating);
             // 
             // cmbDoctor
             // 
             this.cmbDoctor.DisplayMember = "Doctor";
             this.cmbDoctor.FormattingEnabled = true;
-            this.cmbDoctor.Location = new System.Drawing.Point(126, 81);
+            this.cmbDoctor.Location = new System.Drawing.Point(105, 81);
             this.cmbDoctor.Name = "cmbDoctor";
             this.cmbDoctor.Size = new System.Drawing.Size(227, 28);
             this.cmbDoctor.TabIndex = 18;
             this.cmbDoctor.Text = " ";
             this.cmbDoctor.ValueMember = "iddoctor";
+            this.cmbDoctor.Validating += new System.ComponentModel.CancelEventHandler(this.cmbDoctor_Validating);
             // 
             // dtpFecha
             // 
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(126, 179);
+            this.dtpFecha.Location = new System.Drawing.Point(105, 179);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(227, 26);
             this.dtpFecha.TabIndex = 19;
             // 
             // txtPaciente
             // 
-            this.txtPaciente.Location = new System.Drawing.Point(126, 128);
+            this.txtPaciente.Location = new System.Drawing.Point(105, 128);
             this.txtPaciente.Name = "txtPaciente";
             this.txtPaciente.Size = new System.Drawing.Size(227, 26);
             this.txtPaciente.TabIndex = 20;
+            this.txtPaciente.Validating += new System.ComponentModel.CancelEventHandler(this.txtPaciente_Validating);
             // 
             // dgvResumenProductos
             // 
@@ -368,6 +378,7 @@
             // 
             // pnlProducto
             // 
+            this.pnlProducto.Controls.Add(this.nudCantidad);
             this.pnlProducto.Controls.Add(this.btnAgregar);
             this.pnlProducto.Controls.Add(this.label12);
             this.pnlProducto.Controls.Add(this.label4);
@@ -380,7 +391,6 @@
             this.pnlProducto.Controls.Add(this.txtComentario);
             this.pnlProducto.Controls.Add(this.txtTamano);
             this.pnlProducto.Controls.Add(this.label8);
-            this.pnlProducto.Controls.Add(this.txtCantidad);
             this.pnlProducto.Controls.Add(this.label7);
             this.pnlProducto.Controls.Add(this.label6);
             this.pnlProducto.Controls.Add(this.cmbColor);
@@ -388,6 +398,23 @@
             this.pnlProducto.Name = "pnlProducto";
             this.pnlProducto.Size = new System.Drawing.Size(662, 302);
             this.pnlProducto.TabIndex = 24;
+            // 
+            // nudCantidad
+            // 
+            this.nudCantidad.Location = new System.Drawing.Point(136, 220);
+            this.nudCantidad.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudCantidad.Name = "nudCantidad";
+            this.nudCantidad.Size = new System.Drawing.Size(120, 26);
+            this.nudCantidad.TabIndex = 25;
+            this.nudCantidad.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // btnAgregar
             // 
@@ -429,6 +456,31 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // epDoctorValidar
+            // 
+            this.epDoctorValidar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epDoctorValidar.ContainerControl = this;
+            // 
+            // epPacienteValidar
+            // 
+            this.epPacienteValidar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epPacienteValidar.ContainerControl = this;
+            // 
+            // epTipoProductoValidar
+            // 
+            this.epTipoProductoValidar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epTipoProductoValidar.ContainerControl = this;
+            // 
+            // epMarcaValidar
+            // 
+            this.epMarcaValidar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epMarcaValidar.ContainerControl = this;
+            // 
+            // epColorValidar
+            // 
+            this.epColorValidar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epColorValidar.ContainerControl = this;
+            // 
             // frmNuevoCaso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -448,6 +500,12 @@
             this.pnlCaso.PerformLayout();
             this.pnlProducto.ResumeLayout(false);
             this.pnlProducto.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epDoctorValidar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epPacienteValidar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epTipoProductoValidar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epMarcaValidar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epColorValidar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -468,7 +526,6 @@
         private System.Windows.Forms.TextBox txtComentario;
         private System.Windows.Forms.TextBox txtTamano;
         private System.Windows.Forms.TextBox txtDiametro;
-        private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.ComboBox cmbColor;
         private System.Windows.Forms.ComboBox cmbMarca;
         private System.Windows.Forms.ComboBox cmbTipoProducto;
@@ -491,5 +548,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Comentario;
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
+        private System.Windows.Forms.ErrorProvider epDoctorValidar;
+        private System.Windows.Forms.ErrorProvider epPacienteValidar;
+        private System.Windows.Forms.ErrorProvider epTipoProductoValidar;
+        private System.Windows.Forms.ErrorProvider epMarcaValidar;
+        private System.Windows.Forms.ErrorProvider epColorValidar;
+        private System.Windows.Forms.NumericUpDown nudCantidad;
     }
 }
