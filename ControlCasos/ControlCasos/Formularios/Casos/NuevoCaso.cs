@@ -36,6 +36,37 @@ namespace ControlCasos.Formularios.Casos
             cargarComboBoxColor();
         }
 
+        public void cargarDatosEnGrid()
+        {
+            try
+            {
+                dgvResumenProductos.DataSource = null;
+                dgvResumenProductos.AutoGenerateColumns = false;
+                dgvResumenProductos.DataSource = listaProductos;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocurrio un error al cargar los datos de productos");
+            }
+        }
+
+        private void eliminarImagenDefaultEnColumnaEliminarCuandoNoHayDatos()
+        {
+            dgvResumenProductos.Rows[0].Cells["Eliminar"].Value = new Bitmap(1, 1);
+        }
+
+        /// <summary>
+        /// cambia el formato del nombre para que sea tipo título
+        /// "lorem lipsum et" a "Lorem Lipsum Et"
+        /// </summary>
+        /// <param name="paciente">nombre del paciente</param>
+        /// <returns></returns>
+        private string darFormatoDeTituloAlStringPaciente(string paciente)
+        {
+            TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
+            return textInfo.ToTitleCase(paciente);
+        }
+
         #region Cargar ComboBoxes
         private void cargarComboBoxDoctores()
         {
@@ -102,58 +133,7 @@ namespace ControlCasos.Formularios.Casos
             }
         }
         #endregion
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            //controles que quiero validar
-            cmbTipoProducto.CausesValidation = true;
-            cmbMarca.CausesValidation = true;
-            cmbColor.CausesValidation = true;
-
-            //controles que no quiero validar
-            cmbDoctor.CausesValidation = false;
-            txtPaciente.CausesValidation = false;
-
-            if (ValidateChildren(ValidationConstraints.Enabled))
-            {
-                try
-                {
-                    Producto nuevoProducto = new Producto();
-                    nuevoProducto.tamano = txtTamano.Text;
-                    nuevoProducto.diametro = txtDiametro.Text;
-                    nuevoProducto.cantidad = byte.Parse(nudCantidad.Text);
-                    nuevoProducto.idColor = byte.Parse(cmbColor.SelectedValue.ToString());
-                    nuevoProducto.color = cmbColor.Text;
-                    nuevoProducto.idMarca = byte.Parse(cmbMarca.SelectedValue.ToString());
-                    nuevoProducto.marca = cmbMarca.Text;
-                    nuevoProducto.idTipoProducto = byte.Parse(cmbTipoProducto.SelectedValue.ToString());
-                    nuevoProducto.tipoProducto = cmbTipoProducto.Text;
-                    nuevoProducto.comentario = txtComentario.Text;
-
-                    listaProductos.Add(nuevoProducto);
-                    cargarDatosEnGrid();
-                    limpiarDatosProducto();
-                }
-                catch (Exception) 
-                {
-                    MessageBox.Show("Ocurrio un error al agregar el producto");
-                }
-            } 
-        }
-
-        public void cargarDatosEnGrid()
-        {
-            try
-            {
-                dgvResumenProductos.DataSource = null;
-                dgvResumenProductos.AutoGenerateColumns = false;
-                dgvResumenProductos.DataSource = listaProductos;
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Ocurrio un error al cargar los datos de productos");
-            }
-        }
-
+        
         #region LimpiarCampos
         private void limpiarDatosProducto()
         {
@@ -176,27 +156,8 @@ namespace ControlCasos.Formularios.Casos
             dgvResumenProductos.DataSource = null; // dejar el grid resumenProductos vacío
         }
         #endregion
-        private void eliminarImagenDefaultEnColumnaEliminarCuandoNoHayDatos()
-        {
-            dgvResumenProductos.Rows[0].Cells["Eliminar"].Value = new Bitmap(1, 1);
-        }
-
-        private void dgvResumenProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dgvResumenProductos.Columns[e.ColumnIndex].Name == "Eliminar")
-            {
-                try
-                {
-                    listaProductos.RemoveAt(dgvResumenProductos.CurrentRow.Index);//el currentRow index es equivalente al index de listaProductos
-                    cargarDatosEnGrid();
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Ocurrio un error al eliminar prducto");
-                }
-            }
-        }
-
+        
+        #region Eventos
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             //controles que quiero validar
@@ -281,17 +242,62 @@ namespace ControlCasos.Formularios.Casos
                 }
             }
         }
-        /// <summary>
-        /// cambia el formato del nombre para que sea tipo título
-        /// "lorem lipsum et" a "Lorem Lipsum Et"
-        /// </summary>
-        /// <param name="paciente">nombre del paciente</param>
-        /// <returns></returns>
-        private string darFormatoDeTituloAlStringPaciente(string paciente)
+
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
-            TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
-            return textInfo.ToTitleCase(paciente);
+            //controles que quiero validar
+            cmbTipoProducto.CausesValidation = true;
+            cmbMarca.CausesValidation = true;
+            cmbColor.CausesValidation = true;
+
+            //controles que no quiero validar
+            cmbDoctor.CausesValidation = false;
+            txtPaciente.CausesValidation = false;
+
+            if (ValidateChildren(ValidationConstraints.Enabled))
+            {
+                try
+                {
+                    Producto nuevoProducto = new Producto();
+                    nuevoProducto.tamano = txtTamano.Text;
+                    nuevoProducto.diametro = txtDiametro.Text;
+                    nuevoProducto.cantidad = byte.Parse(nudCantidad.Text);
+                    nuevoProducto.idColor = byte.Parse(cmbColor.SelectedValue.ToString());
+                    nuevoProducto.color = cmbColor.Text;
+                    nuevoProducto.idMarca = byte.Parse(cmbMarca.SelectedValue.ToString());
+                    nuevoProducto.marca = cmbMarca.Text;
+                    nuevoProducto.idTipoProducto = byte.Parse(cmbTipoProducto.SelectedValue.ToString());
+                    nuevoProducto.tipoProducto = cmbTipoProducto.Text;
+                    nuevoProducto.comentario = txtComentario.Text;
+
+                    listaProductos.Add(nuevoProducto);
+                    cargarDatosEnGrid();
+                    limpiarDatosProducto();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Ocurrio un error al agregar el producto");
+                }
+            }
         }
+
+        private void dgvResumenProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvResumenProductos.Columns[e.ColumnIndex].Name == "Eliminar")
+            {
+                try
+                {
+                    listaProductos.RemoveAt(dgvResumenProductos.CurrentRow.Index);//el currentRow index es equivalente al index de listaProductos
+                    cargarDatosEnGrid();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Ocurrio un error al eliminar prducto");
+                }
+            }
+        }
+
+        #endregion
 
         #region Validación campos
         /// <summary>
@@ -301,6 +307,7 @@ namespace ControlCasos.Formularios.Casos
         {
             e.Cancel = false;
         }
+        
         private void cmbDoctor_Validating(object sender, CancelEventArgs e)
         {
             if (cmbDoctor.Text.Equals("Seleccione:"))
@@ -314,6 +321,7 @@ namespace ControlCasos.Formularios.Casos
                 epDoctorValidar.SetError(cmbDoctor, "");
             }
         }
+        
         private void txtPaciente_Validating(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtPaciente.Text))
@@ -327,36 +335,6 @@ namespace ControlCasos.Formularios.Casos
                 epPacienteValidar.SetError(txtPaciente, "");
             }
         }
-
-        private bool validarTipoMarcaColorAgregarProductos()
-        {
-            bool esValido = true;
-
-            if (cmbColor.Text.Equals("Seleccione:")) 
-            { 
-                epColorValidar.SetError(cmbColor, "Campo requerido");
-                esValido = false;
-            }else
-                epColorValidar.SetError(cmbColor, "");
-
-            if (cmbTipoProducto.Text.Equals("Seleccione:"))
-            {
-                epTipoProductoValidar.SetError(cmbTipoProducto, "Campo requerido");
-                esValido = false;
-            }else
-                epTipoProductoValidar.SetError(cmbTipoProducto, "");
-
-            if (cmbMarca.Text.Equals("Seleccione:"))
-            {
-                epMarcaValidar.SetError(cmbMarca, "Campo requerido");
-                esValido = false;
-            }
-            else
-                epMarcaValidar.SetError(cmbMarca, "");
-
-            return esValido; 
-        }
-        #endregion
 
         private void cmbTipoProducto_Validating(object sender, CancelEventArgs e)
         {
@@ -399,5 +377,6 @@ namespace ControlCasos.Formularios.Casos
                 epColorValidar.SetError(cmbColor, "");
             }
         }
+        #endregion
     }
 }
