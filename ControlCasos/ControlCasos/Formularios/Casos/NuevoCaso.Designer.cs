@@ -205,6 +205,8 @@
             // 
             // cmbColor
             // 
+            this.cmbColor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbColor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbColor.DisplayMember = "ColorGuia";
             this.cmbColor.FormattingEnabled = true;
             this.cmbColor.Location = new System.Drawing.Point(133, 176);
@@ -217,6 +219,8 @@
             // 
             // cmbMarca
             // 
+            this.cmbMarca.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbMarca.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbMarca.DisplayMember = "Marca";
             this.cmbMarca.FormattingEnabled = true;
             this.cmbMarca.Location = new System.Drawing.Point(136, 132);
@@ -229,6 +233,8 @@
             // 
             // cmbTipoProducto
             // 
+            this.cmbTipoProducto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbTipoProducto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbTipoProducto.DisplayMember = "TipoProducto";
             this.cmbTipoProducto.FormattingEnabled = true;
             this.cmbTipoProducto.Location = new System.Drawing.Point(136, 82);
