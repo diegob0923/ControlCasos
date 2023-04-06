@@ -161,6 +161,7 @@ namespace ControlCasos
 
                     File.Copy(rutaArchivoEnProyecto, nombreArchivo, true);
                     MessageBox.Show("Manual de usuario descargado");
+                    ocultarSubMenu();
                 }
             }
             catch (Exception)
