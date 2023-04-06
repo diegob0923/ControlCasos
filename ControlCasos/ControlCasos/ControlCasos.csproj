@@ -57,6 +57,7 @@
     <Compile Include="BL\BLColor.cs" />
     <Compile Include="BL\BLDoctor.cs" />
     <Compile Include="BL\BLMarca.cs" />
+    <Compile Include="BL\BLRespaldos.cs" />
     <Compile Include="BL\BLTipoProducto.cs" />
     <Compile Include="BL\BLUsuarioSistema.cs" />
     <Compile Include="Clases\Producto.cs" />
