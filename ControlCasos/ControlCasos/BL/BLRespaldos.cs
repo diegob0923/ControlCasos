@@ -12,9 +12,13 @@ namespace ControlCasos.BL
     {
         private ControlCasosEntities modeloBD = new ControlCasosEntities();
         
-        public void generarRespaldo()
+        /// <summary>
+        /// genera un backup de la base de datos y lo guarda en la ruta seleccionada por el usuario
+        /// </summary>
+        /// <param name="ruta">ruta seleccionada por el usuario</param>
+        public void generarRespaldo(string ruta)
         {
-
+            modeloBD.sp_GenerarBackUp(ruta);
         }
 
         /// <summary>

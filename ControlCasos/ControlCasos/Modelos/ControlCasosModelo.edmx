@@ -82,6 +82,9 @@
         <Function Name="sp_DoctorID_Consultar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id" Type="int" Mode="In" />
         </Function>
+        <Function Name="sp_GenerarBackUp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ruta" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="sp_Marca_Consultar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Marca" Type="varchar" Mode="In" />
         </Function>
@@ -330,6 +333,9 @@
           <FunctionImport Name="sp_UsuarioSistemaCambioContrasena_Editar">
             <Parameter Name="Usuario" Mode="In" Type="String" />
             <Parameter Name="Contrasena" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_GenerarBackUp">
+            <Parameter Name="ruta" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_Cliente_Consultar_Result">
@@ -634,6 +640,7 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_UsuarioSistema_Eliminar" FunctionName="ControlCasosModel.Store.sp_UsuarioSistema_Eliminar" />
           <FunctionImportMapping FunctionImportName="sp_UsuarioSistemaCambioContrasena_Editar" FunctionName="ControlCasosModel.Store.sp_UsuarioSistemaCambioContrasena_Editar" />
+          <FunctionImportMapping FunctionImportName="sp_GenerarBackUp" FunctionName="ControlCasosModel.Store.sp_GenerarBackUp" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

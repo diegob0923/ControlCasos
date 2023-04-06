@@ -555,5 +555,14 @@ namespace ControlCasos.Modelos
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_UsuarioSistemaCambioContrasena_Editar", usuarioParameter, contrasenaParameter);
         }
+    
+        public virtual int sp_GenerarBackUp(string ruta)
+        {
+            var rutaParameter = ruta != null ?
+                new ObjectParameter("ruta", ruta) :
+                new ObjectParameter("ruta", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_GenerarBackUp", rutaParameter);
+        }
     }
 }

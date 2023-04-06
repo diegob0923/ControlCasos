@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnGenerarRespaldo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // btnGenerarRespaldo
             // 
-            this.button1.Location = new System.Drawing.Point(370, 194);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnGenerarRespaldo.Location = new System.Drawing.Point(330, 113);
+            this.btnGenerarRespaldo.Name = "btnGenerarRespaldo";
+            this.btnGenerarRespaldo.Size = new System.Drawing.Size(167, 47);
+            this.btnGenerarRespaldo.TabIndex = 2;
+            this.btnGenerarRespaldo.Text = "Generar Respaldo";
+            this.btnGenerarRespaldo.UseVisualStyleBackColor = true;
+            this.btnGenerarRespaldo.Click += new System.EventHandler(this.btnGenerarRespaldo_Click);
             // 
             // frmRespaldos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 666);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnGenerarRespaldo);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -57,7 +57,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnGenerarRespaldo;
     }
 }

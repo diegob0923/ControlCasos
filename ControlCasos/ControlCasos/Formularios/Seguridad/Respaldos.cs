@@ -1,4 +1,5 @@
 ﻿using System;
+using ControlCasos.BL;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,17 +13,31 @@ namespace ControlCasos.Formularios.Seguridad
 {
     public partial class frmRespaldos : Form
     {
+        private readonly BLRespaldos respaldos = new BLRespaldos();
         public frmRespaldos()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnGenerarRespaldo_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                SaveFileDialog dialogoGuardar = new SaveFileDialog();
+                dialogoGuardar.FileName = "ControlCasos-" + DateTime.Now.ToString("dd-MM-yyyy") + ".bak";//nombre predeterminado (igual se puede cambiar en el saveDialog)
+                dialogoGuardar.Filter = "Archivos de respaldo (*.bak)|*.bak";
 
-            
-
+                if (dialogoGuardar.ShowDialog() == DialogResult.OK)
+                {
+                    string ruta = dialogoGuardar.FileName;//ruta + nombre del archivo
+                    respaldos.generarRespaldo(ruta);
+                    MessageBox.Show("Respaldo de datos creado satisfactoriamente");
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al crear el respaldo");
+            }
         }
     }
 }
