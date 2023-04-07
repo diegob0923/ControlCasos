@@ -39,5 +39,25 @@ namespace ControlCasos.Formularios.Seguridad
                 MessageBox.Show("Error al crear el respaldo");
             }
         }
+
+        private void btnRestaurarDatos_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog dialogoAbrir = new OpenFileDialog();
+                dialogoAbrir.Filter = "Archivos de respaldo (*.bak)|*.bak";
+
+                if (dialogoAbrir.ShowDialog() == DialogResult.OK)
+                {
+                    string ruta = dialogoAbrir.FileName;//ruta + nombre del archivo
+                    respaldos.restaurarBD(ruta);
+                    MessageBox.Show("Restauración de datos completada satisfactoriamente");
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al intentar restaurar los datos");
+            }
+        }
     }
 }
