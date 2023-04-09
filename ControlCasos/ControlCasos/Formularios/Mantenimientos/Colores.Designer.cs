@@ -39,6 +39,7 @@
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColorGuia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaColores)).BeginInit();
             this.pnlFiltro.SuspendLayout();
             this.SuspendLayout();
@@ -52,14 +53,15 @@
             this.Guia,
             this.Editar,
             this.Eliminar,
-            this.Id});
+            this.Id,
+            this.ColorGuia});
             this.dgvListaColores.Location = new System.Drawing.Point(98, 189);
             this.dgvListaColores.Name = "dgvListaColores";
             this.dgvListaColores.RowHeadersWidth = 51;
             this.dgvListaColores.RowTemplate.Height = 27;
             this.dgvListaColores.Size = new System.Drawing.Size(666, 150);
             this.dgvListaColores.TabIndex = 1;
-            this.dgvListaColores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaColores_CellClick);
+            this.dgvListaColores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaColores_CellContentClick);
             // 
             // lnkNuevoColor
             // 
@@ -158,6 +160,14 @@
             this.Id.Name = "Id";
             this.Id.Visible = false;
             // 
+            // ColorGuia
+            // 
+            this.ColorGuia.DataPropertyName = "ColorGuia";
+            this.ColorGuia.HeaderText = "ColorGuia";
+            this.ColorGuia.MinimumWidth = 6;
+            this.ColorGuia.Name = "ColorGuia";
+            this.ColorGuia.Visible = false;
+            // 
             // frmColores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -192,5 +202,6 @@
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColorGuia;
     }
 }

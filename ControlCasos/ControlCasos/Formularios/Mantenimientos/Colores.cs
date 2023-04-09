@@ -70,7 +70,8 @@ namespace ControlCasos.Formularios.Mantenimientos
         }
         #endregion
 
-        private void dgvListaColores_CellClick(object sender, DataGridViewCellEventArgs e)
+        #region Eventos
+        private void dgvListaColores_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int idColor = int.Parse(dgvListaColores.CurrentRow.Cells["Id"].Value.ToString());
 
@@ -82,7 +83,7 @@ namespace ControlCasos.Formularios.Mantenimientos
 
             if (dgvListaColores.Columns[e.ColumnIndex].Name == "Eliminar")
             {
-                if (MessageBox.Show("Está a punto de eliminar el color: \""+ dgvListaColores.CurrentRow.Cells["Color"].Value.ToString() + "\" de la guía \"" + dgvListaColores.CurrentRow.Cells["Guia"].Value.ToString() + "\". ¿Desea continuar?", "Eliminar Color", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Está a punto de eliminar el color: \"" + dgvListaColores.CurrentRow.Cells["ColorGuia"].Value.ToString() +"\". ¿Desea continuar?", "Eliminar Color", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     try
                     {
                         colores.eliminarColor(idColor);
@@ -94,5 +95,6 @@ namespace ControlCasos.Formularios.Mantenimientos
                     }
             }
         }
+        #endregion
     }
 }
