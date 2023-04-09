@@ -127,17 +127,18 @@ namespace ControlCasos.Formularios.Casos
         {
             cargarGridCasos();
         }
-        private void dgvListaCasos_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvListaCasos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvListaCasos.Columns[e.ColumnIndex].Name == "Detalles")
             {
-                if(dgvListaCasos.CurrentRow.Cells["idCaso"].Value != null) {
-                    
+                if (dgvListaCasos.CurrentRow.Cells["idCaso"].Value != null)
+                {
+
                     int idCaso = int.Parse(dgvListaCasos.CurrentRow.Cells["idCaso"].Value.ToString());
 
                     frmProductos formularioEditarColor = new frmProductos(idCaso);
                     formularioEditarColor.Visible = true;
-                }  
+                }
             }
         }
         #endregion

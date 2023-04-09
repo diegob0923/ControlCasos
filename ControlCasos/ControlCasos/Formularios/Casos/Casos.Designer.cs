@@ -63,7 +63,7 @@
             this.dgvListaCasos.RowTemplate.Height = 27;
             this.dgvListaCasos.Size = new System.Drawing.Size(739, 150);
             this.dgvListaCasos.TabIndex = 9;
-            this.dgvListaCasos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaCasos_CellClick);
+            this.dgvListaCasos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaCasos_CellContentClick);
             // 
             // IdCaso
             // 
