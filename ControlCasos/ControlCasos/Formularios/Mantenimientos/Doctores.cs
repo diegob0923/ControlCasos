@@ -71,7 +71,8 @@ namespace ControlCasos.Formularios.Mantenimientos
             formularioNuevoDoctor.Visible = true;
         }
 
-        private void dgvListaDoctores_CellClick(object sender, DataGridViewCellEventArgs e)
+        #region Eventos
+        private void dgvListaDoctores_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int idDoctor = int.Parse(dgvListaDoctores.CurrentRow.Cells["Id"].Value.ToString());
 
@@ -95,5 +96,6 @@ namespace ControlCasos.Formularios.Mantenimientos
                     }
             }
         }
+        #endregion
     }
 }
