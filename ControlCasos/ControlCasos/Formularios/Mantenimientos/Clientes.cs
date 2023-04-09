@@ -71,7 +71,8 @@ namespace ControlCasos.Formularios.Mantenimientos
             formularioNuevoCliente.Visible = true;
         }
 
-        private void dgvListaClientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        #region Eventos
+        private void dgvListaClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int idCliente = int.Parse(dgvListaClientes.CurrentRow.Cells["Id"].Value.ToString());
 
@@ -94,5 +95,6 @@ namespace ControlCasos.Formularios.Mantenimientos
                     }
             }
         }
+        #endregion
     }
 }
