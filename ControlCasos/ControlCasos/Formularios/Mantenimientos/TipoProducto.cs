@@ -68,7 +68,8 @@ namespace ControlCasos.Formularios.Mantenimientos
         }
         #endregion
 
-        private void dgvListaTipoProductos_CellClick(object sender, DataGridViewCellEventArgs e)
+        #region Eventos
+        private void dgvListaTipoProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int idTipoProducto = int.Parse(dgvListaTipoProductos.CurrentRow.Cells["Id"].Value.ToString());
 
@@ -92,5 +93,6 @@ namespace ControlCasos.Formularios.Mantenimientos
                     }
             }
         }
+        #endregion
     }
 }
