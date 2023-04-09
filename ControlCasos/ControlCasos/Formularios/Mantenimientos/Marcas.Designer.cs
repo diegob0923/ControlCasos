@@ -30,10 +30,10 @@
         {
             this.pnlFiltro = new System.Windows.Forms.Panel();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.lnkNuevaMarca = new System.Windows.Forms.LinkLabel();
-            this.dgvListaMarcas = new System.Windows.Forms.DataGridView();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.lnkNuevaMarca = new System.Windows.Forms.LinkLabel();
+            this.dgvListaMarcas = new System.Windows.Forms.DataGridView();
             this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
@@ -63,34 +63,6 @@
             this.txtBuscar.TabIndex = 1;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
-            // lnkNuevaMarca
-            // 
-            this.lnkNuevaMarca.AutoSize = true;
-            this.lnkNuevaMarca.Location = new System.Drawing.Point(646, 323);
-            this.lnkNuevaMarca.Name = "lnkNuevaMarca";
-            this.lnkNuevaMarca.Size = new System.Drawing.Size(108, 20);
-            this.lnkNuevaMarca.TabIndex = 7;
-            this.lnkNuevaMarca.TabStop = true;
-            this.lnkNuevaMarca.Text = "Nueva Marca";
-            this.lnkNuevaMarca.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkNuevaMarca_LinkClicked);
-            // 
-            // dgvListaMarcas
-            // 
-            this.dgvListaMarcas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvListaMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListaMarcas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Marca,
-            this.Editar,
-            this.Eliminar,
-            this.Id});
-            this.dgvListaMarcas.Location = new System.Drawing.Point(88, 150);
-            this.dgvListaMarcas.Name = "dgvListaMarcas";
-            this.dgvListaMarcas.RowHeadersWidth = 51;
-            this.dgvListaMarcas.RowTemplate.Height = 27;
-            this.dgvListaMarcas.Size = new System.Drawing.Size(666, 150);
-            this.dgvListaMarcas.TabIndex = 8;
-            this.dgvListaMarcas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaMarcas_CellClick);
-            // 
             // btnBuscar
             // 
             this.btnBuscar.FlatAppearance.BorderSize = 0;
@@ -117,6 +89,34 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Visible = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // lnkNuevaMarca
+            // 
+            this.lnkNuevaMarca.AutoSize = true;
+            this.lnkNuevaMarca.Location = new System.Drawing.Point(646, 323);
+            this.lnkNuevaMarca.Name = "lnkNuevaMarca";
+            this.lnkNuevaMarca.Size = new System.Drawing.Size(108, 20);
+            this.lnkNuevaMarca.TabIndex = 7;
+            this.lnkNuevaMarca.TabStop = true;
+            this.lnkNuevaMarca.Text = "Nueva Marca";
+            this.lnkNuevaMarca.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkNuevaMarca_LinkClicked);
+            // 
+            // dgvListaMarcas
+            // 
+            this.dgvListaMarcas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvListaMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaMarcas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Marca,
+            this.Editar,
+            this.Eliminar,
+            this.Id});
+            this.dgvListaMarcas.Location = new System.Drawing.Point(88, 150);
+            this.dgvListaMarcas.Name = "dgvListaMarcas";
+            this.dgvListaMarcas.RowHeadersWidth = 51;
+            this.dgvListaMarcas.RowTemplate.Height = 27;
+            this.dgvListaMarcas.Size = new System.Drawing.Size(666, 150);
+            this.dgvListaMarcas.TabIndex = 8;
+            this.dgvListaMarcas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaMarcas_CellContentClick);
             // 
             // Marca
             // 

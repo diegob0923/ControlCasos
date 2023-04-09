@@ -71,7 +71,8 @@ namespace ControlCasos.Formularios.Mantenimientos
             formularioNuevaMarca.Visible = true;
         }
 
-        private void dgvListaMarcas_CellClick(object sender, DataGridViewCellEventArgs e)
+        #region Eventos
+        private void dgvListaMarcas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int idMarca = int.Parse(dgvListaMarcas.CurrentRow.Cells["Id"].Value.ToString());
 
@@ -95,5 +96,6 @@ namespace ControlCasos.Formularios.Mantenimientos
                     }
             }
         }
+        #endregion
     }
 }
