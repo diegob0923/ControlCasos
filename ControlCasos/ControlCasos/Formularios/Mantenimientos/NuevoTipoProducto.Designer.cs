@@ -115,7 +115,8 @@
             this.ClientSize = new System.Drawing.Size(290, 235);
             this.Controls.Add(this.panel1);
             this.Name = "frmNuevoTipoProducto";
-            this.Text = "Agregar tipo de producto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Nuevo Tipo Producto";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epTipoProductoValidar)).EndInit();

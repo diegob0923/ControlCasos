@@ -288,7 +288,8 @@
             this.ClientSize = new System.Drawing.Size(509, 433);
             this.Controls.Add(this.panel1);
             this.Name = "frmEditarDoctor";
-            this.Text = "Editar doctor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Editar Doctor";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epNombreValidar)).EndInit();
