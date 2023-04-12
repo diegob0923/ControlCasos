@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvListaClientes = new System.Windows.Forms.DataGridView();
-            this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.pnlFiltro = new System.Windows.Forms.Panel();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -42,6 +37,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaClientes)).BeginInit();
             this.pnlFiltro.SuspendLayout();
             this.SuspendLayout();
@@ -63,46 +63,7 @@
             this.dgvListaClientes.Size = new System.Drawing.Size(666, 150);
             this.dgvListaClientes.TabIndex = 0;
             this.dgvListaClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaClientes_CellContentClick);
-            // 
-            // Cliente
-            // 
-            this.Cliente.DataPropertyName = "Cliente";
-            this.Cliente.HeaderText = "Cliente";
-            this.Cliente.MinimumWidth = 6;
-            this.Cliente.Name = "Cliente";
-            // 
-            // Estado
-            // 
-            this.Estado.DataPropertyName = "Estado";
-            this.Estado.FillWeight = 30F;
-            this.Estado.HeaderText = "Estado";
-            this.Estado.MinimumWidth = 6;
-            this.Estado.Name = "Estado";
-            // 
-            // Editar
-            // 
-            this.Editar.FillWeight = 20F;
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = global::ControlCasos.Properties.Resources.editar;
-            this.Editar.MinimumWidth = 6;
-            this.Editar.Name = "Editar";
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.FillWeight = 20F;
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Image = global::ControlCasos.Properties.Resources.borrar;
-            this.Eliminar.MinimumWidth = 6;
-            this.Eliminar.Name = "Eliminar";
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "idCliente";
-            this.Id.FillWeight = 10F;
-            this.Id.HeaderText = "Id";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.Visible = false;
+            this.dgvListaClientes.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvListaClientes_CellMouseMove);
             // 
             // txtBuscar
             // 
@@ -190,6 +151,46 @@
             this.dataGridViewImageColumn2.MinimumWidth = 6;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 102;
+            // 
+            // Cliente
+            // 
+            this.Cliente.DataPropertyName = "Cliente";
+            this.Cliente.HeaderText = "Cliente";
+            this.Cliente.MinimumWidth = 6;
+            this.Cliente.Name = "Cliente";
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.FillWeight = 30F;
+            this.Estado.HeaderText = "Estado";
+            this.Estado.MinimumWidth = 6;
+            this.Estado.Name = "Estado";
+            // 
+            // Editar
+            // 
+            this.Editar.FillWeight = 20F;
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = global::ControlCasos.Properties.Resources.editar;
+            this.Editar.MinimumWidth = 6;
+            this.Editar.Name = "Editar";
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.FillWeight = 20F;
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Image = global::ControlCasos.Properties.Resources.borrar;
+            this.Eliminar.MinimumWidth = 6;
+            this.Eliminar.Name = "Eliminar";
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "idCliente";
+            this.Id.FillWeight = 10F;
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
             // 
             // frmClientes
             // 
