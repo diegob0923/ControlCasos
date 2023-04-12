@@ -143,22 +143,28 @@ namespace ControlCasos.Formularios.Casos
         }
         private void dgvListaCasos_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
         {
+            // Se le asigna la celda 7 porque esla celda eliminar, donde está la imagen
             if (e.ColumnIndex == 4 && e.RowIndex != -1)
             {
-                Rectangle cellRect = dgvListaCasos.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
-                Point relativePoint = dgvListaCasos.PointToClient(Cursor.Position);
-                if (cellRect.Contains(relativePoint))
+                // Verificar si la fila y la columna son válidas
+                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
                 {
-                    dgvListaCasos.Cursor = Cursors.Hand;
+                    // Obtener la posición de la imagen en la celda actual
+                    DataGridViewImageCell cell = (DataGridViewImageCell)dgvListaCasos.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                    Rectangle imageRectangle = cell.GetContentBounds(e.RowIndex);
+
+                    // Deshabilitar temporalmente la actualización del control
+                    dgvListaCasos.SuspendLayout();
+
+                    // Verificar si el puntero del mouse está sobre la imagen en la celda actual
+                    if (imageRectangle.Contains(e.Location))
+                        Cursor = Cursors.Hand; // Cambiar el cursor a mano
+                    else
+                        Cursor = Cursors.Default;// Cambiar el cursor al valor predeterminado
+
+                    // Habilitar la actualización del control
+                    dgvListaCasos.ResumeLayout();
                 }
-                else
-                {
-                    dgvListaCasos.Cursor = Cursors.Default;
-                }
-            }
-            else
-            {
-                dgvListaCasos.Cursor = Cursors.Default;
             }
         }
         private void dgvListaCasos_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
