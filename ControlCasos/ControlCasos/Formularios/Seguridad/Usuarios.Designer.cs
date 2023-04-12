@@ -33,9 +33,6 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.dgvListaUsuarios = new System.Windows.Forms.DataGridView();
-            this.lnkNuevoUsuario = new System.Windows.Forms.LinkLabel();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,6 +42,9 @@
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lnkNuevoUsuario = new System.Windows.Forms.LinkLabel();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnlFiltro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaUsuarios)).BeginInit();
             this.SuspendLayout();
@@ -118,35 +118,7 @@
             this.dgvListaUsuarios.Size = new System.Drawing.Size(812, 150);
             this.dgvListaUsuarios.TabIndex = 9;
             this.dgvListaUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaUsuarios_CellContentClick);
-            // 
-            // lnkNuevoUsuario
-            // 
-            this.lnkNuevoUsuario.AutoSize = true;
-            this.lnkNuevoUsuario.Location = new System.Drawing.Point(708, 167);
-            this.lnkNuevoUsuario.Name = "lnkNuevoUsuario";
-            this.lnkNuevoUsuario.Size = new System.Drawing.Size(116, 20);
-            this.lnkNuevoUsuario.TabIndex = 10;
-            this.lnkNuevoUsuario.TabStop = true;
-            this.lnkNuevoUsuario.Text = "Nuevo usuario";
-            this.lnkNuevoUsuario.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkNuevoUsuario_LinkClicked);
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.FillWeight = 50F;
-            this.dataGridViewImageColumn1.HeaderText = "Editar";
-            this.dataGridViewImageColumn1.Image = global::ControlCasos.Properties.Resources.editar;
-            this.dataGridViewImageColumn1.MinimumWidth = 6;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 57;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.FillWeight = 60F;
-            this.dataGridViewImageColumn2.HeaderText = "Eliminar";
-            this.dataGridViewImageColumn2.Image = global::ControlCasos.Properties.Resources.borrar;
-            this.dataGridViewImageColumn2.MinimumWidth = 6;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.Width = 68;
+            this.dgvListaUsuarios.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvListaUsuarios_CellMouseMove);
             // 
             // Usuario
             // 
@@ -217,6 +189,35 @@
             this.Id.MinimumWidth = 6;
             this.Id.Name = "Id";
             this.Id.Visible = false;
+            // 
+            // lnkNuevoUsuario
+            // 
+            this.lnkNuevoUsuario.AutoSize = true;
+            this.lnkNuevoUsuario.Location = new System.Drawing.Point(708, 167);
+            this.lnkNuevoUsuario.Name = "lnkNuevoUsuario";
+            this.lnkNuevoUsuario.Size = new System.Drawing.Size(116, 20);
+            this.lnkNuevoUsuario.TabIndex = 10;
+            this.lnkNuevoUsuario.TabStop = true;
+            this.lnkNuevoUsuario.Text = "Nuevo usuario";
+            this.lnkNuevoUsuario.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkNuevoUsuario_LinkClicked);
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.FillWeight = 50F;
+            this.dataGridViewImageColumn1.HeaderText = "Editar";
+            this.dataGridViewImageColumn1.Image = global::ControlCasos.Properties.Resources.editar;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 57;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.FillWeight = 60F;
+            this.dataGridViewImageColumn2.HeaderText = "Eliminar";
+            this.dataGridViewImageColumn2.Image = global::ControlCasos.Properties.Resources.borrar;
+            this.dataGridViewImageColumn2.MinimumWidth = 6;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Width = 68;
             // 
             // frmUsuarios
             // 
