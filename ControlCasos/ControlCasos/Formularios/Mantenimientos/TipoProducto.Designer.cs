@@ -60,6 +60,7 @@
             this.dgvListaTipoProductos.Size = new System.Drawing.Size(666, 150);
             this.dgvListaTipoProductos.TabIndex = 1;
             this.dgvListaTipoProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaTipoProductos_CellContentClick);
+            this.dgvListaTipoProductos.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvListaTipoProductos_CellMouseMove);
             // 
             // TipoProducto
             // 
