@@ -106,12 +106,6 @@ namespace ControlCasos
             abrirFormularioHijo(new frmUsuarios());        
         }
 
-        private void btnRoles_Click(object sender, EventArgs e)
-        {
-            ocultarSubMenu();
-            abrirFormularioHijo(new frmRoles());
-        }
-
         private void btnRespaldos_Click(object sender, EventArgs e)
         {
             ocultarSubMenu();

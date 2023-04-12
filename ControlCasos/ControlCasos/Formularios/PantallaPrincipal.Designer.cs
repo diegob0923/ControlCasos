@@ -36,7 +36,6 @@
             this.btnAyuda = new System.Windows.Forms.Button();
             this.pnlSubMenuSeguridad = new System.Windows.Forms.Panel();
             this.btnRespaldos = new System.Windows.Forms.Button();
-            this.btnRoles = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnSeguridad = new System.Windows.Forms.Button();
             this.pnlSubMenuMantenimientos = new System.Windows.Forms.Panel();
@@ -86,9 +85,9 @@
             this.pnlSubMenuAyuda.Controls.Add(this.btnManualUsuario);
             this.pnlSubMenuAyuda.Controls.Add(this.btnCambioContrasena);
             this.pnlSubMenuAyuda.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubMenuAyuda.Location = new System.Drawing.Point(0, 651);
+            this.pnlSubMenuAyuda.Location = new System.Drawing.Point(0, 607);
             this.pnlSubMenuAyuda.Name = "pnlSubMenuAyuda";
-            this.pnlSubMenuAyuda.Size = new System.Drawing.Size(179, 139);
+            this.pnlSubMenuAyuda.Size = new System.Drawing.Size(200, 139);
             this.pnlSubMenuAyuda.TabIndex = 8;
             this.pnlSubMenuAyuda.Visible = false;
             // 
@@ -102,7 +101,7 @@
             this.btnAcercaDe.Location = new System.Drawing.Point(0, 86);
             this.btnAcercaDe.Name = "btnAcercaDe";
             this.btnAcercaDe.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnAcercaDe.Size = new System.Drawing.Size(179, 43);
+            this.btnAcercaDe.Size = new System.Drawing.Size(200, 43);
             this.btnAcercaDe.TabIndex = 9;
             this.btnAcercaDe.Text = "Acerca de";
             this.btnAcercaDe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -119,7 +118,7 @@
             this.btnManualUsuario.Location = new System.Drawing.Point(0, 43);
             this.btnManualUsuario.Name = "btnManualUsuario";
             this.btnManualUsuario.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnManualUsuario.Size = new System.Drawing.Size(179, 43);
+            this.btnManualUsuario.Size = new System.Drawing.Size(200, 43);
             this.btnManualUsuario.TabIndex = 8;
             this.btnManualUsuario.Text = "Manual Usuario";
             this.btnManualUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -136,7 +135,7 @@
             this.btnCambioContrasena.Location = new System.Drawing.Point(0, 0);
             this.btnCambioContrasena.Name = "btnCambioContrasena";
             this.btnCambioContrasena.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnCambioContrasena.Size = new System.Drawing.Size(179, 43);
+            this.btnCambioContrasena.Size = new System.Drawing.Size(200, 43);
             this.btnCambioContrasena.TabIndex = 7;
             this.btnCambioContrasena.Text = "Cambiar contraseña";
             this.btnCambioContrasena.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -150,10 +149,10 @@
             this.btnAyuda.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnAyuda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAyuda.Location = new System.Drawing.Point(0, 606);
+            this.btnAyuda.Location = new System.Drawing.Point(0, 562);
             this.btnAyuda.Name = "btnAyuda";
             this.btnAyuda.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnAyuda.Size = new System.Drawing.Size(179, 45);
+            this.btnAyuda.Size = new System.Drawing.Size(200, 45);
             this.btnAyuda.TabIndex = 7;
             this.btnAyuda.Text = "Ayuda";
             this.btnAyuda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -164,12 +163,11 @@
             // 
             this.pnlSubMenuSeguridad.BackColor = System.Drawing.Color.LightGray;
             this.pnlSubMenuSeguridad.Controls.Add(this.btnRespaldos);
-            this.pnlSubMenuSeguridad.Controls.Add(this.btnRoles);
             this.pnlSubMenuSeguridad.Controls.Add(this.btnUsuarios);
             this.pnlSubMenuSeguridad.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSubMenuSeguridad.Location = new System.Drawing.Point(0, 465);
             this.pnlSubMenuSeguridad.Name = "pnlSubMenuSeguridad";
-            this.pnlSubMenuSeguridad.Size = new System.Drawing.Size(179, 141);
+            this.pnlSubMenuSeguridad.Size = new System.Drawing.Size(200, 97);
             this.pnlSubMenuSeguridad.TabIndex = 6;
             this.pnlSubMenuSeguridad.Visible = false;
             // 
@@ -180,32 +178,15 @@
             this.btnRespaldos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnRespaldos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnRespaldos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRespaldos.Location = new System.Drawing.Point(0, 86);
+            this.btnRespaldos.Location = new System.Drawing.Point(0, 43);
             this.btnRespaldos.Name = "btnRespaldos";
             this.btnRespaldos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnRespaldos.Size = new System.Drawing.Size(179, 43);
+            this.btnRespaldos.Size = new System.Drawing.Size(200, 43);
             this.btnRespaldos.TabIndex = 9;
             this.btnRespaldos.Text = "Respaldos";
             this.btnRespaldos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRespaldos.UseVisualStyleBackColor = true;
             this.btnRespaldos.Click += new System.EventHandler(this.btnRespaldos_Click);
-            // 
-            // btnRoles
-            // 
-            this.btnRoles.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRoles.FlatAppearance.BorderSize = 0;
-            this.btnRoles.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen;
-            this.btnRoles.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
-            this.btnRoles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRoles.Location = new System.Drawing.Point(0, 43);
-            this.btnRoles.Name = "btnRoles";
-            this.btnRoles.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnRoles.Size = new System.Drawing.Size(179, 43);
-            this.btnRoles.TabIndex = 8;
-            this.btnRoles.Text = "Roles";
-            this.btnRoles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRoles.UseVisualStyleBackColor = true;
-            this.btnRoles.Click += new System.EventHandler(this.btnRoles_Click);
             // 
             // btnUsuarios
             // 
@@ -217,7 +198,7 @@
             this.btnUsuarios.Location = new System.Drawing.Point(0, 0);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnUsuarios.Size = new System.Drawing.Size(179, 43);
+            this.btnUsuarios.Size = new System.Drawing.Size(200, 43);
             this.btnUsuarios.TabIndex = 7;
             this.btnUsuarios.Text = "Usuarios";
             this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -234,7 +215,7 @@
             this.btnSeguridad.Location = new System.Drawing.Point(0, 420);
             this.btnSeguridad.Name = "btnSeguridad";
             this.btnSeguridad.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnSeguridad.Size = new System.Drawing.Size(179, 45);
+            this.btnSeguridad.Size = new System.Drawing.Size(200, 45);
             this.btnSeguridad.TabIndex = 5;
             this.btnSeguridad.Text = "Seguridad";
             this.btnSeguridad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -252,7 +233,7 @@
             this.pnlSubMenuMantenimientos.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSubMenuMantenimientos.Location = new System.Drawing.Point(0, 190);
             this.pnlSubMenuMantenimientos.Name = "pnlSubMenuMantenimientos";
-            this.pnlSubMenuMantenimientos.Size = new System.Drawing.Size(179, 230);
+            this.pnlSubMenuMantenimientos.Size = new System.Drawing.Size(200, 230);
             this.pnlSubMenuMantenimientos.TabIndex = 4;
             this.pnlSubMenuMantenimientos.Visible = false;
             // 
@@ -266,7 +247,7 @@
             this.btnColor.Location = new System.Drawing.Point(0, 172);
             this.btnColor.Name = "btnColor";
             this.btnColor.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnColor.Size = new System.Drawing.Size(179, 43);
+            this.btnColor.Size = new System.Drawing.Size(200, 43);
             this.btnColor.TabIndex = 11;
             this.btnColor.Text = "Colores";
             this.btnColor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -283,7 +264,7 @@
             this.btnMarca.Location = new System.Drawing.Point(0, 129);
             this.btnMarca.Name = "btnMarca";
             this.btnMarca.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnMarca.Size = new System.Drawing.Size(179, 43);
+            this.btnMarca.Size = new System.Drawing.Size(200, 43);
             this.btnMarca.TabIndex = 10;
             this.btnMarca.Text = "Marcas";
             this.btnMarca.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -300,7 +281,7 @@
             this.btnTipoProducto.Location = new System.Drawing.Point(0, 86);
             this.btnTipoProducto.Name = "btnTipoProducto";
             this.btnTipoProducto.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnTipoProducto.Size = new System.Drawing.Size(179, 43);
+            this.btnTipoProducto.Size = new System.Drawing.Size(200, 43);
             this.btnTipoProducto.TabIndex = 9;
             this.btnTipoProducto.Text = "Tipo producto";
             this.btnTipoProducto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -317,7 +298,7 @@
             this.btnDoctores.Location = new System.Drawing.Point(0, 43);
             this.btnDoctores.Name = "btnDoctores";
             this.btnDoctores.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnDoctores.Size = new System.Drawing.Size(179, 43);
+            this.btnDoctores.Size = new System.Drawing.Size(200, 43);
             this.btnDoctores.TabIndex = 8;
             this.btnDoctores.Text = "Doctores";
             this.btnDoctores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -334,7 +315,7 @@
             this.btnClientes.Location = new System.Drawing.Point(0, 0);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnClientes.Size = new System.Drawing.Size(179, 43);
+            this.btnClientes.Size = new System.Drawing.Size(200, 43);
             this.btnClientes.TabIndex = 7;
             this.btnClientes.Text = "Clientes";
             this.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -351,7 +332,7 @@
             this.btnMantenimientos.Location = new System.Drawing.Point(0, 145);
             this.btnMantenimientos.Name = "btnMantenimientos";
             this.btnMantenimientos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnMantenimientos.Size = new System.Drawing.Size(179, 45);
+            this.btnMantenimientos.Size = new System.Drawing.Size(200, 45);
             this.btnMantenimientos.TabIndex = 3;
             this.btnMantenimientos.Text = "Mantenimientos";
             this.btnMantenimientos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -368,7 +349,7 @@
             this.btnCasos.Location = new System.Drawing.Point(0, 100);
             this.btnCasos.Name = "btnCasos";
             this.btnCasos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnCasos.Size = new System.Drawing.Size(179, 45);
+            this.btnCasos.Size = new System.Drawing.Size(200, 45);
             this.btnCasos.TabIndex = 1;
             this.btnCasos.Text = "Casos";
             this.btnCasos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -380,7 +361,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(179, 100);
+            this.panel1.Size = new System.Drawing.Size(200, 100);
             this.panel1.TabIndex = 0;
             // 
             // pnlContenedorDerecho
@@ -478,7 +459,6 @@
         private System.Windows.Forms.Button btnAyuda;
         private System.Windows.Forms.Panel pnlSubMenuSeguridad;
         private System.Windows.Forms.Button btnRespaldos;
-        private System.Windows.Forms.Button btnRoles;
         private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Button btnSeguridad;
         private System.Windows.Forms.Label label1;
