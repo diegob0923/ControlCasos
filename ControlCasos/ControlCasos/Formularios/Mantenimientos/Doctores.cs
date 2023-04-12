@@ -96,8 +96,7 @@ namespace ControlCasos.Formularios.Mantenimientos
                     }
             }
         }
-        #endregion
-
+        
         private void dgvListaDoctores_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
         {
             if ((e.ColumnIndex == 6 || e.ColumnIndex == 7) && e.RowIndex != -1)
@@ -123,5 +122,6 @@ namespace ControlCasos.Formularios.Mantenimientos
                 }
             }
         }
+        #endregion
     }
 }

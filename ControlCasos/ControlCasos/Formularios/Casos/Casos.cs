@@ -113,6 +113,7 @@ namespace ControlCasos.Formularios.Casos
             consultarCasos();//para actulaizar la lista de casos
             cargarComboPaciente();//volver a cargar el comboPaciente para que aparezca el nuevo paciente en la lista
         }
+        
         private void eliminarImagenDefaultEnColumnaDetallesCuandoNoHayDatos()
         {
             dgvListaCasos.Rows[0].Cells["Detalles"].Value = new Bitmap(1, 1);
@@ -123,10 +124,12 @@ namespace ControlCasos.Formularios.Casos
         {
             cargarComboPaciente();
         }
+        
         private void cmbPaciente_SelectedValueChanged(object sender, EventArgs e)
         {
             cargarGridCasos();
         }
+        
         private void dgvListaCasos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvListaCasos.Columns[e.ColumnIndex].Name == "Detalles")
@@ -141,6 +144,7 @@ namespace ControlCasos.Formularios.Casos
                 }
             }
         }
+        
         private void dgvListaCasos_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
         {
             // Se le asigna la celda 7 porque esla celda eliminar, donde está la imagen
@@ -167,6 +171,7 @@ namespace ControlCasos.Formularios.Casos
                 }
             }
         }
+        
         private void dgvListaCasos_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.ColumnIndex == 4 && e.RowIndex >= 0)

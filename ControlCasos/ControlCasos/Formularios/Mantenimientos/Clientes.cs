@@ -95,6 +95,7 @@ namespace ControlCasos.Formularios.Mantenimientos
                     }
             }
         }
+        
         private void dgvListaClientes_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
         {
             // Se le asigna el numero de celda de la celda eliminar, porque es donde está la imagen
@@ -123,7 +124,5 @@ namespace ControlCasos.Formularios.Mantenimientos
 
         }
         #endregion
-
-
     }
 }

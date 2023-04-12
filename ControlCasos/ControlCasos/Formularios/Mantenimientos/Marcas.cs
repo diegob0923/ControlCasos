@@ -96,7 +96,6 @@ namespace ControlCasos.Formularios.Mantenimientos
                     }
             }
         }
-        #endregion
 
         private void dgvListaMarcas_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -123,5 +122,6 @@ namespace ControlCasos.Formularios.Mantenimientos
                 }
             }
         }
+        #endregion
     }
 }

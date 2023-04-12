@@ -95,7 +95,6 @@ namespace ControlCasos.Formularios.Mantenimientos
                     }
             }
         }
-        #endregion
 
         private void dgvListaColores_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -123,5 +122,6 @@ namespace ControlCasos.Formularios.Mantenimientos
                 }
             }
         }
+        #endregion
     }
 }
