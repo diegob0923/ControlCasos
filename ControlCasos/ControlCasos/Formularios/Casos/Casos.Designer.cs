@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvListaCasos = new System.Windows.Forms.DataGridView();
             this.IdCaso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,6 +64,8 @@
             this.dgvListaCasos.Size = new System.Drawing.Size(739, 150);
             this.dgvListaCasos.TabIndex = 9;
             this.dgvListaCasos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaCasos_CellContentClick);
+            this.dgvListaCasos.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvListaCasos_CellMouseMove);
+            this.dgvListaCasos.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvListaCasos_CellPainting);
             // 
             // IdCaso
             // 
@@ -96,9 +98,9 @@
             // 
             // Detalles
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.NullValue = "System.Drawing.Bitmap";
-            this.Detalles.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.NullValue = "System.Drawing.Bitmap";
+            this.Detalles.DefaultCellStyle = dataGridViewCellStyle3;
             this.Detalles.HeaderText = "Detalles";
             this.Detalles.Image = global::ControlCasos.Properties.Resources.btnAbrir;
             this.Detalles.MinimumWidth = 6;
@@ -152,9 +154,9 @@
             // 
             // dataGridViewImageColumn1
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.NullValue = "System.Drawing.Bitmap";
-            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.NullValue = "System.Drawing.Bitmap";
+            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewImageColumn1.HeaderText = "Detalles";
             this.dataGridViewImageColumn1.Image = global::ControlCasos.Properties.Resources.buscar;
             this.dataGridViewImageColumn1.MinimumWidth = 6;

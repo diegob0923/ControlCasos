@@ -141,6 +141,42 @@ namespace ControlCasos.Formularios.Casos
                 }
             }
         }
+        private void dgvListaCasos_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.ColumnIndex == 4 && e.RowIndex != -1)
+            {
+                Rectangle cellRect = dgvListaCasos.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
+                Point relativePoint = dgvListaCasos.PointToClient(Cursor.Position);
+                if (cellRect.Contains(relativePoint))
+                {
+                    dgvListaCasos.Cursor = Cursors.Hand;
+                }
+                else
+                {
+                    dgvListaCasos.Cursor = Cursors.Default;
+                }
+            }
+            else
+            {
+                dgvListaCasos.Cursor = Cursors.Default;
+            }
+        }
+        private void dgvListaCasos_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex == 4 && e.RowIndex >= 0)
+            {
+                var cell = dgvListaCasos.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                if (cell.Value != null)
+                {
+                    var image = (Image)cell.Value;
+                    var width = image.Width + cell.Style.Padding.Horizontal;
+                    if (dgvListaCasos.Columns[e.ColumnIndex].Width != width)
+                    {
+                        dgvListaCasos.Columns[e.ColumnIndex].Width = width;
+                    }
+                }
+            }
+        }
         #endregion
 
         private void lnkNuevoCaso_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
