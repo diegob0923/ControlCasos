@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvListaDoctores = new System.Windows.Forms.DataGridView();
-            this.pnlFiltro = new System.Windows.Forms.Panel();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.lnkNuevoCliente = new System.Windows.Forms.LinkLabel();
             this.Doctor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +38,11 @@
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnlFiltro = new System.Windows.Forms.Panel();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.lnkNuevoCliente = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaDoctores)).BeginInit();
             this.pnlFiltro.SuspendLayout();
             this.SuspendLayout();
@@ -67,7 +67,77 @@
             this.dgvListaDoctores.RowTemplate.Height = 27;
             this.dgvListaDoctores.Size = new System.Drawing.Size(769, 150);
             this.dgvListaDoctores.TabIndex = 1;
-            this.dgvListaDoctores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaDoctores_CellClick);
+            this.dgvListaDoctores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaDoctores_CellContentClick);
+            this.dgvListaDoctores.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvListaDoctores_CellMouseMove);
+            // 
+            // Doctor
+            // 
+            this.Doctor.DataPropertyName = "Doctor";
+            this.Doctor.HeaderText = "Doctor";
+            this.Doctor.MinimumWidth = 6;
+            this.Doctor.Name = "Doctor";
+            // 
+            // Cliente
+            // 
+            this.Cliente.DataPropertyName = "Cliente";
+            this.Cliente.HeaderText = "Cliente";
+            this.Cliente.MinimumWidth = 6;
+            this.Cliente.Name = "Cliente";
+            // 
+            // Cedula
+            // 
+            this.Cedula.DataPropertyName = "cedula";
+            this.Cedula.HeaderText = "Cédula";
+            this.Cedula.MinimumWidth = 6;
+            this.Cedula.Name = "Cedula";
+            this.Cedula.Visible = false;
+            // 
+            // Correo
+            // 
+            this.Correo.DataPropertyName = "correo";
+            this.Correo.HeaderText = "Correo";
+            this.Correo.MinimumWidth = 6;
+            this.Correo.Name = "Correo";
+            // 
+            // Telefono
+            // 
+            this.Telefono.DataPropertyName = "telefono";
+            this.Telefono.FillWeight = 65F;
+            this.Telefono.HeaderText = "Teléfono";
+            this.Telefono.MinimumWidth = 6;
+            this.Telefono.Name = "Telefono";
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "estado";
+            this.Estado.FillWeight = 55F;
+            this.Estado.HeaderText = "Estado";
+            this.Estado.MinimumWidth = 6;
+            this.Estado.Name = "Estado";
+            // 
+            // Editar
+            // 
+            this.Editar.FillWeight = 50F;
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = global::ControlCasos.Properties.Resources.editar;
+            this.Editar.MinimumWidth = 6;
+            this.Editar.Name = "Editar";
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.FillWeight = 50F;
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Image = global::ControlCasos.Properties.Resources.borrar;
+            this.Eliminar.MinimumWidth = 6;
+            this.Eliminar.Name = "Eliminar";
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "idDoctor";
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
             // 
             // pnlFiltro
             // 
@@ -127,84 +197,6 @@
             this.lnkNuevoCliente.TabStop = true;
             this.lnkNuevoCliente.Text = "Nuevo doctor";
             this.lnkNuevoCliente.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkNuevoCliente_LinkClicked);
-            // 
-            // Doctor
-            // 
-            this.Doctor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Doctor.DataPropertyName = "Doctor";
-            this.Doctor.FillWeight = 160.4292F;
-            this.Doctor.HeaderText = "Doctor";
-            this.Doctor.MinimumWidth = 6;
-            this.Doctor.Name = "Doctor";
-            // 
-            // Cliente
-            // 
-            this.Cliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Cliente.DataPropertyName = "Cliente";
-            this.Cliente.FillWeight = 150.5124F;
-            this.Cliente.HeaderText = "Cliente";
-            this.Cliente.MinimumWidth = 6;
-            this.Cliente.Name = "Cliente";
-            // 
-            // Cedula
-            // 
-            this.Cedula.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Cedula.DataPropertyName = "cedula";
-            this.Cedula.FillWeight = 100.4648F;
-            this.Cedula.HeaderText = "Cédula";
-            this.Cedula.MinimumWidth = 6;
-            this.Cedula.Name = "Cedula";
-            // 
-            // Correo
-            // 
-            this.Correo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Correo.DataPropertyName = "correo";
-            this.Correo.FillWeight = 110.5418F;
-            this.Correo.HeaderText = "Correo";
-            this.Correo.MinimumWidth = 6;
-            this.Correo.Name = "Correo";
-            // 
-            // Telefono
-            // 
-            this.Telefono.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Telefono.DataPropertyName = "telefono";
-            this.Telefono.FillWeight = 85.48956F;
-            this.Telefono.HeaderText = "Teléfono";
-            this.Telefono.MinimumWidth = 6;
-            this.Telefono.Name = "Telefono";
-            // 
-            // Estado
-            // 
-            this.Estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Estado.DataPropertyName = "estado";
-            this.Estado.FillWeight = 70.56223F;
-            this.Estado.HeaderText = "Estado";
-            this.Estado.MinimumWidth = 6;
-            this.Estado.Name = "Estado";
-            // 
-            // Editar
-            // 
-            this.Editar.FillWeight = 25F;
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = global::ControlCasos.Properties.Resources.editar;
-            this.Editar.MinimumWidth = 6;
-            this.Editar.Name = "Editar";
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.FillWeight = 25F;
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Image = global::ControlCasos.Properties.Resources.borrar;
-            this.Eliminar.MinimumWidth = 6;
-            this.Eliminar.Name = "Eliminar";
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "idDoctor";
-            this.Id.HeaderText = "Id";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.Visible = false;
             // 
             // frmDoctores
             // 

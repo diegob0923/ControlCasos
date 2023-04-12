@@ -35,35 +35,43 @@ namespace ControlCasos
         #region Eventos
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            if (ValidateChildren(ValidationConstraints.Enabled))
+            try
             {
-                sp_ValidarUsuario_Result usuarioValidado = usuarioSistema.validarUsuario(txtUsuario.Text, txtContrasena.Text);
+                if (ValidateChildren(ValidationConstraints.Enabled))
+                {
+                    sp_ValidarUsuario_Result usuarioValidado = usuarioSistema.validarUsuario(txtUsuario.Text, txtContrasena.Text);
 
-                if (usuarioValidado == null)
-                {
-                    MessageBox.Show(usuarioValidado + "Usuario o contraseña incorrectos");
-                    limpiarTextBoxUsuarioContrasena();
-                    UsuarioLogueado.rolUsuarioLogueado = Rol.UsuarioInvalido;
-                    UsuarioLogueado.usuarioLogueado = "";
-                }
-                else
-                {
-                    if (usuarioValidado.IdRol == Rol.Administrador)
+                    if (usuarioValidado == null)
                     {
-                        UsuarioLogueado.rolUsuarioLogueado = Rol.Administrador;
-                        UsuarioLogueado.usuarioLogueado = usuarioValidado.Usuario;
-                        abrirFormularioPrincipal();
-                        this.Hide();
+                        MessageBox.Show(usuarioValidado + "Usuario o contraseña incorrectos");
+                        limpiarTextBoxUsuarioContrasena();
+                        UsuarioLogueado.rolUsuarioLogueado = Rol.UsuarioInvalido;
+                        UsuarioLogueado.usuarioLogueado = "";
                     }
-                    else if (usuarioValidado.IdRol == Rol.General)
+                    else
                     {
-                        UsuarioLogueado.rolUsuarioLogueado = Rol.General;
-                        UsuarioLogueado.usuarioLogueado = usuarioValidado.Usuario;
-                        abrirFormularioPrincipal();
-                        this.Hide();
+                        if (usuarioValidado.IdRol == Rol.Administrador)
+                        {
+                            UsuarioLogueado.rolUsuarioLogueado = Rol.Administrador;
+                            UsuarioLogueado.usuarioLogueado = usuarioValidado.Usuario;
+                            abrirFormularioPrincipal();
+                            this.Hide();
+                        }
+                        else if (usuarioValidado.IdRol == Rol.General)
+                        {
+                            UsuarioLogueado.rolUsuarioLogueado = Rol.General;
+                            UsuarioLogueado.usuarioLogueado = usuarioValidado.Usuario;
+                            abrirFormularioPrincipal();
+                            this.Hide();
+                        }
                     }
                 }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocurrió un error al ingresar, por favor vuelva a intentarlo");
+            }
+            
         }
         #endregion
 

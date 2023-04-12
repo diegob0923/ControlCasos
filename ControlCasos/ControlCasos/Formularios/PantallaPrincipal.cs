@@ -106,12 +106,6 @@ namespace ControlCasos
             abrirFormularioHijo(new frmUsuarios());        
         }
 
-        private void btnRoles_Click(object sender, EventArgs e)
-        {
-            ocultarSubMenu();
-            abrirFormularioHijo(new frmRoles());
-        }
-
         private void btnRespaldos_Click(object sender, EventArgs e)
         {
             ocultarSubMenu();
@@ -161,6 +155,7 @@ namespace ControlCasos
 
                     File.Copy(rutaArchivoEnProyecto, nombreArchivo, true);
                     MessageBox.Show("Manual de usuario descargado");
+                    ocultarSubMenu();
                 }
             }
             catch (Exception)

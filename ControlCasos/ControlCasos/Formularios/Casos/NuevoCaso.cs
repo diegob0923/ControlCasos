@@ -139,7 +139,7 @@ namespace ControlCasos.Formularios.Casos
         {
             txtTamano.Text = "";
             txtDiametro.Text = "";
-            nudCantidad.Text = "";
+            nudCantidad.Text = 1.ToString();
             cmbColor.SelectedIndex = 0;
             cmbMarca.SelectedIndex = 0;
             cmbTipoProducto.SelectedIndex = 0;
@@ -297,6 +297,49 @@ namespace ControlCasos.Formularios.Casos
             }
         }
 
+        private void dgvResumenProductos_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            // Se le asigna el numero de celda de la celda eliminar, porque es donde está la imagen
+            if (e.ColumnIndex == 7 && e.RowIndex != -1)
+            {
+                // Verificar si la fila y la columna son válidas
+                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+                {
+                    // Obtener la posición de la imagen en la celda actual
+                    DataGridViewImageCell cell = (DataGridViewImageCell)dgvResumenProductos.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                    Rectangle imageRectangle = cell.GetContentBounds(e.RowIndex);
+
+                    // Deshabilitar temporalmente la actualización del control
+                    dgvResumenProductos.SuspendLayout();
+
+                    // Verificar si el puntero del mouse está sobre la imagen en la celda actual
+                    if (imageRectangle.Contains(e.Location))
+                        Cursor = Cursors.Hand; // Cambiar el cursor a mano
+                    else
+                        Cursor = Cursors.Default;// Cambiar el cursor al valor predeterminado
+
+                    // Habilitar la actualización del control
+                    dgvResumenProductos.ResumeLayout();
+                }
+            }
+        }
+        
+        private void dgvResumenProductos_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex == 7 && e.RowIndex >= 0)
+            {
+                var cell = dgvResumenProductos.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                if (cell.Value != null)
+                {
+                    var image = (Image)cell.Value;
+                    var width = image.Width + cell.Style.Padding.Horizontal;
+                    if (dgvResumenProductos.Columns[e.ColumnIndex].Width != width)
+                    {
+                        dgvResumenProductos.Columns[e.ColumnIndex].Width = width;
+                    }
+                }
+            }
+        }
         #endregion
 
         #region Validación campos

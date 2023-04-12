@@ -113,6 +113,7 @@ namespace ControlCasos.Formularios.Casos
             consultarCasos();//para actulaizar la lista de casos
             cargarComboPaciente();//volver a cargar el comboPaciente para que aparezca el nuevo paciente en la lista
         }
+        
         private void eliminarImagenDefaultEnColumnaDetallesCuandoNoHayDatos()
         {
             dgvListaCasos.Rows[0].Cells["Detalles"].Value = new Bitmap(1, 1);
@@ -123,21 +124,68 @@ namespace ControlCasos.Formularios.Casos
         {
             cargarComboPaciente();
         }
+        
         private void cmbPaciente_SelectedValueChanged(object sender, EventArgs e)
         {
             cargarGridCasos();
         }
-        private void dgvListaCasos_CellClick(object sender, DataGridViewCellEventArgs e)
+        
+        private void dgvListaCasos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvListaCasos.Columns[e.ColumnIndex].Name == "Detalles")
             {
-                if(dgvListaCasos.CurrentRow.Cells["idCaso"].Value != null) {
-                    
+                if (dgvListaCasos.CurrentRow.Cells["idCaso"].Value != null)
+                {
+
                     int idCaso = int.Parse(dgvListaCasos.CurrentRow.Cells["idCaso"].Value.ToString());
 
                     frmProductos formularioEditarColor = new frmProductos(idCaso);
                     formularioEditarColor.Visible = true;
-                }  
+                }
+            }
+        }
+        
+        private void dgvListaCasos_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            // Se le asigna la celda 7 porque esla celda eliminar, donde está la imagen
+            if (e.ColumnIndex == 4 && e.RowIndex != -1)
+            {
+                // Verificar si la fila y la columna son válidas
+                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+                {
+                    // Obtener la posición de la imagen en la celda actual
+                    DataGridViewImageCell cell = (DataGridViewImageCell)dgvListaCasos.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                    Rectangle imageRectangle = cell.GetContentBounds(e.RowIndex);
+
+                    // Deshabilitar temporalmente la actualización del control
+                    dgvListaCasos.SuspendLayout();
+
+                    // Verificar si el puntero del mouse está sobre la imagen en la celda actual
+                    if (imageRectangle.Contains(e.Location))
+                        Cursor = Cursors.Hand; // Cambiar el cursor a mano
+                    else
+                        Cursor = Cursors.Default;// Cambiar el cursor al valor predeterminado
+
+                    // Habilitar la actualización del control
+                    dgvListaCasos.ResumeLayout();
+                }
+            }
+        }
+        
+        private void dgvListaCasos_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex == 4 && e.RowIndex >= 0)
+            {
+                var cell = dgvListaCasos.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                if (cell.Value != null)
+                {
+                    var image = (Image)cell.Value;
+                    var width = image.Width + cell.Style.Padding.Horizontal;
+                    if (dgvListaCasos.Columns[e.ColumnIndex].Width != width)
+                    {
+                        dgvListaCasos.Columns[e.ColumnIndex].Width = width;
+                    }
+                }
             }
         }
         #endregion

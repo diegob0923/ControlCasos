@@ -63,7 +63,9 @@
             this.dgvListaCasos.RowTemplate.Height = 27;
             this.dgvListaCasos.Size = new System.Drawing.Size(739, 150);
             this.dgvListaCasos.TabIndex = 9;
-            this.dgvListaCasos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaCasos_CellClick);
+            this.dgvListaCasos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaCasos_CellContentClick);
+            this.dgvListaCasos.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvListaCasos_CellMouseMove);
+            this.dgvListaCasos.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvListaCasos_CellPainting);
             // 
             // IdCaso
             // 
@@ -140,6 +142,8 @@
             // 
             // cmbDoctor
             // 
+            this.cmbDoctor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbDoctor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbDoctor.DisplayMember = "Doctor";
             this.cmbDoctor.FormattingEnabled = true;
             this.cmbDoctor.Location = new System.Drawing.Point(41, 129);

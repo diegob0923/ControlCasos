@@ -76,12 +76,6 @@
     <Compile Include="Formularios\Ayuda\CambiarContrasena.Designer.cs">
       <DependentUpon>CambiarContrasena.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Ayuda\ManualUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Ayuda\ManualUsuario.Designer.cs">
-      <DependentUpon>ManualUsuario.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\Casos\Casos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,12 +214,6 @@
     <Compile Include="Formularios\Seguridad\Respaldos.Designer.cs">
       <DependentUpon>Respaldos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Seguridad\Roles.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Seguridad\Roles.Designer.cs">
-      <DependentUpon>Roles.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\Seguridad\Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -300,9 +288,6 @@
     <EmbeddedResource Include="Formularios\Ayuda\CambiarContrasena.resx">
       <DependentUpon>CambiarContrasena.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Ayuda\ManualUsuario.resx">
-      <DependentUpon>ManualUsuario.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Casos\Casos.resx">
       <DependentUpon>Casos.cs</DependentUpon>
     </EmbeddedResource>
@@ -371,9 +356,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Seguridad\Respaldos.resx">
       <DependentUpon>Respaldos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Seguridad\Roles.resx">
-      <DependentUpon>Roles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Seguridad\Usuarios.resx">
       <DependentUpon>Usuarios.cs</DependentUpon>

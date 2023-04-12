@@ -136,7 +136,8 @@
             this.ClientSize = new System.Drawing.Size(272, 280);
             this.Controls.Add(this.panel1);
             this.Name = "frmNuevoColor";
-            this.Text = "Agregar color";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Nuevo Color";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epColorValidar)).EndInit();

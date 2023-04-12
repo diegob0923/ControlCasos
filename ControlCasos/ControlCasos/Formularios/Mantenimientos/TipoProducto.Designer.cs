@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.dgvListaTipoProductos = new System.Windows.Forms.DataGridView();
-            this.lnkNuevoTipoProducto = new System.Windows.Forms.LinkLabel();
-            this.pnlFiltro = new System.Windows.Forms.Panel();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.TipoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lnkNuevoTipoProducto = new System.Windows.Forms.LinkLabel();
+            this.pnlFiltro = new System.Windows.Forms.Panel();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaTipoProductos)).BeginInit();
             this.pnlFiltro.SuspendLayout();
             this.SuspendLayout();
@@ -59,7 +59,40 @@
             this.dgvListaTipoProductos.RowTemplate.Height = 27;
             this.dgvListaTipoProductos.Size = new System.Drawing.Size(666, 150);
             this.dgvListaTipoProductos.TabIndex = 1;
-            this.dgvListaTipoProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaTipoProductos_CellClick);
+            this.dgvListaTipoProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaTipoProductos_CellContentClick);
+            this.dgvListaTipoProductos.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvListaTipoProductos_CellMouseMove);
+            // 
+            // TipoProducto
+            // 
+            this.TipoProducto.DataPropertyName = "TipoProducto";
+            this.TipoProducto.FillWeight = 140F;
+            this.TipoProducto.HeaderText = "Tipo de producto";
+            this.TipoProducto.MinimumWidth = 6;
+            this.TipoProducto.Name = "TipoProducto";
+            // 
+            // Editar
+            // 
+            this.Editar.FillWeight = 20F;
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = global::ControlCasos.Properties.Resources.editar;
+            this.Editar.MinimumWidth = 6;
+            this.Editar.Name = "Editar";
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.FillWeight = 20F;
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Image = global::ControlCasos.Properties.Resources.borrar;
+            this.Eliminar.MinimumWidth = 6;
+            this.Eliminar.Name = "Eliminar";
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "IdTipoProducto";
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
             // 
             // lnkNuevoTipoProducto
             // 
@@ -93,24 +126,6 @@
             this.txtBuscar.TabIndex = 1;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.FillWeight = 20F;
-            this.dataGridViewImageColumn1.HeaderText = "Editar";
-            this.dataGridViewImageColumn1.Image = global::ControlCasos.Properties.Resources.editar;
-            this.dataGridViewImageColumn1.MinimumWidth = 6;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 68;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.FillWeight = 20F;
-            this.dataGridViewImageColumn2.HeaderText = "Eliminar";
-            this.dataGridViewImageColumn2.Image = global::ControlCasos.Properties.Resources.borrar;
-            this.dataGridViewImageColumn2.MinimumWidth = 6;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.Width = 68;
-            // 
             // btnBuscar
             // 
             this.btnBuscar.FlatAppearance.BorderSize = 0;
@@ -138,37 +153,23 @@
             this.btnCancelar.Visible = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // TipoProducto
+            // dataGridViewImageColumn1
             // 
-            this.TipoProducto.DataPropertyName = "TipoProducto";
-            this.TipoProducto.FillWeight = 140F;
-            this.TipoProducto.HeaderText = "Tipo de producto";
-            this.TipoProducto.MinimumWidth = 6;
-            this.TipoProducto.Name = "TipoProducto";
+            this.dataGridViewImageColumn1.FillWeight = 20F;
+            this.dataGridViewImageColumn1.HeaderText = "Editar";
+            this.dataGridViewImageColumn1.Image = global::ControlCasos.Properties.Resources.editar;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 68;
             // 
-            // Editar
+            // dataGridViewImageColumn2
             // 
-            this.Editar.FillWeight = 20F;
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = global::ControlCasos.Properties.Resources.editar;
-            this.Editar.MinimumWidth = 6;
-            this.Editar.Name = "Editar";
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.FillWeight = 20F;
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Image = global::ControlCasos.Properties.Resources.borrar;
-            this.Eliminar.MinimumWidth = 6;
-            this.Eliminar.Name = "Eliminar";
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "IdTipoProducto";
-            this.Id.HeaderText = "Id";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.Visible = false;
+            this.dataGridViewImageColumn2.FillWeight = 20F;
+            this.dataGridViewImageColumn2.HeaderText = "Eliminar";
+            this.dataGridViewImageColumn2.Image = global::ControlCasos.Properties.Resources.borrar;
+            this.dataGridViewImageColumn2.MinimumWidth = 6;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Width = 68;
             // 
             // frmTipoProducto
             // 

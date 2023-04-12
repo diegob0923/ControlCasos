@@ -91,7 +91,6 @@ namespace ControlCasos.Formularios.Mantenimientos
             if (string.IsNullOrWhiteSpace(txtNombre.Text))
             {
                 e.Cancel = true;
-                txtNombre.Focus();
                 epNombreValidar.SetError(txtNombre, "Campo requerido");
             }
             else
@@ -105,7 +104,6 @@ namespace ControlCasos.Formularios.Mantenimientos
             if (string.IsNullOrWhiteSpace(txtApellido1.Text))
             {
                 e.Cancel = true;
-                txtApellido1.Focus();
                 epApellido1Validar.SetError(txtApellido1, "Campo requerido");
             }
             else
@@ -119,7 +117,6 @@ namespace ControlCasos.Formularios.Mantenimientos
             if (cmbCliente.Text.Equals("Seleccione:"))
             {
                 e.Cancel = true;
-                cmbCliente.Focus();
                 epClienteValidar.SetError(cmbCliente, "Campo requerido");
             }
             else

@@ -62,7 +62,8 @@
             this.dgvListaClientes.RowTemplate.Height = 27;
             this.dgvListaClientes.Size = new System.Drawing.Size(666, 150);
             this.dgvListaClientes.TabIndex = 0;
-            this.dgvListaClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaClientes_CellClick);
+            this.dgvListaClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaClientes_CellContentClick);
+            this.dgvListaClientes.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvListaClientes_CellMouseMove);
             // 
             // txtBuscar
             // 

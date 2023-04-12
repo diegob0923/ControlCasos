@@ -68,7 +68,8 @@ namespace ControlCasos.Formularios.Mantenimientos
         }
         #endregion
 
-        private void dgvListaTipoProductos_CellClick(object sender, DataGridViewCellEventArgs e)
+        #region Eventos
+        private void dgvListaTipoProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int idTipoProducto = int.Parse(dgvListaTipoProductos.CurrentRow.Cells["Id"].Value.ToString());
 
@@ -92,5 +93,32 @@ namespace ControlCasos.Formularios.Mantenimientos
                     }
             }
         }
+
+        private void dgvListaTipoProductos_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if ((e.ColumnIndex == 1 || e.ColumnIndex == 2) && e.RowIndex != -1)
+            {
+                // Verificar si la fila y la columna son válidas
+                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+                {
+                    // Obtener la posición de la imagen en la celda actual
+                    DataGridViewImageCell cell = (DataGridViewImageCell)dgvListaTipoProductos.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                    Rectangle imageRectangle = cell.GetContentBounds(e.RowIndex);
+
+                    // Deshabilitar temporalmente la actualización del control
+                    dgvListaTipoProductos.SuspendLayout();
+
+                    // Verificar si el puntero del mouse está sobre la imagen en la celda actual
+                    if (imageRectangle.Contains(e.Location))
+                        Cursor = Cursors.Hand; // Cambiar el cursor a mano
+                    else
+                        Cursor = Cursors.Default;// Cambiar el cursor al valor predeterminado
+
+                    // Habilitar la actualización del control
+                    dgvListaTipoProductos.ResumeLayout();
+                }
+            }
+        }
+        #endregion
     }
 }
