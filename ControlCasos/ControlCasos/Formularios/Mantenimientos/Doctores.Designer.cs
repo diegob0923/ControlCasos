@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvListaDoctores = new System.Windows.Forms.DataGridView();
-            this.pnlFiltro = new System.Windows.Forms.Panel();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.lnkNuevoCliente = new System.Windows.Forms.LinkLabel();
             this.Doctor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +38,11 @@
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnlFiltro = new System.Windows.Forms.Panel();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.lnkNuevoCliente = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaDoctores)).BeginInit();
             this.pnlFiltro.SuspendLayout();
             this.SuspendLayout();
@@ -68,65 +68,7 @@
             this.dgvListaDoctores.Size = new System.Drawing.Size(769, 150);
             this.dgvListaDoctores.TabIndex = 1;
             this.dgvListaDoctores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaDoctores_CellContentClick);
-            // 
-            // pnlFiltro
-            // 
-            this.pnlFiltro.BackColor = System.Drawing.SystemColors.Window;
-            this.pnlFiltro.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlFiltro.Controls.Add(this.txtBuscar);
-            this.pnlFiltro.Controls.Add(this.btnBuscar);
-            this.pnlFiltro.Controls.Add(this.btnCancelar);
-            this.pnlFiltro.Location = new System.Drawing.Point(45, 85);
-            this.pnlFiltro.Name = "pnlFiltro";
-            this.pnlFiltro.Size = new System.Drawing.Size(371, 36);
-            this.pnlFiltro.TabIndex = 5;
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBuscar.Location = new System.Drawing.Point(3, 7);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(279, 19);
-            this.txtBuscar.TabIndex = 1;
-            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.FlatAppearance.BorderSize = 0;
-            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Image = global::ControlCasos.Properties.Resources.buscar;
-            this.btnBuscar.Location = new System.Drawing.Point(330, -2);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(34, 34);
-            this.btnBuscar.TabIndex = 2;
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Image = global::ControlCasos.Properties.Resources.cancelar;
-            this.btnCancelar.Location = new System.Drawing.Point(290, -2);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(34, 34);
-            this.btnCancelar.TabIndex = 3;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Visible = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // lnkNuevoCliente
-            // 
-            this.lnkNuevoCliente.AutoSize = true;
-            this.lnkNuevoCliente.Location = new System.Drawing.Point(706, 338);
-            this.lnkNuevoCliente.Name = "lnkNuevoCliente";
-            this.lnkNuevoCliente.Size = new System.Drawing.Size(108, 20);
-            this.lnkNuevoCliente.TabIndex = 6;
-            this.lnkNuevoCliente.TabStop = true;
-            this.lnkNuevoCliente.Text = "Nuevo doctor";
-            this.lnkNuevoCliente.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkNuevoCliente_LinkClicked);
+            this.dgvListaDoctores.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvListaDoctores_CellMouseMove);
             // 
             // Doctor
             // 
@@ -196,6 +138,65 @@
             this.Id.MinimumWidth = 6;
             this.Id.Name = "Id";
             this.Id.Visible = false;
+            // 
+            // pnlFiltro
+            // 
+            this.pnlFiltro.BackColor = System.Drawing.SystemColors.Window;
+            this.pnlFiltro.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlFiltro.Controls.Add(this.txtBuscar);
+            this.pnlFiltro.Controls.Add(this.btnBuscar);
+            this.pnlFiltro.Controls.Add(this.btnCancelar);
+            this.pnlFiltro.Location = new System.Drawing.Point(45, 85);
+            this.pnlFiltro.Name = "pnlFiltro";
+            this.pnlFiltro.Size = new System.Drawing.Size(371, 36);
+            this.pnlFiltro.TabIndex = 5;
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBuscar.Location = new System.Drawing.Point(3, 7);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(279, 19);
+            this.txtBuscar.TabIndex = 1;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Image = global::ControlCasos.Properties.Resources.buscar;
+            this.btnBuscar.Location = new System.Drawing.Point(330, -2);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(34, 34);
+            this.btnBuscar.TabIndex = 2;
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Image = global::ControlCasos.Properties.Resources.cancelar;
+            this.btnCancelar.Location = new System.Drawing.Point(290, -2);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(34, 34);
+            this.btnCancelar.TabIndex = 3;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Visible = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // lnkNuevoCliente
+            // 
+            this.lnkNuevoCliente.AutoSize = true;
+            this.lnkNuevoCliente.Location = new System.Drawing.Point(706, 338);
+            this.lnkNuevoCliente.Name = "lnkNuevoCliente";
+            this.lnkNuevoCliente.Size = new System.Drawing.Size(108, 20);
+            this.lnkNuevoCliente.TabIndex = 6;
+            this.lnkNuevoCliente.TabStop = true;
+            this.lnkNuevoCliente.Text = "Nuevo doctor";
+            this.lnkNuevoCliente.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkNuevoCliente_LinkClicked);
             // 
             // frmDoctores
             // 
