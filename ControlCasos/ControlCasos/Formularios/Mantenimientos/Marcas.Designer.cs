@@ -117,6 +117,7 @@
             this.dgvListaMarcas.Size = new System.Drawing.Size(666, 150);
             this.dgvListaMarcas.TabIndex = 8;
             this.dgvListaMarcas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaMarcas_CellContentClick);
+            this.dgvListaMarcas.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvListaMarcas_CellMouseMove);
             // 
             // Marca
             // 
