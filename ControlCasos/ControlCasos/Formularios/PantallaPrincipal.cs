@@ -185,6 +185,17 @@ namespace ControlCasos
             pnlFormularios.Tag = formularioHijo; // se asocia el formularioHijo con el panel contenedor
             formularioHijo.BringToFront();
             formularioHijo.Show();
-        }  
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            UsuarioLogueado.usuarioLogueado = "";
+            UsuarioLogueado.rolUsuarioLogueado = Rol.UsuarioInvalido;
+
+            frmInicioSesion formularioInicioSesion = new frmInicioSesion();
+            formularioInicioSesion.Visible = true;
+            
+            this.Close();
+        }
     }
 }
