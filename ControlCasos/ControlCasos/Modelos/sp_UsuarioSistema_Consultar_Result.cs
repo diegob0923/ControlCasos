@@ -24,5 +24,6 @@ namespace ControlCasos.Modelos
         public string Estado { get; set; }
         public byte IdRol { get; set; }
         public string Rol { get; set; }
+        public string Cedula { get; set; }
     }
 }

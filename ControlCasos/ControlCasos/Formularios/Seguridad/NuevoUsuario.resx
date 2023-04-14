@@ -129,4 +129,7 @@
   <metadata name="epRolValidar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>571, 22</value>
   </metadata>
+  <metadata name="epCedulaValidar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>714, 22</value>
+  </metadata>
 </root>

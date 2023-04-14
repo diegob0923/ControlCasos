@@ -26,13 +26,13 @@ namespace ControlCasos.BL
             sp_UsuarioSistemaID_Consultar_Result usuario = modeloBD.sp_UsuarioSistemaID_Consultar(idUsuario).FirstOrDefault();
             return usuario;
         }
-        public void insertarUsuario(string usuario, string nombre, string apellido1,DateTime fecha, string creador,int idRol, string apellido2 = null)
+        public void insertarUsuario(string usuario, string nombre, string apellido1,DateTime fecha, string creador,int idRol, string cedula, string apellido2 = null)
         {
-            modeloBD.sp_UsuarioSistema_Insertar(usuario, nombre, apellido1, apellido2, fecha, creador, idRol);
+            modeloBD.sp_UsuarioSistema_Insertar(usuario, nombre, apellido1, apellido2, fecha, creador, idRol, cedula);
         }
-        public void editarUsuario(byte idUsuario, string usuario, string nombre, string apellido1, bool estado, int idRol, string apellido2 = null)
+        public void editarUsuario(byte idUsuario, string usuario, string nombre, string apellido1, bool estado, int idRol, string cedula, string apellido2 = null)
         {
-            modeloBD.sp_UsuarioSistema_Editar(idUsuario, usuario, nombre, apellido1, apellido2, estado, idRol);
+            modeloBD.sp_UsuarioSistema_Editar(idUsuario, usuario, nombre, apellido1, apellido2, estado, idRol, cedula);
         }
         public void cambioContrasena(string usuario, string nuevaContrasena)
         {
