@@ -78,7 +78,7 @@ namespace ControlCasos.Formularios.Seguridad
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Error al editar usuario. \n Posibles causas:\n Puede que ya exista un usuario \"" + txtUsuario.Text + "\"");
+                    MessageBox.Show("Error al editar usuario. \n Posibles causas:\nPuede que ya exista un usuario \"" + txtUsuario.Text + "\".\nPuede que la cédula ingresada ya exista.");
                 }
             }   
         }
