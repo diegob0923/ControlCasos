@@ -11,6 +11,8 @@ using ControlCasos.Modelos;
 using ControlCasos.Constantes;
 using ControlCasos.Clases;
 using ControlCasos.BL;
+using ControlCasos.Formularios;
+
 namespace ControlCasos
 {
     public partial class frmInicioSesion : Form
@@ -114,5 +116,14 @@ namespace ControlCasos
             }
         }
         #endregion
+
+        private void lnkRestablecerContrasena_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (MessageBox.Show("Está a punto de restablecer la contraseña para el usuario \"" + txtUsuario.Text + "\". Si el usuario es incorrecto, por favor presione \"No\" y cambielo en la casilla \"Usuario\". ¿Desea continuar?", "Restablecer Contraseña", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                frmRestablecerContrasena formularioRestablecerContrasena = new frmRestablecerContrasena(txtUsuario.Text);
+                formularioRestablecerContrasena.Visible = true;
+            }
+        }
     }
 }

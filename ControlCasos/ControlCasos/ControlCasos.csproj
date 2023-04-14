@@ -196,6 +196,12 @@
     <Compile Include="Formularios\InicioSesion.Designer.cs">
       <DependentUpon>InicioSesion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\RestablecerContrasena.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\RestablecerContrasena.Designer.cs">
+      <DependentUpon>RestablecerContrasena.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Seguridad\EditarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -347,6 +353,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\PantallaPrincipal.resx">
       <DependentUpon>PantallaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\RestablecerContrasena.resx">
+      <DependentUpon>RestablecerContrasena.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Seguridad\EditarUsuario.resx">
       <DependentUpon>EditarUsuario.cs</DependentUpon>

@@ -39,6 +39,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.epUsuarioValidar = new System.Windows.Forms.ErrorProvider(this.components);
             this.epContrasenaValidar = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lnkRestablecerContrasena = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epUsuarioValidar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epContrasenaValidar)).BeginInit();
@@ -48,10 +49,11 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(179, 74);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(175, 69);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 20);
+            this.label1.Size = new System.Drawing.Size(79, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Usuario";
             // 
@@ -59,42 +61,45 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(163, 153);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(158, 148);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 20);
+            this.label2.Size = new System.Drawing.Size(114, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "Contraseña";
             // 
             // txtUsuario
             // 
             this.txtUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.Location = new System.Drawing.Point(125, 98);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(175, 26);
+            this.txtUsuario.Size = new System.Drawing.Size(175, 30);
             this.txtUsuario.TabIndex = 2;
             this.txtUsuario.Validating += new System.ComponentModel.CancelEventHandler(this.txtUsuario_Validating);
             // 
             // txtContrasena
             // 
             this.txtContrasena.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtContrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContrasena.Location = new System.Drawing.Point(127, 177);
             this.txtContrasena.Margin = new System.Windows.Forms.Padding(4);
             this.txtContrasena.Name = "txtContrasena";
             this.txtContrasena.PasswordChar = '*';
-            this.txtContrasena.Size = new System.Drawing.Size(175, 26);
+            this.txtContrasena.Size = new System.Drawing.Size(175, 30);
             this.txtContrasena.TabIndex = 3;
             this.txtContrasena.Validating += new System.ComponentModel.CancelEventHandler(this.txtContrasena_Validating);
             // 
             // btnIngresar
             // 
             this.btnIngresar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnIngresar.Location = new System.Drawing.Point(127, 242);
+            this.btnIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngresar.Location = new System.Drawing.Point(127, 237);
             this.btnIngresar.Margin = new System.Windows.Forms.Padding(4);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(175, 29);
+            this.btnIngresar.Size = new System.Drawing.Size(175, 34);
             this.btnIngresar.TabIndex = 4;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
@@ -140,11 +145,24 @@
             this.epContrasenaValidar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.epContrasenaValidar.ContainerControl = this;
             // 
+            // lnkRestablecerContrasena
+            // 
+            this.lnkRestablecerContrasena.AutoSize = true;
+            this.lnkRestablecerContrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkRestablecerContrasena.Location = new System.Drawing.Point(189, 283);
+            this.lnkRestablecerContrasena.Name = "lnkRestablecerContrasena";
+            this.lnkRestablecerContrasena.Size = new System.Drawing.Size(222, 25);
+            this.lnkRestablecerContrasena.TabIndex = 7;
+            this.lnkRestablecerContrasena.TabStop = true;
+            this.lnkRestablecerContrasena.Text = "Restablecer Contraseña";
+            this.lnkRestablecerContrasena.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkRestablecerContrasena_LinkClicked);
+            // 
             // frmInicioSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(411, 354);
+            this.Controls.Add(this.lnkRestablecerContrasena);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnIngresar);
@@ -178,5 +196,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ErrorProvider epUsuarioValidar;
         private System.Windows.Forms.ErrorProvider epContrasenaValidar;
+        private System.Windows.Forms.LinkLabel lnkRestablecerContrasena;
     }
 }
