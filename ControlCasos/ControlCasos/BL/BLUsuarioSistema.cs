@@ -38,6 +38,14 @@ namespace ControlCasos.BL
         {
             modeloBD.sp_UsuarioSistemaCambioContrasena_Editar(usuario, nuevaContrasena);
         }
+        public bool RestablecerContrasena(string usuario, string nuevaContrasena, string cedula)
+        {
+            int respuesta = modeloBD.sp_RestablecerContrasena_Editar(usuario, nuevaContrasena, cedula);
+            if (respuesta > 0)
+                return true;
+            else
+                return false;
+        }
         public void eliminarUsuario(byte idUsuario)
         {
             modeloBD.sp_UsuarioSistema_Eliminar(idUsuario);
