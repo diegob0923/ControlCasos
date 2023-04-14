@@ -41,6 +41,7 @@ namespace ControlCasos.Formularios.Seguridad
                 txtNombre.Text = datosUsuario.Nombre;
                 txtApellido1.Text = datosUsuario.Apellido1;
                 txtApellido2.Text = datosUsuario.Apellido2;
+                txtCedula.Text = datosUsuario.Cedula;
                 cmbEstado.Text = datosUsuario.Estado;
                 cmbRol.Text = datosUsuario.Rol;
             }
@@ -67,7 +68,7 @@ namespace ControlCasos.Formularios.Seguridad
                     bool estado = cmbEstado.Text.Equals("Activo") ? Estado.Activo : Estado.Inactivo;
                     int idRol = cmbRol.Text.Equals("Administrador") ? Rol.Administrador : Rol.General;
 
-                    BLUsuario.editarUsuario(idUsuario, txtUsuario.Text, txtNombre.Text, txtApellido1.Text, estado, idRol, txtApellido2.Text);
+                    BLUsuario.editarUsuario(idUsuario, txtUsuario.Text, txtNombre.Text, txtApellido1.Text, estado, idRol, txtCedula.Text, txtApellido2.Text);
 
                     if (usuarioEditadoEsElLogueado)
                         UsuarioLogueado.usuarioLogueado = txtUsuario.Text;//actualiza usuarioLogueado con el nuevo usuario
@@ -77,7 +78,7 @@ namespace ControlCasos.Formularios.Seguridad
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Error al editar usuario. \n Posibles causas:\n Puede que ya exista un usuario \"" + txtUsuario.Text + "\"");
+                    MessageBox.Show("Error al editar usuario. \n Posibles causas:\nPuede que ya exista un usuario \"" + txtUsuario.Text + "\".\nPuede que la cédula ingresada ya exista.");
                 }
             }   
         }
@@ -136,6 +137,20 @@ namespace ControlCasos.Formularios.Seguridad
             {
                 e.Cancel = false;
                 epApellido1Validar.SetError(txtApellido1, "");
+            }
+        }
+        private void txtCedula_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtCedula.Text))
+            {
+                e.Cancel = true;
+                txtCedula.Focus();
+                epCedulaValidar.SetError(txtCedula, "Campo requerido");
+            }
+            else
+            {
+                e.Cancel = false;
+                epCedulaValidar.SetError(txtCedula, "");
             }
         }
         #endregion

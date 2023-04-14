@@ -117,6 +117,11 @@
         <Function Name="sp_ProductosPorCaso_Consultar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="idCaso" Type="int" Mode="In" />
         </Function>
+        <Function Name="sp_RestablecerContrasena_Editar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="usuario" Type="varchar" Mode="In" />
+          <Parameter Name="NuevaContrasena" Type="varchar" Mode="In" />
+          <Parameter Name="Cedula" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="sp_TipoProducto_Consultar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="TipoProducto" Type="varchar" Mode="In" />
         </Function>
@@ -144,6 +149,7 @@
           <Parameter Name="Apellido2" Type="varchar" Mode="In" />
           <Parameter Name="Estado" Type="bit" Mode="In" />
           <Parameter Name="IdRol" Type="int" Mode="In" />
+          <Parameter Name="Cedula" Type="varchar" Mode="In" />
         </Function>
         <Function Name="sp_UsuarioSistema_Eliminar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="idUsuario" Type="tinyint" Mode="In" />
@@ -156,6 +162,7 @@
           <Parameter Name="Fecha" Type="date" Mode="In" />
           <Parameter Name="Creador" Type="varchar" Mode="In" />
           <Parameter Name="IdRol" Type="int" Mode="In" />
+          <Parameter Name="Cedula" Type="varchar" Mode="In" />
         </Function>
         <Function Name="sp_UsuarioSistemaCambioContrasena_Editar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Usuario" Type="varchar" Mode="In" />
@@ -303,9 +310,6 @@
             <Parameter Name="Usuario" Mode="In" Type="String" />
             <Parameter Name="Contrasena" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="sp_UsuarioSistema_Consultar" ReturnType="Collection(ControlCasosModel.sp_UsuarioSistema_Consultar_Result)">
-          <Parameter Name="buscar" Mode="In" Type="String" />
-          </FunctionImport>
           <FunctionImport Name="sp_UsuarioSistema_Insertar">
             <Parameter Name="Usuario" Mode="In" Type="String" />
             <Parameter Name="Nombre" Mode="In" Type="String" />
@@ -314,6 +318,7 @@
             <Parameter Name="Fecha" Mode="In" Type="DateTime" />
             <Parameter Name="Creador" Mode="In" Type="String" />
             <Parameter Name="IdRol" Mode="In" Type="Int32" />
+            <Parameter Name="Cedula" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_UsuarioSistema_Editar">
             <Parameter Name="idUsuario" Mode="In" Type="Byte" />
@@ -323,9 +328,7 @@
             <Parameter Name="Apellido2" Mode="In" Type="String" />
             <Parameter Name="Estado" Mode="In" Type="Boolean" />
             <Parameter Name="IdRol" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_UsuarioSistemaID_Consultar" ReturnType="Collection(ControlCasosModel.sp_UsuarioSistemaID_Consultar_Result)">
-          <Parameter Name="idUsuario" Mode="In" Type="Byte" />
+            <Parameter Name="Cedula" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_UsuarioSistema_Eliminar">
           <Parameter Name="idUsuario" Mode="In" Type="Byte" />
@@ -335,7 +338,18 @@
             <Parameter Name="Contrasena" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_GenerarBackUp">
-            <Parameter Name="ruta" Mode="In" Type="String" />
+          <Parameter Name="ruta" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_RestablecerContrasena_Editar">
+            <Parameter Name="usuario" Mode="In" Type="String" />
+            <Parameter Name="NuevaContrasena" Mode="In" Type="String" />
+            <Parameter Name="Cedula" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_UsuarioSistema_Consultar" ReturnType="Collection(ControlCasosModel.sp_UsuarioSistema_Consultar_Result)">
+            <Parameter Name="buscar" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_UsuarioSistemaID_Consultar" ReturnType="Collection(ControlCasosModel.sp_UsuarioSistemaID_Consultar_Result)">
+            <Parameter Name="idUsuario" Mode="In" Type="Byte" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_Cliente_Consultar_Result">
@@ -432,6 +446,7 @@
           <Property Type="String" Name="Estado" Nullable="true" MaxLength="8" />
           <Property Type="Byte" Name="IdRol" Nullable="false" />
           <Property Type="String" Name="Rol" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Cedula" Nullable="false" MaxLength="50" />
         </ComplexType>
         <ComplexType Name="sp_UsuarioSistemaID_Consultar_Result">
           <Property Type="Byte" Name="IdUsuario" Nullable="false" />
@@ -443,6 +458,7 @@
           <Property Type="String" Name="Estado" Nullable="true" MaxLength="8" />
           <Property Type="Byte" Name="IdRol" Nullable="false" />
           <Property Type="String" Name="Rol" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Cedula" Nullable="false" MaxLength="50" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -604,6 +620,12 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_UsuarioSistema_Insertar" FunctionName="ControlCasosModel.Store.sp_UsuarioSistema_Insertar" />
+          <FunctionImportMapping FunctionImportName="sp_UsuarioSistema_Editar" FunctionName="ControlCasosModel.Store.sp_UsuarioSistema_Editar" />
+          <FunctionImportMapping FunctionImportName="sp_UsuarioSistema_Eliminar" FunctionName="ControlCasosModel.Store.sp_UsuarioSistema_Eliminar" />
+          <FunctionImportMapping FunctionImportName="sp_UsuarioSistemaCambioContrasena_Editar" FunctionName="ControlCasosModel.Store.sp_UsuarioSistemaCambioContrasena_Editar" />
+          <FunctionImportMapping FunctionImportName="sp_GenerarBackUp" FunctionName="ControlCasosModel.Store.sp_GenerarBackUp" />
+          <FunctionImportMapping FunctionImportName="sp_RestablecerContrasena_Editar" FunctionName="ControlCasosModel.Store.sp_RestablecerContrasena_Editar" />
           <FunctionImportMapping FunctionImportName="sp_UsuarioSistema_Consultar" FunctionName="ControlCasosModel.Store.sp_UsuarioSistema_Consultar">
             <ResultMapping>
               <ComplexTypeMapping TypeName="ControlCasosModel.sp_UsuarioSistema_Consultar_Result">
@@ -618,11 +640,10 @@
                 <ScalarProperty Name="Estado" ColumnName="Estado" />
                 <ScalarProperty Name="IdRol" ColumnName="IdRol" />
                 <ScalarProperty Name="Rol" ColumnName="Rol" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_UsuarioSistema_Insertar" FunctionName="ControlCasosModel.Store.sp_UsuarioSistema_Insertar" />
-          <FunctionImportMapping FunctionImportName="sp_UsuarioSistema_Editar" FunctionName="ControlCasosModel.Store.sp_UsuarioSistema_Editar" />
           <FunctionImportMapping FunctionImportName="sp_UsuarioSistemaID_Consultar" FunctionName="ControlCasosModel.Store.sp_UsuarioSistemaID_Consultar">
             <ResultMapping>
               <ComplexTypeMapping TypeName="ControlCasosModel.sp_UsuarioSistemaID_Consultar_Result">
@@ -635,12 +656,10 @@
                 <ScalarProperty Name="Estado" ColumnName="Estado" />
                 <ScalarProperty Name="IdRol" ColumnName="IdRol" />
                 <ScalarProperty Name="Rol" ColumnName="Rol" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_UsuarioSistema_Eliminar" FunctionName="ControlCasosModel.Store.sp_UsuarioSistema_Eliminar" />
-          <FunctionImportMapping FunctionImportName="sp_UsuarioSistemaCambioContrasena_Editar" FunctionName="ControlCasosModel.Store.sp_UsuarioSistemaCambioContrasena_Editar" />
-          <FunctionImportMapping FunctionImportName="sp_GenerarBackUp" FunctionName="ControlCasosModel.Store.sp_GenerarBackUp" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
