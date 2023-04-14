@@ -39,7 +39,7 @@ namespace ControlCasos.Formularios.Seguridad
 
                     string apellido2 = txtApellido2.Text.Equals("") ? null : txtApellido2.Text;
 
-                    usuarios.insertarUsuario(txtUsuario.Text, txtNombre.Text, txtApellido1.Text, DateTime.Now.Date, UsuarioLogueado.usuarioLogueado, idRol, apellido2);
+                    usuarios.insertarUsuario(txtUsuario.Text, txtNombre.Text, txtApellido1.Text, DateTime.Now.Date, UsuarioLogueado.usuarioLogueado, idRol, txtCedula.Text, apellido2);
 
                     this.Dispose();
                     formularioUsuarios.cargarDatosEnGrid();
@@ -107,6 +107,20 @@ namespace ControlCasos.Formularios.Seguridad
                 epApellido1Validar.SetError(txtApellido1, "");
             }
         }
+        private void txtCedula_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtCedula.Text))
+            {
+                e.Cancel = true;
+                txtCedula.Focus();
+                epCedulaValidar.SetError(txtCedula, "Campo requerido");
+            }
+            else
+            {
+                e.Cancel = false;
+                epCedulaValidar.SetError(txtCedula, "");
+            }
+        }
         private void cmbRol_Validating(object sender, CancelEventArgs e)
         {
             if (cmbRol.Text.Equals("Seleccione:"))
@@ -122,5 +136,6 @@ namespace ControlCasos.Formularios.Seguridad
             }
         }
         #endregion
+
     }
 }

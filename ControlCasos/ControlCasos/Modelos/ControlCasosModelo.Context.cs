@@ -450,16 +450,7 @@ namespace ControlCasos.Modelos
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_ValidarUsuario_Result>("sp_ValidarUsuario", usuarioParameter, contrasenaParameter);
         }
     
-        public virtual ObjectResult<sp_UsuarioSistema_Consultar_Result> sp_UsuarioSistema_Consultar(string buscar)
-        {
-            var buscarParameter = buscar != null ?
-                new ObjectParameter("buscar", buscar) :
-                new ObjectParameter("buscar", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_UsuarioSistema_Consultar_Result>("sp_UsuarioSistema_Consultar", buscarParameter);
-        }
-    
-        public virtual int sp_UsuarioSistema_Insertar(string usuario, string nombre, string apellido1, string apellido2, Nullable<System.DateTime> fecha, string creador, Nullable<int> idRol)
+        public virtual int sp_UsuarioSistema_Insertar(string usuario, string nombre, string apellido1, string apellido2, Nullable<System.DateTime> fecha, string creador, Nullable<int> idRol, string cedula)
         {
             var usuarioParameter = usuario != null ?
                 new ObjectParameter("Usuario", usuario) :
@@ -489,10 +480,14 @@ namespace ControlCasos.Modelos
                 new ObjectParameter("IdRol", idRol) :
                 new ObjectParameter("IdRol", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_UsuarioSistema_Insertar", usuarioParameter, nombreParameter, apellido1Parameter, apellido2Parameter, fechaParameter, creadorParameter, idRolParameter);
+            var cedulaParameter = cedula != null ?
+                new ObjectParameter("Cedula", cedula) :
+                new ObjectParameter("Cedula", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_UsuarioSistema_Insertar", usuarioParameter, nombreParameter, apellido1Parameter, apellido2Parameter, fechaParameter, creadorParameter, idRolParameter, cedulaParameter);
         }
     
-        public virtual int sp_UsuarioSistema_Editar(Nullable<byte> idUsuario, string usuario, string nombre, string apellido1, string apellido2, Nullable<bool> estado, Nullable<int> idRol)
+        public virtual int sp_UsuarioSistema_Editar(Nullable<byte> idUsuario, string usuario, string nombre, string apellido1, string apellido2, Nullable<bool> estado, Nullable<int> idRol, string cedula)
         {
             var idUsuarioParameter = idUsuario.HasValue ?
                 new ObjectParameter("idUsuario", idUsuario) :
@@ -522,16 +517,11 @@ namespace ControlCasos.Modelos
                 new ObjectParameter("IdRol", idRol) :
                 new ObjectParameter("IdRol", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_UsuarioSistema_Editar", idUsuarioParameter, usuarioParameter, nombreParameter, apellido1Parameter, apellido2Parameter, estadoParameter, idRolParameter);
-        }
+            var cedulaParameter = cedula != null ?
+                new ObjectParameter("Cedula", cedula) :
+                new ObjectParameter("Cedula", typeof(string));
     
-        public virtual ObjectResult<sp_UsuarioSistemaID_Consultar_Result> sp_UsuarioSistemaID_Consultar(Nullable<byte> idUsuario)
-        {
-            var idUsuarioParameter = idUsuario.HasValue ?
-                new ObjectParameter("idUsuario", idUsuario) :
-                new ObjectParameter("idUsuario", typeof(byte));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_UsuarioSistemaID_Consultar_Result>("sp_UsuarioSistemaID_Consultar", idUsuarioParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_UsuarioSistema_Editar", idUsuarioParameter, usuarioParameter, nombreParameter, apellido1Parameter, apellido2Parameter, estadoParameter, idRolParameter, cedulaParameter);
         }
     
         public virtual int sp_UsuarioSistema_Eliminar(Nullable<byte> idUsuario)
@@ -563,6 +553,41 @@ namespace ControlCasos.Modelos
                 new ObjectParameter("ruta", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_GenerarBackUp", rutaParameter);
+        }
+    
+        public virtual int sp_RestablecerContrasena_Editar(string usuario, string nuevaContrasena, string cedula)
+        {
+            var usuarioParameter = usuario != null ?
+                new ObjectParameter("usuario", usuario) :
+                new ObjectParameter("usuario", typeof(string));
+    
+            var nuevaContrasenaParameter = nuevaContrasena != null ?
+                new ObjectParameter("NuevaContrasena", nuevaContrasena) :
+                new ObjectParameter("NuevaContrasena", typeof(string));
+    
+            var cedulaParameter = cedula != null ?
+                new ObjectParameter("Cedula", cedula) :
+                new ObjectParameter("Cedula", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_RestablecerContrasena_Editar", usuarioParameter, nuevaContrasenaParameter, cedulaParameter);
+        }
+    
+        public virtual ObjectResult<sp_UsuarioSistema_Consultar_Result> sp_UsuarioSistema_Consultar(string buscar)
+        {
+            var buscarParameter = buscar != null ?
+                new ObjectParameter("buscar", buscar) :
+                new ObjectParameter("buscar", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_UsuarioSistema_Consultar_Result>("sp_UsuarioSistema_Consultar", buscarParameter);
+        }
+    
+        public virtual ObjectResult<sp_UsuarioSistemaID_Consultar_Result> sp_UsuarioSistemaID_Consultar(Nullable<byte> idUsuario)
+        {
+            var idUsuarioParameter = idUsuario.HasValue ?
+                new ObjectParameter("idUsuario", idUsuario) :
+                new ObjectParameter("idUsuario", typeof(byte));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_UsuarioSistemaID_Consultar_Result>("sp_UsuarioSistemaID_Consultar", idUsuarioParameter);
         }
     }
 }

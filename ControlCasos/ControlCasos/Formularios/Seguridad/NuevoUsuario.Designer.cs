@@ -47,15 +47,21 @@
             this.epNombreValidar = new System.Windows.Forms.ErrorProvider(this.components);
             this.epApellido1Validar = new System.Windows.Forms.ErrorProvider(this.components);
             this.epRolValidar = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtCedula = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.epCedulaValidar = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epUsuarioValidar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epNombreValidar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epApellido1Validar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epRolValidar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epCedulaValidar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtCedula);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.cmbRol);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.txtApellido2);
@@ -84,7 +90,7 @@
             "Seleccione:",
             "Administrador",
             "General"});
-            this.cmbRol.Location = new System.Drawing.Point(293, 209);
+            this.cmbRol.Location = new System.Drawing.Point(292, 297);
             this.cmbRol.Margin = new System.Windows.Forms.Padding(4);
             this.cmbRol.Name = "cmbRol";
             this.cmbRol.Size = new System.Drawing.Size(213, 28);
@@ -94,7 +100,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(289, 172);
+            this.label7.Location = new System.Drawing.Point(288, 260);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(34, 20);
@@ -236,6 +242,31 @@
             this.epRolValidar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.epRolValidar.ContainerControl = this;
             // 
+            // txtCedula
+            // 
+            this.txtCedula.Location = new System.Drawing.Point(292, 211);
+            this.txtCedula.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCedula.Name = "txtCedula";
+            this.txtCedula.Size = new System.Drawing.Size(213, 26);
+            this.txtCedula.TabIndex = 15;
+            this.txtCedula.Validating += new System.ComponentModel.CancelEventHandler(this.txtCedula_Validating);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(287, 170);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(61, 20);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Cédula";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // epCedulaValidar
+            // 
+            this.epCedulaValidar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epCedulaValidar.ContainerControl = this;
+            // 
             // frmNuevoUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -253,6 +284,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.epNombreValidar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epApellido1Validar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epRolValidar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epCedulaValidar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -277,5 +309,8 @@
         private System.Windows.Forms.ErrorProvider epNombreValidar;
         private System.Windows.Forms.ErrorProvider epApellido1Validar;
         private System.Windows.Forms.ErrorProvider epRolValidar;
+        private System.Windows.Forms.TextBox txtCedula;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ErrorProvider epCedulaValidar;
     }
 }
