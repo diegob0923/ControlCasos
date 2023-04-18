@@ -408,6 +408,7 @@
     <Content Include="Imagenes\cancelar.png" />
     <None Include="Imagenes\cerrarSesion.png" />
     <Content Include="Imagenes\editar.png" />
+    <Content Include="Imagenes\MOBARLogo.png" />
     <Content Include="Modelos\ControlCasosModelo.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ControlCasosModelo.Context.cs</LastGenOutput>
