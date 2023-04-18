@@ -43,55 +43,57 @@
             // 
             // txtNuevaContrasena
             // 
+            this.txtNuevaContrasena.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNuevaContrasena.Location = new System.Drawing.Point(434, 188);
             this.txtNuevaContrasena.Name = "txtNuevaContrasena";
             this.txtNuevaContrasena.PasswordChar = '*';
-            this.txtNuevaContrasena.Size = new System.Drawing.Size(227, 26);
+            this.txtNuevaContrasena.Size = new System.Drawing.Size(227, 27);
             this.txtNuevaContrasena.TabIndex = 0;
             this.txtNuevaContrasena.Validating += new System.ComponentModel.CancelEventHandler(this.txtNuevaContrasena_Validating);
             // 
             // txtConfirmarContrasena
             // 
+            this.txtConfirmarContrasena.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirmarContrasena.Location = new System.Drawing.Point(434, 260);
             this.txtConfirmarContrasena.Name = "txtConfirmarContrasena";
             this.txtConfirmarContrasena.PasswordChar = '*';
-            this.txtConfirmarContrasena.Size = new System.Drawing.Size(227, 26);
+            this.txtConfirmarContrasena.Size = new System.Drawing.Size(227, 27);
             this.txtConfirmarContrasena.TabIndex = 1;
             this.txtConfirmarContrasena.Validating += new System.ComponentModel.CancelEventHandler(this.txtConfirmarContrasena_Validating);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Montserrat Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(340, 71);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(258, 31);
+            this.label1.Size = new System.Drawing.Size(226, 26);
             this.label1.TabIndex = 2;
             this.label1.Text = "Cambiar contraseña";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(257, 187);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(171, 25);
+            this.label2.Size = new System.Drawing.Size(156, 22);
             this.label2.TabIndex = 3;
             this.label2.Text = "Nueva contraseña";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(229, 258);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(199, 25);
+            this.label3.Size = new System.Drawing.Size(186, 22);
             this.label3.TabIndex = 4;
             this.label3.Text = "Confirmar contraseña";
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.Location = new System.Drawing.Point(562, 325);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(99, 32);
@@ -112,7 +114,7 @@
             // 
             // frmCambiarContrasena
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 666);
             this.Controls.Add(this.btnGuardar);
