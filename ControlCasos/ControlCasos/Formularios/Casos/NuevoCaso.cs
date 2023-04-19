@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
+using ControlCasos.Constantes;
 
 namespace ControlCasos.Formularios.Casos
 {
@@ -28,6 +29,7 @@ namespace ControlCasos.Formularios.Casos
         public frmNuevoCaso(frmCasos formularioCasos)
         {
             InitializeComponent();
+            Formato.DarFormatoDataGridView(dgvResumenProductos);
             this.formularioCasos = formularioCasos;
             eliminarImagenDefaultEnColumnaEliminarCuandoNoHayDatos();
             cargarComboBoxDoctores();
