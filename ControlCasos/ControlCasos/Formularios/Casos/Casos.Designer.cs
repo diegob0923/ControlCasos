@@ -109,20 +109,22 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(36, 176);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 20);
+            this.label2.Size = new System.Drawing.Size(81, 22);
             this.label2.TabIndex = 8;
             this.label2.Text = "Paciente";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(36, 100);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 20);
+            this.label1.Size = new System.Drawing.Size(65, 22);
             this.label1.TabIndex = 7;
             this.label1.Text = "Doctor";
             // 
@@ -131,11 +133,12 @@
             this.cmbPaciente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmbPaciente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbPaciente.DisplayMember = "Paciente";
+            this.cmbPaciente.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbPaciente.FormattingEnabled = true;
             this.cmbPaciente.Location = new System.Drawing.Point(41, 205);
             this.cmbPaciente.Margin = new System.Windows.Forms.Padding(4);
             this.cmbPaciente.Name = "cmbPaciente";
-            this.cmbPaciente.Size = new System.Drawing.Size(561, 28);
+            this.cmbPaciente.Size = new System.Drawing.Size(561, 26);
             this.cmbPaciente.TabIndex = 6;
             this.cmbPaciente.ValueMember = "Paciente";
             this.cmbPaciente.SelectedValueChanged += new System.EventHandler(this.cmbPaciente_SelectedValueChanged);
@@ -145,11 +148,12 @@
             this.cmbDoctor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmbDoctor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbDoctor.DisplayMember = "Doctor";
+            this.cmbDoctor.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDoctor.FormattingEnabled = true;
             this.cmbDoctor.Location = new System.Drawing.Point(41, 129);
             this.cmbDoctor.Margin = new System.Windows.Forms.Padding(4);
             this.cmbDoctor.Name = "cmbDoctor";
-            this.cmbDoctor.Size = new System.Drawing.Size(561, 28);
+            this.cmbDoctor.Size = new System.Drawing.Size(561, 26);
             this.cmbDoctor.TabIndex = 5;
             this.cmbDoctor.ValueMember = "idDoctor";
             this.cmbDoctor.SelectedValueChanged += new System.EventHandler(this.cmbDoctor_SelectedValueChanged);
@@ -167,10 +171,13 @@
             // 
             // lnkNuevoCaso
             // 
+            this.lnkNuevoCaso.ActiveLinkColor = System.Drawing.Color.LightSeaGreen;
             this.lnkNuevoCaso.AutoSize = true;
-            this.lnkNuevoCaso.Location = new System.Drawing.Point(679, 287);
+            this.lnkNuevoCaso.Font = new System.Drawing.Font("Montserrat", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkNuevoCaso.LinkColor = System.Drawing.Color.Teal;
+            this.lnkNuevoCaso.Location = new System.Drawing.Point(681, 298);
             this.lnkNuevoCaso.Name = "lnkNuevoCaso";
-            this.lnkNuevoCaso.Size = new System.Drawing.Size(100, 20);
+            this.lnkNuevoCaso.Size = new System.Drawing.Size(98, 21);
             this.lnkNuevoCaso.TabIndex = 11;
             this.lnkNuevoCaso.TabStop = true;
             this.lnkNuevoCaso.Text = "Nuevo Caso";
@@ -180,17 +187,17 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Montserrat Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(374, 33);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 31);
+            this.label4.Size = new System.Drawing.Size(81, 29);
             this.label4.TabIndex = 12;
             this.label4.Text = "Casos";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // frmCasos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 666);
             this.Controls.Add(this.label4);

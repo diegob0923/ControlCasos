@@ -1,4 +1,5 @@
 using ControlCasos.BL;
+using ControlCasos.Constantes;
 using ControlCasos.Modelos;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ namespace ControlCasos.Formularios.Casos
         public frmCasos()
         {
             InitializeComponent();
+            Formato.DarFormatoDataGridView(dgvListaCasos);
             cargarComboDoctor();
             consultarCasos();
             eliminarImagenDefaultEnColumnaDetallesCuandoNoHayDatos();
