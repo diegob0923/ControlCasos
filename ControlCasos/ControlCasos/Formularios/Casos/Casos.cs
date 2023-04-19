@@ -1,4 +1,4 @@
-﻿using ControlCasos.BL;
+using ControlCasos.BL;
 using ControlCasos.Modelos;
 using System;
 using System.Collections.Generic;
@@ -147,7 +147,9 @@ namespace ControlCasos.Formularios.Casos
         
         private void dgvListaCasos_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
         {
-            // Se le asigna la celda 7 porque esla celda eliminar, donde está la imagen
+            Cursor = Cursors.Default;
+
+            //Se le asigna el numero de celda de la celda detalles, porque es donde está la imagen
             if (e.ColumnIndex == 4 && e.RowIndex != -1)
             {
                 // Verificar si la fila y la columna son válidas

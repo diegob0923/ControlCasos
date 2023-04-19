@@ -299,7 +299,9 @@ namespace ControlCasos.Formularios.Casos
 
         private void dgvResumenProductos_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
         {
-            // Se le asigna el numero de celda de la celda eliminar, porque es donde está la imagen
+            Cursor = Cursors.Default;
+
+            //Se le asigna el numero de celda de la celda eliminar, porque es donde está la imagen
             if (e.ColumnIndex == 7 && e.RowIndex != -1)
             {
                 // Verificar si la fila y la columna son válidas

@@ -98,7 +98,9 @@ namespace ControlCasos.Formularios.Mantenimientos
 
         private void dgvListaColores_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
         {
-            // Se le asigna el numero de celda de la celda eliminar, porque es donde está la imagen
+            Cursor = Cursors.Default;
+
+            // Se le asigna el numero de celda de las celdas editar-eliminar, porque es donde está la imagen
             if ((e.ColumnIndex == 2 || e.ColumnIndex == 3) && e.RowIndex != -1)
             {
                 // Verificar si la fila y la columna son válidas
