@@ -263,6 +263,8 @@
             // 
             // cmbDoctor
             // 
+            this.cmbDoctor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbDoctor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbDoctor.DisplayMember = "Doctor";
             this.cmbDoctor.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDoctor.FormattingEnabled = true;

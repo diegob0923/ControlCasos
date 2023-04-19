@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ControlCasos.Constantes;
 
 namespace ControlCasos.Formularios.Casos
 {
@@ -18,6 +19,7 @@ namespace ControlCasos.Formularios.Casos
         public frmProductos(int idCaso)
         {
             InitializeComponent();
+            Formato.DarFormatoDataGridView(dgvProductos);
             cargarGridProductos(idCaso);
         }
 
