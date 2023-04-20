@@ -40,6 +40,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaTipoProductos)).BeginInit();
             this.pnlFiltro.SuspendLayout();
             this.SuspendLayout();
@@ -53,11 +54,11 @@
             this.Editar,
             this.Eliminar,
             this.Id});
-            this.dgvListaTipoProductos.Location = new System.Drawing.Point(96, 159);
+            this.dgvListaTipoProductos.Location = new System.Drawing.Point(70, 234);
             this.dgvListaTipoProductos.Name = "dgvListaTipoProductos";
             this.dgvListaTipoProductos.RowHeadersWidth = 51;
             this.dgvListaTipoProductos.RowTemplate.Height = 27;
-            this.dgvListaTipoProductos.Size = new System.Drawing.Size(666, 150);
+            this.dgvListaTipoProductos.Size = new System.Drawing.Size(719, 282);
             this.dgvListaTipoProductos.TabIndex = 1;
             this.dgvListaTipoProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaTipoProductos_CellContentClick);
             this.dgvListaTipoProductos.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvListaTipoProductos_CellMouseMove);
@@ -96,13 +97,15 @@
             // 
             // lnkNuevoTipoProducto
             // 
+            this.lnkNuevoTipoProducto.ActiveLinkColor = System.Drawing.Color.LightSeaGreen;
             this.lnkNuevoTipoProducto.AutoSize = true;
-            this.lnkNuevoTipoProducto.Location = new System.Drawing.Point(581, 341);
+            this.lnkNuevoTipoProducto.LinkColor = System.Drawing.Color.Teal;
+            this.lnkNuevoTipoProducto.Location = new System.Drawing.Point(627, 201);
             this.lnkNuevoTipoProducto.Name = "lnkNuevoTipoProducto";
-            this.lnkNuevoTipoProducto.Size = new System.Drawing.Size(181, 20);
+            this.lnkNuevoTipoProducto.Size = new System.Drawing.Size(162, 17);
             this.lnkNuevoTipoProducto.TabIndex = 6;
             this.lnkNuevoTipoProducto.TabStop = true;
-            this.lnkNuevoTipoProducto.Text = "Nuevo tipo de producto";
+            this.lnkNuevoTipoProducto.Text = "Nuevo Tipo de Producto";
             this.lnkNuevoTipoProducto.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkNuevoTipoProducto_LinkClicked);
             // 
             // pnlFiltro
@@ -112,7 +115,7 @@
             this.pnlFiltro.Controls.Add(this.txtBuscar);
             this.pnlFiltro.Controls.Add(this.btnBuscar);
             this.pnlFiltro.Controls.Add(this.btnCancelar);
-            this.pnlFiltro.Location = new System.Drawing.Point(96, 88);
+            this.pnlFiltro.Location = new System.Drawing.Point(70, 174);
             this.pnlFiltro.Name = "pnlFiltro";
             this.pnlFiltro.Size = new System.Drawing.Size(371, 36);
             this.pnlFiltro.TabIndex = 7;
@@ -122,7 +125,7 @@
             this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBuscar.Location = new System.Drawing.Point(3, 7);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(279, 19);
+            this.txtBuscar.Size = new System.Drawing.Size(279, 16);
             this.txtBuscar.TabIndex = 1;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
@@ -171,11 +174,22 @@
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 68;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Montserrat Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(318, 71);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(287, 29);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Lista Tipos de Producto";
+            // 
             // frmTipoProducto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 666);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pnlFiltro);
             this.Controls.Add(this.lnkNuevoTipoProducto);
             this.Controls.Add(this.dgvListaTipoProductos);
@@ -206,5 +220,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.Label label1;
     }
 }

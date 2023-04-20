@@ -43,6 +43,7 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lnkNuevoCliente = new System.Windows.Forms.LinkLabel();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaDoctores)).BeginInit();
             this.pnlFiltro.SuspendLayout();
             this.SuspendLayout();
@@ -61,11 +62,11 @@
             this.Editar,
             this.Eliminar,
             this.Id});
-            this.dgvListaDoctores.Location = new System.Drawing.Point(45, 167);
+            this.dgvListaDoctores.Location = new System.Drawing.Point(70, 234);
             this.dgvListaDoctores.Name = "dgvListaDoctores";
             this.dgvListaDoctores.RowHeadersWidth = 51;
             this.dgvListaDoctores.RowTemplate.Height = 27;
-            this.dgvListaDoctores.Size = new System.Drawing.Size(769, 150);
+            this.dgvListaDoctores.Size = new System.Drawing.Size(719, 282);
             this.dgvListaDoctores.TabIndex = 1;
             this.dgvListaDoctores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaDoctores_CellContentClick);
             this.dgvListaDoctores.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvListaDoctores_CellMouseMove);
@@ -146,7 +147,7 @@
             this.pnlFiltro.Controls.Add(this.txtBuscar);
             this.pnlFiltro.Controls.Add(this.btnBuscar);
             this.pnlFiltro.Controls.Add(this.btnCancelar);
-            this.pnlFiltro.Location = new System.Drawing.Point(45, 85);
+            this.pnlFiltro.Location = new System.Drawing.Point(70, 174);
             this.pnlFiltro.Name = "pnlFiltro";
             this.pnlFiltro.Size = new System.Drawing.Size(371, 36);
             this.pnlFiltro.TabIndex = 5;
@@ -154,6 +155,7 @@
             // txtBuscar
             // 
             this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBuscar.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscar.Location = new System.Drawing.Point(3, 7);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(279, 19);
@@ -189,20 +191,34 @@
             // 
             // lnkNuevoCliente
             // 
+            this.lnkNuevoCliente.ActiveLinkColor = System.Drawing.Color.LightSeaGreen;
             this.lnkNuevoCliente.AutoSize = true;
-            this.lnkNuevoCliente.Location = new System.Drawing.Point(706, 338);
+            this.lnkNuevoCliente.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkNuevoCliente.LinkColor = System.Drawing.Color.Teal;
+            this.lnkNuevoCliente.Location = new System.Drawing.Point(677, 201);
             this.lnkNuevoCliente.Name = "lnkNuevoCliente";
-            this.lnkNuevoCliente.Size = new System.Drawing.Size(108, 20);
+            this.lnkNuevoCliente.Size = new System.Drawing.Size(112, 21);
             this.lnkNuevoCliente.TabIndex = 6;
             this.lnkNuevoCliente.TabStop = true;
-            this.lnkNuevoCliente.Text = "Nuevo doctor";
+            this.lnkNuevoCliente.Text = "Nuevo Doctor";
             this.lnkNuevoCliente.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkNuevoCliente_LinkClicked);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Montserrat Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(343, 71);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(181, 29);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Lista Doctores";
             // 
             // frmDoctores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 666);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lnkNuevoCliente);
             this.Controls.Add(this.pnlFiltro);
             this.Controls.Add(this.dgvListaDoctores);
@@ -236,5 +252,6 @@
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.Label label1;
     }
 }

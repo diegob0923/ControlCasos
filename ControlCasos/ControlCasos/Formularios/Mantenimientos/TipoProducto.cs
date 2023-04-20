@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ControlCasos.Modelos;
+using ControlCasos.Constantes;
 
 namespace ControlCasos.Formularios.Mantenimientos
 {
@@ -18,6 +19,7 @@ namespace ControlCasos.Formularios.Mantenimientos
         public frmTipoProducto()
         {
             InitializeComponent();
+            Formato.DarFormatoDataGridView(dgvListaTipoProductos);
             cargarDatosEnGrid();
         }
         public void cargarDatosEnGrid()

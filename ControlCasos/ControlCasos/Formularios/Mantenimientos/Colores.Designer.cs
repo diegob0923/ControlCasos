@@ -40,6 +40,7 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaColores)).BeginInit();
             this.pnlFiltro.SuspendLayout();
             this.SuspendLayout();
@@ -55,11 +56,11 @@
             this.Eliminar,
             this.Id,
             this.ColorGuia});
-            this.dgvListaColores.Location = new System.Drawing.Point(98, 189);
+            this.dgvListaColores.Location = new System.Drawing.Point(70, 234);
             this.dgvListaColores.Name = "dgvListaColores";
             this.dgvListaColores.RowHeadersWidth = 51;
             this.dgvListaColores.RowTemplate.Height = 27;
-            this.dgvListaColores.Size = new System.Drawing.Size(666, 150);
+            this.dgvListaColores.Size = new System.Drawing.Size(719, 282);
             this.dgvListaColores.TabIndex = 1;
             this.dgvListaColores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaColores_CellContentClick);
             this.dgvListaColores.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvListaColores_CellMouseMove);
@@ -112,13 +113,16 @@
             // 
             // lnkNuevoColor
             // 
+            this.lnkNuevoColor.ActiveLinkColor = System.Drawing.Color.LightSeaGreen;
             this.lnkNuevoColor.AutoSize = true;
-            this.lnkNuevoColor.Location = new System.Drawing.Point(654, 362);
+            this.lnkNuevoColor.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkNuevoColor.LinkColor = System.Drawing.Color.Teal;
+            this.lnkNuevoColor.Location = new System.Drawing.Point(688, 201);
             this.lnkNuevoColor.Name = "lnkNuevoColor";
-            this.lnkNuevoColor.Size = new System.Drawing.Size(98, 20);
+            this.lnkNuevoColor.Size = new System.Drawing.Size(101, 21);
             this.lnkNuevoColor.TabIndex = 6;
             this.lnkNuevoColor.TabStop = true;
-            this.lnkNuevoColor.Text = "Nuevo color";
+            this.lnkNuevoColor.Text = "Nuevo Color";
             this.lnkNuevoColor.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkNuevoColor_LinkClicked);
             // 
             // pnlFiltro
@@ -128,7 +132,7 @@
             this.pnlFiltro.Controls.Add(this.txtBuscar);
             this.pnlFiltro.Controls.Add(this.btnBuscar);
             this.pnlFiltro.Controls.Add(this.btnCancelar);
-            this.pnlFiltro.Location = new System.Drawing.Point(98, 104);
+            this.pnlFiltro.Location = new System.Drawing.Point(70, 174);
             this.pnlFiltro.Name = "pnlFiltro";
             this.pnlFiltro.Size = new System.Drawing.Size(371, 36);
             this.pnlFiltro.TabIndex = 7;
@@ -136,6 +140,7 @@
             // txtBuscar
             // 
             this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBuscar.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscar.Location = new System.Drawing.Point(3, 7);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(279, 19);
@@ -169,11 +174,22 @@
             this.btnCancelar.Visible = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Montserrat Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(363, 71);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(163, 29);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Lista Colores";
+            // 
             // frmColores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 666);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pnlFiltro);
             this.Controls.Add(this.lnkNuevoColor);
             this.Controls.Add(this.dgvListaColores);
@@ -204,5 +220,6 @@
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColorGuia;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using ControlCasos.BL;
 using ControlCasos.Modelos;
+using ControlCasos.Constantes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,7 @@ namespace ControlCasos.Formularios.Seguridad
         public frmUsuarios()
         {
             InitializeComponent();
+            Formato.DarFormatoDataGridView(dgvListaUsuarios);
             cargarDatosEnGrid();
         }
         public void cargarDatosEnGrid()

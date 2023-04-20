@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ControlCasos.BL;
 using ControlCasos.Modelos;
+using ControlCasos.Constantes;
 
 namespace ControlCasos.Formularios.Mantenimientos
 {
@@ -18,6 +19,7 @@ namespace ControlCasos.Formularios.Mantenimientos
         public frmDoctores()
         {
             InitializeComponent();
+            Formato.DarFormatoDataGridView(dgvListaDoctores);
             cargarDatosEnGrid();
         }
 

@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ControlCasos.Modelos;
+using ControlCasos.Constantes;
+
 
 namespace ControlCasos.Formularios.Mantenimientos
 {
@@ -18,6 +20,7 @@ namespace ControlCasos.Formularios.Mantenimientos
         public frmColores()
         {
             InitializeComponent();
+            Formato.DarFormatoDataGridView(dgvListaColores);
             cargarDatosEnGrid();
         }
 
