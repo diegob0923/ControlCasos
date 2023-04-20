@@ -47,6 +47,8 @@
             // 
             // dgvListaColores
             // 
+            this.dgvListaColores.AllowUserToAddRows = false;
+            this.dgvListaColores.AllowUserToDeleteRows = false;
             this.dgvListaColores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListaColores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaColores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -58,6 +60,7 @@
             this.ColorGuia});
             this.dgvListaColores.Location = new System.Drawing.Point(70, 234);
             this.dgvListaColores.Name = "dgvListaColores";
+            this.dgvListaColores.ReadOnly = true;
             this.dgvListaColores.RowHeadersWidth = 51;
             this.dgvListaColores.RowTemplate.Height = 27;
             this.dgvListaColores.Size = new System.Drawing.Size(719, 282);

@@ -31,7 +31,6 @@ namespace ControlCasos.Formularios.Casos
             InitializeComponent();
             Formato.DarFormatoDataGridView(dgvResumenProductos);
             this.formularioCasos = formularioCasos;
-            eliminarImagenDefaultEnColumnaEliminarCuandoNoHayDatos();
             cargarComboBoxDoctores();
             cargarComboBoxMarca();
             cargarComboBoxTipoProducto();
@@ -50,11 +49,6 @@ namespace ControlCasos.Formularios.Casos
             {
                 MessageBox.Show("Ocurrio un error al cargar los datos de productos");
             }
-        }
-
-        private void eliminarImagenDefaultEnColumnaEliminarCuandoNoHayDatos()
-        {
-            dgvResumenProductos.Rows[0].Cells["Eliminar"].Value = new Bitmap(1, 1);
         }
 
         /// <summary>

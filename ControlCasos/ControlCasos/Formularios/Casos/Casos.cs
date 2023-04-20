@@ -24,7 +24,6 @@ namespace ControlCasos.Formularios.Casos
             Formato.DarFormatoDataGridView(dgvListaCasos);
             cargarComboDoctor();
             consultarCasos();
-            eliminarImagenDefaultEnColumnaDetallesCuandoNoHayDatos();
         }
 
         private void cargarComboDoctor()
@@ -106,7 +105,6 @@ namespace ControlCasos.Formularios.Casos
             if (cmbPaciente.Text.Equals(""))
             {
                 dgvListaCasos.DataSource = null;
-                eliminarImagenDefaultEnColumnaDetallesCuandoNoHayDatos();
             }
         }
 
@@ -114,11 +112,6 @@ namespace ControlCasos.Formularios.Casos
         {
             consultarCasos();//para actulaizar la lista de casos
             cargarComboPaciente();//volver a cargar el comboPaciente para que aparezca el nuevo paciente en la lista
-        }
-        
-        private void eliminarImagenDefaultEnColumnaDetallesCuandoNoHayDatos()
-        {
-            dgvListaCasos.Rows[0].Cells["Detalles"].Value = new Bitmap(1, 1);
         }
 
         #region Eventos

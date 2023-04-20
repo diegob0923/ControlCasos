@@ -50,6 +50,8 @@
             // 
             // dgvListaDoctores
             // 
+            this.dgvListaDoctores.AllowUserToAddRows = false;
+            this.dgvListaDoctores.AllowUserToDeleteRows = false;
             this.dgvListaDoctores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListaDoctores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaDoctores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -64,6 +66,7 @@
             this.Id});
             this.dgvListaDoctores.Location = new System.Drawing.Point(70, 234);
             this.dgvListaDoctores.Name = "dgvListaDoctores";
+            this.dgvListaDoctores.ReadOnly = true;
             this.dgvListaDoctores.RowHeadersWidth = 51;
             this.dgvListaDoctores.RowTemplate.Height = 27;
             this.dgvListaDoctores.Size = new System.Drawing.Size(719, 282);

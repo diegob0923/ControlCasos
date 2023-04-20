@@ -48,6 +48,8 @@
             // 
             // dgvListaCasos
             // 
+            this.dgvListaCasos.AllowUserToAddRows = false;
+            this.dgvListaCasos.AllowUserToDeleteRows = false;
             this.dgvListaCasos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListaCasos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaCasos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -59,6 +61,7 @@
             this.dgvListaCasos.Location = new System.Drawing.Point(40, 323);
             this.dgvListaCasos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvListaCasos.Name = "dgvListaCasos";
+            this.dgvListaCasos.ReadOnly = true;
             this.dgvListaCasos.RowHeadersWidth = 51;
             this.dgvListaCasos.RowTemplate.Height = 27;
             this.dgvListaCasos.Size = new System.Drawing.Size(739, 150);
@@ -74,6 +77,7 @@
             this.IdCaso.HeaderText = "ID";
             this.IdCaso.MinimumWidth = 6;
             this.IdCaso.Name = "IdCaso";
+            this.IdCaso.ReadOnly = true;
             // 
             // Fecha
             // 
@@ -81,6 +85,7 @@
             this.Fecha.HeaderText = "Fecha";
             this.Fecha.MinimumWidth = 6;
             this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
             // 
             // Doctor
             // 
@@ -88,6 +93,7 @@
             this.Doctor.HeaderText = "Doctor";
             this.Doctor.MinimumWidth = 6;
             this.Doctor.Name = "Doctor";
+            this.Doctor.ReadOnly = true;
             // 
             // Paciente
             // 
@@ -95,6 +101,7 @@
             this.Paciente.HeaderText = "Paciente";
             this.Paciente.MinimumWidth = 6;
             this.Paciente.Name = "Paciente";
+            this.Paciente.ReadOnly = true;
             // 
             // Detalles
             // 
@@ -105,6 +112,7 @@
             this.Detalles.Image = global::ControlCasos.Properties.Resources.btnAbrir;
             this.Detalles.MinimumWidth = 6;
             this.Detalles.Name = "Detalles";
+            this.Detalles.ReadOnly = true;
             // 
             // label2
             // 

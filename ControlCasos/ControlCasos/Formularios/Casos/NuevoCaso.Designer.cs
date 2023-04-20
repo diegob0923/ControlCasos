@@ -296,6 +296,8 @@
             // 
             // dgvResumenProductos
             // 
+            this.dgvResumenProductos.AllowUserToAddRows = false;
+            this.dgvResumenProductos.AllowUserToDeleteRows = false;
             this.dgvResumenProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvResumenProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvResumenProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -309,6 +311,7 @@
             this.Eliminar});
             this.dgvResumenProductos.Location = new System.Drawing.Point(26, 335);
             this.dgvResumenProductos.Name = "dgvResumenProductos";
+            this.dgvResumenProductos.ReadOnly = true;
             this.dgvResumenProductos.RowHeadersWidth = 51;
             this.dgvResumenProductos.RowTemplate.Height = 24;
             this.dgvResumenProductos.Size = new System.Drawing.Size(991, 126);

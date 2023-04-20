@@ -108,6 +108,8 @@
             // 
             // dgvListaMarcas
             // 
+            this.dgvListaMarcas.AllowUserToAddRows = false;
+            this.dgvListaMarcas.AllowUserToDeleteRows = false;
             this.dgvListaMarcas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListaMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaMarcas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -117,6 +119,7 @@
             this.Id});
             this.dgvListaMarcas.Location = new System.Drawing.Point(70, 234);
             this.dgvListaMarcas.Name = "dgvListaMarcas";
+            this.dgvListaMarcas.ReadOnly = true;
             this.dgvListaMarcas.RowHeadersWidth = 51;
             this.dgvListaMarcas.RowTemplate.Height = 27;
             this.dgvListaMarcas.Size = new System.Drawing.Size(719, 282);

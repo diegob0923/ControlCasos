@@ -47,6 +47,8 @@
             // 
             // dgvListaTipoProductos
             // 
+            this.dgvListaTipoProductos.AllowUserToAddRows = false;
+            this.dgvListaTipoProductos.AllowUserToDeleteRows = false;
             this.dgvListaTipoProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListaTipoProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaTipoProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -56,6 +58,7 @@
             this.Id});
             this.dgvListaTipoProductos.Location = new System.Drawing.Point(70, 234);
             this.dgvListaTipoProductos.Name = "dgvListaTipoProductos";
+            this.dgvListaTipoProductos.ReadOnly = true;
             this.dgvListaTipoProductos.RowHeadersWidth = 51;
             this.dgvListaTipoProductos.RowTemplate.Height = 27;
             this.dgvListaTipoProductos.Size = new System.Drawing.Size(719, 282);

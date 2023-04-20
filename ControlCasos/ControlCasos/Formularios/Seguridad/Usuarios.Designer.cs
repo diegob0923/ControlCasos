@@ -100,6 +100,8 @@
             // 
             // dgvListaUsuarios
             // 
+            this.dgvListaUsuarios.AllowUserToAddRows = false;
+            this.dgvListaUsuarios.AllowUserToDeleteRows = false;
             this.dgvListaUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListaUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -114,6 +116,7 @@
             this.Id});
             this.dgvListaUsuarios.Location = new System.Drawing.Point(59, 234);
             this.dgvListaUsuarios.Name = "dgvListaUsuarios";
+            this.dgvListaUsuarios.ReadOnly = true;
             this.dgvListaUsuarios.RowHeadersWidth = 51;
             this.dgvListaUsuarios.RowTemplate.Height = 27;
             this.dgvListaUsuarios.Size = new System.Drawing.Size(747, 282);
