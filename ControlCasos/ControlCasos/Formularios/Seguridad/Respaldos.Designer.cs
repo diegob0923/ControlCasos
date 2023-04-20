@@ -34,6 +34,7 @@
             // 
             // btnGenerarRespaldo
             // 
+            this.btnGenerarRespaldo.Font = new System.Drawing.Font("Montserrat", 11F);
             this.btnGenerarRespaldo.Location = new System.Drawing.Point(330, 113);
             this.btnGenerarRespaldo.Name = "btnGenerarRespaldo";
             this.btnGenerarRespaldo.Size = new System.Drawing.Size(167, 47);
@@ -44,6 +45,7 @@
             // 
             // btnRestaurarDatos
             // 
+            this.btnRestaurarDatos.Font = new System.Drawing.Font("Montserrat", 11F);
             this.btnRestaurarDatos.Location = new System.Drawing.Point(330, 232);
             this.btnRestaurarDatos.Name = "btnRestaurarDatos";
             this.btnRestaurarDatos.Size = new System.Drawing.Size(167, 47);
@@ -54,7 +56,7 @@
             // 
             // frmRespaldos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 666);
             this.Controls.Add(this.btnRestaurarDatos);
