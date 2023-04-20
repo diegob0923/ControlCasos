@@ -123,9 +123,9 @@
             this.label1.Location = new System.Drawing.Point(24, 23);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 22);
+            this.label1.Size = new System.Drawing.Size(139, 22);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Nombre";
+            this.label1.Text = "Nombre Cliente";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // epNombreValidar

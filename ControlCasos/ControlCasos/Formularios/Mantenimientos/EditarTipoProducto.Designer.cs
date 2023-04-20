@@ -95,7 +95,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(148, 22);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Tipo de producto";
+            this.label1.Text = "Tipo de Producto";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // epTipoProductoValidar

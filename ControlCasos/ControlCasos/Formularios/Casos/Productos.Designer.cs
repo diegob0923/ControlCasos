@@ -67,6 +67,7 @@
             this.TipoProducto.HeaderText = "TipoProducto";
             this.TipoProducto.MinimumWidth = 6;
             this.TipoProducto.Name = "TipoProducto";
+            this.TipoProducto.ReadOnly = true;
             this.TipoProducto.Width = 125;
             // 
             // Marca
@@ -75,6 +76,7 @@
             this.Marca.HeaderText = "Marca";
             this.Marca.MinimumWidth = 6;
             this.Marca.Name = "Marca";
+            this.Marca.ReadOnly = true;
             this.Marca.Width = 125;
             // 
             // Color
@@ -83,6 +85,7 @@
             this.Color.HeaderText = "Color";
             this.Color.MinimumWidth = 6;
             this.Color.Name = "Color";
+            this.Color.ReadOnly = true;
             this.Color.Width = 125;
             // 
             // Tamano
@@ -91,6 +94,7 @@
             this.Tamano.HeaderText = "Tamaño";
             this.Tamano.MinimumWidth = 6;
             this.Tamano.Name = "Tamano";
+            this.Tamano.ReadOnly = true;
             this.Tamano.Width = 125;
             // 
             // Diametro
@@ -99,6 +103,7 @@
             this.Diametro.HeaderText = "Diámetro";
             this.Diametro.MinimumWidth = 6;
             this.Diametro.Name = "Diametro";
+            this.Diametro.ReadOnly = true;
             this.Diametro.Width = 125;
             // 
             // Cantidad
@@ -107,6 +112,7 @@
             this.Cantidad.HeaderText = "Cantidad";
             this.Cantidad.MinimumWidth = 6;
             this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
             this.Cantidad.Width = 125;
             // 
             // Comentario
@@ -115,6 +121,7 @@
             this.Comentario.HeaderText = "Comentario";
             this.Comentario.MinimumWidth = 6;
             this.Comentario.Name = "Comentario";
+            this.Comentario.ReadOnly = true;
             this.Comentario.Width = 125;
             // 
             // label5
@@ -123,9 +130,9 @@
             this.label5.Font = new System.Drawing.Font("Montserrat Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(12, 28);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(323, 26);
+            this.label5.Size = new System.Drawing.Size(290, 26);
             this.label5.TabIndex = 23;
-            this.label5.Text = "Información sobre Productos";
+            this.label5.Text = "Información de Productos";
             // 
             // frmProductos
             // 

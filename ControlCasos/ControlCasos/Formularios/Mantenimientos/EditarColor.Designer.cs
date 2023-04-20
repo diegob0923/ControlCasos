@@ -74,7 +74,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 22);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Guia";
+            this.label3.Text = "Guía";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnCancelar
