@@ -65,9 +65,10 @@
             // txtBuscar
             // 
             this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBuscar.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscar.Location = new System.Drawing.Point(3, 7);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(279, 16);
+            this.txtBuscar.Size = new System.Drawing.Size(279, 19);
             this.txtBuscar.TabIndex = 1;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
@@ -128,10 +129,11 @@
             // 
             this.lnkNuevoUsuario.ActiveLinkColor = System.Drawing.Color.LightSeaGreen;
             this.lnkNuevoUsuario.AutoSize = true;
+            this.lnkNuevoUsuario.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkNuevoUsuario.LinkColor = System.Drawing.Color.Teal;
-            this.lnkNuevoUsuario.Location = new System.Drawing.Point(704, 201);
+            this.lnkNuevoUsuario.Location = new System.Drawing.Point(687, 201);
             this.lnkNuevoUsuario.Name = "lnkNuevoUsuario";
-            this.lnkNuevoUsuario.Size = new System.Drawing.Size(102, 17);
+            this.lnkNuevoUsuario.Size = new System.Drawing.Size(119, 21);
             this.lnkNuevoUsuario.TabIndex = 10;
             this.lnkNuevoUsuario.TabStop = true;
             this.lnkNuevoUsuario.Text = "Nuevo Usuario";
