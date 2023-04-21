@@ -44,6 +44,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lnkNuevoCliente = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblBuscar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaDoctores)).BeginInit();
             this.pnlFiltro.SuspendLayout();
             this.SuspendLayout();
@@ -158,6 +159,7 @@
             this.pnlFiltro.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlFiltro.BackColor = System.Drawing.SystemColors.Window;
             this.pnlFiltro.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlFiltro.Controls.Add(this.lblBuscar);
             this.pnlFiltro.Controls.Add(this.txtBuscar);
             this.pnlFiltro.Controls.Add(this.btnBuscar);
             this.pnlFiltro.Controls.Add(this.btnCancelar);
@@ -174,6 +176,7 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(279, 19);
             this.txtBuscar.TabIndex = 1;
+            this.txtBuscar.Click += new System.EventHandler(this.txtBuscar_Click);
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // btnBuscar
@@ -229,6 +232,19 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Lista Doctores";
             // 
+            // lblBuscar
+            // 
+            this.lblBuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblBuscar.AutoSize = true;
+            this.lblBuscar.Font = new System.Drawing.Font("Montserrat", 11.25F);
+            this.lblBuscar.Location = new System.Drawing.Point(3, 6);
+            this.lblBuscar.Name = "lblBuscar";
+            this.lblBuscar.Size = new System.Drawing.Size(70, 21);
+            this.lblBuscar.TabIndex = 10;
+            this.lblBuscar.Text = "Buscar...";
+            this.lblBuscar.Click += new System.EventHandler(this.lblBuscar_Click);
+            this.lblBuscar.MouseHover += new System.EventHandler(this.lblBuscar_MouseHover);
+            // 
             // frmDoctores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -269,5 +285,6 @@
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.Label lblBuscar;
     }
 }

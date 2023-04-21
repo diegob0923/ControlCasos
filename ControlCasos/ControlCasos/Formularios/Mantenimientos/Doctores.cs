@@ -65,6 +65,21 @@ namespace ControlCasos.Formularios.Mantenimientos
                 MessageBox.Show("Ocurrio un error al buscar doctores");
             }
         }
+
+        private void lblBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblBuscar_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
         #endregion
 
         private void lnkNuevoCliente_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
