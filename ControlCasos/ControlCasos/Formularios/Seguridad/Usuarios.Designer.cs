@@ -170,16 +170,20 @@
             // Usuario
             // 
             this.Usuario.DataPropertyName = "Usuario";
+            this.Usuario.FillWeight = 90F;
             this.Usuario.HeaderText = "Usuario";
             this.Usuario.MinimumWidth = 6;
             this.Usuario.Name = "Usuario";
+            this.Usuario.ReadOnly = true;
             // 
             // Rol
             // 
             this.Rol.DataPropertyName = "Rol";
+            this.Rol.FillWeight = 120F;
             this.Rol.HeaderText = "Rol";
             this.Rol.MinimumWidth = 6;
             this.Rol.Name = "Rol";
+            this.Rol.ReadOnly = true;
             // 
             // NombreCompleto
             // 
@@ -188,14 +192,16 @@
             this.NombreCompleto.HeaderText = "Nombre";
             this.NombreCompleto.MinimumWidth = 6;
             this.NombreCompleto.Name = "NombreCompleto";
+            this.NombreCompleto.ReadOnly = true;
             // 
             // FechaRegistro
             // 
             this.FechaRegistro.DataPropertyName = "FechaRegistro";
-            this.FechaRegistro.FillWeight = 80F;
+            this.FechaRegistro.FillWeight = 85F;
             this.FechaRegistro.HeaderText = "Fecha de Registro";
             this.FechaRegistro.MinimumWidth = 6;
             this.FechaRegistro.Name = "FechaRegistro";
+            this.FechaRegistro.ReadOnly = true;
             // 
             // Creador
             // 
@@ -204,32 +210,40 @@
             this.Creador.HeaderText = "Creador";
             this.Creador.MinimumWidth = 6;
             this.Creador.Name = "Creador";
+            this.Creador.ReadOnly = true;
             // 
             // Estado
             // 
             this.Estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Estado.DataPropertyName = "Estado";
-            this.Estado.FillWeight = 80F;
+            this.Estado.FillWeight = 50F;
             this.Estado.HeaderText = "Estado";
             this.Estado.MinimumWidth = 6;
             this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
             this.Estado.Width = 77;
             // 
             // Editar
             // 
+            this.Editar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Editar.FillWeight = 50F;
             this.Editar.HeaderText = "Editar";
             this.Editar.Image = global::ControlCasos.Properties.Resources.editar;
             this.Editar.MinimumWidth = 6;
             this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            this.Editar.Width = 51;
             // 
             // Eliminar
             // 
+            this.Eliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Eliminar.FillWeight = 60F;
             this.Eliminar.HeaderText = "Eliminar";
             this.Eliminar.Image = global::ControlCasos.Properties.Resources.borrar;
             this.Eliminar.MinimumWidth = 6;
             this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Width = 64;
             // 
             // Id
             // 
@@ -237,6 +251,7 @@
             this.Id.HeaderText = "Id";
             this.Id.MinimumWidth = 6;
             this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
             this.Id.Visible = false;
             // 
             // frmUsuarios
@@ -271,6 +286,7 @@
         private System.Windows.Forms.LinkLabel lnkNuevoUsuario;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreCompleto;
@@ -280,6 +296,5 @@
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.Label label1;
     }
 }

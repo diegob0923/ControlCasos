@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.dgvListaColores = new System.Windows.Forms.DataGridView();
-            this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Guia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColorGuia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lnkNuevoColor = new System.Windows.Forms.LinkLabel();
             this.pnlFiltro = new System.Windows.Forms.Panel();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Guia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColorGuia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaColores)).BeginInit();
             this.pnlFiltro.SuspendLayout();
             this.SuspendLayout();
@@ -67,52 +67,6 @@
             this.dgvListaColores.TabIndex = 1;
             this.dgvListaColores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaColores_CellContentClick);
             this.dgvListaColores.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvListaColores_CellMouseMove);
-            // 
-            // Color
-            // 
-            this.Color.DataPropertyName = "Color";
-            this.Color.HeaderText = "Color";
-            this.Color.MinimumWidth = 6;
-            this.Color.Name = "Color";
-            // 
-            // Guia
-            // 
-            this.Guia.DataPropertyName = "Guia";
-            this.Guia.HeaderText = "Guía";
-            this.Guia.MinimumWidth = 6;
-            this.Guia.Name = "Guia";
-            // 
-            // Editar
-            // 
-            this.Editar.FillWeight = 25F;
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = global::ControlCasos.Properties.Resources.editar;
-            this.Editar.MinimumWidth = 6;
-            this.Editar.Name = "Editar";
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.FillWeight = 25F;
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Image = global::ControlCasos.Properties.Resources.borrar;
-            this.Eliminar.MinimumWidth = 6;
-            this.Eliminar.Name = "Eliminar";
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "IdColor";
-            this.Id.HeaderText = "Id";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.Visible = false;
-            // 
-            // ColorGuia
-            // 
-            this.ColorGuia.DataPropertyName = "ColorGuia";
-            this.ColorGuia.HeaderText = "ColorGuia";
-            this.ColorGuia.MinimumWidth = 6;
-            this.ColorGuia.Name = "ColorGuia";
-            this.ColorGuia.Visible = false;
             // 
             // lnkNuevoColor
             // 
@@ -187,6 +141,58 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Lista Colores";
             // 
+            // Color
+            // 
+            this.Color.DataPropertyName = "Color";
+            this.Color.HeaderText = "Color";
+            this.Color.MinimumWidth = 6;
+            this.Color.Name = "Color";
+            this.Color.ReadOnly = true;
+            // 
+            // Guia
+            // 
+            this.Guia.DataPropertyName = "Guia";
+            this.Guia.HeaderText = "Guía";
+            this.Guia.MinimumWidth = 6;
+            this.Guia.Name = "Guia";
+            this.Guia.ReadOnly = true;
+            // 
+            // Editar
+            // 
+            this.Editar.FillWeight = 25F;
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = global::ControlCasos.Properties.Resources.editar;
+            this.Editar.MinimumWidth = 6;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.FillWeight = 30F;
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Image = global::ControlCasos.Properties.Resources.borrar;
+            this.Eliminar.MinimumWidth = 6;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "IdColor";
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            // 
+            // ColorGuia
+            // 
+            this.ColorGuia.DataPropertyName = "ColorGuia";
+            this.ColorGuia.HeaderText = "ColorGuia";
+            this.ColorGuia.MinimumWidth = 6;
+            this.ColorGuia.Name = "ColorGuia";
+            this.ColorGuia.ReadOnly = true;
+            this.ColorGuia.Visible = false;
+            // 
             // frmColores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -217,12 +223,12 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Color;
         private System.Windows.Forms.DataGridViewTextBoxColumn Guia;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColorGuia;
-        private System.Windows.Forms.Label label1;
     }
 }

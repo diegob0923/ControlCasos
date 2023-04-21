@@ -457,10 +457,10 @@
             // TipoProducto
             // 
             this.TipoProducto.DataPropertyName = "tipoProducto";
-            this.TipoProducto.FillWeight = 75F;
             this.TipoProducto.HeaderText = "Tipo Producto";
             this.TipoProducto.MinimumWidth = 6;
             this.TipoProducto.Name = "TipoProducto";
+            this.TipoProducto.ReadOnly = true;
             // 
             // Marca
             // 
@@ -469,6 +469,7 @@
             this.Marca.HeaderText = "Marca";
             this.Marca.MinimumWidth = 6;
             this.Marca.Name = "Marca";
+            this.Marca.ReadOnly = true;
             // 
             // Color
             // 
@@ -477,29 +478,39 @@
             this.Color.HeaderText = "Color";
             this.Color.MinimumWidth = 6;
             this.Color.Name = "Color";
+            this.Color.ReadOnly = true;
             // 
             // Tamano
             // 
+            this.Tamano.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Tamano.DataPropertyName = "tamano";
             this.Tamano.HeaderText = "Tamaño";
             this.Tamano.MinimumWidth = 6;
             this.Tamano.Name = "Tamano";
+            this.Tamano.ReadOnly = true;
+            this.Tamano.Width = 85;
             // 
             // Diametro
             // 
+            this.Diametro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Diametro.DataPropertyName = "diametro";
             this.Diametro.FillWeight = 50F;
             this.Diametro.HeaderText = "Diámentro";
             this.Diametro.MinimumWidth = 6;
             this.Diametro.Name = "Diametro";
+            this.Diametro.ReadOnly = true;
+            this.Diametro.Width = 98;
             // 
             // Cantidad
             // 
+            this.Cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Cantidad.DataPropertyName = "cantidad";
             this.Cantidad.FillWeight = 50F;
             this.Cantidad.HeaderText = "Cantidad";
             this.Cantidad.MinimumWidth = 6;
             this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            this.Cantidad.Width = 89;
             // 
             // Comentario
             // 
@@ -508,6 +519,7 @@
             this.Comentario.HeaderText = "Comentario";
             this.Comentario.MinimumWidth = 6;
             this.Comentario.Name = "Comentario";
+            this.Comentario.ReadOnly = true;
             // 
             // Eliminar
             // 
@@ -516,6 +528,7 @@
             this.Eliminar.Image = global::ControlCasos.Properties.Resources.borrar;
             this.Eliminar.MinimumWidth = 6;
             this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
             this.Eliminar.Width = 64;
             // 
             // frmNuevoCaso
