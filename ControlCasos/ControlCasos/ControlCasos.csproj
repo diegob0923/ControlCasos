@@ -63,6 +63,7 @@
     <Compile Include="Clases\Producto.cs" />
     <Compile Include="Clases\UsuarioLogueado.cs" />
     <Compile Include="Constantes\Estado.cs" />
+    <Compile Include="Constantes\Formato.cs" />
     <Compile Include="Constantes\Rol.cs" />
     <Compile Include="Formularios\Ayuda\AcercaDe.cs">
       <SubType>Form</SubType>
@@ -408,6 +409,9 @@
     <Content Include="Imagenes\cancelar.png" />
     <None Include="Imagenes\cerrarSesion.png" />
     <Content Include="Imagenes\editar.png" />
+    <Content Include="Imagenes\LogoCentral.png" />
+    <Content Include="Imagenes\MOBARLogo.png" />
+    <Content Include="Imagenes\MOBARLogoPeq.png" />
     <Content Include="Modelos\ControlCasosModelo.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ControlCasosModelo.Context.cs</LastGenOutput>

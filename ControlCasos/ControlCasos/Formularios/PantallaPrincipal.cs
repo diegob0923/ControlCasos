@@ -15,6 +15,7 @@ using ControlCasos.Formularios.Ayuda;
 using ControlCasos.Clases;
 using ControlCasos.Constantes;
 using System.IO;
+using System.Drawing.Imaging;
 
 namespace ControlCasos
 {
@@ -25,6 +26,8 @@ namespace ControlCasos
             InitializeComponent();
             if (UsuarioLogueado.rolUsuarioLogueado == Rol.General)
                 btnSeguridad.Visible = false;
+
+            cambiraOpacidadImagen(pbImagenCentral,0.3f);
         }
 
         private void ocultarSubMenu()
@@ -196,6 +199,27 @@ namespace ControlCasos
             formularioInicioSesion.Visible = true;
             
             this.Close();
+        }
+
+        private void cambiraOpacidadImagen(PictureBox imagenPictureBox, float opacidad)
+        {
+            Image imagen = imagenPictureBox.Image;//Obtener la imagen del PictureBox
+
+            Bitmap bitmap = new Bitmap(imagen.Width, imagen.Height);//Crear un Bitmap a partir de la imagen
+            
+            Graphics graphics = Graphics.FromImage(bitmap);//Crear un objeto Graphics a partir del Bitmap
+
+            // Crear un objeto ColorMatrix para ajustar la opacidad
+            ColorMatrix colorMatrix = new ColorMatrix();
+            colorMatrix.Matrix33 = opacidad;
+
+            // Crear un objeto ImageAttributes para aplicar el ColorMatrix
+            ImageAttributes imageAttributes = new ImageAttributes();
+            imageAttributes.SetColorMatrix(colorMatrix);
+
+            graphics.DrawImage(imagen, new Rectangle(0, 0, imagen.Width, imagen.Height), 0, 0, imagen.Width, imagen.Height, GraphicsUnit.Pixel, imageAttributes);//Dibujar la imagen con la opacidad ajustada en el Bitmap
+
+            imagenPictureBox.Image = bitmap;//Establecer el Bitmap modificado como la imagen del PictureBox
         }
     }
 }

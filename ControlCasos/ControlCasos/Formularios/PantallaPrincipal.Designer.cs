@@ -47,8 +47,10 @@
             this.btnMantenimientos = new System.Windows.Forms.Button();
             this.btnCasos = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pbLogoSuperiorIzq = new System.Windows.Forms.PictureBox();
             this.pnlContenedorDerecho = new System.Windows.Forms.Panel();
             this.pnlFormularios = new System.Windows.Forms.Panel();
+            this.pbImagenCentral = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
@@ -57,7 +59,11 @@
             this.pnlSubMenuAyuda.SuspendLayout();
             this.pnlSubMenuSeguridad.SuspendLayout();
             this.pnlSubMenuMantenimientos.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogoSuperiorIzq)).BeginInit();
             this.pnlContenedorDerecho.SuspendLayout();
+            this.pnlFormularios.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenCentral)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,7 +92,7 @@
             this.pnlSubMenuAyuda.Controls.Add(this.btnManualUsuario);
             this.pnlSubMenuAyuda.Controls.Add(this.btnCambioContrasena);
             this.pnlSubMenuAyuda.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubMenuAyuda.Location = new System.Drawing.Point(0, 607);
+            this.pnlSubMenuAyuda.Location = new System.Drawing.Point(0, 591);
             this.pnlSubMenuAyuda.Name = "pnlSubMenuAyuda";
             this.pnlSubMenuAyuda.Size = new System.Drawing.Size(200, 139);
             this.pnlSubMenuAyuda.TabIndex = 8;
@@ -99,7 +105,8 @@
             this.btnAcercaDe.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnAcercaDe.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnAcercaDe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAcercaDe.Location = new System.Drawing.Point(0, 86);
+            this.btnAcercaDe.Font = new System.Drawing.Font("Montserrat", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAcercaDe.Location = new System.Drawing.Point(0, 93);
             this.btnAcercaDe.Name = "btnAcercaDe";
             this.btnAcercaDe.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnAcercaDe.Size = new System.Drawing.Size(200, 43);
@@ -116,7 +123,8 @@
             this.btnManualUsuario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnManualUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnManualUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManualUsuario.Location = new System.Drawing.Point(0, 43);
+            this.btnManualUsuario.Font = new System.Drawing.Font("Montserrat", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManualUsuario.Location = new System.Drawing.Point(0, 50);
             this.btnManualUsuario.Name = "btnManualUsuario";
             this.btnManualUsuario.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnManualUsuario.Size = new System.Drawing.Size(200, 43);
@@ -133,12 +141,13 @@
             this.btnCambioContrasena.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnCambioContrasena.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnCambioContrasena.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCambioContrasena.Font = new System.Drawing.Font("Montserrat", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCambioContrasena.Location = new System.Drawing.Point(0, 0);
             this.btnCambioContrasena.Name = "btnCambioContrasena";
             this.btnCambioContrasena.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnCambioContrasena.Size = new System.Drawing.Size(200, 43);
+            this.btnCambioContrasena.Size = new System.Drawing.Size(200, 50);
             this.btnCambioContrasena.TabIndex = 7;
-            this.btnCambioContrasena.Text = "Cambiar contraseña";
+            this.btnCambioContrasena.Text = "Cambiar Contraseña";
             this.btnCambioContrasena.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCambioContrasena.UseVisualStyleBackColor = true;
             this.btnCambioContrasena.Click += new System.EventHandler(this.btnCambioContrasena_Click);
@@ -150,7 +159,8 @@
             this.btnAyuda.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnAyuda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAyuda.Location = new System.Drawing.Point(0, 562);
+            this.btnAyuda.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAyuda.Location = new System.Drawing.Point(0, 546);
             this.btnAyuda.Name = "btnAyuda";
             this.btnAyuda.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAyuda.Size = new System.Drawing.Size(200, 45);
@@ -166,7 +176,7 @@
             this.pnlSubMenuSeguridad.Controls.Add(this.btnRespaldos);
             this.pnlSubMenuSeguridad.Controls.Add(this.btnUsuarios);
             this.pnlSubMenuSeguridad.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubMenuSeguridad.Location = new System.Drawing.Point(0, 465);
+            this.pnlSubMenuSeguridad.Location = new System.Drawing.Point(0, 449);
             this.pnlSubMenuSeguridad.Name = "pnlSubMenuSeguridad";
             this.pnlSubMenuSeguridad.Size = new System.Drawing.Size(200, 97);
             this.pnlSubMenuSeguridad.TabIndex = 6;
@@ -179,6 +189,7 @@
             this.btnRespaldos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnRespaldos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnRespaldos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRespaldos.Font = new System.Drawing.Font("Montserrat", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRespaldos.Location = new System.Drawing.Point(0, 43);
             this.btnRespaldos.Name = "btnRespaldos";
             this.btnRespaldos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
@@ -196,6 +207,7 @@
             this.btnUsuarios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnUsuarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUsuarios.Font = new System.Drawing.Font("Montserrat", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuarios.Location = new System.Drawing.Point(0, 0);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
@@ -213,7 +225,8 @@
             this.btnSeguridad.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnSeguridad.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnSeguridad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeguridad.Location = new System.Drawing.Point(0, 420);
+            this.btnSeguridad.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeguridad.Location = new System.Drawing.Point(0, 404);
             this.btnSeguridad.Name = "btnSeguridad";
             this.btnSeguridad.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnSeguridad.Size = new System.Drawing.Size(200, 45);
@@ -232,7 +245,7 @@
             this.pnlSubMenuMantenimientos.Controls.Add(this.btnDoctores);
             this.pnlSubMenuMantenimientos.Controls.Add(this.btnClientes);
             this.pnlSubMenuMantenimientos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubMenuMantenimientos.Location = new System.Drawing.Point(0, 190);
+            this.pnlSubMenuMantenimientos.Location = new System.Drawing.Point(0, 174);
             this.pnlSubMenuMantenimientos.Name = "pnlSubMenuMantenimientos";
             this.pnlSubMenuMantenimientos.Size = new System.Drawing.Size(200, 230);
             this.pnlSubMenuMantenimientos.TabIndex = 4;
@@ -245,6 +258,7 @@
             this.btnColor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnColor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnColor.Font = new System.Drawing.Font("Montserrat", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnColor.Location = new System.Drawing.Point(0, 172);
             this.btnColor.Name = "btnColor";
             this.btnColor.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
@@ -262,6 +276,7 @@
             this.btnMarca.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnMarca.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMarca.Font = new System.Drawing.Font("Montserrat", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMarca.Location = new System.Drawing.Point(0, 129);
             this.btnMarca.Name = "btnMarca";
             this.btnMarca.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
@@ -279,12 +294,13 @@
             this.btnTipoProducto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnTipoProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnTipoProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTipoProducto.Font = new System.Drawing.Font("Montserrat", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTipoProducto.Location = new System.Drawing.Point(0, 86);
             this.btnTipoProducto.Name = "btnTipoProducto";
             this.btnTipoProducto.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnTipoProducto.Size = new System.Drawing.Size(200, 43);
             this.btnTipoProducto.TabIndex = 9;
-            this.btnTipoProducto.Text = "Tipo producto";
+            this.btnTipoProducto.Text = "Tipo Producto";
             this.btnTipoProducto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTipoProducto.UseVisualStyleBackColor = true;
             this.btnTipoProducto.Click += new System.EventHandler(this.btnTipoProducto_Click);
@@ -296,6 +312,7 @@
             this.btnDoctores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnDoctores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnDoctores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDoctores.Font = new System.Drawing.Font("Montserrat", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDoctores.Location = new System.Drawing.Point(0, 43);
             this.btnDoctores.Name = "btnDoctores";
             this.btnDoctores.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
@@ -313,6 +330,7 @@
             this.btnClientes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnClientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClientes.Font = new System.Drawing.Font("Montserrat", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClientes.Location = new System.Drawing.Point(0, 0);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
@@ -330,7 +348,8 @@
             this.btnMantenimientos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnMantenimientos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnMantenimientos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMantenimientos.Location = new System.Drawing.Point(0, 145);
+            this.btnMantenimientos.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMantenimientos.Location = new System.Drawing.Point(0, 129);
             this.btnMantenimientos.Name = "btnMantenimientos";
             this.btnMantenimientos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnMantenimientos.Size = new System.Drawing.Size(200, 45);
@@ -347,7 +366,8 @@
             this.btnCasos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnCasos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnCasos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCasos.Location = new System.Drawing.Point(0, 100);
+            this.btnCasos.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCasos.Location = new System.Drawing.Point(0, 84);
             this.btnCasos.Name = "btnCasos";
             this.btnCasos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnCasos.Size = new System.Drawing.Size(200, 45);
@@ -359,11 +379,21 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.pbLogoSuperiorIzq);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 100);
+            this.panel1.Size = new System.Drawing.Size(200, 84);
             this.panel1.TabIndex = 0;
+            // 
+            // pbLogoSuperiorIzq
+            // 
+            this.pbLogoSuperiorIzq.Image = global::ControlCasos.Properties.Resources.MOBARLogoPeq;
+            this.pbLogoSuperiorIzq.Location = new System.Drawing.Point(0, 0);
+            this.pbLogoSuperiorIzq.Name = "pbLogoSuperiorIzq";
+            this.pbLogoSuperiorIzq.Size = new System.Drawing.Size(200, 83);
+            this.pbLogoSuperiorIzq.TabIndex = 0;
+            this.pbLogoSuperiorIzq.TabStop = false;
             // 
             // pnlContenedorDerecho
             // 
@@ -378,11 +408,22 @@
             // 
             // pnlFormularios
             // 
+            this.pnlFormularios.Controls.Add(this.pbImagenCentral);
             this.pnlFormularios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlFormularios.Location = new System.Drawing.Point(0, 49);
             this.pnlFormularios.Name = "pnlFormularios";
             this.pnlFormularios.Size = new System.Drawing.Size(860, 666);
             this.pnlFormularios.TabIndex = 2;
+            // 
+            // pbImagenCentral
+            // 
+            this.pbImagenCentral.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbImagenCentral.Image = global::ControlCasos.Properties.Resources.LogoCentral;
+            this.pbImagenCentral.Location = new System.Drawing.Point(334, 188);
+            this.pbImagenCentral.Name = "pbImagenCentral";
+            this.pbImagenCentral.Size = new System.Drawing.Size(194, 275);
+            this.pbImagenCentral.TabIndex = 0;
+            this.pbImagenCentral.TabStop = false;
             // 
             // panel3
             // 
@@ -406,6 +447,8 @@
             // 
             // btnCerrarSesion
             // 
+            this.btnCerrarSesion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
             this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrarSesion.Image = global::ControlCasos.Properties.Resources.cerrarSesion;
@@ -420,16 +463,16 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(265, 9);
+            this.label1.Font = new System.Drawing.Font("Montserrat Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(231, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(366, 31);
+            this.label1.Size = new System.Drawing.Size(394, 29);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Sistema de Control de Casos";
+            this.label1.Text = "Sistema de Control de Pacientes";
             // 
             // frmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1060, 764);
             this.Controls.Add(this.pnlContenedorDerecho);
@@ -443,7 +486,11 @@
             this.pnlSubMenuAyuda.ResumeLayout(false);
             this.pnlSubMenuSeguridad.ResumeLayout(false);
             this.pnlSubMenuMantenimientos.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogoSuperiorIzq)).EndInit();
             this.pnlContenedorDerecho.ResumeLayout(false);
+            this.pnlFormularios.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenCentral)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -477,6 +524,8 @@
         private System.Windows.Forms.Button btnSeguridad;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCerrarSesion;
+        private System.Windows.Forms.PictureBox pbLogoSuperiorIzq;
+        private System.Windows.Forms.PictureBox pbImagenCentral;
     }
 }
 

@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ControlCasos.Modelos;
+using ControlCasos.Constantes;
+
 
 namespace ControlCasos.Formularios.Mantenimientos
 {
@@ -18,6 +20,7 @@ namespace ControlCasos.Formularios.Mantenimientos
         public frmColores()
         {
             InitializeComponent();
+            Formato.DarFormatoDataGridView(dgvListaColores);
             cargarDatosEnGrid();
         }
 
@@ -66,7 +69,26 @@ namespace ControlCasos.Formularios.Mantenimientos
             if (txtBuscar.Text != "")
                 btnCancelar.Visible = true;
             else
+            {
                 btnCancelar.Visible = false;
+                lblBuscar.Visible = true;
+            }
+        }
+
+        private void lblBuscar_Click(object sender, EventArgs e)
+        {
+            lblBuscar.Visible = false;
+            txtBuscar.Select();
+        }
+
+        private void lblBuscar_MouseHover(object sender, EventArgs e)
+        {
+            Cursor = Cursors.IBeam;
+        }
+
+        private void txtBuscar_Click(object sender, EventArgs e)
+        {
+            lblBuscar.Visible = false;
         }
         #endregion
 

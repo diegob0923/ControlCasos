@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ControlCasos.BL;
 using ControlCasos.Modelos;
+using ControlCasos.Constantes;
 
 namespace ControlCasos.Formularios.Mantenimientos
 {
@@ -18,6 +19,7 @@ namespace ControlCasos.Formularios.Mantenimientos
         public frmClientes()
         {
             InitializeComponent();
+            Formato.DarFormatoDataGridView(dgvListaClientes);
             cargarDatosEnGrid();
   
         }
@@ -54,6 +56,7 @@ namespace ControlCasos.Formularios.Mantenimientos
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             txtBuscar.Text = "";
+            lblBuscar.Visible = true;
             cargarDatosEnGrid();
         }
         
@@ -62,7 +65,26 @@ namespace ControlCasos.Formularios.Mantenimientos
             if (txtBuscar.Text != "")
                 btnCancelar.Visible = true;
             else
-                btnCancelar.Visible = false;   
+            {
+                btnCancelar.Visible = false;
+                lblBuscar.Visible = true;
+            }  
+        }
+
+        private void lblBuscar_Click(object sender, EventArgs e)
+        {
+            lblBuscar.Visible = false;
+            txtBuscar.Select();
+        }
+
+        private void lblBuscar_MouseHover(object sender, EventArgs e)
+        {
+            Cursor = Cursors.IBeam;
+        }
+
+        private void txtBuscar_Click(object sender, EventArgs e)
+        {
+            lblBuscar.Visible = false;
         }
         #endregion
         private void lnkNuevoCliente_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -126,5 +148,7 @@ namespace ControlCasos.Formularios.Mantenimientos
 
         }
         #endregion
+
+        
     }
 }

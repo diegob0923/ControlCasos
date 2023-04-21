@@ -45,18 +45,20 @@
             this.lnkNuevoUsuario = new System.Windows.Forms.LinkLabel();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnlFiltro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlFiltro
             // 
+            this.pnlFiltro.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlFiltro.BackColor = System.Drawing.SystemColors.Window;
             this.pnlFiltro.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlFiltro.Controls.Add(this.txtBuscar);
             this.pnlFiltro.Controls.Add(this.btnBuscar);
             this.pnlFiltro.Controls.Add(this.btnCancelar);
-            this.pnlFiltro.Location = new System.Drawing.Point(61, 86);
+            this.pnlFiltro.Location = new System.Drawing.Point(59, 174);
             this.pnlFiltro.Name = "pnlFiltro";
             this.pnlFiltro.Size = new System.Drawing.Size(371, 36);
             this.pnlFiltro.TabIndex = 8;
@@ -64,6 +66,7 @@
             // txtBuscar
             // 
             this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBuscar.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscar.Location = new System.Drawing.Point(3, 7);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(279, 19);
@@ -99,6 +102,9 @@
             // 
             // dgvListaUsuarios
             // 
+            this.dgvListaUsuarios.AllowUserToAddRows = false;
+            this.dgvListaUsuarios.AllowUserToDeleteRows = false;
+            this.dgvListaUsuarios.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvListaUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListaUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -111,11 +117,12 @@
             this.Editar,
             this.Eliminar,
             this.Id});
-            this.dgvListaUsuarios.Location = new System.Drawing.Point(12, 204);
+            this.dgvListaUsuarios.Location = new System.Drawing.Point(59, 234);
             this.dgvListaUsuarios.Name = "dgvListaUsuarios";
+            this.dgvListaUsuarios.ReadOnly = true;
             this.dgvListaUsuarios.RowHeadersWidth = 51;
             this.dgvListaUsuarios.RowTemplate.Height = 27;
-            this.dgvListaUsuarios.Size = new System.Drawing.Size(812, 150);
+            this.dgvListaUsuarios.Size = new System.Drawing.Size(747, 282);
             this.dgvListaUsuarios.TabIndex = 9;
             this.dgvListaUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaUsuarios_CellContentClick);
             this.dgvListaUsuarios.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvListaUsuarios_CellMouseMove);
@@ -123,16 +130,20 @@
             // Usuario
             // 
             this.Usuario.DataPropertyName = "Usuario";
+            this.Usuario.FillWeight = 90F;
             this.Usuario.HeaderText = "Usuario";
             this.Usuario.MinimumWidth = 6;
             this.Usuario.Name = "Usuario";
+            this.Usuario.ReadOnly = true;
             // 
             // Rol
             // 
             this.Rol.DataPropertyName = "Rol";
+            this.Rol.FillWeight = 120F;
             this.Rol.HeaderText = "Rol";
             this.Rol.MinimumWidth = 6;
             this.Rol.Name = "Rol";
+            this.Rol.ReadOnly = true;
             // 
             // NombreCompleto
             // 
@@ -141,14 +152,16 @@
             this.NombreCompleto.HeaderText = "Nombre";
             this.NombreCompleto.MinimumWidth = 6;
             this.NombreCompleto.Name = "NombreCompleto";
+            this.NombreCompleto.ReadOnly = true;
             // 
             // FechaRegistro
             // 
             this.FechaRegistro.DataPropertyName = "FechaRegistro";
-            this.FechaRegistro.FillWeight = 80F;
+            this.FechaRegistro.FillWeight = 85F;
             this.FechaRegistro.HeaderText = "Fecha de Registro";
             this.FechaRegistro.MinimumWidth = 6;
             this.FechaRegistro.Name = "FechaRegistro";
+            this.FechaRegistro.ReadOnly = true;
             // 
             // Creador
             // 
@@ -157,30 +170,40 @@
             this.Creador.HeaderText = "Creador";
             this.Creador.MinimumWidth = 6;
             this.Creador.Name = "Creador";
+            this.Creador.ReadOnly = true;
             // 
             // Estado
             // 
+            this.Estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Estado.DataPropertyName = "Estado";
-            this.Estado.FillWeight = 80F;
+            this.Estado.FillWeight = 50F;
             this.Estado.HeaderText = "Estado";
             this.Estado.MinimumWidth = 6;
             this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Width = 77;
             // 
             // Editar
             // 
+            this.Editar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Editar.FillWeight = 50F;
             this.Editar.HeaderText = "Editar";
             this.Editar.Image = global::ControlCasos.Properties.Resources.editar;
             this.Editar.MinimumWidth = 6;
             this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            this.Editar.Width = 51;
             // 
             // Eliminar
             // 
+            this.Eliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Eliminar.FillWeight = 60F;
             this.Eliminar.HeaderText = "Eliminar";
             this.Eliminar.Image = global::ControlCasos.Properties.Resources.borrar;
             this.Eliminar.MinimumWidth = 6;
             this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Width = 64;
             // 
             // Id
             // 
@@ -188,17 +211,22 @@
             this.Id.HeaderText = "Id";
             this.Id.MinimumWidth = 6;
             this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
             this.Id.Visible = false;
             // 
             // lnkNuevoUsuario
             // 
+            this.lnkNuevoUsuario.ActiveLinkColor = System.Drawing.Color.LightSeaGreen;
+            this.lnkNuevoUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lnkNuevoUsuario.AutoSize = true;
-            this.lnkNuevoUsuario.Location = new System.Drawing.Point(708, 167);
+            this.lnkNuevoUsuario.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkNuevoUsuario.LinkColor = System.Drawing.Color.Teal;
+            this.lnkNuevoUsuario.Location = new System.Drawing.Point(687, 201);
             this.lnkNuevoUsuario.Name = "lnkNuevoUsuario";
-            this.lnkNuevoUsuario.Size = new System.Drawing.Size(116, 20);
+            this.lnkNuevoUsuario.Size = new System.Drawing.Size(119, 21);
             this.lnkNuevoUsuario.TabIndex = 10;
             this.lnkNuevoUsuario.TabStop = true;
-            this.lnkNuevoUsuario.Text = "Nuevo usuario";
+            this.lnkNuevoUsuario.Text = "Nuevo Usuario";
             this.lnkNuevoUsuario.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkNuevoUsuario_LinkClicked);
             // 
             // dataGridViewImageColumn1
@@ -219,11 +247,23 @@
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 68;
             // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Montserrat Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(272, 71);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(322, 29);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Lista Usuarios del Sistema";
+            // 
             // frmUsuarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 666);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lnkNuevoUsuario);
             this.Controls.Add(this.dgvListaUsuarios);
             this.Controls.Add(this.pnlFiltro);
@@ -250,6 +290,7 @@
         private System.Windows.Forms.LinkLabel lnkNuevoUsuario;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreCompleto;
