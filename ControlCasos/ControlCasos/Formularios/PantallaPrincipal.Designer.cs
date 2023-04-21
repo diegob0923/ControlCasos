@@ -106,7 +106,7 @@
             this.btnAcercaDe.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnAcercaDe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAcercaDe.Font = new System.Drawing.Font("Montserrat", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAcercaDe.Location = new System.Drawing.Point(0, 86);
+            this.btnAcercaDe.Location = new System.Drawing.Point(0, 93);
             this.btnAcercaDe.Name = "btnAcercaDe";
             this.btnAcercaDe.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnAcercaDe.Size = new System.Drawing.Size(200, 43);
@@ -124,7 +124,7 @@
             this.btnManualUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnManualUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManualUsuario.Font = new System.Drawing.Font("Montserrat", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnManualUsuario.Location = new System.Drawing.Point(0, 43);
+            this.btnManualUsuario.Location = new System.Drawing.Point(0, 50);
             this.btnManualUsuario.Name = "btnManualUsuario";
             this.btnManualUsuario.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnManualUsuario.Size = new System.Drawing.Size(200, 43);
@@ -145,9 +145,9 @@
             this.btnCambioContrasena.Location = new System.Drawing.Point(0, 0);
             this.btnCambioContrasena.Name = "btnCambioContrasena";
             this.btnCambioContrasena.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnCambioContrasena.Size = new System.Drawing.Size(200, 43);
+            this.btnCambioContrasena.Size = new System.Drawing.Size(200, 50);
             this.btnCambioContrasena.TabIndex = 7;
-            this.btnCambioContrasena.Text = "Cambiar contraseña";
+            this.btnCambioContrasena.Text = "Cambiar Contraseña";
             this.btnCambioContrasena.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCambioContrasena.UseVisualStyleBackColor = true;
             this.btnCambioContrasena.Click += new System.EventHandler(this.btnCambioContrasena_Click);
@@ -300,7 +300,7 @@
             this.btnTipoProducto.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnTipoProducto.Size = new System.Drawing.Size(200, 43);
             this.btnTipoProducto.TabIndex = 9;
-            this.btnTipoProducto.Text = "Tipo producto";
+            this.btnTipoProducto.Text = "Tipo Producto";
             this.btnTipoProducto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTipoProducto.UseVisualStyleBackColor = true;
             this.btnTipoProducto.Click += new System.EventHandler(this.btnTipoProducto_Click);
