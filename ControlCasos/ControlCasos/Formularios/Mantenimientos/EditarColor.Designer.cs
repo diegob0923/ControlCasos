@@ -135,6 +135,7 @@
             this.ClientSize = new System.Drawing.Size(246, 226);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MinimumSize = new System.Drawing.Size(262, 265);
             this.Name = "frmEditarColor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar Color";
