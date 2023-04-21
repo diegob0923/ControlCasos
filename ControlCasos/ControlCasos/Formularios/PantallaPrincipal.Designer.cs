@@ -52,6 +52,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.pbImagenCentral = new System.Windows.Forms.PictureBox();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.pbLogoSuperiorIzq = new System.Windows.Forms.PictureBox();
             this.PnlMenuLateral.SuspendLayout();
@@ -60,7 +61,9 @@
             this.pnlSubMenuMantenimientos.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlContenedorDerecho.SuspendLayout();
+            this.pnlFormularios.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenCentral)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogoSuperiorIzq)).BeginInit();
             this.SuspendLayout();
             // 
@@ -396,6 +399,7 @@
             // 
             // pnlFormularios
             // 
+            this.pnlFormularios.Controls.Add(this.pbImagenCentral);
             this.pnlFormularios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlFormularios.Location = new System.Drawing.Point(0, 49);
             this.pnlFormularios.Name = "pnlFormularios";
@@ -432,6 +436,15 @@
             this.label1.Size = new System.Drawing.Size(394, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Sistema de Control de Pacientes";
+            // 
+            // pbImagenCentral
+            // 
+            this.pbImagenCentral.Image = global::ControlCasos.Properties.Resources.LogoCentral;
+            this.pbImagenCentral.Location = new System.Drawing.Point(334, 188);
+            this.pbImagenCentral.Name = "pbImagenCentral";
+            this.pbImagenCentral.Size = new System.Drawing.Size(194, 275);
+            this.pbImagenCentral.TabIndex = 0;
+            this.pbImagenCentral.TabStop = false;
             // 
             // btnCerrarSesion
             // 
@@ -472,8 +485,10 @@
             this.pnlSubMenuMantenimientos.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.pnlContenedorDerecho.ResumeLayout(false);
+            this.pnlFormularios.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenCentral)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogoSuperiorIzq)).EndInit();
             this.ResumeLayout(false);
 
@@ -507,6 +522,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCerrarSesion;
         private System.Windows.Forms.PictureBox pbLogoSuperiorIzq;
+        private System.Windows.Forms.PictureBox pbImagenCentral;
     }
 }
 
