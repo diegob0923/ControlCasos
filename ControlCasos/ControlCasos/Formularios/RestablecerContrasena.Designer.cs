@@ -42,9 +42,11 @@
             this.epNuevaContrasenaValidar = new System.Windows.Forms.ErrorProvider(this.components);
             this.epConfirmarContrasenaValidar = new System.Windows.Forms.ErrorProvider(this.components);
             this.epNumeroCedulaValidar = new System.Windows.Forms.ErrorProvider(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.epNuevaContrasenaValidar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epConfirmarContrasenaValidar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epNumeroCedulaValidar)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnGuardar
@@ -158,20 +160,29 @@
             this.epNumeroCedulaValidar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.epNumeroCedulaValidar.ContainerControl = this;
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.Controls.Add(this.lblCedula);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.txtNuevaContrasena);
+            this.panel1.Controls.Add(this.txtCedula);
+            this.panel1.Controls.Add(this.txtConfirmarContrasena);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.btnGuardar);
+            this.panel1.Location = new System.Drawing.Point(0, 1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(281, 309);
+            this.panel1.TabIndex = 17;
+            // 
             // frmRestablecerContrasena
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(282, 310);
-            this.Controls.Add(this.lblCedula);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtCedula);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtConfirmarContrasena);
-            this.Controls.Add(this.txtNuevaContrasena);
+            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmRestablecerContrasena";
@@ -180,6 +191,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.epNuevaContrasenaValidar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epConfirmarContrasenaValidar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epNumeroCedulaValidar)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,5 +213,6 @@
         private System.Windows.Forms.ErrorProvider epNuevaContrasenaValidar;
         private System.Windows.Forms.ErrorProvider epConfirmarContrasenaValidar;
         private System.Windows.Forms.ErrorProvider epNumeroCedulaValidar;
+        private System.Windows.Forms.Panel panel1;
     }
 }

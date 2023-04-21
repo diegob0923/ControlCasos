@@ -30,31 +30,40 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtGuia = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtColor = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.epColorValidar = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtGuia = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epColorValidar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.Controls.Add(this.txtGuia);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Controls.Add(this.btnGuardar);
             this.panel1.Controls.Add(this.txtColor);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(246, 228);
             this.panel1.TabIndex = 3;
+            // 
+            // txtGuia
+            // 
+            this.txtGuia.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGuia.Location = new System.Drawing.Point(28, 132);
+            this.txtGuia.Margin = new System.Windows.Forms.Padding(2);
+            this.txtGuia.Name = "txtGuia";
+            this.txtGuia.Size = new System.Drawing.Size(192, 23);
+            this.txtGuia.TabIndex = 5;
             // 
             // label3
             // 
@@ -118,15 +127,6 @@
             // 
             this.epColorValidar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.epColorValidar.ContainerControl = this;
-            // 
-            // txtGuia
-            // 
-            this.txtGuia.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGuia.Location = new System.Drawing.Point(28, 132);
-            this.txtGuia.Margin = new System.Windows.Forms.Padding(2);
-            this.txtGuia.Name = "txtGuia";
-            this.txtGuia.Size = new System.Drawing.Size(192, 23);
-            this.txtGuia.TabIndex = 5;
             // 
             // frmNuevoColor
             // 

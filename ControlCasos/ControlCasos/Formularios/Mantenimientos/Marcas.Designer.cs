@@ -45,6 +45,7 @@
             // 
             // pnlFiltro
             // 
+            this.pnlFiltro.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlFiltro.BackColor = System.Drawing.SystemColors.Window;
             this.pnlFiltro.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlFiltro.Controls.Add(this.txtBuscar);
@@ -95,6 +96,7 @@
             // lnkNuevaMarca
             // 
             this.lnkNuevaMarca.ActiveLinkColor = System.Drawing.Color.LightSeaGreen;
+            this.lnkNuevaMarca.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lnkNuevaMarca.AutoSize = true;
             this.lnkNuevaMarca.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkNuevaMarca.LinkColor = System.Drawing.Color.Teal;
@@ -110,6 +112,7 @@
             // 
             this.dgvListaMarcas.AllowUserToAddRows = false;
             this.dgvListaMarcas.AllowUserToDeleteRows = false;
+            this.dgvListaMarcas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvListaMarcas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListaMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaMarcas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -134,6 +137,7 @@
             this.Marca.HeaderText = "Marca";
             this.Marca.MinimumWidth = 6;
             this.Marca.Name = "Marca";
+            this.Marca.ReadOnly = true;
             // 
             // Editar
             // 
@@ -142,6 +146,7 @@
             this.Editar.Image = global::ControlCasos.Properties.Resources.editar;
             this.Editar.MinimumWidth = 6;
             this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
             // 
             // Eliminar
             // 
@@ -150,6 +155,7 @@
             this.Eliminar.Image = global::ControlCasos.Properties.Resources.borrar;
             this.Eliminar.MinimumWidth = 6;
             this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
             // 
             // Id
             // 
@@ -157,10 +163,12 @@
             this.Id.HeaderText = "Id";
             this.Id.MinimumWidth = 6;
             this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
             this.Id.Visible = false;
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Montserrat Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(355, 71);

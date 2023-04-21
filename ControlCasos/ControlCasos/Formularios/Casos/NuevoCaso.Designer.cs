@@ -49,6 +49,14 @@
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.txtPaciente = new System.Windows.Forms.TextBox();
             this.dgvResumenProductos = new System.Windows.Forms.DataGridView();
+            this.TipoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tamano = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Diametro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Comentario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.pnlCaso = new System.Windows.Forms.Panel();
             this.pnlProducto = new System.Windows.Forms.Panel();
@@ -62,14 +70,6 @@
             this.epTipoProductoValidar = new System.Windows.Forms.ErrorProvider(this.components);
             this.epMarcaValidar = new System.Windows.Forms.ErrorProvider(this.components);
             this.epColorValidar = new System.Windows.Forms.ErrorProvider(this.components);
-            this.TipoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tamano = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Diametro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Comentario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResumenProductos)).BeginInit();
             this.pnlCaso.SuspendLayout();
             this.pnlProducto.SuspendLayout();
@@ -298,6 +298,7 @@
             // 
             this.dgvResumenProductos.AllowUserToAddRows = false;
             this.dgvResumenProductos.AllowUserToDeleteRows = false;
+            this.dgvResumenProductos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvResumenProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvResumenProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvResumenProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -319,140 +320,6 @@
             this.dgvResumenProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResumenProductos_CellContentClick);
             this.dgvResumenProductos.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvResumenProductos_CellMouseMove);
             this.dgvResumenProductos.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvResumenProductos_CellPainting);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Montserrat Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(45, 18);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(260, 29);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "Información del Caso";
-            // 
-            // pnlCaso
-            // 
-            this.pnlCaso.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlCaso.Controls.Add(this.label5);
-            this.pnlCaso.Controls.Add(this.label1);
-            this.pnlCaso.Controls.Add(this.txtPaciente);
-            this.pnlCaso.Controls.Add(this.label2);
-            this.pnlCaso.Controls.Add(this.dtpFecha);
-            this.pnlCaso.Controls.Add(this.label3);
-            this.pnlCaso.Controls.Add(this.cmbDoctor);
-            this.pnlCaso.Location = new System.Drawing.Point(12, 12);
-            this.pnlCaso.Name = "pnlCaso";
-            this.pnlCaso.Size = new System.Drawing.Size(337, 223);
-            this.pnlCaso.TabIndex = 23;
-            // 
-            // pnlProducto
-            // 
-            this.pnlProducto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlProducto.Controls.Add(this.nudCantidad);
-            this.pnlProducto.Controls.Add(this.btnAgregar);
-            this.pnlProducto.Controls.Add(this.label12);
-            this.pnlProducto.Controls.Add(this.label4);
-            this.pnlProducto.Controls.Add(this.cmbTipoProducto);
-            this.pnlProducto.Controls.Add(this.label9);
-            this.pnlProducto.Controls.Add(this.label10);
-            this.pnlProducto.Controls.Add(this.label11);
-            this.pnlProducto.Controls.Add(this.cmbMarca);
-            this.pnlProducto.Controls.Add(this.txtDiametro);
-            this.pnlProducto.Controls.Add(this.txtComentario);
-            this.pnlProducto.Controls.Add(this.txtTamano);
-            this.pnlProducto.Controls.Add(this.label8);
-            this.pnlProducto.Controls.Add(this.label7);
-            this.pnlProducto.Controls.Add(this.label6);
-            this.pnlProducto.Controls.Add(this.cmbColor);
-            this.pnlProducto.Location = new System.Drawing.Point(381, 12);
-            this.pnlProducto.Name = "pnlProducto";
-            this.pnlProducto.Size = new System.Drawing.Size(636, 302);
-            this.pnlProducto.TabIndex = 24;
-            // 
-            // nudCantidad
-            // 
-            this.nudCantidad.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudCantidad.Location = new System.Drawing.Point(133, 220);
-            this.nudCantidad.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nudCantidad.Name = "nudCantidad";
-            this.nudCantidad.Size = new System.Drawing.Size(55, 23);
-            this.nudCantidad.TabIndex = 25;
-            this.nudCantidad.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(539, 258);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(85, 30);
-            this.btnAgregar.TabIndex = 24;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Montserrat Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(166, 18);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(311, 29);
-            this.label12.TabIndex = 23;
-            this.label12.Text = "Información del Producto";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Montserrat Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(21, 288);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(283, 29);
-            this.label13.TabIndex = 25;
-            this.label13.Text = "Resumen de productos";
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(935, 467);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(82, 30);
-            this.btnGuardar.TabIndex = 26;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // epDoctorValidar
-            // 
-            this.epDoctorValidar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.epDoctorValidar.ContainerControl = this;
-            // 
-            // epPacienteValidar
-            // 
-            this.epPacienteValidar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.epPacienteValidar.ContainerControl = this;
-            // 
-            // epTipoProductoValidar
-            // 
-            this.epTipoProductoValidar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.epTipoProductoValidar.ContainerControl = this;
-            // 
-            // epMarcaValidar
-            // 
-            this.epMarcaValidar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.epMarcaValidar.ContainerControl = this;
-            // 
-            // epColorValidar
-            // 
-            this.epColorValidar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.epColorValidar.ContainerControl = this;
             // 
             // TipoProducto
             // 
@@ -530,6 +397,144 @@
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.ReadOnly = true;
             this.Eliminar.Width = 64;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Montserrat Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(45, 18);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(260, 29);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Información del Caso";
+            // 
+            // pnlCaso
+            // 
+            this.pnlCaso.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlCaso.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlCaso.Controls.Add(this.label5);
+            this.pnlCaso.Controls.Add(this.label1);
+            this.pnlCaso.Controls.Add(this.txtPaciente);
+            this.pnlCaso.Controls.Add(this.label2);
+            this.pnlCaso.Controls.Add(this.dtpFecha);
+            this.pnlCaso.Controls.Add(this.label3);
+            this.pnlCaso.Controls.Add(this.cmbDoctor);
+            this.pnlCaso.Location = new System.Drawing.Point(12, 12);
+            this.pnlCaso.Name = "pnlCaso";
+            this.pnlCaso.Size = new System.Drawing.Size(344, 223);
+            this.pnlCaso.TabIndex = 23;
+            // 
+            // pnlProducto
+            // 
+            this.pnlProducto.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlProducto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlProducto.Controls.Add(this.nudCantidad);
+            this.pnlProducto.Controls.Add(this.btnAgregar);
+            this.pnlProducto.Controls.Add(this.label12);
+            this.pnlProducto.Controls.Add(this.label4);
+            this.pnlProducto.Controls.Add(this.cmbTipoProducto);
+            this.pnlProducto.Controls.Add(this.label9);
+            this.pnlProducto.Controls.Add(this.label10);
+            this.pnlProducto.Controls.Add(this.label11);
+            this.pnlProducto.Controls.Add(this.cmbMarca);
+            this.pnlProducto.Controls.Add(this.txtDiametro);
+            this.pnlProducto.Controls.Add(this.txtComentario);
+            this.pnlProducto.Controls.Add(this.txtTamano);
+            this.pnlProducto.Controls.Add(this.label8);
+            this.pnlProducto.Controls.Add(this.label7);
+            this.pnlProducto.Controls.Add(this.label6);
+            this.pnlProducto.Controls.Add(this.cmbColor);
+            this.pnlProducto.Location = new System.Drawing.Point(381, 12);
+            this.pnlProducto.Name = "pnlProducto";
+            this.pnlProducto.Size = new System.Drawing.Size(636, 302);
+            this.pnlProducto.TabIndex = 24;
+            // 
+            // nudCantidad
+            // 
+            this.nudCantidad.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudCantidad.Location = new System.Drawing.Point(133, 220);
+            this.nudCantidad.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudCantidad.Name = "nudCantidad";
+            this.nudCantidad.Size = new System.Drawing.Size(55, 23);
+            this.nudCantidad.TabIndex = 25;
+            this.nudCantidad.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Location = new System.Drawing.Point(539, 258);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(85, 30);
+            this.btnAgregar.TabIndex = 24;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Montserrat Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(166, 18);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(311, 29);
+            this.label12.TabIndex = 23;
+            this.label12.Text = "Información del Producto";
+            // 
+            // label13
+            // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Montserrat Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(21, 288);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(283, 29);
+            this.label13.TabIndex = 25;
+            this.label13.Text = "Resumen de productos";
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnGuardar.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Location = new System.Drawing.Point(935, 467);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(82, 30);
+            this.btnGuardar.TabIndex = 26;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // epDoctorValidar
+            // 
+            this.epDoctorValidar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epDoctorValidar.ContainerControl = this;
+            // 
+            // epPacienteValidar
+            // 
+            this.epPacienteValidar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epPacienteValidar.ContainerControl = this;
+            // 
+            // epTipoProductoValidar
+            // 
+            this.epTipoProductoValidar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epTipoProductoValidar.ContainerControl = this;
+            // 
+            // epMarcaValidar
+            // 
+            this.epMarcaValidar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epMarcaValidar.ContainerControl = this;
+            // 
+            // epColorValidar
+            // 
+            this.epColorValidar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epColorValidar.ContainerControl = this;
             // 
             // frmNuevoCaso
             // 

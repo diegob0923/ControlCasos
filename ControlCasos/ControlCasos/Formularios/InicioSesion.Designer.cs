@@ -112,11 +112,12 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(156)))), ((int)(((byte)(156)))));
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(0, 143);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(385, 43);
+            this.panel1.Size = new System.Drawing.Size(381, 43);
             this.panel1.TabIndex = 5;
             // 
             // label3
@@ -131,8 +132,8 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(156)))), ((int)(((byte)(156)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 506);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(381, 43);
@@ -164,7 +165,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::ControlCasos.Properties.Resources.MOBARLogo;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
@@ -174,6 +175,7 @@
             // 
             // pnlCentral
             // 
+            this.pnlCentral.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlCentral.Controls.Add(this.panel4);
             this.pnlCentral.Controls.Add(this.panel3);
             this.pnlCentral.Controls.Add(this.lnkRestablecerContrasena);
@@ -182,7 +184,6 @@
             this.pnlCentral.Controls.Add(this.txtUsuario);
             this.pnlCentral.Controls.Add(this.btnIngresar);
             this.pnlCentral.Controls.Add(this.txtContrasena);
-            this.pnlCentral.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCentral.Location = new System.Drawing.Point(0, 156);
             this.pnlCentral.Name = "pnlCentral";
             this.pnlCentral.Size = new System.Drawing.Size(381, 350);

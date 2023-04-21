@@ -34,6 +34,7 @@
             // 
             // btnGenerarRespaldo
             // 
+            this.btnGenerarRespaldo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnGenerarRespaldo.Font = new System.Drawing.Font("Montserrat", 11F);
             this.btnGenerarRespaldo.Location = new System.Drawing.Point(330, 113);
             this.btnGenerarRespaldo.Name = "btnGenerarRespaldo";
@@ -45,6 +46,7 @@
             // 
             // btnRestaurarDatos
             // 
+            this.btnRestaurarDatos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnRestaurarDatos.Font = new System.Drawing.Font("Montserrat", 11F);
             this.btnRestaurarDatos.Location = new System.Drawing.Point(330, 232);
             this.btnRestaurarDatos.Name = "btnRestaurarDatos";

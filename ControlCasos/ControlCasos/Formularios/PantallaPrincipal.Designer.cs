@@ -47,24 +47,24 @@
             this.btnMantenimientos = new System.Windows.Forms.Button();
             this.btnCasos = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pbLogoSuperiorIzq = new System.Windows.Forms.PictureBox();
             this.pnlContenedorDerecho = new System.Windows.Forms.Panel();
             this.pnlFormularios = new System.Windows.Forms.Panel();
+            this.pbImagenCentral = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pbImagenCentral = new System.Windows.Forms.PictureBox();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
-            this.pbLogoSuperiorIzq = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.PnlMenuLateral.SuspendLayout();
             this.pnlSubMenuAyuda.SuspendLayout();
             this.pnlSubMenuSeguridad.SuspendLayout();
             this.pnlSubMenuMantenimientos.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogoSuperiorIzq)).BeginInit();
             this.pnlContenedorDerecho.SuspendLayout();
             this.pnlFormularios.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagenCentral)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogoSuperiorIzq)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // PnlMenuLateral
@@ -386,6 +386,15 @@
             this.panel1.Size = new System.Drawing.Size(200, 84);
             this.panel1.TabIndex = 0;
             // 
+            // pbLogoSuperiorIzq
+            // 
+            this.pbLogoSuperiorIzq.Image = global::ControlCasos.Properties.Resources.MOBARLogoPeq;
+            this.pbLogoSuperiorIzq.Location = new System.Drawing.Point(0, 0);
+            this.pbLogoSuperiorIzq.Name = "pbLogoSuperiorIzq";
+            this.pbLogoSuperiorIzq.Size = new System.Drawing.Size(200, 83);
+            this.pbLogoSuperiorIzq.TabIndex = 0;
+            this.pbLogoSuperiorIzq.TabStop = false;
+            // 
             // pnlContenedorDerecho
             // 
             this.pnlContenedorDerecho.Controls.Add(this.pnlFormularios);
@@ -405,6 +414,16 @@
             this.pnlFormularios.Name = "pnlFormularios";
             this.pnlFormularios.Size = new System.Drawing.Size(860, 666);
             this.pnlFormularios.TabIndex = 2;
+            // 
+            // pbImagenCentral
+            // 
+            this.pbImagenCentral.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbImagenCentral.Image = global::ControlCasos.Properties.Resources.LogoCentral;
+            this.pbImagenCentral.Location = new System.Drawing.Point(334, 188);
+            this.pbImagenCentral.Name = "pbImagenCentral";
+            this.pbImagenCentral.Size = new System.Drawing.Size(194, 275);
+            this.pbImagenCentral.TabIndex = 0;
+            this.pbImagenCentral.TabStop = false;
             // 
             // panel3
             // 
@@ -426,28 +445,10 @@
             this.panel2.Size = new System.Drawing.Size(860, 49);
             this.panel2.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Montserrat Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(231, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(394, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Sistema de Control de Pacientes";
-            // 
-            // pbImagenCentral
-            // 
-            this.pbImagenCentral.Image = global::ControlCasos.Properties.Resources.LogoCentral;
-            this.pbImagenCentral.Location = new System.Drawing.Point(334, 188);
-            this.pbImagenCentral.Name = "pbImagenCentral";
-            this.pbImagenCentral.Size = new System.Drawing.Size(194, 275);
-            this.pbImagenCentral.TabIndex = 0;
-            this.pbImagenCentral.TabStop = false;
-            // 
             // btnCerrarSesion
             // 
+            this.btnCerrarSesion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
             this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrarSesion.Image = global::ControlCasos.Properties.Resources.cerrarSesion;
@@ -458,14 +459,16 @@
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
             this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
-            // pbLogoSuperiorIzq
+            // label1
             // 
-            this.pbLogoSuperiorIzq.Image = global::ControlCasos.Properties.Resources.MOBARLogoPeq;
-            this.pbLogoSuperiorIzq.Location = new System.Drawing.Point(0, 0);
-            this.pbLogoSuperiorIzq.Name = "pbLogoSuperiorIzq";
-            this.pbLogoSuperiorIzq.Size = new System.Drawing.Size(200, 83);
-            this.pbLogoSuperiorIzq.TabIndex = 0;
-            this.pbLogoSuperiorIzq.TabStop = false;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Montserrat Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(231, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(394, 29);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Sistema de Control de Pacientes";
             // 
             // frmPrincipal
             // 
@@ -484,12 +487,12 @@
             this.pnlSubMenuSeguridad.ResumeLayout(false);
             this.pnlSubMenuMantenimientos.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogoSuperiorIzq)).EndInit();
             this.pnlContenedorDerecho.ResumeLayout(false);
             this.pnlFormularios.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenCentral)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagenCentral)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogoSuperiorIzq)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -50,6 +50,7 @@
             // 
             this.dgvListaCasos.AllowUserToAddRows = false;
             this.dgvListaCasos.AllowUserToDeleteRows = false;
+            this.dgvListaCasos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvListaCasos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListaCasos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaCasos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -116,6 +117,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(36, 176);
@@ -127,6 +129,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(36, 100);
@@ -138,6 +141,7 @@
             // 
             // cmbPaciente
             // 
+            this.cmbPaciente.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cmbPaciente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmbPaciente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbPaciente.DisplayMember = "Paciente";
@@ -153,6 +157,7 @@
             // 
             // cmbDoctor
             // 
+            this.cmbDoctor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cmbDoctor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmbDoctor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbDoctor.DisplayMember = "Doctor";
@@ -180,6 +185,7 @@
             // lnkNuevoCaso
             // 
             this.lnkNuevoCaso.ActiveLinkColor = System.Drawing.Color.LightSeaGreen;
+            this.lnkNuevoCaso.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lnkNuevoCaso.AutoSize = true;
             this.lnkNuevoCaso.Font = new System.Drawing.Font("Montserrat", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkNuevoCaso.LinkColor = System.Drawing.Color.Teal;

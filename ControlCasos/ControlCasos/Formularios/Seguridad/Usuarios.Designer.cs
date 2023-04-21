@@ -33,10 +33,6 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.dgvListaUsuarios = new System.Windows.Forms.DataGridView();
-            this.lnkNuevoUsuario = new System.Windows.Forms.LinkLabel();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.label1 = new System.Windows.Forms.Label();
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,12 +42,17 @@
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lnkNuevoUsuario = new System.Windows.Forms.LinkLabel();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnlFiltro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlFiltro
             // 
+            this.pnlFiltro.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlFiltro.BackColor = System.Drawing.SystemColors.Window;
             this.pnlFiltro.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlFiltro.Controls.Add(this.txtBuscar);
@@ -103,6 +104,7 @@
             // 
             this.dgvListaUsuarios.AllowUserToAddRows = false;
             this.dgvListaUsuarios.AllowUserToDeleteRows = false;
+            this.dgvListaUsuarios.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvListaUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListaUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -124,48 +126,6 @@
             this.dgvListaUsuarios.TabIndex = 9;
             this.dgvListaUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaUsuarios_CellContentClick);
             this.dgvListaUsuarios.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvListaUsuarios_CellMouseMove);
-            // 
-            // lnkNuevoUsuario
-            // 
-            this.lnkNuevoUsuario.ActiveLinkColor = System.Drawing.Color.LightSeaGreen;
-            this.lnkNuevoUsuario.AutoSize = true;
-            this.lnkNuevoUsuario.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnkNuevoUsuario.LinkColor = System.Drawing.Color.Teal;
-            this.lnkNuevoUsuario.Location = new System.Drawing.Point(687, 201);
-            this.lnkNuevoUsuario.Name = "lnkNuevoUsuario";
-            this.lnkNuevoUsuario.Size = new System.Drawing.Size(119, 21);
-            this.lnkNuevoUsuario.TabIndex = 10;
-            this.lnkNuevoUsuario.TabStop = true;
-            this.lnkNuevoUsuario.Text = "Nuevo Usuario";
-            this.lnkNuevoUsuario.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkNuevoUsuario_LinkClicked);
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.FillWeight = 50F;
-            this.dataGridViewImageColumn1.HeaderText = "Editar";
-            this.dataGridViewImageColumn1.Image = global::ControlCasos.Properties.Resources.editar;
-            this.dataGridViewImageColumn1.MinimumWidth = 6;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 57;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.FillWeight = 60F;
-            this.dataGridViewImageColumn2.HeaderText = "Eliminar";
-            this.dataGridViewImageColumn2.Image = global::ControlCasos.Properties.Resources.borrar;
-            this.dataGridViewImageColumn2.MinimumWidth = 6;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.Width = 68;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Montserrat Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(272, 71);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(322, 29);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Lista Usuarios del Sistema";
             // 
             // Usuario
             // 
@@ -253,6 +213,50 @@
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
             this.Id.Visible = false;
+            // 
+            // lnkNuevoUsuario
+            // 
+            this.lnkNuevoUsuario.ActiveLinkColor = System.Drawing.Color.LightSeaGreen;
+            this.lnkNuevoUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lnkNuevoUsuario.AutoSize = true;
+            this.lnkNuevoUsuario.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkNuevoUsuario.LinkColor = System.Drawing.Color.Teal;
+            this.lnkNuevoUsuario.Location = new System.Drawing.Point(687, 201);
+            this.lnkNuevoUsuario.Name = "lnkNuevoUsuario";
+            this.lnkNuevoUsuario.Size = new System.Drawing.Size(119, 21);
+            this.lnkNuevoUsuario.TabIndex = 10;
+            this.lnkNuevoUsuario.TabStop = true;
+            this.lnkNuevoUsuario.Text = "Nuevo Usuario";
+            this.lnkNuevoUsuario.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkNuevoUsuario_LinkClicked);
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.FillWeight = 50F;
+            this.dataGridViewImageColumn1.HeaderText = "Editar";
+            this.dataGridViewImageColumn1.Image = global::ControlCasos.Properties.Resources.editar;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 57;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.FillWeight = 60F;
+            this.dataGridViewImageColumn2.HeaderText = "Eliminar";
+            this.dataGridViewImageColumn2.Image = global::ControlCasos.Properties.Resources.borrar;
+            this.dataGridViewImageColumn2.MinimumWidth = 6;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Width = 68;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Montserrat Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(272, 71);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(322, 29);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Lista Usuarios del Sistema";
             // 
             // frmUsuarios
             // 

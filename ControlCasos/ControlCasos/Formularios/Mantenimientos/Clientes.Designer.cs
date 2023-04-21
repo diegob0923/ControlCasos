@@ -50,6 +50,7 @@
             // 
             this.dgvListaClientes.AllowUserToAddRows = false;
             this.dgvListaClientes.AllowUserToDeleteRows = false;
+            this.dgvListaClientes.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvListaClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -74,6 +75,7 @@
             this.Cliente.HeaderText = "Cliente";
             this.Cliente.MinimumWidth = 6;
             this.Cliente.Name = "Cliente";
+            this.Cliente.ReadOnly = true;
             // 
             // Estado
             // 
@@ -82,6 +84,7 @@
             this.Estado.HeaderText = "Estado";
             this.Estado.MinimumWidth = 6;
             this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
             // 
             // Editar
             // 
@@ -90,6 +93,7 @@
             this.Editar.Image = global::ControlCasos.Properties.Resources.editar;
             this.Editar.MinimumWidth = 6;
             this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
             // 
             // Eliminar
             // 
@@ -98,6 +102,7 @@
             this.Eliminar.Image = global::ControlCasos.Properties.Resources.borrar;
             this.Eliminar.MinimumWidth = 6;
             this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
             // 
             // Id
             // 
@@ -106,6 +111,7 @@
             this.Id.HeaderText = "Id";
             this.Id.MinimumWidth = 6;
             this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
             this.Id.Visible = false;
             // 
             // txtBuscar
@@ -120,6 +126,7 @@
             // 
             // pnlFiltro
             // 
+            this.pnlFiltro.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlFiltro.BackColor = System.Drawing.SystemColors.Window;
             this.pnlFiltro.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlFiltro.Controls.Add(this.txtBuscar);
@@ -160,6 +167,7 @@
             // lnkNuevoCliente
             // 
             this.lnkNuevoCliente.ActiveLinkColor = System.Drawing.Color.LightSeaGreen;
+            this.lnkNuevoCliente.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lnkNuevoCliente.AutoSize = true;
             this.lnkNuevoCliente.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkNuevoCliente.LinkColor = System.Drawing.Color.Teal;
@@ -173,6 +181,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Montserrat Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(343, 71);

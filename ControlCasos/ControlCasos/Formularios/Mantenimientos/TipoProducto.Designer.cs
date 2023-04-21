@@ -49,6 +49,7 @@
             // 
             this.dgvListaTipoProductos.AllowUserToAddRows = false;
             this.dgvListaTipoProductos.AllowUserToDeleteRows = false;
+            this.dgvListaTipoProductos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvListaTipoProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListaTipoProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaTipoProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -73,6 +74,7 @@
             this.TipoProducto.HeaderText = "Tipo de producto";
             this.TipoProducto.MinimumWidth = 6;
             this.TipoProducto.Name = "TipoProducto";
+            this.TipoProducto.ReadOnly = true;
             // 
             // Editar
             // 
@@ -81,6 +83,7 @@
             this.Editar.Image = global::ControlCasos.Properties.Resources.editar;
             this.Editar.MinimumWidth = 6;
             this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
             // 
             // Eliminar
             // 
@@ -89,6 +92,7 @@
             this.Eliminar.Image = global::ControlCasos.Properties.Resources.borrar;
             this.Eliminar.MinimumWidth = 6;
             this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
             // 
             // Id
             // 
@@ -96,11 +100,13 @@
             this.Id.HeaderText = "Id";
             this.Id.MinimumWidth = 6;
             this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
             this.Id.Visible = false;
             // 
             // lnkNuevoTipoProducto
             // 
             this.lnkNuevoTipoProducto.ActiveLinkColor = System.Drawing.Color.LightSeaGreen;
+            this.lnkNuevoTipoProducto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lnkNuevoTipoProducto.AutoSize = true;
             this.lnkNuevoTipoProducto.LinkColor = System.Drawing.Color.Teal;
             this.lnkNuevoTipoProducto.Location = new System.Drawing.Point(627, 201);
@@ -113,6 +119,7 @@
             // 
             // pnlFiltro
             // 
+            this.pnlFiltro.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlFiltro.BackColor = System.Drawing.SystemColors.Window;
             this.pnlFiltro.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlFiltro.Controls.Add(this.txtBuscar);
@@ -179,6 +186,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Montserrat Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(318, 71);
