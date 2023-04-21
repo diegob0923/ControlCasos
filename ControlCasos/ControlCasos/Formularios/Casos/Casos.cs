@@ -72,7 +72,12 @@ namespace ControlCasos.Formularios.Casos
                 {
                     cmbPaciente.DataSource = null;
 
-                    var pacientesPorDoctor = listaCasos.Where(x => x.IdDoctor == int.Parse(cmbDoctor.SelectedValue.ToString())).ToList();
+                    //lista completa se filtra por doctor y luego se hace el distinct pacientes (no trae pacientes repetidos)
+                    var pacientesPorDoctor = listaCasos
+                        .Where(x => x.IdDoctor == int.Parse(cmbDoctor.SelectedValue.ToString()))
+                        .Select(x => x.Paciente)
+                        .Distinct()
+                        .ToList();
 
                     if (pacientesPorDoctor.Count != 0)
                     {
@@ -87,9 +92,9 @@ namespace ControlCasos.Formularios.Casos
 
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                MessageBox.Show("Ocurrio un error al cargar los pacientes" + e);
+                MessageBox.Show("Ocurrio un error al cargar los pacientes");
             }
         }
 
