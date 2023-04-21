@@ -124,6 +124,9 @@
   <data name="btnAbrir" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagenes\btnAbrir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="MOBARLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\MOBARLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="cerrarSesion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagenes\cerrarSesion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -136,7 +139,7 @@
   <data name="cancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagenes\cancelar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MOBARLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagenes\MOBARLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MOBARLogoPeq" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\MOBARLogoPeq.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

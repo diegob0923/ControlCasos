@@ -51,14 +51,17 @@
             this.pnlFormularios = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
+            this.pbLogoSuperiorIzq = new System.Windows.Forms.PictureBox();
             this.PnlMenuLateral.SuspendLayout();
             this.pnlSubMenuAyuda.SuspendLayout();
             this.pnlSubMenuSeguridad.SuspendLayout();
             this.pnlSubMenuMantenimientos.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.pnlContenedorDerecho.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogoSuperiorIzq)).BeginInit();
             this.SuspendLayout();
             // 
             // PnlMenuLateral
@@ -86,7 +89,7 @@
             this.pnlSubMenuAyuda.Controls.Add(this.btnManualUsuario);
             this.pnlSubMenuAyuda.Controls.Add(this.btnCambioContrasena);
             this.pnlSubMenuAyuda.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubMenuAyuda.Location = new System.Drawing.Point(0, 607);
+            this.pnlSubMenuAyuda.Location = new System.Drawing.Point(0, 591);
             this.pnlSubMenuAyuda.Name = "pnlSubMenuAyuda";
             this.pnlSubMenuAyuda.Size = new System.Drawing.Size(200, 139);
             this.pnlSubMenuAyuda.TabIndex = 8;
@@ -150,7 +153,7 @@
             this.btnAyuda.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnAyuda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAyuda.Location = new System.Drawing.Point(0, 562);
+            this.btnAyuda.Location = new System.Drawing.Point(0, 546);
             this.btnAyuda.Name = "btnAyuda";
             this.btnAyuda.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAyuda.Size = new System.Drawing.Size(200, 45);
@@ -166,7 +169,7 @@
             this.pnlSubMenuSeguridad.Controls.Add(this.btnRespaldos);
             this.pnlSubMenuSeguridad.Controls.Add(this.btnUsuarios);
             this.pnlSubMenuSeguridad.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubMenuSeguridad.Location = new System.Drawing.Point(0, 465);
+            this.pnlSubMenuSeguridad.Location = new System.Drawing.Point(0, 449);
             this.pnlSubMenuSeguridad.Name = "pnlSubMenuSeguridad";
             this.pnlSubMenuSeguridad.Size = new System.Drawing.Size(200, 97);
             this.pnlSubMenuSeguridad.TabIndex = 6;
@@ -213,7 +216,7 @@
             this.btnSeguridad.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnSeguridad.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnSeguridad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeguridad.Location = new System.Drawing.Point(0, 420);
+            this.btnSeguridad.Location = new System.Drawing.Point(0, 404);
             this.btnSeguridad.Name = "btnSeguridad";
             this.btnSeguridad.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnSeguridad.Size = new System.Drawing.Size(200, 45);
@@ -232,7 +235,7 @@
             this.pnlSubMenuMantenimientos.Controls.Add(this.btnDoctores);
             this.pnlSubMenuMantenimientos.Controls.Add(this.btnClientes);
             this.pnlSubMenuMantenimientos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubMenuMantenimientos.Location = new System.Drawing.Point(0, 190);
+            this.pnlSubMenuMantenimientos.Location = new System.Drawing.Point(0, 174);
             this.pnlSubMenuMantenimientos.Name = "pnlSubMenuMantenimientos";
             this.pnlSubMenuMantenimientos.Size = new System.Drawing.Size(200, 230);
             this.pnlSubMenuMantenimientos.TabIndex = 4;
@@ -330,7 +333,7 @@
             this.btnMantenimientos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnMantenimientos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnMantenimientos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMantenimientos.Location = new System.Drawing.Point(0, 145);
+            this.btnMantenimientos.Location = new System.Drawing.Point(0, 129);
             this.btnMantenimientos.Name = "btnMantenimientos";
             this.btnMantenimientos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnMantenimientos.Size = new System.Drawing.Size(200, 45);
@@ -347,7 +350,7 @@
             this.btnCasos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnCasos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnCasos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCasos.Location = new System.Drawing.Point(0, 100);
+            this.btnCasos.Location = new System.Drawing.Point(0, 84);
             this.btnCasos.Name = "btnCasos";
             this.btnCasos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnCasos.Size = new System.Drawing.Size(200, 45);
@@ -359,10 +362,11 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.pbLogoSuperiorIzq);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 100);
+            this.panel1.Size = new System.Drawing.Size(200, 84);
             this.panel1.TabIndex = 0;
             // 
             // pnlContenedorDerecho
@@ -404,6 +408,17 @@
             this.panel2.Size = new System.Drawing.Size(860, 49);
             this.panel2.TabIndex = 0;
             // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(265, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(296, 26);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Sistema de Control de Casos";
+            // 
             // btnCerrarSesion
             // 
             this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
@@ -416,20 +431,18 @@
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
             this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
-            // label1
+            // pbLogoSuperiorIzq
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(265, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(366, 31);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Sistema de Control de Casos";
+            this.pbLogoSuperiorIzq.Image = global::ControlCasos.Properties.Resources.MOBARLogoPeq;
+            this.pbLogoSuperiorIzq.Location = new System.Drawing.Point(0, 0);
+            this.pbLogoSuperiorIzq.Name = "pbLogoSuperiorIzq";
+            this.pbLogoSuperiorIzq.Size = new System.Drawing.Size(200, 83);
+            this.pbLogoSuperiorIzq.TabIndex = 0;
+            this.pbLogoSuperiorIzq.TabStop = false;
             // 
             // frmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1060, 764);
             this.Controls.Add(this.pnlContenedorDerecho);
@@ -443,9 +456,11 @@
             this.pnlSubMenuAyuda.ResumeLayout(false);
             this.pnlSubMenuSeguridad.ResumeLayout(false);
             this.pnlSubMenuMantenimientos.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.pnlContenedorDerecho.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogoSuperiorIzq)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -477,6 +492,7 @@
         private System.Windows.Forms.Button btnSeguridad;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCerrarSesion;
+        private System.Windows.Forms.PictureBox pbLogoSuperiorIzq;
     }
 }
 
