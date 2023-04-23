@@ -346,10 +346,10 @@
             <Parameter Name="Cedula" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_UsuarioSistema_Consultar" ReturnType="Collection(ControlCasosModel.sp_UsuarioSistema_Consultar_Result)">
-            <Parameter Name="buscar" Mode="In" Type="String" />
+          <Parameter Name="buscar" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_UsuarioSistemaID_Consultar" ReturnType="Collection(ControlCasosModel.sp_UsuarioSistemaID_Consultar_Result)">
-            <Parameter Name="idUsuario" Mode="In" Type="Byte" />
+          <Parameter Name="idUsuario" Mode="In" Type="Byte" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_Cliente_Consultar_Result">
