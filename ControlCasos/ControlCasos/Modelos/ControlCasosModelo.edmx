@@ -101,6 +101,13 @@
         <Function Name="sp_MarcaID_Consultar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id" Type="int" Mode="In" />
         </Function>
+        <Function Name="sp_Producto_Color_Eliminar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idProducto" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_Producto_Color_Insertar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idProducto" Type="int" Mode="In" />
+          <Parameter Name="idColor" Type="tinyint" Mode="In" />
+        </Function>
         <Function Name="sp_Producto_Eliminar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id" Type="int" Mode="In" />
         </Function>
@@ -108,7 +115,6 @@
           <Parameter Name="Tamano" Type="varchar" Mode="In" />
           <Parameter Name="Diametro" Type="varchar" Mode="In" />
           <Parameter Name="Cantidad" Type="tinyint" Mode="In" />
-          <Parameter Name="IdColor" Type="tinyint" Mode="In" />
           <Parameter Name="IdMarca" Type="tinyint" Mode="In" />
           <Parameter Name="IdTipoProducto" Type="tinyint" Mode="In" />
           <Parameter Name="Comentario" Type="varchar" Mode="In" />
@@ -281,9 +287,6 @@
             <Parameter Name="Color" Mode="In" Type="String" />
             <Parameter Name="Guia" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="sp_ProductosPorCaso_Consultar" ReturnType="Collection(ControlCasosModel.sp_ProductosPorCaso_Consultar_Result)">
-          <Parameter Name="idCaso" Mode="In" Type="Int32" />
-          </FunctionImport>
           <FunctionImport Name="sp_Caso_Insertar">
             <Parameter Name="Fecha" Mode="In" Type="DateTime" />
             <Parameter Name="IdDoctor" Mode="In" Type="Int32" />
@@ -294,7 +297,6 @@
             <Parameter Name="Tamano" Mode="In" Type="String" />
             <Parameter Name="Diametro" Mode="In" Type="String" />
             <Parameter Name="Cantidad" Mode="In" Type="Byte" />
-            <Parameter Name="IdColor" Mode="In" Type="Byte" />
             <Parameter Name="IdMarca" Mode="In" Type="Byte" />
             <Parameter Name="IdTipoProducto" Mode="In" Type="Byte" />
             <Parameter Name="Comentario" Mode="In" Type="String" />
@@ -350,6 +352,16 @@
           </FunctionImport>
           <FunctionImport Name="sp_UsuarioSistemaID_Consultar" ReturnType="Collection(ControlCasosModel.sp_UsuarioSistemaID_Consultar_Result)">
           <Parameter Name="idUsuario" Mode="In" Type="Byte" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Producto_Color_Eliminar">
+          <Parameter Name="idProducto" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Producto_Color_Insertar">
+            <Parameter Name="idProducto" Mode="In" Type="Int32" />
+            <Parameter Name="idColor" Mode="In" Type="Byte" />
+          </FunctionImport>
+          <FunctionImport Name="sp_ProductosPorCaso_Consultar" ReturnType="Collection(ControlCasosModel.sp_ProductosPorCaso_Consultar_Result)">
+          <Parameter Name="idCaso" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_Cliente_Consultar_Result">
@@ -416,20 +428,6 @@
           <Property Type="String" Name="Guia" Nullable="true" MaxLength="50" />
           <Property Type="String" Name="ColorGuia" Nullable="false" MaxLength="104" />
         </ComplexType>
-        <ComplexType Name="sp_ProductosPorCaso_Consultar_Result">
-          <Property Type="Int32" Name="IdProducto" Nullable="false" />
-          <Property Type="String" Name="Tamano" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="Diametro" Nullable="true" MaxLength="50" />
-          <Property Type="Byte" Name="Cantidad" Nullable="true" />
-          <Property Type="Byte" Name="IdColor" Nullable="false" />
-          <Property Type="Byte" Name="IdMarca" Nullable="false" />
-          <Property Type="Byte" Name="IdTipoProducto" Nullable="false" />
-          <Property Type="String" Name="Comentario" Nullable="true" MaxLength="300" />
-          <Property Type="Int32" Name="IdCaso" Nullable="false" />
-          <Property Type="String" Name="Color" Nullable="false" MaxLength="104" />
-          <Property Type="String" Name="Marca" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="TipoProducto" Nullable="false" MaxLength="50" />
-        </ComplexType>
         <ComplexType Name="sp_ValidarUsuario_Result">
           <Property Type="Byte" Name="IdRol" Nullable="false" />
           <Property Type="String" Name="Usuario" Nullable="false" MaxLength="50" />
@@ -459,6 +457,18 @@
           <Property Type="Byte" Name="IdRol" Nullable="false" />
           <Property Type="String" Name="Rol" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="Cedula" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_ProductosPorCaso_Consultar_Result">
+          <Property Type="Int32" Name="IdProducto" Nullable="false" />
+          <Property Type="String" Name="Tamano" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Diametro" Nullable="true" MaxLength="50" />
+          <Property Type="Byte" Name="Cantidad" Nullable="true" />
+          <Property Type="Byte" Name="IdMarca" Nullable="false" />
+          <Property Type="Byte" Name="IdTipoProducto" Nullable="false" />
+          <Property Type="String" Name="Comentario" Nullable="true" MaxLength="300" />
+          <Property Type="Int32" Name="IdCaso" Nullable="false" />
+          <Property Type="String" Name="Marca" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="TipoProducto" Nullable="false" MaxLength="50" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -589,24 +599,6 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_ProductosPorCaso_Consultar" FunctionName="ControlCasosModel.Store.sp_ProductosPorCaso_Consultar">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="ControlCasosModel.sp_ProductosPorCaso_Consultar_Result">
-                <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
-                <ScalarProperty Name="Tamano" ColumnName="Tamano" />
-                <ScalarProperty Name="Diametro" ColumnName="Diametro" />
-                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
-                <ScalarProperty Name="IdColor" ColumnName="IdColor" />
-                <ScalarProperty Name="IdMarca" ColumnName="IdMarca" />
-                <ScalarProperty Name="IdTipoProducto" ColumnName="IdTipoProducto" />
-                <ScalarProperty Name="Comentario" ColumnName="Comentario" />
-                <ScalarProperty Name="IdCaso" ColumnName="IdCaso" />
-                <ScalarProperty Name="Color" ColumnName="Color" />
-                <ScalarProperty Name="Marca" ColumnName="Marca" />
-                <ScalarProperty Name="TipoProducto" ColumnName="TipoProducto" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_Caso_Insertar" FunctionName="ControlCasosModel.Store.sp_Caso_Insertar" />
           <FunctionImportMapping FunctionImportName="sp_CasoMaxID_Consultar" FunctionName="ControlCasosModel.Store.sp_CasoMaxID_Consultar" />
           <FunctionImportMapping FunctionImportName="sp_Producto_Insertar" FunctionName="ControlCasosModel.Store.sp_Producto_Insertar" />
@@ -657,6 +649,24 @@
                 <ScalarProperty Name="IdRol" ColumnName="IdRol" />
                 <ScalarProperty Name="Rol" ColumnName="Rol" />
                 <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Producto_Color_Eliminar" FunctionName="ControlCasosModel.Store.sp_Producto_Color_Eliminar" />
+          <FunctionImportMapping FunctionImportName="sp_Producto_Color_Insertar" FunctionName="ControlCasosModel.Store.sp_Producto_Color_Insertar" />
+          <FunctionImportMapping FunctionImportName="sp_ProductosPorCaso_Consultar" FunctionName="ControlCasosModel.Store.sp_ProductosPorCaso_Consultar">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ControlCasosModel.sp_ProductosPorCaso_Consultar_Result">
+                <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+                <ScalarProperty Name="Tamano" ColumnName="Tamano" />
+                <ScalarProperty Name="Diametro" ColumnName="Diametro" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="IdMarca" ColumnName="IdMarca" />
+                <ScalarProperty Name="IdTipoProducto" ColumnName="IdTipoProducto" />
+                <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+                <ScalarProperty Name="IdCaso" ColumnName="IdCaso" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="TipoProducto" ColumnName="TipoProducto" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

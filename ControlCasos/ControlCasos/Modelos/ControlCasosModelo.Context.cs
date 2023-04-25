@@ -351,15 +351,6 @@ namespace ControlCasos.Modelos
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_Color_Consultar_Result>("sp_Color_Consultar", colorParameter, guiaParameter);
         }
     
-        public virtual ObjectResult<sp_ProductosPorCaso_Consultar_Result> sp_ProductosPorCaso_Consultar(Nullable<int> idCaso)
-        {
-            var idCasoParameter = idCaso.HasValue ?
-                new ObjectParameter("idCaso", idCaso) :
-                new ObjectParameter("idCaso", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_ProductosPorCaso_Consultar_Result>("sp_ProductosPorCaso_Consultar", idCasoParameter);
-        }
-    
         public virtual int sp_Caso_Insertar(Nullable<System.DateTime> fecha, Nullable<int> idDoctor, string paciente)
         {
             var fechaParameter = fecha.HasValue ?
@@ -382,7 +373,7 @@ namespace ControlCasos.Modelos
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("sp_CasoMaxID_Consultar");
         }
     
-        public virtual ObjectResult<Nullable<int>> sp_Producto_Insertar(string tamano, string diametro, Nullable<byte> cantidad, Nullable<byte> idColor, Nullable<byte> idMarca, Nullable<byte> idTipoProducto, string comentario, Nullable<int> idCaso)
+        public virtual ObjectResult<Nullable<int>> sp_Producto_Insertar(string tamano, string diametro, Nullable<byte> cantidad, Nullable<byte> idMarca, Nullable<byte> idTipoProducto, string comentario, Nullable<int> idCaso)
         {
             var tamanoParameter = tamano != null ?
                 new ObjectParameter("Tamano", tamano) :
@@ -395,10 +386,6 @@ namespace ControlCasos.Modelos
             var cantidadParameter = cantidad.HasValue ?
                 new ObjectParameter("Cantidad", cantidad) :
                 new ObjectParameter("Cantidad", typeof(byte));
-    
-            var idColorParameter = idColor.HasValue ?
-                new ObjectParameter("IdColor", idColor) :
-                new ObjectParameter("IdColor", typeof(byte));
     
             var idMarcaParameter = idMarca.HasValue ?
                 new ObjectParameter("IdMarca", idMarca) :
@@ -416,7 +403,7 @@ namespace ControlCasos.Modelos
                 new ObjectParameter("IdCaso", idCaso) :
                 new ObjectParameter("IdCaso", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("sp_Producto_Insertar", tamanoParameter, diametroParameter, cantidadParameter, idColorParameter, idMarcaParameter, idTipoProductoParameter, comentarioParameter, idCasoParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("sp_Producto_Insertar", tamanoParameter, diametroParameter, cantidadParameter, idMarcaParameter, idTipoProductoParameter, comentarioParameter, idCasoParameter);
         }
     
         public virtual int sp_Caso_Eliminar(Nullable<int> id)
@@ -588,6 +575,37 @@ namespace ControlCasos.Modelos
                 new ObjectParameter("idUsuario", typeof(byte));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_UsuarioSistemaID_Consultar_Result>("sp_UsuarioSistemaID_Consultar", idUsuarioParameter);
+        }
+    
+        public virtual int sp_Producto_Color_Eliminar(Nullable<int> idProducto)
+        {
+            var idProductoParameter = idProducto.HasValue ?
+                new ObjectParameter("idProducto", idProducto) :
+                new ObjectParameter("idProducto", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_Producto_Color_Eliminar", idProductoParameter);
+        }
+    
+        public virtual int sp_Producto_Color_Insertar(Nullable<int> idProducto, Nullable<byte> idColor)
+        {
+            var idProductoParameter = idProducto.HasValue ?
+                new ObjectParameter("idProducto", idProducto) :
+                new ObjectParameter("idProducto", typeof(int));
+    
+            var idColorParameter = idColor.HasValue ?
+                new ObjectParameter("idColor", idColor) :
+                new ObjectParameter("idColor", typeof(byte));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_Producto_Color_Insertar", idProductoParameter, idColorParameter);
+        }
+    
+        public virtual ObjectResult<sp_ProductosPorCaso_Consultar_Result> sp_ProductosPorCaso_Consultar(Nullable<int> idCaso)
+        {
+            var idCasoParameter = idCaso.HasValue ?
+                new ObjectParameter("idCaso", idCaso) :
+                new ObjectParameter("idCaso", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_ProductosPorCaso_Consultar_Result>("sp_ProductosPorCaso_Consultar", idCasoParameter);
         }
     }
 }
