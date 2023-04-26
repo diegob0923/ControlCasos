@@ -39,6 +39,7 @@ namespace ControlCasos.Formularios.Casos
             cargarComboBoxColor();
         }
 
+        #region Cargar Grids
         public void cargarDatosEnGrid()
         {
             try
@@ -66,6 +67,7 @@ namespace ControlCasos.Formularios.Casos
                 MessageBox.Show("Ocurrio un error al cargar los datos del color");
             }
         }
+        #endregion
 
         /// <summary>
         /// cambia el formato del nombre para que sea tipo título
@@ -211,6 +213,12 @@ namespace ControlCasos.Formularios.Casos
                                     if (idNuevoRegistro != ErrorAlInsertarProducto)
                                     {
                                         listaRegistrosInsertados.Add(idNuevoRegistro);
+
+                                        //agregar colores al producto
+                                        foreach (sp_Color_Consultar_Result color in producto.colores)
+                                        {
+                                            BLCasos.insertarProductoColor(idNuevoRegistro, color.IdColor);
+                                        }
                                     }
                                     else
                                     {
@@ -225,6 +233,7 @@ namespace ControlCasos.Formularios.Casos
                                 {
                                     foreach (int idProducto in listaRegistrosInsertados)
                                     {
+                                        BLCasos.eliminarProductoColor(idProducto);
                                         BLCasos.eliminarProducto(idProducto);
                                     }
                                 }
