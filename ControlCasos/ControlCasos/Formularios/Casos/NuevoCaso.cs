@@ -23,13 +23,15 @@ namespace ControlCasos.Formularios.Casos
         private readonly BLColor BLColores = new BLColor();
         private readonly BLCaso BLCasos = new BLCaso();
         private List<Producto> listaProductos = new List<Producto>();
+        private List<sp_Color_Consultar_Result> listaColores = new List<sp_Color_Consultar_Result>();
         private frmCasos formularioCasos;
         private const int ErrorAlInsertarProducto = -1;
 
         public frmNuevoCaso(frmCasos formularioCasos)
         {
             InitializeComponent();
-            Formato.DarFormatoDataGridView(dgvResumenProductos);
+            Formato.DarFormatoDataGridView(dgvResumenProductos); 
+            Formato.DarFormatoDataGridView(dgvListaColores);
             this.formularioCasos = formularioCasos;
             cargarComboBoxDoctores();
             cargarComboBoxMarca();
@@ -48,6 +50,20 @@ namespace ControlCasos.Formularios.Casos
             catch (Exception)
             {
                 MessageBox.Show("Ocurrio un error al cargar los datos de productos");
+            }
+        }
+
+        public void cargarDatosEnGridColores()
+        {
+            try
+            {
+                dgvListaColores.DataSource = null;
+                dgvListaColores.AutoGenerateColumns = false;
+                dgvListaColores.DataSource = listaColores;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocurrio un error al cargar los datos del color");
             }
         }
 
@@ -185,7 +201,7 @@ namespace ControlCasos.Formularios.Casos
                             {
                                 foreach (Producto producto in listaProductos)
                                 {
-                                    idNuevoRegistro = BLCasos.insertarProducto(producto.idColor, producto.idMarca, producto.idTipoProducto, maxCasoId, producto.tamano, producto.diametro, producto.cantidad, producto.comentario);
+                                    idNuevoRegistro = BLCasos.insertarProducto(producto.idMarca, producto.idTipoProducto, maxCasoId, producto.tamano, producto.diametro, producto.cantidad, producto.comentario);
 
                                     if (idNuevoRegistro != ErrorAlInsertarProducto)
                                     {
@@ -244,11 +260,11 @@ namespace ControlCasos.Formularios.Casos
             //controles que quiero validar
             cmbTipoProducto.CausesValidation = true;
             cmbMarca.CausesValidation = true;
-            cmbColor.CausesValidation = true;
 
             //controles que no quiero validar
             cmbDoctor.CausesValidation = false;
             txtPaciente.CausesValidation = false;
+            cmbColor.CausesValidation = false;
 
             if (ValidateChildren(ValidationConstraints.Enabled))
             {
@@ -288,7 +304,7 @@ namespace ControlCasos.Formularios.Casos
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Ocurrio un error al eliminar prducto");
+                    MessageBox.Show("Ocurrio un error al eliminar producto");
                 }
             }
         }
@@ -419,5 +435,70 @@ namespace ControlCasos.Formularios.Casos
             }
         }
         #endregion
+
+        private void btnAgregarColor_Click(object sender, EventArgs e)
+        {
+            //controles que quiero validar
+            cmbColor.CausesValidation = true;
+            
+            //controles que no quiero validar
+            cmbDoctor.CausesValidation = false;
+            txtPaciente.CausesValidation = false;
+            cmbColor.CausesValidation = false;
+            cmbTipoProducto.CausesValidation = false;
+            cmbMarca.CausesValidation = false;
+
+            if (ValidateChildren(ValidationConstraints.Enabled))
+            {
+                listaColores.Add((sp_Color_Consultar_Result)cmbColor.SelectedItem);
+                cargarDatosEnGridColores();
+                cmbColor.SelectedIndex = 0;// el index 0 es " Seleccione: "
+            }
+        }
+
+        private void dgvListaColores_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvListaColores.Columns[e.ColumnIndex].Name == "ColoresEliminar")
+            {
+                try
+                {
+                    listaColores.RemoveAt(dgvListaColores.CurrentRow.Index);//el currentRow index es equivalente al index de listaProductos
+                    cargarDatosEnGridColores();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Ocurrio un error al eliminar color");
+                }
+            }
+        }
+
+        private void dgvListaColores_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            Cursor = Cursors.Default;
+
+            //Se le asigna el numero de celda de la celda eliminar, porque es donde está la imagen
+            if (e.ColumnIndex == 1 && e.RowIndex != -1)
+            {
+                // Verificar si la fila y la columna son válidas
+                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+                {
+                    // Obtener la posición de la imagen en la celda actual
+                    DataGridViewImageCell cell = (DataGridViewImageCell)dgvListaColores.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                    Rectangle imageRectangle = cell.GetContentBounds(e.RowIndex);
+
+                    // Deshabilitar temporalmente la actualización del control
+                    dgvListaColores.SuspendLayout();
+
+                    // Verificar si el puntero del mouse está sobre la imagen en la celda actual
+                    if (imageRectangle.Contains(e.Location))
+                        Cursor = Cursors.Hand; // Cambiar el cursor a mano
+                    else
+                        Cursor = Cursors.Default;// Cambiar el cursor al valor predeterminado
+
+                    // Habilitar la actualización del control
+                    dgvListaColores.ResumeLayout();
+                }
+            }
+        }
     }
 }
