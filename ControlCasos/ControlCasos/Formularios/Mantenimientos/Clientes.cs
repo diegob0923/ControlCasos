@@ -145,7 +145,6 @@ namespace ControlCasos.Formularios.Mantenimientos
                     dgvListaClientes.ResumeLayout();
                 }
             }
-
         }
         #endregion
 
