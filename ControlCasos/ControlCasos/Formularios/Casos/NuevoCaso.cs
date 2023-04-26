@@ -156,6 +156,8 @@ namespace ControlCasos.Formularios.Casos
             cmbMarca.SelectedIndex = 0;
             cmbTipoProducto.SelectedIndex = 0;
             txtComentario.Text = "";
+            listaColores.Clear();
+            dgvListaColores.DataSource = null;
         }
 
         private void limpiarTodoSiError()
@@ -165,7 +167,9 @@ namespace ControlCasos.Formularios.Casos
             dtpFecha.Value = DateTime.Now;
             limpiarDatosProducto();
             listaProductos.Clear();//limpia los posibles datos en la lista de productos
+            listaColores.Clear();//limpia los posibles datos en la lista de colores
             dgvResumenProductos.DataSource = null; // dejar el grid resumenProductos vacío
+            dgvListaColores.DataSource = null;// dejar el grid listaColores vacío
         }
         #endregion
         
@@ -274,7 +278,12 @@ namespace ControlCasos.Formularios.Casos
                     nuevoProducto.tamano = txtTamano.Text;
                     nuevoProducto.diametro = txtDiametro.Text;
                     nuevoProducto.cantidad = byte.Parse(nudCantidad.Text);
-                    nuevoProducto.idColor = byte.Parse(cmbColor.SelectedValue.ToString());
+                    
+                    foreach (sp_Color_Consultar_Result color in listaColores)
+                    {
+                        nuevoProducto.colores.Add(color);
+                    }
+                
                     nuevoProducto.color = cmbColor.Text;
                     nuevoProducto.idMarca = byte.Parse(cmbMarca.SelectedValue.ToString());
                     nuevoProducto.marca = cmbMarca.Text;
@@ -305,6 +314,24 @@ namespace ControlCasos.Formularios.Casos
                 catch (Exception)
                 {
                     MessageBox.Show("Ocurrio un error al eliminar producto");
+                }
+            }
+
+            if (dgvResumenProductos.Columns[e.ColumnIndex].Name == "Colores")
+            {
+                try
+                {
+                    string coloresEnProducto = "Colores:\n";
+                    foreach (sp_Color_Consultar_Result color in listaProductos[e.RowIndex].colores)
+                    {
+                        coloresEnProducto += "* "+color.ColorGuia+"\n";
+                    }
+                   
+                    MessageBox.Show(coloresEnProducto);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Ocurrio un error al cargar colores");
                 }
             }
         }

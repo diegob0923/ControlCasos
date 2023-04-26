@@ -48,14 +48,6 @@
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.txtPaciente = new System.Windows.Forms.TextBox();
             this.dgvResumenProductos = new System.Windows.Forms.DataGridView();
-            this.TipoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tamano = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Diametro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Comentario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.pnlCaso = new System.Windows.Forms.Panel();
             this.pnlProducto = new System.Windows.Forms.Panel();
@@ -75,6 +67,14 @@
             this.epTipoProductoValidar = new System.Windows.Forms.ErrorProvider(this.components);
             this.epMarcaValidar = new System.Windows.Forms.ErrorProvider(this.components);
             this.epColorValidar = new System.Windows.Forms.ErrorProvider(this.components);
+            this.TipoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Colores = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Tamano = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Diametro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Comentario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResumenProductos)).BeginInit();
             this.pnlCaso.SuspendLayout();
             this.pnlProducto.SuspendLayout();
@@ -295,13 +295,13 @@
             this.dgvResumenProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TipoProducto,
             this.Marca,
-            this.Color,
+            this.Colores,
             this.Tamano,
             this.Diametro,
             this.Cantidad,
             this.Comentario,
             this.Eliminar});
-            this.dgvResumenProductos.Location = new System.Drawing.Point(26, 511);
+            this.dgvResumenProductos.Location = new System.Drawing.Point(26, 534);
             this.dgvResumenProductos.Name = "dgvResumenProductos";
             this.dgvResumenProductos.ReadOnly = true;
             this.dgvResumenProductos.RowHeadersWidth = 51;
@@ -311,83 +311,6 @@
             this.dgvResumenProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResumenProductos_CellContentClick);
             this.dgvResumenProductos.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvResumenProductos_CellMouseMove);
             this.dgvResumenProductos.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvResumenProductos_CellPainting);
-            // 
-            // TipoProducto
-            // 
-            this.TipoProducto.DataPropertyName = "tipoProducto";
-            this.TipoProducto.HeaderText = "Tipo Producto";
-            this.TipoProducto.MinimumWidth = 6;
-            this.TipoProducto.Name = "TipoProducto";
-            this.TipoProducto.ReadOnly = true;
-            // 
-            // Marca
-            // 
-            this.Marca.DataPropertyName = "marca";
-            this.Marca.FillWeight = 75F;
-            this.Marca.HeaderText = "Marca";
-            this.Marca.MinimumWidth = 6;
-            this.Marca.Name = "Marca";
-            this.Marca.ReadOnly = true;
-            // 
-            // Color
-            // 
-            this.Color.DataPropertyName = "color";
-            this.Color.FillWeight = 75F;
-            this.Color.HeaderText = "Color";
-            this.Color.MinimumWidth = 6;
-            this.Color.Name = "Color";
-            this.Color.ReadOnly = true;
-            // 
-            // Tamano
-            // 
-            this.Tamano.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Tamano.DataPropertyName = "tamano";
-            this.Tamano.HeaderText = "Tamaño";
-            this.Tamano.MinimumWidth = 6;
-            this.Tamano.Name = "Tamano";
-            this.Tamano.ReadOnly = true;
-            this.Tamano.Width = 85;
-            // 
-            // Diametro
-            // 
-            this.Diametro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Diametro.DataPropertyName = "diametro";
-            this.Diametro.FillWeight = 50F;
-            this.Diametro.HeaderText = "Diámentro";
-            this.Diametro.MinimumWidth = 6;
-            this.Diametro.Name = "Diametro";
-            this.Diametro.ReadOnly = true;
-            this.Diametro.Width = 98;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Cantidad.DataPropertyName = "cantidad";
-            this.Cantidad.FillWeight = 50F;
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.MinimumWidth = 6;
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            this.Cantidad.Width = 89;
-            // 
-            // Comentario
-            // 
-            this.Comentario.DataPropertyName = "comentario";
-            this.Comentario.FillWeight = 150F;
-            this.Comentario.HeaderText = "Comentario";
-            this.Comentario.MinimumWidth = 6;
-            this.Comentario.Name = "Comentario";
-            this.Comentario.ReadOnly = true;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Image = global::ControlCasos.Properties.Resources.borrar;
-            this.Eliminar.MinimumWidth = 6;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Width = 64;
             // 
             // label5
             // 
@@ -410,7 +333,7 @@
             this.pnlCaso.Controls.Add(this.dtpFecha);
             this.pnlCaso.Controls.Add(this.label3);
             this.pnlCaso.Controls.Add(this.cmbDoctor);
-            this.pnlCaso.Location = new System.Drawing.Point(12, 21);
+            this.pnlCaso.Location = new System.Drawing.Point(12, 12);
             this.pnlCaso.Name = "pnlCaso";
             this.pnlCaso.Size = new System.Drawing.Size(344, 223);
             this.pnlCaso.TabIndex = 23;
@@ -437,7 +360,7 @@
             this.pnlProducto.Controls.Add(this.label7);
             this.pnlProducto.Controls.Add(this.label6);
             this.pnlProducto.Controls.Add(this.cmbColor);
-            this.pnlProducto.Location = new System.Drawing.Point(381, 21);
+            this.pnlProducto.Location = new System.Drawing.Point(381, 12);
             this.pnlProducto.Name = "pnlProducto";
             this.pnlProducto.Size = new System.Drawing.Size(636, 472);
             this.pnlProducto.TabIndex = 24;
@@ -556,7 +479,7 @@
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Montserrat Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(21, 464);
+            this.label13.Location = new System.Drawing.Point(21, 487);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(283, 29);
             this.label13.TabIndex = 25;
@@ -566,7 +489,7 @@
             // 
             this.btnGuardar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnGuardar.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(935, 643);
+            this.btnGuardar.Location = new System.Drawing.Point(935, 666);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(82, 30);
             this.btnGuardar.TabIndex = 26;
@@ -599,11 +522,90 @@
             this.epColorValidar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.epColorValidar.ContainerControl = this;
             // 
+            // TipoProducto
+            // 
+            this.TipoProducto.DataPropertyName = "tipoProducto";
+            this.TipoProducto.HeaderText = "Tipo Producto";
+            this.TipoProducto.MinimumWidth = 6;
+            this.TipoProducto.Name = "TipoProducto";
+            this.TipoProducto.ReadOnly = true;
+            // 
+            // Marca
+            // 
+            this.Marca.DataPropertyName = "marca";
+            this.Marca.FillWeight = 75F;
+            this.Marca.HeaderText = "Marca";
+            this.Marca.MinimumWidth = 6;
+            this.Marca.Name = "Marca";
+            this.Marca.ReadOnly = true;
+            // 
+            // Colores
+            // 
+            this.Colores.FillWeight = 75F;
+            this.Colores.HeaderText = "Colores";
+            this.Colores.Image = global::ControlCasos.Properties.Resources.btnAbrir;
+            this.Colores.MinimumWidth = 6;
+            this.Colores.Name = "Colores";
+            this.Colores.ReadOnly = true;
+            this.Colores.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Colores.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Tamano
+            // 
+            this.Tamano.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Tamano.DataPropertyName = "tamano";
+            this.Tamano.HeaderText = "Tamaño";
+            this.Tamano.MinimumWidth = 6;
+            this.Tamano.Name = "Tamano";
+            this.Tamano.ReadOnly = true;
+            this.Tamano.Width = 85;
+            // 
+            // Diametro
+            // 
+            this.Diametro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Diametro.DataPropertyName = "diametro";
+            this.Diametro.FillWeight = 50F;
+            this.Diametro.HeaderText = "Diámentro";
+            this.Diametro.MinimumWidth = 6;
+            this.Diametro.Name = "Diametro";
+            this.Diametro.ReadOnly = true;
+            this.Diametro.Width = 98;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Cantidad.DataPropertyName = "cantidad";
+            this.Cantidad.FillWeight = 50F;
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.MinimumWidth = 6;
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            this.Cantidad.Width = 89;
+            // 
+            // Comentario
+            // 
+            this.Comentario.DataPropertyName = "comentario";
+            this.Comentario.FillWeight = 150F;
+            this.Comentario.HeaderText = "Comentario";
+            this.Comentario.MinimumWidth = 6;
+            this.Comentario.Name = "Comentario";
+            this.Comentario.ReadOnly = true;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Image = global::ControlCasos.Properties.Resources.borrar;
+            this.Eliminar.MinimumWidth = 6;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Width = 64;
+            // 
             // frmNuevoCaso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1034, 782);
+            this.ClientSize = new System.Drawing.Size(1034, 718);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.pnlProducto);
             this.Controls.Add(this.label13);
@@ -665,14 +667,6 @@
         private System.Windows.Forms.ErrorProvider epTipoProductoValidar;
         private System.Windows.Forms.ErrorProvider epMarcaValidar;
         private System.Windows.Forms.NumericUpDown nudCantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Color;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tamano;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Diametro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Comentario;
-        private System.Windows.Forms.DataGridViewImageColumn Eliminar;
         private System.Windows.Forms.Button btnAgregarColor;
         private System.Windows.Forms.ComboBox cmbColor;
         private System.Windows.Forms.ErrorProvider epColorValidar;
@@ -680,5 +674,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColoresColor;
         private System.Windows.Forms.DataGridViewImageColumn ColoresEliminar;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColoresIdColor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
+        private System.Windows.Forms.DataGridViewImageColumn Colores;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tamano;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Diametro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Comentario;
+        private System.Windows.Forms.DataGridViewImageColumn Eliminar;
     }
 }
