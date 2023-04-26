@@ -36,5 +36,59 @@ namespace ControlCasos.Formularios.Casos
                 MessageBox.Show("Ocurrio un error al cargar los productos");
             }
         }
+
+        private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvProductos.Columns[e.ColumnIndex].Name == "Colores")
+            {
+                try
+                {
+                    int idProducto = int.Parse(dgvProductos.CurrentRow.Cells["Id"].Value.ToString());
+
+                    IList<string> listaColores = BLCaso.consultarColoresPorProducto(idProducto);
+
+                    string coloresEnProducto = "Colores:\n";
+                    foreach (string color in listaColores)
+                    {
+                        coloresEnProducto += "* " + color+ "\n";
+                    }
+
+                    MessageBox.Show(coloresEnProducto);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Ocurrio un error al cargar colores");
+                }
+            }
+        }
+
+        private void dgvProductos_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            Cursor = Cursors.Default;
+
+            // Se le asigna el numero de celda de las celdas editar-eliminar, porque es donde está la imagen
+            if (e.ColumnIndex == 2 && e.RowIndex != -1)
+            {
+                // Verificar si la fila y la columna son válidas
+                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+                {
+                    // Obtener la posición de la imagen en la celda actual
+                    DataGridViewImageCell cell = (DataGridViewImageCell)dgvProductos.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                    Rectangle imageRectangle = cell.GetContentBounds(e.RowIndex);
+
+                    // Deshabilitar temporalmente la actualización del control
+                    dgvProductos.SuspendLayout();
+
+                    // Verificar si el puntero del mouse está sobre la imagen en la celda actual
+                    if (imageRectangle.Contains(e.Location))
+                        Cursor = Cursors.Hand; // Cambiar el cursor a mano
+                    else
+                        Cursor = Cursors.Default;// Cambiar el cursor al valor predeterminado
+
+                    // Habilitar la actualización del control
+                    dgvProductos.ResumeLayout();
+                }
+            }
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using ControlCasos.Modelos;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ namespace ControlCasos.Clases
         public string tamano { get; set; }
         public string diametro { get; set; }
         public Nullable<byte> cantidad { get; set; }
-        public byte idColor { get; set; }
+        public List<sp_Color_Consultar_Result> colores { get; set; }
         public string color { get; set; }
         public byte idMarca { get; set; }
         public string marca { get; set; }
@@ -24,7 +25,7 @@ namespace ControlCasos.Clases
             tamano = null;
             diametro = null;
             cantidad = null;
-            idColor = 0;
+            colores = new List<sp_Color_Consultar_Result>();
             color = null;
             idMarca = 0;
             marca = null;

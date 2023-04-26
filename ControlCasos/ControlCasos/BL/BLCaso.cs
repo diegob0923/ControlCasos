@@ -29,6 +29,12 @@ namespace ControlCasos.BL
             var maxIdCaso = modeloBD.sp_CasoMaxID_Consultar().FirstOrDefault();
             return (int)maxIdCaso;
         }
+
+        public IList<string> consultarColoresPorProducto(int idProducto)
+        {
+            IList<string> colores= modeloBD.sp_Producto_ColorIdProducto_Consultar(idProducto).ToList();
+            return colores;
+        }
         #endregion
 
         #region Insertar
