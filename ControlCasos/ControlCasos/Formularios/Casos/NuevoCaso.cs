@@ -341,7 +341,7 @@ namespace ControlCasos.Formularios.Casos
             Cursor = Cursors.Default;
 
             //Se le asigna el numero de celda de la celda eliminar, porque es donde está la imagen
-            if (e.ColumnIndex == 7 && e.RowIndex != -1)
+            if ((e.ColumnIndex == 7 || e.ColumnIndex == 2) && e.RowIndex != -1)
             {
                 // Verificar si la fila y la columna son válidas
                 if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
