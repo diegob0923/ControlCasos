@@ -40,11 +40,11 @@ namespace ControlCasos.BL
             return false;
         }
 
-        public int insertarProducto(byte idColor, byte idMarca, byte idTipoProducto, int idCaso,
+        public int insertarProducto(byte idMarca, byte idTipoProducto, int idCaso,
                                     string tamano = null, string diametro = null,
                                     Nullable<byte> cantidad = null, string comentario = null)
         {
-            int idNuevoRegistro = (int) modeloBD.sp_Producto_Insertar(tamano,diametro,cantidad,idColor,
+            int idNuevoRegistro = (int) modeloBD.sp_Producto_Insertar(tamano,diametro,cantidad,
                                                                   idMarca,idTipoProducto,comentario,
                                                                   idCaso).FirstOrDefault();
             return idNuevoRegistro;
