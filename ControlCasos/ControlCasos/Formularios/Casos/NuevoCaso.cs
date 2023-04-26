@@ -272,33 +272,38 @@ namespace ControlCasos.Formularios.Casos
 
             if (ValidateChildren(ValidationConstraints.Enabled))
             {
-                try
+                if (listaColores.Count != 0)
                 {
-                    Producto nuevoProducto = new Producto();
-                    nuevoProducto.tamano = txtTamano.Text;
-                    nuevoProducto.diametro = txtDiametro.Text;
-                    nuevoProducto.cantidad = byte.Parse(nudCantidad.Text);
-                    
-                    foreach (sp_Color_Consultar_Result color in listaColores)
+                    try
                     {
-                        nuevoProducto.colores.Add(color);
-                    }
-                
-                    nuevoProducto.color = cmbColor.Text;
-                    nuevoProducto.idMarca = byte.Parse(cmbMarca.SelectedValue.ToString());
-                    nuevoProducto.marca = cmbMarca.Text;
-                    nuevoProducto.idTipoProducto = byte.Parse(cmbTipoProducto.SelectedValue.ToString());
-                    nuevoProducto.tipoProducto = cmbTipoProducto.Text;
-                    nuevoProducto.comentario = txtComentario.Text;
+                        Producto nuevoProducto = new Producto();
+                        nuevoProducto.tamano = txtTamano.Text;
+                        nuevoProducto.diametro = txtDiametro.Text;
+                        nuevoProducto.cantidad = byte.Parse(nudCantidad.Text);
 
-                    listaProductos.Add(nuevoProducto);
-                    cargarDatosEnGrid();
-                    limpiarDatosProducto();
+                        foreach (sp_Color_Consultar_Result color in listaColores)
+                        {
+                            nuevoProducto.colores.Add(color);
+                        }
+
+                        nuevoProducto.color = cmbColor.Text;
+                        nuevoProducto.idMarca = byte.Parse(cmbMarca.SelectedValue.ToString());
+                        nuevoProducto.marca = cmbMarca.Text;
+                        nuevoProducto.idTipoProducto = byte.Parse(cmbTipoProducto.SelectedValue.ToString());
+                        nuevoProducto.tipoProducto = cmbTipoProducto.Text;
+                        nuevoProducto.comentario = txtComentario.Text;
+
+                        listaProductos.Add(nuevoProducto);
+                        cargarDatosEnGrid();
+                        limpiarDatosProducto();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Ocurrio un error al agregar el producto");
+                    }
                 }
-                catch (Exception)
-                {
-                    MessageBox.Show("Ocurrio un error al agregar el producto");
-                }
+                else
+                    MessageBox.Show("Por favor agregue al menos un color");
             }
         }
 
@@ -447,7 +452,7 @@ namespace ControlCasos.Formularios.Casos
                 epMarcaValidar.SetError(cmbMarca, "");
             }
         }
-
+       
         private void cmbColor_Validating(object sender, CancelEventArgs e)
         {
             if (cmbColor.Text.Equals("Seleccione:"))
@@ -471,15 +476,21 @@ namespace ControlCasos.Formularios.Casos
             //controles que no quiero validar
             cmbDoctor.CausesValidation = false;
             txtPaciente.CausesValidation = false;
-            cmbColor.CausesValidation = false;
             cmbTipoProducto.CausesValidation = false;
             cmbMarca.CausesValidation = false;
 
             if (ValidateChildren(ValidationConstraints.Enabled))
             {
-                listaColores.Add((sp_Color_Consultar_Result)cmbColor.SelectedItem);
-                cargarDatosEnGridColores();
-                cmbColor.SelectedIndex = 0;// el index 0 es " Seleccione: "
+                try
+                {
+                    listaColores.Add((sp_Color_Consultar_Result)cmbColor.SelectedItem);
+                    cargarDatosEnGridColores();
+                    cmbColor.SelectedIndex = 0;// el index 0 es " Seleccione: "
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Error al agregar color");
+                }
             }
         }
 
@@ -527,5 +538,7 @@ namespace ControlCasos.Formularios.Casos
                 }
             }
         }
+
+      
     }
 }
