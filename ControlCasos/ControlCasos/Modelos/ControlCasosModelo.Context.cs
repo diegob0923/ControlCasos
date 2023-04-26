@@ -607,5 +607,14 @@ namespace ControlCasos.Modelos
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_ProductosPorCaso_Consultar_Result>("sp_ProductosPorCaso_Consultar", idCasoParameter);
         }
+    
+        public virtual ObjectResult<string> sp_Producto_ColorIdProducto_Consultar(Nullable<int> idProducto)
+        {
+            var idProductoParameter = idProducto.HasValue ?
+                new ObjectParameter("idProducto", idProducto) :
+                new ObjectParameter("idProducto", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("sp_Producto_ColorIdProducto_Consultar", idProductoParameter);
+        }
     }
 }
