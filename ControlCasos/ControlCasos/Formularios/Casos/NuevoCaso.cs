@@ -174,6 +174,7 @@ namespace ControlCasos.Formularios.Casos
         #endregion
         
         #region Eventos
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             //controles que quiero validar
@@ -307,6 +308,32 @@ namespace ControlCasos.Formularios.Casos
             }
         }
 
+        private void btnAgregarColor_Click(object sender, EventArgs e)
+        {
+            //controles que quiero validar
+            cmbColor.CausesValidation = true;
+
+            //controles que no quiero validar
+            cmbDoctor.CausesValidation = false;
+            txtPaciente.CausesValidation = false;
+            cmbTipoProducto.CausesValidation = false;
+            cmbMarca.CausesValidation = false;
+
+            if (ValidateChildren(ValidationConstraints.Enabled))
+            {
+                try
+                {
+                    listaColores.Add((sp_Color_Consultar_Result)cmbColor.SelectedItem);
+                    cargarDatosEnGridColores();
+                    cmbColor.SelectedIndex = 0;// el index 0 es " Seleccione: "
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Error al agregar color");
+                }
+            }
+        }
+
         private void dgvResumenProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvResumenProductos.Columns[e.ColumnIndex].Name == "Eliminar")
@@ -383,6 +410,51 @@ namespace ControlCasos.Formularios.Casos
                     {
                         dgvResumenProductos.Columns[e.ColumnIndex].Width = width;
                     }
+                }
+            }
+        }
+       
+        private void dgvListaColores_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvListaColores.Columns[e.ColumnIndex].Name == "ColoresEliminar")
+            {
+                try
+                {
+                    listaColores.RemoveAt(dgvListaColores.CurrentRow.Index);//el currentRow index es equivalente al index de listaProductos
+                    cargarDatosEnGridColores();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Ocurrio un error al eliminar color");
+                }
+            }
+        }
+
+        private void dgvListaColores_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            Cursor = Cursors.Default;
+
+            //Se le asigna el numero de celda de la celda eliminar, porque es donde está la imagen
+            if (e.ColumnIndex == 1 && e.RowIndex != -1)
+            {
+                // Verificar si la fila y la columna son válidas
+                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+                {
+                    // Obtener la posición de la imagen en la celda actual
+                    DataGridViewImageCell cell = (DataGridViewImageCell)dgvListaColores.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                    Rectangle imageRectangle = cell.GetContentBounds(e.RowIndex);
+
+                    // Deshabilitar temporalmente la actualización del control
+                    dgvListaColores.SuspendLayout();
+
+                    // Verificar si el puntero del mouse está sobre la imagen en la celda actual
+                    if (imageRectangle.Contains(e.Location))
+                        Cursor = Cursors.Hand; // Cambiar el cursor a mano
+                    else
+                        Cursor = Cursors.Default;// Cambiar el cursor al valor predeterminado
+
+                    // Habilitar la actualización del control
+                    dgvListaColores.ResumeLayout();
                 }
             }
         }
@@ -467,78 +539,5 @@ namespace ControlCasos.Formularios.Casos
             }
         }
         #endregion
-
-        private void btnAgregarColor_Click(object sender, EventArgs e)
-        {
-            //controles que quiero validar
-            cmbColor.CausesValidation = true;
-            
-            //controles que no quiero validar
-            cmbDoctor.CausesValidation = false;
-            txtPaciente.CausesValidation = false;
-            cmbTipoProducto.CausesValidation = false;
-            cmbMarca.CausesValidation = false;
-
-            if (ValidateChildren(ValidationConstraints.Enabled))
-            {
-                try
-                {
-                    listaColores.Add((sp_Color_Consultar_Result)cmbColor.SelectedItem);
-                    cargarDatosEnGridColores();
-                    cmbColor.SelectedIndex = 0;// el index 0 es " Seleccione: "
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Error al agregar color");
-                }
-            }
-        }
-
-        private void dgvListaColores_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dgvListaColores.Columns[e.ColumnIndex].Name == "ColoresEliminar")
-            {
-                try
-                {
-                    listaColores.RemoveAt(dgvListaColores.CurrentRow.Index);//el currentRow index es equivalente al index de listaProductos
-                    cargarDatosEnGridColores();
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Ocurrio un error al eliminar color");
-                }
-            }
-        }
-
-        private void dgvListaColores_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            Cursor = Cursors.Default;
-
-            //Se le asigna el numero de celda de la celda eliminar, porque es donde está la imagen
-            if (e.ColumnIndex == 1 && e.RowIndex != -1)
-            {
-                // Verificar si la fila y la columna son válidas
-                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-                {
-                    // Obtener la posición de la imagen en la celda actual
-                    DataGridViewImageCell cell = (DataGridViewImageCell)dgvListaColores.Rows[e.RowIndex].Cells[e.ColumnIndex];
-                    Rectangle imageRectangle = cell.GetContentBounds(e.RowIndex);
-
-                    // Deshabilitar temporalmente la actualización del control
-                    dgvListaColores.SuspendLayout();
-
-                    // Verificar si el puntero del mouse está sobre la imagen en la celda actual
-                    if (imageRectangle.Contains(e.Location))
-                        Cursor = Cursors.Hand; // Cambiar el cursor a mano
-                    else
-                        Cursor = Cursors.Default;// Cambiar el cursor al valor predeterminado
-
-                    // Habilitar la actualización del control
-                    dgvListaColores.ResumeLayout();
-                }
-            }
-        }
-
-      
     }
 }
