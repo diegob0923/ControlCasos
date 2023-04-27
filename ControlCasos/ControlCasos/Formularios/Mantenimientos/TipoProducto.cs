@@ -20,6 +20,7 @@ namespace ControlCasos.Formularios.Mantenimientos
         {
             InitializeComponent();
             Formato.DarFormatoDataGridView(dgvListaTipoProductos);
+            Formato.DarAlturaCorrectaTextBoxSinBorde(txtBuscar);
             cargarDatosEnGrid();
         }
         public void cargarDatosEnGrid()

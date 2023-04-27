@@ -20,6 +20,7 @@ namespace ControlCasos.Formularios.Mantenimientos
         {
             InitializeComponent();
             Formato.DarFormatoDataGridView(dgvListaDoctores);
+            Formato.DarAlturaCorrectaTextBoxSinBorde(txtBuscar);
             cargarDatosEnGrid();
         }
 
@@ -43,7 +44,10 @@ namespace ControlCasos.Formularios.Mantenimientos
             if (txtBuscar.Text != "")
                 btnCancelar.Visible = true;
             else
+            {
                 btnCancelar.Visible = false;
+                lblBuscar.Visible = true;
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -68,17 +72,18 @@ namespace ControlCasos.Formularios.Mantenimientos
 
         private void lblBuscar_Click(object sender, EventArgs e)
         {
-
+            lblBuscar.Visible = false;
+            txtBuscar.Select();
         }
 
         private void lblBuscar_MouseHover(object sender, EventArgs e)
         {
-
+            Cursor = Cursors.IBeam;
         }
 
         private void txtBuscar_Click(object sender, EventArgs e)
         {
-
+            lblBuscar.Visible = false;
         }
         #endregion
 

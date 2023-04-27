@@ -21,6 +21,7 @@ namespace ControlCasos
         public frmInicioSesion()
         {
             InitializeComponent();
+            Formato.DarAlturaCorrectaTextBoxSinBorde(txtUsuario);
         }
 
         private void abrirFormularioPrincipal()

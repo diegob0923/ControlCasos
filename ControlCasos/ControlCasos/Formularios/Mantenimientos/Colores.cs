@@ -21,6 +21,7 @@ namespace ControlCasos.Formularios.Mantenimientos
         {
             InitializeComponent();
             Formato.DarFormatoDataGridView(dgvListaColores);
+            Formato.DarAlturaCorrectaTextBoxSinBorde(txtBuscar);
             cargarDatosEnGrid();
         }
 
@@ -64,6 +65,7 @@ namespace ControlCasos.Formularios.Mantenimientos
             txtBuscar.Text = "";
             cargarDatosEnGrid();
         }
+        
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             if (txtBuscar.Text != "")
