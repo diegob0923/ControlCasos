@@ -311,20 +311,6 @@
           <FunctionImport Name="sp_Producto_Eliminar">
           <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="sp_ValidarUsuario" ReturnType="Collection(ControlCasosModel.sp_ValidarUsuario_Result)">
-            <Parameter Name="Usuario" Mode="In" Type="String" />
-            <Parameter Name="Contrasena" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_UsuarioSistema_Insertar">
-            <Parameter Name="Usuario" Mode="In" Type="String" />
-            <Parameter Name="Nombre" Mode="In" Type="String" />
-            <Parameter Name="Apellido1" Mode="In" Type="String" />
-            <Parameter Name="Apellido2" Mode="In" Type="String" />
-            <Parameter Name="Fecha" Mode="In" Type="DateTime" />
-            <Parameter Name="Creador" Mode="In" Type="String" />
-            <Parameter Name="IdRol" Mode="In" Type="Int32" />
-            <Parameter Name="Cedula" Mode="In" Type="String" />
-          </FunctionImport>
           <FunctionImport Name="sp_UsuarioSistema_Editar">
             <Parameter Name="idUsuario" Mode="In" Type="Byte" />
             <Parameter Name="Usuario" Mode="In" Type="String" />
@@ -345,11 +331,6 @@
           <FunctionImport Name="sp_GenerarBackUp">
           <Parameter Name="ruta" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="sp_RestablecerContrasena_Editar">
-            <Parameter Name="usuario" Mode="In" Type="String" />
-            <Parameter Name="NuevaContrasena" Mode="In" Type="String" />
-            <Parameter Name="Cedula" Mode="In" Type="String" />
-          </FunctionImport>
           <FunctionImport Name="sp_UsuarioSistema_Consultar" ReturnType="Collection(ControlCasosModel.sp_UsuarioSistema_Consultar_Result)">
           <Parameter Name="buscar" Mode="In" Type="String" />
           </FunctionImport>
@@ -367,7 +348,26 @@
           <Parameter Name="idCaso" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_Producto_ColorIdProducto_Consultar" ReturnType="Collection(String)">
-            <Parameter Name="idProducto" Mode="In" Type="Int32" />
+          <Parameter Name="idProducto" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_RestablecerContrasena_Editar">
+            <Parameter Name="usuario" Mode="In" Type="String" />
+            <Parameter Name="NuevaContrasena" Mode="In" Type="String" />
+            <Parameter Name="Cedula" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_UsuarioSistema_Insertar">
+            <Parameter Name="Usuario" Mode="In" Type="String" />
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="Apellido1" Mode="In" Type="String" />
+            <Parameter Name="Apellido2" Mode="In" Type="String" />
+            <Parameter Name="Fecha" Mode="In" Type="DateTime" />
+            <Parameter Name="Creador" Mode="In" Type="String" />
+            <Parameter Name="IdRol" Mode="In" Type="Int32" />
+            <Parameter Name="Cedula" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_ValidarUsuario" ReturnType="Collection(ControlCasosModel.sp_ValidarUsuario_Result)">
+            <Parameter Name="Usuario" Mode="In" Type="String" />
+            <Parameter Name="Contrasena" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_Cliente_Consultar_Result">
@@ -434,10 +434,6 @@
           <Property Type="String" Name="Guia" Nullable="true" MaxLength="50" />
           <Property Type="String" Name="ColorGuia" Nullable="false" MaxLength="104" />
         </ComplexType>
-        <ComplexType Name="sp_ValidarUsuario_Result">
-          <Property Type="Byte" Name="IdRol" Nullable="false" />
-          <Property Type="String" Name="Usuario" Nullable="false" MaxLength="50" />
-        </ComplexType>
         <ComplexType Name="sp_UsuarioSistema_Consultar_Result">
           <Property Type="Byte" Name="IdUsuario" Nullable="false" />
           <Property Type="String" Name="Usuario" Nullable="false" MaxLength="50" />
@@ -475,6 +471,10 @@
           <Property Type="Int32" Name="IdCaso" Nullable="false" />
           <Property Type="String" Name="Marca" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="TipoProducto" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_ValidarUsuario_Result">
+          <Property Type="Byte" Name="IdRol" Nullable="false" />
+          <Property Type="String" Name="Usuario" Nullable="false" MaxLength="50" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -610,20 +610,10 @@
           <FunctionImportMapping FunctionImportName="sp_Producto_Insertar" FunctionName="ControlCasosModel.Store.sp_Producto_Insertar" />
           <FunctionImportMapping FunctionImportName="sp_Caso_Eliminar" FunctionName="ControlCasosModel.Store.sp_Caso_Eliminar" />
           <FunctionImportMapping FunctionImportName="sp_Producto_Eliminar" FunctionName="ControlCasosModel.Store.sp_Producto_Eliminar" />
-          <FunctionImportMapping FunctionImportName="sp_ValidarUsuario" FunctionName="ControlCasosModel.Store.sp_ValidarUsuario">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="ControlCasosModel.sp_ValidarUsuario_Result">
-                <ScalarProperty Name="IdRol" ColumnName="IdRol" />
-                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_UsuarioSistema_Insertar" FunctionName="ControlCasosModel.Store.sp_UsuarioSistema_Insertar" />
           <FunctionImportMapping FunctionImportName="sp_UsuarioSistema_Editar" FunctionName="ControlCasosModel.Store.sp_UsuarioSistema_Editar" />
           <FunctionImportMapping FunctionImportName="sp_UsuarioSistema_Eliminar" FunctionName="ControlCasosModel.Store.sp_UsuarioSistema_Eliminar" />
           <FunctionImportMapping FunctionImportName="sp_UsuarioSistemaCambioContrasena_Editar" FunctionName="ControlCasosModel.Store.sp_UsuarioSistemaCambioContrasena_Editar" />
           <FunctionImportMapping FunctionImportName="sp_GenerarBackUp" FunctionName="ControlCasosModel.Store.sp_GenerarBackUp" />
-          <FunctionImportMapping FunctionImportName="sp_RestablecerContrasena_Editar" FunctionName="ControlCasosModel.Store.sp_RestablecerContrasena_Editar" />
           <FunctionImportMapping FunctionImportName="sp_UsuarioSistema_Consultar" FunctionName="ControlCasosModel.Store.sp_UsuarioSistema_Consultar">
             <ResultMapping>
               <ComplexTypeMapping TypeName="ControlCasosModel.sp_UsuarioSistema_Consultar_Result">
@@ -677,6 +667,16 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_Producto_ColorIdProducto_Consultar" FunctionName="ControlCasosModel.Store.sp_Producto_ColorIdProducto_Consultar" />
+          <FunctionImportMapping FunctionImportName="sp_RestablecerContrasena_Editar" FunctionName="ControlCasosModel.Store.sp_RestablecerContrasena_Editar" />
+          <FunctionImportMapping FunctionImportName="sp_UsuarioSistema_Insertar" FunctionName="ControlCasosModel.Store.sp_UsuarioSistema_Insertar" />
+          <FunctionImportMapping FunctionImportName="sp_ValidarUsuario" FunctionName="ControlCasosModel.Store.sp_ValidarUsuario">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ControlCasosModel.sp_ValidarUsuario_Result">
+                <ScalarProperty Name="IdRol" ColumnName="IdRol" />
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
