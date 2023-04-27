@@ -37,6 +37,8 @@ namespace ControlCasos
         #region Eventos
         private void btnIngresar_Click(object sender, EventArgs e)
         {
+            txtUsuario.CausesValidation = true;
+            txtContrasena.CausesValidation = true;
             try
             {
                 if (ValidateChildren(ValidationConstraints.Enabled))
@@ -119,10 +121,16 @@ namespace ControlCasos
 
         private void lnkRestablecerContrasena_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if (MessageBox.Show("Está a punto de restablecer la contraseña para el usuario \"" + txtUsuario.Text + "\". Si el usuario es incorrecto, por favor presione \"No\" y cambielo en la casilla \"Usuario\". ¿Desea continuar?", "Restablecer Contraseña", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            txtUsuario.CausesValidation = true;
+            txtContrasena.CausesValidation = false;
+
+            if (ValidateChildren(ValidationConstraints.Enabled))
             {
-                frmRestablecerContrasena formularioRestablecerContrasena = new frmRestablecerContrasena(txtUsuario.Text);
-                formularioRestablecerContrasena.Visible = true;
+                if (MessageBox.Show("Está a punto de restablecer la contraseña para el usuario \"" + txtUsuario.Text + "\". Si el usuario es incorrecto, por favor presione \"No\" y cámbielo en la casilla \"Usuario\". ¿Desea continuar?", "Restablecer Contraseña", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    frmRestablecerContrasena formularioRestablecerContrasena = new frmRestablecerContrasena(txtUsuario.Text);
+                    formularioRestablecerContrasena.Visible = true;
+                }
             }
         }
     }
