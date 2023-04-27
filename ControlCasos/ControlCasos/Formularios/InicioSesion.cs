@@ -27,6 +27,7 @@ namespace ControlCasos
         {
             frmPrincipal pantallaPrincipal = new frmPrincipal();
             pantallaPrincipal.Visible = true;
+            this.Hide();
         }
         private void limpiarTextBoxUsuarioContrasena()
         {
@@ -59,14 +60,12 @@ namespace ControlCasos
                             UsuarioLogueado.rolUsuarioLogueado = Rol.Administrador;
                             UsuarioLogueado.usuarioLogueado = usuarioValidado.Usuario;
                             abrirFormularioPrincipal();
-                            this.Hide();
                         }
                         else if (usuarioValidado.IdRol == Rol.General)
                         {
                             UsuarioLogueado.rolUsuarioLogueado = Rol.General;
                             UsuarioLogueado.usuarioLogueado = usuarioValidado.Usuario;
                             abrirFormularioPrincipal();
-                            this.Hide();
                         }
                     }
                 }
@@ -80,13 +79,6 @@ namespace ControlCasos
         #endregion
 
         #region Validación campos
-        /// <summary>
-        /// Evita que se active el errorProvider al hacer click en la X para cerrar el formulario
-        /// </summary>
-        protected override void OnFormClosing(FormClosingEventArgs e)
-        {
-            e.Cancel = false;
-        }
         
         private void txtUsuario_Validating(object sender, CancelEventArgs e)
         {
@@ -132,6 +124,14 @@ namespace ControlCasos
                     formularioRestablecerContrasena.Visible = true;
                 }
             }
+        }
+
+        private void frmInicioSesion_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+                Application.Exit();// Si la razón del cierre es CloseReason.UserClosing, cerrar la aplicación completamente
+            else
+                e.Cancel = false;// Si la razón del cierre es distinta a CloseReason.UserClosing, permitir el cierre del formulario
         }
     }
 }

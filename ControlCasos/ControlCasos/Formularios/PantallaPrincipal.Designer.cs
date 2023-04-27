@@ -483,6 +483,7 @@
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de control de casos";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrincipal_FormClosing);
             this.PnlMenuLateral.ResumeLayout(false);
             this.pnlSubMenuAyuda.ResumeLayout(false);
             this.pnlSubMenuSeguridad.ResumeLayout(false);

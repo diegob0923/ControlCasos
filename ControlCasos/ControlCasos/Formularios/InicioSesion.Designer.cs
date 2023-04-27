@@ -219,7 +219,8 @@
             this.MinimumSize = new System.Drawing.Size(397, 588);
             this.Name = "frmInicioSesion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "InicioSesion";
+            this.Text = "Inicio Sesión";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmInicioSesion_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epUsuarioValidar)).EndInit();
