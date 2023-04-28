@@ -50,7 +50,7 @@ namespace ControlCasos.Formularios.Casos
             }
             catch (Exception)
             {
-                MessageBox.Show("Ocurrio un error al cargar los datos de productos");
+                MessageBox.Show("Ocurrió un error al cargar los datos de productos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -64,7 +64,7 @@ namespace ControlCasos.Formularios.Casos
             }
             catch (Exception)
             {
-                MessageBox.Show("Ocurrio un error al cargar los datos del color");
+                MessageBox.Show("Ocurrió un error al cargar los datos del color.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         #endregion
@@ -95,7 +95,7 @@ namespace ControlCasos.Formularios.Casos
             }
             catch (Exception)
             {
-                MessageBox.Show("Error al cargar lista desplegable de doctores");
+                MessageBox.Show("Error al cargar lista desplegable de doctores.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void cargarComboBoxMarca()
@@ -111,7 +111,7 @@ namespace ControlCasos.Formularios.Casos
             }
             catch (Exception)
             {
-                MessageBox.Show("Error al cargar lista desplegable de marcas");
+                MessageBox.Show("Error al cargar lista desplegable de marcas.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void cargarComboBoxTipoProducto()
@@ -127,7 +127,7 @@ namespace ControlCasos.Formularios.Casos
             }
             catch (Exception)
             {
-                MessageBox.Show("Error al cargar lista desplegable de tipo productos");
+                MessageBox.Show("Error al cargar lista desplegable de tipo productos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void cargarComboBoxColor()
@@ -143,7 +143,7 @@ namespace ControlCasos.Formularios.Casos
             }
             catch (Exception)
             {
-                MessageBox.Show("Error al cargar lista desplegable de colores");
+                MessageBox.Show("Error al cargar lista desplegable de colores.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         #endregion
@@ -249,22 +249,22 @@ namespace ControlCasos.Formularios.Casos
                             }
                         }
 
-                        MessageBox.Show("Nuevo caso creado satisfactoriamente");
+                        MessageBox.Show("Nuevo caso creado satisfactoriamente.", "Proceso Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Dispose();
                         formularioCasos.recargarComboPacienteLuegoDeInsertarNuevoCaso();//esto va a actualizar la lista de casos para que los nuevos registros sean visibles
 
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show("Ocurrio un error al crear el caso");
+                        MessageBox.Show("Ocurrió un error al crear el caso.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
                     if (listaProductos.Count == 0)
-                        MessageBox.Show("Por favor agregue al menos un producto");
+                        MessageBox.Show("Por favor agregue al menos un producto.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     if (cmbDoctor.SelectedIndex == 0 || txtPaciente.Text == "")
-                        MessageBox.Show("Por favor ingrese un doctor y un paciente ");
+                        MessageBox.Show("Por favor ingrese un doctor y un paciente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
@@ -309,11 +309,11 @@ namespace ControlCasos.Formularios.Casos
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show("Ocurrio un error al agregar el producto");
+                        MessageBox.Show("Ocurrió un error al agregar el producto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
-                    MessageBox.Show("Por favor agregue al menos un color");
+                    MessageBox.Show("Por favor agregue al menos un color.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -338,7 +338,7 @@ namespace ControlCasos.Formularios.Casos
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Error al agregar color");
+                    MessageBox.Show("Error al agregar color.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -354,7 +354,7 @@ namespace ControlCasos.Formularios.Casos
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Ocurrio un error al eliminar producto");
+                    MessageBox.Show("Ocurrió un error al eliminar producto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
@@ -362,17 +362,17 @@ namespace ControlCasos.Formularios.Casos
             {
                 try
                 {
-                    string coloresEnProducto = "Colores:\n";
+                    string coloresEnProducto = "";
                     foreach (sp_Color_Consultar_Result color in listaProductos[e.RowIndex].colores)
                     {
                         coloresEnProducto += "* "+color.ColorGuia+"\n";
                     }
                    
-                    MessageBox.Show(coloresEnProducto);
+                    MessageBox.Show(coloresEnProducto, "Colores", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Ocurrio un error al cargar colores");
+                    MessageBox.Show("Ocurrió un error al cargar colores.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -434,7 +434,7 @@ namespace ControlCasos.Formularios.Casos
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Ocurrio un error al eliminar color");
+                    MessageBox.Show("Ocurrió un error al eliminar color.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

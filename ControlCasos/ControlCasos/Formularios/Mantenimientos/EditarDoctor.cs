@@ -42,7 +42,7 @@ namespace ControlCasos.Formularios.Mantenimientos
             }
             catch (Exception)
             {
-                MessageBox.Show("Error al cargar lista desplegable de clientes");
+                MessageBox.Show("Error al cargar lista desplegable de clientes.","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -63,7 +63,7 @@ namespace ControlCasos.Formularios.Mantenimientos
             }
             catch (Exception)
             {
-                MessageBox.Show("Error al cargar datos color");
+                MessageBox.Show("Error al cargar datos color.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -88,7 +88,7 @@ namespace ControlCasos.Formularios.Mantenimientos
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Error al editar doctor");
+                    MessageBox.Show("Error al editar doctor.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

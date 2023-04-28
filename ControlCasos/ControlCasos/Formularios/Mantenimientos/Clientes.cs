@@ -34,7 +34,7 @@ namespace ControlCasos.Formularios.Mantenimientos
             }
             catch (Exception)
             {
-                MessageBox.Show("Ocurrio un error al cargar los clientes");
+                MessageBox.Show("Ocurrió un error al cargar los clientes.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -49,7 +49,7 @@ namespace ControlCasos.Formularios.Mantenimientos
             }
             catch (Exception)
             {
-                MessageBox.Show("Ocurrio un error al buscar clientes");
+                MessageBox.Show("Ocurrió un error al buscar clientes.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -105,7 +105,7 @@ namespace ControlCasos.Formularios.Mantenimientos
             }
             if (dgvListaClientes.Columns[e.ColumnIndex].Name == "Eliminar")
             {
-                if (MessageBox.Show("Está a punto de eliminar el cliente: \" " + dgvListaClientes.CurrentRow.Cells["Cliente"].Value.ToString() + "\". ¿Desea continuar?", "Eliminar cliente", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Está a punto de eliminar el cliente: \" " + dgvListaClientes.CurrentRow.Cells["Cliente"].Value.ToString() + "\". ¿Desea continuar?", "Eliminar Cliente", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == DialogResult.Yes)
                     try
                     {
                         clientes.eliminarCliente(idCliente);
@@ -113,7 +113,7 @@ namespace ControlCasos.Formularios.Mantenimientos
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show("Ocurrio un error al eliminar el cliente.\nPosibles causas:\n Puede existan otros registros asociados al elemento que intenta borrar");
+                        MessageBox.Show("Ocurrió un error al eliminar el cliente.\nPosibles causas:\n Puede existan otros registros asociados al elemento que intenta borrar","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
             }
         }

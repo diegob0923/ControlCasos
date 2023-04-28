@@ -39,7 +39,7 @@ namespace ControlCasos.Formularios.Mantenimientos
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Error al agregar cliente");
+                    MessageBox.Show("Error al agregar cliente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

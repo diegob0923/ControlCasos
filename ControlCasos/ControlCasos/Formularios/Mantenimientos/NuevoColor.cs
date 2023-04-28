@@ -40,7 +40,7 @@ namespace ControlCasos.Formularios.Mantenimientos
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Error al agregar color");
+                    MessageBox.Show("Error al agregar color.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }                
         }

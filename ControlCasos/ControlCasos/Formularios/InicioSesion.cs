@@ -49,7 +49,7 @@ namespace ControlCasos
 
                     if (usuarioValidado == null)
                     {
-                        MessageBox.Show(usuarioValidado + "Usuario o contraseña incorrectos");
+                        MessageBox.Show("Usuario o contraseña incorrectos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         limpiarTextBoxUsuarioContrasena();
                         UsuarioLogueado.rolUsuarioLogueado = Rol.UsuarioInvalido;
                         UsuarioLogueado.usuarioLogueado = "";
@@ -73,7 +73,7 @@ namespace ControlCasos
             }
             catch (Exception)
             {
-                MessageBox.Show("Ocurrió un error al ingresar, por favor vuelva a intentarlo");
+                MessageBox.Show("Ocurrió un error al ingresar, por favor vuelva a intentarlo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
         }
@@ -119,7 +119,7 @@ namespace ControlCasos
 
             if (ValidateChildren(ValidationConstraints.Enabled))
             {
-                if (MessageBox.Show("Está a punto de restablecer la contraseña para el usuario \"" + txtUsuario.Text + "\". Si el usuario es incorrecto, por favor presione \"No\" y cámbielo en la casilla \"Usuario\". ¿Desea continuar?", "Restablecer Contraseña", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Está a punto de restablecer la contraseña para el usuario \"" + txtUsuario.Text + "\". Si el usuario es incorrecto, por favor presione \"No\" y cámbielo en la casilla \"Usuario\". ¿Desea continuar?", "Restablecer Contraseña", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     frmRestablecerContrasena formularioRestablecerContrasena = new frmRestablecerContrasena(txtUsuario.Text);
                     formularioRestablecerContrasena.Visible = true;

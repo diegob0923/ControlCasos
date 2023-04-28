@@ -33,7 +33,7 @@ namespace ControlCasos.Formularios.Casos
             }
             catch (Exception)
             {
-                MessageBox.Show("Ocurrio un error al cargar los productos");
+                MessageBox.Show("Ocurrió un error al cargar los productos.","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -47,17 +47,17 @@ namespace ControlCasos.Formularios.Casos
 
                     IList<string> listaColores = BLCaso.consultarColoresPorProducto(idProducto);
 
-                    string coloresEnProducto = "Colores:\n";
+                    string coloresEnProducto = "";
                     foreach (string color in listaColores)
                     {
                         coloresEnProducto += "* " + color+ "\n";
                     }
 
-                    MessageBox.Show(coloresEnProducto);
+                    MessageBox.Show(coloresEnProducto,"Colores",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Ocurrio un error al cargar colores");
+                    MessageBox.Show("Ocurrió un error al cargar colores.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

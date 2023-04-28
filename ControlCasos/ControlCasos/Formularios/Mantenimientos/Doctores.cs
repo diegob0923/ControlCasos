@@ -34,7 +34,7 @@ namespace ControlCasos.Formularios.Mantenimientos
             }
             catch (Exception)
             {
-                MessageBox.Show("Ocurrio un error al cargar los doctores");
+                MessageBox.Show("Ocurrió un error al cargar los doctores.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -66,7 +66,7 @@ namespace ControlCasos.Formularios.Mantenimientos
             }
             catch (Exception)
             {
-                MessageBox.Show("Ocurrio un error al buscar doctores");
+                MessageBox.Show("Ocurrió un error al buscar doctores.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -106,7 +106,7 @@ namespace ControlCasos.Formularios.Mantenimientos
 
             if (dgvListaDoctores.Columns[e.ColumnIndex].Name == "Eliminar")
             {
-                if (MessageBox.Show("Está a punto de eliminar el doctor: \"" + dgvListaDoctores.CurrentRow.Cells["Doctor"].Value.ToString() + "\". ¿Desea continuar?", "Eliminar Doctor", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Está a punto de eliminar el doctor: \"" + dgvListaDoctores.CurrentRow.Cells["Doctor"].Value.ToString() + "\". ¿Desea continuar?", "Eliminar Doctor", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == DialogResult.Yes)
                     try
                     {
                         doctores.eliminarDoctor(idDoctor);
@@ -114,7 +114,7 @@ namespace ControlCasos.Formularios.Mantenimientos
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show("Ocurrio un error al eliminar el doctor.\nPosibles causas:\n Puede existan otros registros asociados al elemento que intenta borrar");
+                        MessageBox.Show("Ocurrió un error al eliminar el doctor.\nPosibles causas:\n Puede existan otros registros asociados al elemento que intenta borrar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
             }
         }

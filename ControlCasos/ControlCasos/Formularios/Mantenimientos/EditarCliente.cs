@@ -41,7 +41,7 @@ namespace ControlCasos.Formularios.Mantenimientos
             }
             catch (Exception)
             {
-                MessageBox.Show("Error al cargar cliente");
+                MessageBox.Show("Error al cargar cliente.","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -60,7 +60,7 @@ namespace ControlCasos.Formularios.Mantenimientos
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Error al editar cliente");
+                    MessageBox.Show("Error al editar cliente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

@@ -35,7 +35,7 @@ namespace ControlCasos.Formularios.Mantenimientos
             }
             catch (Exception)
             {
-                MessageBox.Show("Ocurrio un error al cargar los colores");
+                MessageBox.Show("Ocurrió un error al cargar los colores.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -56,7 +56,7 @@ namespace ControlCasos.Formularios.Mantenimientos
             }
             catch (Exception)
             {
-                MessageBox.Show("Ocurrio un error al buscar colores");
+                MessageBox.Show("Ocurrió un error al buscar colores.","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -107,7 +107,7 @@ namespace ControlCasos.Formularios.Mantenimientos
 
             if (dgvListaColores.Columns[e.ColumnIndex].Name == "Eliminar")
             {
-                if (MessageBox.Show("Está a punto de eliminar el color: \"" + dgvListaColores.CurrentRow.Cells["ColorGuia"].Value.ToString() +"\". ¿Desea continuar?", "Eliminar Color", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Está a punto de eliminar el color: \"" + dgvListaColores.CurrentRow.Cells["ColorGuia"].Value.ToString() +"\". ¿Desea continuar?", "Eliminar Color", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == DialogResult.Yes)
                     try
                     {
                         colores.eliminarColor(idColor);
@@ -115,7 +115,7 @@ namespace ControlCasos.Formularios.Mantenimientos
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show("Ocurrio un error al eliminar el color.\nPosibles causas:\n Puede existan otros registros asociados al elemento que intenta borrar");
+                        MessageBox.Show("Ocurrió un error al eliminar el color.\nPosibles causas:\n Puede existan otros registros asociados al elemento que intenta borrar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
             }
         }

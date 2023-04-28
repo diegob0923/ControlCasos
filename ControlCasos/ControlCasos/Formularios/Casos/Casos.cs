@@ -39,7 +39,7 @@ namespace ControlCasos.Formularios.Casos
             }
             catch (Exception)
             {
-                MessageBox.Show("Error al cargar lista desplegable de clientes");
+                MessageBox.Show("Error al cargar lista desplegable de clientes.","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -52,7 +52,7 @@ namespace ControlCasos.Formularios.Casos
             }
             catch (Exception)
             {
-                MessageBox.Show("Error al cargar casos");
+                MessageBox.Show("Error al cargar casos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }
@@ -94,7 +94,7 @@ namespace ControlCasos.Formularios.Casos
             }
             catch (Exception)
             {
-                MessageBox.Show("Ocurrio un error al cargar los pacientes");
+                MessageBox.Show("Ocurrió un error al cargar los pacientes.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

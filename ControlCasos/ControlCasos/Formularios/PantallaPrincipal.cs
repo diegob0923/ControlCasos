@@ -157,13 +157,13 @@ namespace ControlCasos
                     }
 
                     File.Copy(rutaArchivoEnProyecto, nombreArchivo, true);
-                    MessageBox.Show("Manual de usuario descargado");
+                    MessageBox.Show("Manual de usuario descargado.", "Proceso Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ocultarSubMenu();
                 }
             }
             catch (Exception)
             {
-                MessageBox.Show("Error al descargar el manual de usuario");
+                MessageBox.Show("Error al descargar el manual de usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

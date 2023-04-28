@@ -32,7 +32,7 @@ namespace ControlCasos.Formularios.Seguridad
             }
             catch (Exception)
             {
-                MessageBox.Show("Ocurrio un error al cargar los usuarios");
+                MessageBox.Show("Ocurrió un error al cargar los usuarios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -54,7 +54,7 @@ namespace ControlCasos.Formularios.Seguridad
             
             if (dgvListaUsuarios.Columns[e.ColumnIndex].Name == "Eliminar")
             {
-                if (MessageBox.Show("Está a punto de eliminar el usuario: \"" + dgvListaUsuarios.CurrentRow.Cells["Usuario"].Value.ToString() + "\". ¿Desea continuar?", "Eliminar Marca", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Está a punto de eliminar el usuario: \"" + dgvListaUsuarios.CurrentRow.Cells["Usuario"].Value.ToString() + "\". ¿Desea continuar?", "Eliminar Marca", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == DialogResult.Yes)
                     try
                     {
                         usuarios.eliminarUsuario(idUsuario);
@@ -62,7 +62,7 @@ namespace ControlCasos.Formularios.Seguridad
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show("Ocurrio un error al eliminar el usuario");
+                        MessageBox.Show("Ocurrió un error al eliminar el usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
             }
         }
@@ -78,7 +78,7 @@ namespace ControlCasos.Formularios.Seguridad
             }
             catch (Exception)
             {
-                MessageBox.Show("Ocurrio un error al buscar usuarios");
+                MessageBox.Show("Ocurrió un error al buscar usuarios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
