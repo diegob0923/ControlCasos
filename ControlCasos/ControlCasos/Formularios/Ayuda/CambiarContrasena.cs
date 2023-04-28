@@ -1,4 +1,4 @@
-﻿using ControlCasos.BL;
+using ControlCasos.BL;
 using ControlCasos.Clases;
 using System;
 using System.Collections.Generic;
@@ -35,7 +35,7 @@ namespace ControlCasos.Formularios.Ayuda
                 {
                     try
                     {
-                        usuarios.cambioContrasena(UsuarioLogueado.usuarioLogueado, txtNuevaContrasena.Text);
+                        usuarios.RestablecerContrasena(UsuarioLogueado.usuarioLogueado, txtNuevaContrasena.Text);
                         MessageBox.Show("Contraseña cambiada exitosamente.");
                         limpiarCampos();
                     }
