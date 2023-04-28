@@ -89,12 +89,12 @@
             // 
             this.txtContrasena.BackColor = System.Drawing.SystemColors.Control;
             this.txtContrasena.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtContrasena.Font = new System.Drawing.Font("Montserrat", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContrasena.Location = new System.Drawing.Point(39, 192);
+            this.txtContrasena.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContrasena.Location = new System.Drawing.Point(39, 193);
             this.txtContrasena.Margin = new System.Windows.Forms.Padding(4);
             this.txtContrasena.Name = "txtContrasena";
-            this.txtContrasena.PasswordChar = '*';
-            this.txtContrasena.Size = new System.Drawing.Size(297, 18);
+            this.txtContrasena.PasswordChar = '●';
+            this.txtContrasena.Size = new System.Drawing.Size(297, 15);
             this.txtContrasena.TabIndex = 3;
             this.txtContrasena.Validating += new System.ComponentModel.CancelEventHandler(this.txtContrasena_Validating);
             // 
@@ -192,7 +192,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel4.Location = new System.Drawing.Point(39, 212);
+            this.panel4.Location = new System.Drawing.Point(39, 211);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(297, 1);
             this.panel4.TabIndex = 10;
