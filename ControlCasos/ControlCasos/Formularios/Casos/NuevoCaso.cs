@@ -365,7 +365,7 @@ namespace ControlCasos.Formularios.Casos
                     string coloresEnProducto = "";
                     foreach (sp_Color_Consultar_Result color in listaProductos[e.RowIndex].colores)
                     {
-                        coloresEnProducto += "* "+color.ColorGuia+"\n";
+                        coloresEnProducto += "● " + color.ColorGuia+"\n";
                     }
                    
                     MessageBox.Show(coloresEnProducto, "Colores", MessageBoxButtons.OK, MessageBoxIcon.Information);

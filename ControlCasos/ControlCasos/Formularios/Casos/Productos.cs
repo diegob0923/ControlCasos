@@ -50,7 +50,7 @@ namespace ControlCasos.Formularios.Casos
                     string coloresEnProducto = "";
                     foreach (string color in listaColores)
                     {
-                        coloresEnProducto += "* " + color+ "\n";
+                        coloresEnProducto += "● " + color+ "\n";
                     }
 
                     MessageBox.Show(coloresEnProducto,"Colores",MessageBoxButtons.OK,MessageBoxIcon.Information);
