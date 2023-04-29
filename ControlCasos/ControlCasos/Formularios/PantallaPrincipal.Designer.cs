@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.PnlMenuLateral = new System.Windows.Forms.Panel();
             this.pnlSubMenuAyuda = new System.Windows.Forms.Panel();
             this.btnAcercaDe = new System.Windows.Forms.Button();
@@ -478,6 +479,7 @@
             this.Controls.Add(this.pnlContenedorDerecho);
             this.Controls.Add(this.PnlMenuLateral);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1076, 803);
             this.Name = "frmPrincipal";
