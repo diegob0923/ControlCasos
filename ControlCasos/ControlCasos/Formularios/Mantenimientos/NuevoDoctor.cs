@@ -53,21 +53,24 @@ namespace ControlCasos.Formularios.Mantenimientos
             {
                 try
                 {
-                    string cedula = txtCedula.Text.Equals("") ? null : txtCedula.Text;
                     string apellido2 = txtApellido2.Text.Equals("") ? null : txtApellido2.Text;
                     string correo = txtCorreo.Text.Equals("") ? null : txtCorreo.Text;
                     string telefono = txtTelefono.Text.Equals("") ? null : txtTelefono.Text;
 
-                    BLDoctor.insertarDoctor(txtNombre.Text, txtApellido1.Text,
-                                                int.Parse(cmbCliente.SelectedValue.ToString()), cedula,
-                                                apellido2, correo, telefono);
+                    BLDoctor.insertarDoctor(txtNombre.Text, 
+                                            txtApellido1.Text,
+                                            int.Parse(cmbCliente.SelectedValue.ToString()), 
+                                            txtCedula.Text,
+                                            apellido2, 
+                                            correo, 
+                                            telefono);
 
                     recargarGridEnFormularioPrincipal();
                     this.Dispose();
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Error al agregar doctor.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error al agregar doctor.\nPosibles causas:\n-Puede que la cédula ingresada ya esté registrada.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             } 
         }
@@ -86,11 +89,13 @@ namespace ControlCasos.Formularios.Mantenimientos
         {
             e.Cancel = false;
         }
+
         private void txtNombre_Validating(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtNombre.Text))
             {
                 e.Cancel = true;
+                txtNombre.Focus();
                 epNombreValidar.SetError(txtNombre, "Campo requerido");
             }
             else
@@ -99,11 +104,13 @@ namespace ControlCasos.Formularios.Mantenimientos
                 epNombreValidar.SetError(txtNombre, "");
             }
         }
+
         private void txtApellido1_Validating(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtApellido1.Text))
             {
                 e.Cancel = true;
+                txtApellido1.Focus();
                 epApellido1Validar.SetError(txtApellido1, "Campo requerido");
             }
             else
@@ -112,11 +119,28 @@ namespace ControlCasos.Formularios.Mantenimientos
                 epApellido1Validar.SetError(txtApellido1, "");
             }
         }
+
+        private void txtCedula_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtCedula.Text))
+            {
+                e.Cancel = true;
+                txtCedula.Focus();
+                epCedulaValidar.SetError(txtCedula, "Campo requerido");
+            }
+            else
+            {
+                e.Cancel = false;
+                epCedulaValidar.SetError(txtCedula, "");
+            }
+        }
+
         private void cmbCliente_Validating(object sender, CancelEventArgs e)
         {
             if (cmbCliente.Text.Equals("Seleccione:"))
             {
                 e.Cancel = true;
+                cmbCliente.Focus();
                 epClienteValidar.SetError(cmbCliente, "Campo requerido");
             }
             else
