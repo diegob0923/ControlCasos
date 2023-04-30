@@ -260,12 +260,12 @@
             // 
             this.cmbDoctor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmbDoctor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbDoctor.DisplayMember = "Doctor";
+            this.cmbDoctor.DisplayMember = "DoctorCliente";
             this.cmbDoctor.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDoctor.FormattingEnabled = true;
             this.cmbDoctor.Location = new System.Drawing.Point(99, 79);
             this.cmbDoctor.Name = "cmbDoctor";
-            this.cmbDoctor.Size = new System.Drawing.Size(227, 26);
+            this.cmbDoctor.Size = new System.Drawing.Size(256, 26);
             this.cmbDoctor.TabIndex = 18;
             this.cmbDoctor.Text = " ";
             this.cmbDoctor.ValueMember = "iddoctor";
@@ -277,7 +277,7 @@
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFecha.Location = new System.Drawing.Point(98, 184);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(227, 23);
+            this.dtpFecha.Size = new System.Drawing.Size(257, 23);
             this.dtpFecha.TabIndex = 19;
             // 
             // txtPaciente
@@ -285,7 +285,7 @@
             this.txtPaciente.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPaciente.Location = new System.Drawing.Point(98, 130);
             this.txtPaciente.Name = "txtPaciente";
-            this.txtPaciente.Size = new System.Drawing.Size(227, 23);
+            this.txtPaciente.Size = new System.Drawing.Size(257, 23);
             this.txtPaciente.TabIndex = 20;
             this.txtPaciente.Validating += new System.ComponentModel.CancelEventHandler(this.txtPaciente_Validating);
             // 
@@ -305,12 +305,12 @@
             this.Cantidad,
             this.Comentario,
             this.Eliminar});
-            this.dgvResumenProductos.Location = new System.Drawing.Point(26, 534);
+            this.dgvResumenProductos.Location = new System.Drawing.Point(30, 534);
             this.dgvResumenProductos.Name = "dgvResumenProductos";
             this.dgvResumenProductos.ReadOnly = true;
             this.dgvResumenProductos.RowHeadersWidth = 51;
             this.dgvResumenProductos.RowTemplate.Height = 24;
-            this.dgvResumenProductos.Size = new System.Drawing.Size(991, 126);
+            this.dgvResumenProductos.Size = new System.Drawing.Size(1015, 126);
             this.dgvResumenProductos.TabIndex = 21;
             this.dgvResumenProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResumenProductos_CellContentClick);
             this.dgvResumenProductos.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvResumenProductos_CellMouseMove);
@@ -418,7 +418,7 @@
             this.pnlCaso.Controls.Add(this.cmbDoctor);
             this.pnlCaso.Location = new System.Drawing.Point(12, 12);
             this.pnlCaso.Name = "pnlCaso";
-            this.pnlCaso.Size = new System.Drawing.Size(344, 223);
+            this.pnlCaso.Size = new System.Drawing.Size(379, 223);
             this.pnlCaso.TabIndex = 23;
             // 
             // pnlProducto
@@ -443,7 +443,7 @@
             this.pnlProducto.Controls.Add(this.label7);
             this.pnlProducto.Controls.Add(this.label6);
             this.pnlProducto.Controls.Add(this.cmbColor);
-            this.pnlProducto.Location = new System.Drawing.Point(381, 12);
+            this.pnlProducto.Location = new System.Drawing.Point(409, 12);
             this.pnlProducto.Name = "pnlProducto";
             this.pnlProducto.Size = new System.Drawing.Size(636, 472);
             this.pnlProducto.TabIndex = 24;
@@ -562,7 +562,7 @@
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Montserrat Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(21, 487);
+            this.label13.Location = new System.Drawing.Point(25, 487);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(283, 29);
             this.label13.TabIndex = 25;
@@ -572,7 +572,7 @@
             // 
             this.btnGuardar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnGuardar.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(935, 666);
+            this.btnGuardar.Location = new System.Drawing.Point(963, 670);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(82, 30);
             this.btnGuardar.TabIndex = 26;
@@ -637,7 +637,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1034, 718);
+            this.ClientSize = new System.Drawing.Size(1057, 718);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.pnlProducto);
             this.Controls.Add(this.label13);

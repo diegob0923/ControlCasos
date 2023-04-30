@@ -31,7 +31,7 @@ namespace ControlCasos.Formularios.Casos
             try
             {
                 sp_Doctor_Consultar_Result opcionDefault = new sp_Doctor_Consultar_Result();
-                opcionDefault.Doctor = "Seleccione:";
+                opcionDefault.DoctorCliente = "Seleccione:";
 
                 IList<sp_Doctor_Consultar_Result> fuenteDatos = BLDoctor.consultarDoctores(null);//null es para que consulte todos
                 fuenteDatos.Insert(0, opcionDefault);

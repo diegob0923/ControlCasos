@@ -96,15 +96,6 @@ namespace ControlCasos.Modelos
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_Color_Insertar", colorParameter, guiaParameter);
         }
     
-        public virtual ObjectResult<sp_Doctor_Consultar_Result> sp_Doctor_Consultar(string nombreDoctor)
-        {
-            var nombreDoctorParameter = nombreDoctor != null ?
-                new ObjectParameter("NombreDoctor", nombreDoctor) :
-                new ObjectParameter("NombreDoctor", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_Doctor_Consultar_Result>("sp_Doctor_Consultar", nombreDoctorParameter);
-        }
-    
         public virtual int sp_Doctor_Insertar(string cedula, string nombre, string apellido1, string apellido2, string correo, string telefono, Nullable<int> idCliente)
         {
             var cedulaParameter = cedula != null ?
@@ -602,6 +593,15 @@ namespace ControlCasos.Modelos
                 new ObjectParameter("Contrasena", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_ValidarUsuario_Result>("sp_ValidarUsuario", usuarioParameter, contrasenaParameter);
+        }
+    
+        public virtual ObjectResult<sp_Doctor_Consultar_Result> sp_Doctor_Consultar(string nombreDoctor)
+        {
+            var nombreDoctorParameter = nombreDoctor != null ?
+                new ObjectParameter("NombreDoctor", nombreDoctor) :
+                new ObjectParameter("NombreDoctor", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_Doctor_Consultar_Result>("sp_Doctor_Consultar", nombreDoctorParameter);
         }
     }
 }
