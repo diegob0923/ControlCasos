@@ -76,6 +76,9 @@
             this.epTipoProductoValidar = new System.Windows.Forms.ErrorProvider(this.components);
             this.epMarcaValidar = new System.Windows.Forms.ErrorProvider(this.components);
             this.epColorValidar = new System.Windows.Forms.ErrorProvider(this.components);
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResumenProductos)).BeginInit();
             this.pnlCaso.SuspendLayout();
             this.pnlProducto.SuspendLayout();
@@ -492,11 +495,11 @@
             // btnAgregarColor
             // 
             this.btnAgregarColor.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarColor.Location = new System.Drawing.Point(438, 260);
+            this.btnAgregarColor.Image = global::ControlCasos.Properties.Resources.btnAgregar;
+            this.btnAgregarColor.Location = new System.Drawing.Point(430, 260);
             this.btnAgregarColor.Name = "btnAgregarColor";
-            this.btnAgregarColor.Size = new System.Drawing.Size(36, 26);
+            this.btnAgregarColor.Size = new System.Drawing.Size(26, 26);
             this.btnAgregarColor.TabIndex = 26;
-            this.btnAgregarColor.Text = "+";
             this.btnAgregarColor.UseVisualStyleBackColor = true;
             this.btnAgregarColor.Click += new System.EventHandler(this.btnAgregarColor_Click);
             // 
@@ -602,6 +605,34 @@
             this.epColorValidar.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.epColorValidar.ContainerControl = this;
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.FillWeight = 75F;
+            this.dataGridViewImageColumn1.HeaderText = "Colores";
+            this.dataGridViewImageColumn1.Image = global::ControlCasos.Properties.Resources.btnAbrir;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewImageColumn1.Width = 125;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewImageColumn2.HeaderText = "Eliminar";
+            this.dataGridViewImageColumn2.Image = global::ControlCasos.Properties.Resources.borrar;
+            this.dataGridViewImageColumn2.MinimumWidth = 6;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            // 
+            // dataGridViewImageColumn3
+            // 
+            this.dataGridViewImageColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewImageColumn3.HeaderText = "Eliminar";
+            this.dataGridViewImageColumn3.Image = global::ControlCasos.Properties.Resources.borrar;
+            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
+            this.dataGridViewImageColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // frmNuevoCaso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -684,5 +715,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Comentario;
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
         private System.Windows.Forms.ErrorProvider epColorValidar;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
     }
 }
