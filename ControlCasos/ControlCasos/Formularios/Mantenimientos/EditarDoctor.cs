@@ -51,11 +51,10 @@ namespace ControlCasos.Formularios.Mantenimientos
             try
             {
                 sp_DoctorID_Consultar_Result datosDoctor = BLDoctor.consultarDoctorID(idDoctor);
-                string[] nombreDoctorSeparado = datosDoctor.Doctor.Split(' ');// el orden quedaría nombre apellodo1 apellido2
                 txtCedula.Text = datosDoctor.cedula;
-                txtNombre.Text = nombreDoctorSeparado[0];
-                txtApellido1.Text = nombreDoctorSeparado[1];
-                txtApellido2.Text = nombreDoctorSeparado[2];
+                txtNombre.Text = datosDoctor.Nombre;
+                txtApellido1.Text = datosDoctor.Apellido1;
+                txtApellido2.Text = datosDoctor.Apellido2;
                 txtCorreo.Text = datosDoctor.correo;
                 txtTelefono.Text = datosDoctor.telefono;
                 cmbCliente.Text = datosDoctor.Cliente;

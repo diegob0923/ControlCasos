@@ -223,9 +223,6 @@
           <FunctionImport Name="sp_ColorID_Consultar" ReturnType="Collection(ControlCasosModel.sp_ColorID_Consultar_Result)">
           <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="sp_DoctorID_Consultar" ReturnType="Collection(ControlCasosModel.sp_DoctorID_Consultar_Result)">
-          <Parameter Name="id" Mode="In" Type="Int32" />
-          </FunctionImport>
           <FunctionImport Name="sp_MarcaID_Consultar" ReturnType="Collection(ControlCasosModel.sp_MarcaID_Consultar_Result)">
           <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
@@ -359,7 +356,10 @@
             <Parameter Name="Contrasena" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_Doctor_Consultar" ReturnType="Collection(ControlCasosModel.sp_Doctor_Consultar_Result)">
-            <Parameter Name="NombreDoctor" Mode="In" Type="String" />
+          <Parameter Name="NombreDoctor" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_DoctorID_Consultar" ReturnType="Collection(ControlCasosModel.sp_DoctorID_Consultar_Result)">
+            <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_Cliente_Consultar_Result">
@@ -384,16 +384,6 @@
           <Property Type="Byte" Name="IdColor" Nullable="false" />
           <Property Type="String" Name="Color" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="Guia" Nullable="true" MaxLength="50" />
-        </ComplexType>
-        <ComplexType Name="sp_DoctorID_Consultar_Result">
-          <Property Type="Int32" Name="iddoctor" Nullable="false" />
-          <Property Type="String" Name="cedula" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="Doctor" Nullable="false" MaxLength="152" />
-          <Property Type="String" Name="correo" Nullable="true" MaxLength="70" />
-          <Property Type="String" Name="telefono" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="Estado" Nullable="true" MaxLength="8" />
-          <Property Type="String" Name="Cliente" Nullable="false" MaxLength="50" />
-          <Property Type="Int32" Name="IdCliente" Nullable="false" />
         </ComplexType>
         <ComplexType Name="sp_MarcaID_Consultar_Result">
           <Property Type="Byte" Name="IdMarca" Nullable="false" />
@@ -469,6 +459,19 @@
           <Property Type="Int32" Name="IdCliente" Nullable="false" />
           <Property Type="String" Name="DoctorCliente" Nullable="false" MaxLength="205" />
         </ComplexType>
+        <ComplexType Name="sp_DoctorID_Consultar_Result">
+          <Property Type="Int32" Name="iddoctor" Nullable="false" />
+          <Property Type="String" Name="cedula" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Apellido1" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Apellido2" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Doctor" Nullable="false" MaxLength="152" />
+          <Property Type="String" Name="correo" Nullable="true" MaxLength="70" />
+          <Property Type="String" Name="telefono" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Estado" Nullable="true" MaxLength="8" />
+          <Property Type="String" Name="Cliente" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="IdCliente" Nullable="false" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -520,20 +523,6 @@
                 <ScalarProperty Name="IdColor" ColumnName="IdColor" />
                 <ScalarProperty Name="Color" ColumnName="Color" />
                 <ScalarProperty Name="Guia" ColumnName="Guia" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_DoctorID_Consultar" FunctionName="ControlCasosModel.Store.sp_DoctorID_Consultar">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="ControlCasosModel.sp_DoctorID_Consultar_Result">
-                <ScalarProperty Name="iddoctor" ColumnName="iddoctor" />
-                <ScalarProperty Name="cedula" ColumnName="cedula" />
-                <ScalarProperty Name="Doctor" ColumnName="Doctor" />
-                <ScalarProperty Name="correo" ColumnName="correo" />
-                <ScalarProperty Name="telefono" ColumnName="telefono" />
-                <ScalarProperty Name="Estado" ColumnName="Estado" />
-                <ScalarProperty Name="Cliente" ColumnName="Cliente" />
-                <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -667,6 +656,23 @@
                 <ScalarProperty Name="Cliente" ColumnName="Cliente" />
                 <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
                 <ScalarProperty Name="DoctorCliente" ColumnName="DoctorCliente" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_DoctorID_Consultar" FunctionName="ControlCasosModel.Store.sp_DoctorID_Consultar">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ControlCasosModel.sp_DoctorID_Consultar_Result">
+                <ScalarProperty Name="iddoctor" ColumnName="iddoctor" />
+                <ScalarProperty Name="cedula" ColumnName="cedula" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido1" ColumnName="Apellido1" />
+                <ScalarProperty Name="Apellido2" ColumnName="Apellido2" />
+                <ScalarProperty Name="Doctor" ColumnName="Doctor" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+                <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
