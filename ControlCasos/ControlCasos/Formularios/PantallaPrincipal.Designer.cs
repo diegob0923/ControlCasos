@@ -484,7 +484,7 @@
             this.MinimumSize = new System.Drawing.Size(1076, 803);
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Sistema de control de casos";
+            this.Text = "Sistema de Control de Pacientes";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrincipal_FormClosing);
             this.PnlMenuLateral.ResumeLayout(false);
             this.pnlSubMenuAyuda.ResumeLayout(false);

@@ -564,9 +564,9 @@
             this.label13.Font = new System.Drawing.Font("Montserrat Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(25, 487);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(283, 29);
+            this.label13.Size = new System.Drawing.Size(284, 29);
             this.label13.TabIndex = 25;
-            this.label13.Text = "Resumen de productos";
+            this.label13.Text = "Resumen de Productos";
             // 
             // btnGuardar
             // 
