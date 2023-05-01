@@ -160,7 +160,7 @@
             this.cmbDoctor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cmbDoctor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmbDoctor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbDoctor.DisplayMember = "Doctor";
+            this.cmbDoctor.DisplayMember = "DoctorCliente";
             this.cmbDoctor.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDoctor.FormattingEnabled = true;
             this.cmbDoctor.Location = new System.Drawing.Point(41, 129);

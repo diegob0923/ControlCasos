@@ -17,12 +17,10 @@ namespace ControlCasos.Modelos
         public string Tamano { get; set; }
         public string Diametro { get; set; }
         public Nullable<byte> Cantidad { get; set; }
-        public byte IdColor { get; set; }
         public byte IdMarca { get; set; }
         public byte IdTipoProducto { get; set; }
         public string Comentario { get; set; }
         public int IdCaso { get; set; }
-        public string Color { get; set; }
         public string Marca { get; set; }
         public string TipoProducto { get; set; }
     }

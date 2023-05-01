@@ -31,12 +31,12 @@ namespace ControlCasos.Formularios.Seguridad
                 {
                     string ruta = dialogoGuardar.FileName;//ruta + nombre del archivo
                     respaldos.generarRespaldo(ruta);
-                    MessageBox.Show("Respaldo de datos creado satisfactoriamente");
+                    MessageBox.Show("Respaldo de datos creado satisfactoriamente.", "Proceso Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception)
             {
-                MessageBox.Show("Error al crear el respaldo");
+                MessageBox.Show("Error al crear el respaldo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -51,12 +51,12 @@ namespace ControlCasos.Formularios.Seguridad
                 {
                     string ruta = dialogoAbrir.FileName;//ruta + nombre del archivo
                     respaldos.restaurarBD(ruta);
-                    MessageBox.Show("Restauración de datos completada satisfactoriamente");
+                    MessageBox.Show("Restauración de datos completada satisfactoriamente.", "Proceso Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception)
             {
-                MessageBox.Show("Error al intentar restaurar los datos");
+                MessageBox.Show("Error al intentar restaurar los datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

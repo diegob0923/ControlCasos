@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProductos));
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.TipoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Colores = new System.Windows.Forms.DataGridViewImageColumn();
             this.Tamano = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Diametro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Comentario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.SuspendLayout();
@@ -45,22 +47,26 @@
             this.dgvProductos.AllowUserToAddRows = false;
             this.dgvProductos.AllowUserToDeleteRows = false;
             this.dgvProductos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TipoProducto,
             this.Marca,
-            this.Color,
+            this.Colores,
             this.Tamano,
             this.Diametro,
             this.Cantidad,
-            this.Comentario});
-            this.dgvProductos.Location = new System.Drawing.Point(13, 87);
+            this.Comentario,
+            this.Id});
+            this.dgvProductos.Location = new System.Drawing.Point(13, 75);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
             this.dgvProductos.RowHeadersWidth = 51;
             this.dgvProductos.RowTemplate.Height = 24;
-            this.dgvProductos.Size = new System.Drawing.Size(927, 225);
+            this.dgvProductos.Size = new System.Drawing.Size(927, 181);
             this.dgvProductos.TabIndex = 0;
+            this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
+            this.dgvProductos.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvProductos_CellMouseMove);
             // 
             // TipoProducto
             // 
@@ -69,7 +75,6 @@
             this.TipoProducto.MinimumWidth = 6;
             this.TipoProducto.Name = "TipoProducto";
             this.TipoProducto.ReadOnly = true;
-            this.TipoProducto.Width = 125;
             // 
             // Marca
             // 
@@ -79,17 +84,17 @@
             this.Marca.MinimumWidth = 6;
             this.Marca.Name = "Marca";
             this.Marca.ReadOnly = true;
-            this.Marca.Width = 125;
             // 
-            // Color
+            // Colores
             // 
-            this.Color.DataPropertyName = "Color";
-            this.Color.FillWeight = 75F;
-            this.Color.HeaderText = "Color";
-            this.Color.MinimumWidth = 6;
-            this.Color.Name = "Color";
-            this.Color.ReadOnly = true;
-            this.Color.Width = 125;
+            this.Colores.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Colores.HeaderText = "Colores";
+            this.Colores.Image = global::ControlCasos.Properties.Resources.btnAbrir;
+            this.Colores.MinimumWidth = 6;
+            this.Colores.Name = "Colores";
+            this.Colores.ReadOnly = true;
+            this.Colores.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Colores.Width = 62;
             // 
             // Tamano
             // 
@@ -129,14 +134,22 @@
             this.Comentario.MinimumWidth = 6;
             this.Comentario.Name = "Comentario";
             this.Comentario.ReadOnly = true;
-            this.Comentario.Width = 235;
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "idProducto";
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
             // 
             // label5
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Montserrat Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 28);
+            this.label5.Location = new System.Drawing.Point(12, 16);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(290, 26);
             this.label5.TabIndex = 23;
@@ -146,11 +159,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(955, 333);
+            this.ClientSize = new System.Drawing.Size(955, 284);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dgvProductos);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(971, 323);
             this.Name = "frmProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Productos";
@@ -166,10 +181,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Color;
+        private System.Windows.Forms.DataGridViewImageColumn Colores;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tamano;
         private System.Windows.Forms.DataGridViewTextBoxColumn Diametro;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Comentario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
     }
 }

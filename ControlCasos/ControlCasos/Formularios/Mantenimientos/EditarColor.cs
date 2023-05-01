@@ -38,7 +38,7 @@ namespace ControlCasos.Formularios.Mantenimientos
             }
             catch (Exception)
             {
-                MessageBox.Show("Error al cargar datos color");
+                MessageBox.Show("Error al cargar datos color.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -55,7 +55,7 @@ namespace ControlCasos.Formularios.Mantenimientos
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Error al editar color");
+                    MessageBox.Show("Error al editar color.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

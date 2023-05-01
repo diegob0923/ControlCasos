@@ -20,6 +20,7 @@ namespace ControlCasos.Formularios.Mantenimientos
         {
             InitializeComponent();
             Formato.DarFormatoDataGridView(dgvListaTipoProductos);
+            Formato.DarAlturaCorrectaTextBoxSinBorde(txtBuscar);
             cargarDatosEnGrid();
         }
         public void cargarDatosEnGrid()
@@ -32,7 +33,7 @@ namespace ControlCasos.Formularios.Mantenimientos
             }
             catch (Exception)
             {
-                MessageBox.Show("Ocurrio un error al cargar los tipos de producto");
+                MessageBox.Show("Ocurrió un error al cargar los tipos de producto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -68,7 +69,7 @@ namespace ControlCasos.Formularios.Mantenimientos
             }
             catch (Exception)
             {
-                MessageBox.Show("Ocurrio un error al buscar tipos de producto");
+                MessageBox.Show("Ocurrió un error al buscar tipos de producto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -102,7 +103,7 @@ namespace ControlCasos.Formularios.Mantenimientos
 
             if (dgvListaTipoProductos.Columns[e.ColumnIndex].Name == "Eliminar")
             {
-                if (MessageBox.Show("Está a punto de eliminar el tipo de producto: \"" + dgvListaTipoProductos.CurrentRow.Cells["TipoProducto"].Value.ToString() + "\". ¿Desea continuar?", "Eliminar Tipo Producto", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Está a punto de eliminar el tipo de producto: \"" + dgvListaTipoProductos.CurrentRow.Cells["TipoProducto"].Value.ToString() + "\". ¿Desea continuar?", "Eliminar Tipo Producto", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == DialogResult.Yes)
                     try
                     {
                         tipoProductos.eliminarTipoProducto(idTipoProducto);
@@ -110,7 +111,7 @@ namespace ControlCasos.Formularios.Mantenimientos
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show("Ocurrio un error al eliminar el tipo de producto.\nPosibles causas:\n Puede existan otros registros asociados al elemento que intenta borrar");
+                        MessageBox.Show("Ocurrió un error al eliminar el tipo de producto.\nPosibles causas:\n Puede existan otros registros asociados al elemento que intenta borrar.","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
             }
         }

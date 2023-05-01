@@ -157,13 +157,13 @@ namespace ControlCasos
                     }
 
                     File.Copy(rutaArchivoEnProyecto, nombreArchivo, true);
-                    MessageBox.Show("Manual de usuario descargado");
+                    MessageBox.Show("Manual de usuario descargado.", "Proceso Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ocultarSubMenu();
                 }
             }
             catch (Exception)
             {
-                MessageBox.Show("Error al descargar el manual de usuario");
+                MessageBox.Show("Error al descargar el manual de usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -198,7 +198,7 @@ namespace ControlCasos
             frmInicioSesion formularioInicioSesion = new frmInicioSesion();
             formularioInicioSesion.Visible = true;
             
-            this.Close();
+            this.Dispose();
         }
 
         private void cambiraOpacidadImagen(PictureBox imagenPictureBox, float opacidad)
@@ -220,6 +220,14 @@ namespace ControlCasos
             graphics.DrawImage(imagen, new Rectangle(0, 0, imagen.Width, imagen.Height), 0, 0, imagen.Width, imagen.Height, GraphicsUnit.Pixel, imageAttributes);//Dibujar la imagen con la opacidad ajustada en el Bitmap
 
             imagenPictureBox.Image = bitmap;//Establecer el Bitmap modificado como la imagen del PictureBox
+        }
+
+        private void frmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+                Application.Exit();// Si la razón del cierre es CloseReason.UserClosing, cerrar la aplicación completamente
+            else
+                e.Cancel = false;// Si la razón del cierre es distinta a CloseReason.UserClosing, permitir el cierre del formulario
         }
     }
 }

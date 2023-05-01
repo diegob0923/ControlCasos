@@ -96,15 +96,6 @@ namespace ControlCasos.Modelos
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_Color_Insertar", colorParameter, guiaParameter);
         }
     
-        public virtual ObjectResult<sp_Doctor_Consultar_Result> sp_Doctor_Consultar(string nombreDoctor)
-        {
-            var nombreDoctorParameter = nombreDoctor != null ?
-                new ObjectParameter("NombreDoctor", nombreDoctor) :
-                new ObjectParameter("NombreDoctor", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_Doctor_Consultar_Result>("sp_Doctor_Consultar", nombreDoctorParameter);
-        }
-    
         public virtual int sp_Doctor_Insertar(string cedula, string nombre, string apellido1, string apellido2, string correo, string telefono, Nullable<int> idCliente)
         {
             var cedulaParameter = cedula != null ?
@@ -154,15 +145,6 @@ namespace ControlCasos.Modelos
                 new ObjectParameter("id", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_ColorID_Consultar_Result>("sp_ColorID_Consultar", idParameter);
-        }
-    
-        public virtual ObjectResult<sp_DoctorID_Consultar_Result> sp_DoctorID_Consultar(Nullable<int> id)
-        {
-            var idParameter = id.HasValue ?
-                new ObjectParameter("id", id) :
-                new ObjectParameter("id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_DoctorID_Consultar_Result>("sp_DoctorID_Consultar", idParameter);
         }
     
         public virtual ObjectResult<sp_MarcaID_Consultar_Result> sp_MarcaID_Consultar(Nullable<int> id)
@@ -351,15 +333,6 @@ namespace ControlCasos.Modelos
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_Color_Consultar_Result>("sp_Color_Consultar", colorParameter, guiaParameter);
         }
     
-        public virtual ObjectResult<sp_ProductosPorCaso_Consultar_Result> sp_ProductosPorCaso_Consultar(Nullable<int> idCaso)
-        {
-            var idCasoParameter = idCaso.HasValue ?
-                new ObjectParameter("idCaso", idCaso) :
-                new ObjectParameter("idCaso", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_ProductosPorCaso_Consultar_Result>("sp_ProductosPorCaso_Consultar", idCasoParameter);
-        }
-    
         public virtual int sp_Caso_Insertar(Nullable<System.DateTime> fecha, Nullable<int> idDoctor, string paciente)
         {
             var fechaParameter = fecha.HasValue ?
@@ -382,7 +355,7 @@ namespace ControlCasos.Modelos
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("sp_CasoMaxID_Consultar");
         }
     
-        public virtual ObjectResult<Nullable<int>> sp_Producto_Insertar(string tamano, string diametro, Nullable<byte> cantidad, Nullable<byte> idColor, Nullable<byte> idMarca, Nullable<byte> idTipoProducto, string comentario, Nullable<int> idCaso)
+        public virtual ObjectResult<Nullable<int>> sp_Producto_Insertar(string tamano, string diametro, Nullable<byte> cantidad, Nullable<byte> idMarca, Nullable<byte> idTipoProducto, string comentario, Nullable<int> idCaso)
         {
             var tamanoParameter = tamano != null ?
                 new ObjectParameter("Tamano", tamano) :
@@ -395,10 +368,6 @@ namespace ControlCasos.Modelos
             var cantidadParameter = cantidad.HasValue ?
                 new ObjectParameter("Cantidad", cantidad) :
                 new ObjectParameter("Cantidad", typeof(byte));
-    
-            var idColorParameter = idColor.HasValue ?
-                new ObjectParameter("IdColor", idColor) :
-                new ObjectParameter("IdColor", typeof(byte));
     
             var idMarcaParameter = idMarca.HasValue ?
                 new ObjectParameter("IdMarca", idMarca) :
@@ -416,7 +385,7 @@ namespace ControlCasos.Modelos
                 new ObjectParameter("IdCaso", idCaso) :
                 new ObjectParameter("IdCaso", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("sp_Producto_Insertar", tamanoParameter, diametroParameter, cantidadParameter, idColorParameter, idMarcaParameter, idTipoProductoParameter, comentarioParameter, idCasoParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("sp_Producto_Insertar", tamanoParameter, diametroParameter, cantidadParameter, idMarcaParameter, idTipoProductoParameter, comentarioParameter, idCasoParameter);
         }
     
         public virtual int sp_Caso_Eliminar(Nullable<int> id)
@@ -435,56 +404,6 @@ namespace ControlCasos.Modelos
                 new ObjectParameter("id", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_Producto_Eliminar", idParameter);
-        }
-    
-        public virtual ObjectResult<sp_ValidarUsuario_Result> sp_ValidarUsuario(string usuario, string contrasena)
-        {
-            var usuarioParameter = usuario != null ?
-                new ObjectParameter("Usuario", usuario) :
-                new ObjectParameter("Usuario", typeof(string));
-    
-            var contrasenaParameter = contrasena != null ?
-                new ObjectParameter("Contrasena", contrasena) :
-                new ObjectParameter("Contrasena", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_ValidarUsuario_Result>("sp_ValidarUsuario", usuarioParameter, contrasenaParameter);
-        }
-    
-        public virtual int sp_UsuarioSistema_Insertar(string usuario, string nombre, string apellido1, string apellido2, Nullable<System.DateTime> fecha, string creador, Nullable<int> idRol, string cedula)
-        {
-            var usuarioParameter = usuario != null ?
-                new ObjectParameter("Usuario", usuario) :
-                new ObjectParameter("Usuario", typeof(string));
-    
-            var nombreParameter = nombre != null ?
-                new ObjectParameter("Nombre", nombre) :
-                new ObjectParameter("Nombre", typeof(string));
-    
-            var apellido1Parameter = apellido1 != null ?
-                new ObjectParameter("Apellido1", apellido1) :
-                new ObjectParameter("Apellido1", typeof(string));
-    
-            var apellido2Parameter = apellido2 != null ?
-                new ObjectParameter("Apellido2", apellido2) :
-                new ObjectParameter("Apellido2", typeof(string));
-    
-            var fechaParameter = fecha.HasValue ?
-                new ObjectParameter("Fecha", fecha) :
-                new ObjectParameter("Fecha", typeof(System.DateTime));
-    
-            var creadorParameter = creador != null ?
-                new ObjectParameter("Creador", creador) :
-                new ObjectParameter("Creador", typeof(string));
-    
-            var idRolParameter = idRol.HasValue ?
-                new ObjectParameter("IdRol", idRol) :
-                new ObjectParameter("IdRol", typeof(int));
-    
-            var cedulaParameter = cedula != null ?
-                new ObjectParameter("Cedula", cedula) :
-                new ObjectParameter("Cedula", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_UsuarioSistema_Insertar", usuarioParameter, nombreParameter, apellido1Parameter, apellido2Parameter, fechaParameter, creadorParameter, idRolParameter, cedulaParameter);
         }
     
         public virtual int sp_UsuarioSistema_Editar(Nullable<byte> idUsuario, string usuario, string nombre, string apellido1, string apellido2, Nullable<bool> estado, Nullable<int> idRol, string cedula)
@@ -533,19 +452,6 @@ namespace ControlCasos.Modelos
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_UsuarioSistema_Eliminar", idUsuarioParameter);
         }
     
-        public virtual int sp_UsuarioSistemaCambioContrasena_Editar(string usuario, string contrasena)
-        {
-            var usuarioParameter = usuario != null ?
-                new ObjectParameter("Usuario", usuario) :
-                new ObjectParameter("Usuario", typeof(string));
-    
-            var contrasenaParameter = contrasena != null ?
-                new ObjectParameter("Contrasena", contrasena) :
-                new ObjectParameter("Contrasena", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_UsuarioSistemaCambioContrasena_Editar", usuarioParameter, contrasenaParameter);
-        }
-    
         public virtual int sp_GenerarBackUp(string ruta)
         {
             var rutaParameter = ruta != null ?
@@ -553,6 +459,64 @@ namespace ControlCasos.Modelos
                 new ObjectParameter("ruta", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_GenerarBackUp", rutaParameter);
+        }
+    
+        public virtual ObjectResult<sp_UsuarioSistema_Consultar_Result> sp_UsuarioSistema_Consultar(string buscar)
+        {
+            var buscarParameter = buscar != null ?
+                new ObjectParameter("buscar", buscar) :
+                new ObjectParameter("buscar", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_UsuarioSistema_Consultar_Result>("sp_UsuarioSistema_Consultar", buscarParameter);
+        }
+    
+        public virtual ObjectResult<sp_UsuarioSistemaID_Consultar_Result> sp_UsuarioSistemaID_Consultar(Nullable<byte> idUsuario)
+        {
+            var idUsuarioParameter = idUsuario.HasValue ?
+                new ObjectParameter("idUsuario", idUsuario) :
+                new ObjectParameter("idUsuario", typeof(byte));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_UsuarioSistemaID_Consultar_Result>("sp_UsuarioSistemaID_Consultar", idUsuarioParameter);
+        }
+    
+        public virtual int sp_Producto_Color_Eliminar(Nullable<int> idProducto)
+        {
+            var idProductoParameter = idProducto.HasValue ?
+                new ObjectParameter("idProducto", idProducto) :
+                new ObjectParameter("idProducto", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_Producto_Color_Eliminar", idProductoParameter);
+        }
+    
+        public virtual int sp_Producto_Color_Insertar(Nullable<int> idProducto, Nullable<byte> idColor)
+        {
+            var idProductoParameter = idProducto.HasValue ?
+                new ObjectParameter("idProducto", idProducto) :
+                new ObjectParameter("idProducto", typeof(int));
+    
+            var idColorParameter = idColor.HasValue ?
+                new ObjectParameter("idColor", idColor) :
+                new ObjectParameter("idColor", typeof(byte));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_Producto_Color_Insertar", idProductoParameter, idColorParameter);
+        }
+    
+        public virtual ObjectResult<sp_ProductosPorCaso_Consultar_Result> sp_ProductosPorCaso_Consultar(Nullable<int> idCaso)
+        {
+            var idCasoParameter = idCaso.HasValue ?
+                new ObjectParameter("idCaso", idCaso) :
+                new ObjectParameter("idCaso", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_ProductosPorCaso_Consultar_Result>("sp_ProductosPorCaso_Consultar", idCasoParameter);
+        }
+    
+        public virtual ObjectResult<string> sp_Producto_ColorIdProducto_Consultar(Nullable<int> idProducto)
+        {
+            var idProductoParameter = idProducto.HasValue ?
+                new ObjectParameter("idProducto", idProducto) :
+                new ObjectParameter("idProducto", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("sp_Producto_ColorIdProducto_Consultar", idProductoParameter);
         }
     
         public virtual int sp_RestablecerContrasena_Editar(string usuario, string nuevaContrasena, string cedula)
@@ -572,22 +536,72 @@ namespace ControlCasos.Modelos
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_RestablecerContrasena_Editar", usuarioParameter, nuevaContrasenaParameter, cedulaParameter);
         }
     
-        public virtual ObjectResult<sp_UsuarioSistema_Consultar_Result> sp_UsuarioSistema_Consultar(string buscar)
+        public virtual int sp_UsuarioSistema_Insertar(string usuario, string nombre, string apellido1, string apellido2, Nullable<System.DateTime> fecha, string creador, Nullable<int> idRol, string cedula)
         {
-            var buscarParameter = buscar != null ?
-                new ObjectParameter("buscar", buscar) :
-                new ObjectParameter("buscar", typeof(string));
+            var usuarioParameter = usuario != null ?
+                new ObjectParameter("Usuario", usuario) :
+                new ObjectParameter("Usuario", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_UsuarioSistema_Consultar_Result>("sp_UsuarioSistema_Consultar", buscarParameter);
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("Nombre", nombre) :
+                new ObjectParameter("Nombre", typeof(string));
+    
+            var apellido1Parameter = apellido1 != null ?
+                new ObjectParameter("Apellido1", apellido1) :
+                new ObjectParameter("Apellido1", typeof(string));
+    
+            var apellido2Parameter = apellido2 != null ?
+                new ObjectParameter("Apellido2", apellido2) :
+                new ObjectParameter("Apellido2", typeof(string));
+    
+            var fechaParameter = fecha.HasValue ?
+                new ObjectParameter("Fecha", fecha) :
+                new ObjectParameter("Fecha", typeof(System.DateTime));
+    
+            var creadorParameter = creador != null ?
+                new ObjectParameter("Creador", creador) :
+                new ObjectParameter("Creador", typeof(string));
+    
+            var idRolParameter = idRol.HasValue ?
+                new ObjectParameter("IdRol", idRol) :
+                new ObjectParameter("IdRol", typeof(int));
+    
+            var cedulaParameter = cedula != null ?
+                new ObjectParameter("Cedula", cedula) :
+                new ObjectParameter("Cedula", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_UsuarioSistema_Insertar", usuarioParameter, nombreParameter, apellido1Parameter, apellido2Parameter, fechaParameter, creadorParameter, idRolParameter, cedulaParameter);
         }
     
-        public virtual ObjectResult<sp_UsuarioSistemaID_Consultar_Result> sp_UsuarioSistemaID_Consultar(Nullable<byte> idUsuario)
+        public virtual ObjectResult<sp_ValidarUsuario_Result> sp_ValidarUsuario(string usuario, string contrasena)
         {
-            var idUsuarioParameter = idUsuario.HasValue ?
-                new ObjectParameter("idUsuario", idUsuario) :
-                new ObjectParameter("idUsuario", typeof(byte));
+            var usuarioParameter = usuario != null ?
+                new ObjectParameter("Usuario", usuario) :
+                new ObjectParameter("Usuario", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_UsuarioSistemaID_Consultar_Result>("sp_UsuarioSistemaID_Consultar", idUsuarioParameter);
+            var contrasenaParameter = contrasena != null ?
+                new ObjectParameter("Contrasena", contrasena) :
+                new ObjectParameter("Contrasena", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_ValidarUsuario_Result>("sp_ValidarUsuario", usuarioParameter, contrasenaParameter);
+        }
+    
+        public virtual ObjectResult<sp_Doctor_Consultar_Result> sp_Doctor_Consultar(string nombreDoctor)
+        {
+            var nombreDoctorParameter = nombreDoctor != null ?
+                new ObjectParameter("NombreDoctor", nombreDoctor) :
+                new ObjectParameter("NombreDoctor", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_Doctor_Consultar_Result>("sp_Doctor_Consultar", nombreDoctorParameter);
+        }
+    
+        public virtual ObjectResult<sp_DoctorID_Consultar_Result> sp_DoctorID_Consultar(Nullable<int> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_DoctorID_Consultar_Result>("sp_DoctorID_Consultar", idParameter);
         }
     }
 }

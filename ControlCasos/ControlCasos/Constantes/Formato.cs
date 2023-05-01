@@ -15,5 +15,13 @@ namespace ControlCasos.Constantes
             dataGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Montserrat", 10);
             dataGrid.DefaultCellStyle.Font = new Font("Montserrat", 10);
         }
+
+        public static void DarAlturaCorrectaTextBoxSinBorde(TextBox textBox)
+        {
+            int txtHeight = TextRenderer.MeasureText("Text", textBox.Font).Height + 1;
+            textBox.Multiline = true;
+            textBox.MinimumSize = new Size(0, txtHeight);
+            textBox.Multiline = false;
+        }
     }
 }

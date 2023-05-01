@@ -44,22 +44,22 @@
             // txtNuevaContrasena
             // 
             this.txtNuevaContrasena.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNuevaContrasena.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNuevaContrasena.Location = new System.Drawing.Point(434, 188);
+            this.txtNuevaContrasena.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNuevaContrasena.Location = new System.Drawing.Point(434, 186);
             this.txtNuevaContrasena.Name = "txtNuevaContrasena";
-            this.txtNuevaContrasena.PasswordChar = '*';
-            this.txtNuevaContrasena.Size = new System.Drawing.Size(227, 27);
+            this.txtNuevaContrasena.PasswordChar = '●';
+            this.txtNuevaContrasena.Size = new System.Drawing.Size(227, 24);
             this.txtNuevaContrasena.TabIndex = 0;
             this.txtNuevaContrasena.Validating += new System.ComponentModel.CancelEventHandler(this.txtNuevaContrasena_Validating);
             // 
             // txtConfirmarContrasena
             // 
             this.txtConfirmarContrasena.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtConfirmarContrasena.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmarContrasena.Location = new System.Drawing.Point(434, 260);
+            this.txtConfirmarContrasena.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfirmarContrasena.Location = new System.Drawing.Point(434, 257);
             this.txtConfirmarContrasena.Name = "txtConfirmarContrasena";
-            this.txtConfirmarContrasena.PasswordChar = '*';
-            this.txtConfirmarContrasena.Size = new System.Drawing.Size(227, 27);
+            this.txtConfirmarContrasena.PasswordChar = '●';
+            this.txtConfirmarContrasena.Size = new System.Drawing.Size(227, 24);
             this.txtConfirmarContrasena.TabIndex = 1;
             this.txtConfirmarContrasena.Validating += new System.ComponentModel.CancelEventHandler(this.txtConfirmarContrasena_Validating);
             // 

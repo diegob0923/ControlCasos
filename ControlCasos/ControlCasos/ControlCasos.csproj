@@ -405,6 +405,7 @@
   <ItemGroup>
     <Content Include="Imagenes\borrar.png" />
     <Content Include="Imagenes\btnAbrir.png" />
+    <Content Include="Imagenes\btnAgregar.png" />
     <Content Include="Imagenes\buscar.png" />
     <Content Include="Imagenes\cancelar.png" />
     <None Include="Imagenes\cerrarSesion.png" />

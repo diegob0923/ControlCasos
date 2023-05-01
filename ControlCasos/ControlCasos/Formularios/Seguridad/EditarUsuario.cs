@@ -47,7 +47,7 @@ namespace ControlCasos.Formularios.Seguridad
             }
             catch (Exception)
             {
-                MessageBox.Show("Error al cargar datos del tipo de producto");
+                MessageBox.Show("Error al cargar datos del tipo de producto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private bool varificarUsuarioAEditarEsMiUsuario(string usuario)
@@ -78,7 +78,7 @@ namespace ControlCasos.Formularios.Seguridad
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Error al editar usuario. \n Posibles causas:\nPuede que ya exista un usuario \"" + txtUsuario.Text + "\".\nPuede que la cédula ingresada ya exista.");
+                    MessageBox.Show("Error al editar usuario. \n Posibles causas:\nPuede que ya exista un usuario \"" + txtUsuario.Text + "\".\nPuede que la cédula ingresada ya exista.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }   
         }

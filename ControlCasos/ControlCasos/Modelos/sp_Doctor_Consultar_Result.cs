@@ -21,5 +21,6 @@ namespace ControlCasos.Modelos
         public string Estado { get; set; }
         public string Cliente { get; set; }
         public int IdCliente { get; set; }
+        public string DoctorCliente { get; set; }
     }
 }

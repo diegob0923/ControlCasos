@@ -20,6 +20,7 @@ namespace ControlCasos.Formularios.Mantenimientos
         {
             InitializeComponent();
             Formato.DarFormatoDataGridView(dgvListaDoctores);
+            Formato.DarAlturaCorrectaTextBoxSinBorde(txtBuscar);
             cargarDatosEnGrid();
         }
 
@@ -33,7 +34,7 @@ namespace ControlCasos.Formularios.Mantenimientos
             }
             catch (Exception)
             {
-                MessageBox.Show("Ocurrio un error al cargar los doctores");
+                MessageBox.Show("Ocurrió un error al cargar los doctores.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -43,7 +44,10 @@ namespace ControlCasos.Formularios.Mantenimientos
             if (txtBuscar.Text != "")
                 btnCancelar.Visible = true;
             else
+            {
                 btnCancelar.Visible = false;
+                lblBuscar.Visible = true;
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -62,23 +66,24 @@ namespace ControlCasos.Formularios.Mantenimientos
             }
             catch (Exception)
             {
-                MessageBox.Show("Ocurrio un error al buscar doctores");
+                MessageBox.Show("Ocurrió un error al buscar doctores.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void lblBuscar_Click(object sender, EventArgs e)
         {
-
+            lblBuscar.Visible = false;
+            txtBuscar.Select();
         }
 
         private void lblBuscar_MouseHover(object sender, EventArgs e)
         {
-
+            Cursor = Cursors.IBeam;
         }
 
         private void txtBuscar_Click(object sender, EventArgs e)
         {
-
+            lblBuscar.Visible = false;
         }
         #endregion
 
@@ -101,7 +106,7 @@ namespace ControlCasos.Formularios.Mantenimientos
 
             if (dgvListaDoctores.Columns[e.ColumnIndex].Name == "Eliminar")
             {
-                if (MessageBox.Show("Está a punto de eliminar el doctor: \"" + dgvListaDoctores.CurrentRow.Cells["Doctor"].Value.ToString() + "\". ¿Desea continuar?", "Eliminar Doctor", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Está a punto de eliminar el doctor: \"" + dgvListaDoctores.CurrentRow.Cells["Doctor"].Value.ToString() + "\". ¿Desea continuar?", "Eliminar Doctor", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == DialogResult.Yes)
                     try
                     {
                         doctores.eliminarDoctor(idDoctor);
@@ -109,7 +114,7 @@ namespace ControlCasos.Formularios.Mantenimientos
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show("Ocurrio un error al eliminar el doctor.\nPosibles causas:\n Puede existan otros registros asociados al elemento que intenta borrar");
+                        MessageBox.Show("Ocurrió un error al eliminar el doctor.\nPosibles causas:\n Puede existan otros registros asociados al elemento que intenta borrar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
             }
         }

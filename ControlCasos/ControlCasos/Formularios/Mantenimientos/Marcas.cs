@@ -20,6 +20,7 @@ namespace ControlCasos.Formularios.Mantenimientos
         {
             InitializeComponent();
             Formato.DarFormatoDataGridView(dgvListaMarcas);
+            Formato.DarAlturaCorrectaTextBoxSinBorde(txtBuscar);
             cargarDatosEnGrid();
         }
 
@@ -33,7 +34,7 @@ namespace ControlCasos.Formularios.Mantenimientos
             }
             catch (Exception)
             {
-                MessageBox.Show("Ocurrio un error al cargar las marcas");
+                MessageBox.Show("Ocurrió un error al cargar las marcas.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -65,7 +66,7 @@ namespace ControlCasos.Formularios.Mantenimientos
             }
             catch (Exception)
             {
-                MessageBox.Show("Ocurrio un error al buscar marcas");
+                MessageBox.Show("Ocurrió un error al buscar marcas.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -105,7 +106,7 @@ namespace ControlCasos.Formularios.Mantenimientos
 
             if (dgvListaMarcas.Columns[e.ColumnIndex].Name == "Eliminar")
             {
-                if (MessageBox.Show("Está a punto de eliminar la marca: \"" + dgvListaMarcas.CurrentRow.Cells["Marca"].Value.ToString() + "\". ¿Desea continuar?", "Eliminar Marca", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Está a punto de eliminar la marca: \"" + dgvListaMarcas.CurrentRow.Cells["Marca"].Value.ToString() + "\". ¿Desea continuar?", "Eliminar Marca", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     try
                     {
                         marcas.eliminarMarca(idMarca);
@@ -113,7 +114,7 @@ namespace ControlCasos.Formularios.Mantenimientos
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show("Ocurrio un error al eliminar la marca.\nPosibles causas:\n Puede existan otros registros asociados al elemento que intenta borrar");
+                        MessageBox.Show("Ocurrió un error al eliminar la marca.\nPosibles causas:\n Puede existan otros registros asociados al elemento que intenta borrar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
             }
         }

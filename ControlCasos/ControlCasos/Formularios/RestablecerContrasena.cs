@@ -44,22 +44,22 @@ namespace ControlCasos.Formularios
                     {
                         if (usuarios.RestablecerContrasena(usuarioRestablecer, txtNuevaContrasena.Text, txtCedula.Text))
                         {
-                            MessageBox.Show("Contraseña restablecida exitosamente.");
+                            MessageBox.Show("Contraseña restablecida exitosamente.","Proceso Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Dispose();
                         }
                         else
                         {
-                            MessageBox.Show("Error al confirmar su identidad, asegúrese de que su número de cédula es correcto. Recuerde utilizar ceros y no poner guiones ni espacios");
+                            MessageBox.Show("Error al confirmar su identidad, asegúrese de que su número de cédula es correcto. Recuerde utilizar ceros y no poner guiones ni espacios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }                        
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show("Ocurrio un error al restablecer la contraseña.\nPosibles causas:\nNo se pudo confirmar su identidad.");
+                        MessageBox.Show("Ocurrió un error al restablecer la contraseña.\nPosibles causas:\nNo se pudo confirmar su identidad.");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Las contraseñas no coinciden, por favor vuelva a intentarlo.");
+                    MessageBox.Show("Las contraseñas no coinciden, por favor vuelva a intentarlo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtNuevaContrasena.Text = "";
                     txtConfirmarContrasena.Text = "";
                     txtCedula.Text = "";

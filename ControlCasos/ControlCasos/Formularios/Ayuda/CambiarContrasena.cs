@@ -35,18 +35,18 @@ namespace ControlCasos.Formularios.Ayuda
                 {
                     try
                     {
-                        usuarios.cambioContrasena(UsuarioLogueado.usuarioLogueado, txtNuevaContrasena.Text);
-                        MessageBox.Show("Contraseña cambiada exitosamente.");
+                        usuarios.RestablecerContrasena(UsuarioLogueado.usuarioLogueado, txtNuevaContrasena.Text);
+                        MessageBox.Show("Contraseña cambiada exitosamente.","Proceso Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         limpiarCampos();
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show("Ocurrio un error al cambiar la contraseña.");
+                        MessageBox.Show("Ocurrió un error al cambiar la contraseña.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Las contraseñas no coinciden, por favor vuelva a intentarlo.");
+                    MessageBox.Show("Las contraseñas no coinciden, por favor vuelva a intentarlo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     limpiarCampos();
                 }
             }

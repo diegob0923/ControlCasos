@@ -38,7 +38,7 @@ namespace ControlCasos.Formularios.Mantenimientos
             }
             catch (Exception)
             {
-                MessageBox.Show("Error al cargar datos de la marca");
+                MessageBox.Show("Error al cargar datos de la marca.","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         #region Eventos
@@ -54,7 +54,7 @@ namespace ControlCasos.Formularios.Mantenimientos
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Error al editar marca");
+                    MessageBox.Show("Error al editar marca.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             } 
         }

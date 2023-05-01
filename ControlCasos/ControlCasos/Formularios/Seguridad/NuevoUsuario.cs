@@ -46,7 +46,7 @@ namespace ControlCasos.Formularios.Seguridad
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Ocurrió un error al agregar usuario.\nPosibles causas:\nPuede que ya exista un usuario \"" + txtUsuario.Text + "\".\nPuede que la cédula ingresada ya exista.");
+                    MessageBox.Show("Ocurrió un error al agregar usuario.\nPosibles causas:\nPuede que ya exista un usuario \"" + txtUsuario.Text + "\".\nPuede que la cédula ingresada ya exista.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

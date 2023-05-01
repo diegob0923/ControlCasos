@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRestablecerContrasena));
             this.btnGuardar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -82,21 +83,21 @@
             // 
             // txtConfirmarContrasena
             // 
-            this.txtConfirmarContrasena.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfirmarContrasena.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirmarContrasena.Location = new System.Drawing.Point(28, 132);
             this.txtConfirmarContrasena.Name = "txtConfirmarContrasena";
-            this.txtConfirmarContrasena.PasswordChar = '*';
-            this.txtConfirmarContrasena.Size = new System.Drawing.Size(227, 23);
+            this.txtConfirmarContrasena.PasswordChar = '●';
+            this.txtConfirmarContrasena.Size = new System.Drawing.Size(227, 22);
             this.txtConfirmarContrasena.TabIndex = 7;
             this.txtConfirmarContrasena.Validating += new System.ComponentModel.CancelEventHandler(this.txtConfirmarContrasena_Validating);
             // 
             // txtNuevaContrasena
             // 
-            this.txtNuevaContrasena.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNuevaContrasena.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNuevaContrasena.Location = new System.Drawing.Point(27, 58);
             this.txtNuevaContrasena.Name = "txtNuevaContrasena";
-            this.txtNuevaContrasena.PasswordChar = '*';
-            this.txtNuevaContrasena.Size = new System.Drawing.Size(227, 23);
+            this.txtNuevaContrasena.PasswordChar = '●';
+            this.txtNuevaContrasena.Size = new System.Drawing.Size(227, 22);
             this.txtNuevaContrasena.TabIndex = 6;
             this.txtNuevaContrasena.Validating += new System.ComponentModel.CancelEventHandler(this.txtNuevaContrasena_Validating);
             // 
@@ -184,7 +185,9 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(298, 349);
             this.Name = "frmRestablecerContrasena";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Restablecer Contrasena";

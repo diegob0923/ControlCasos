@@ -31,7 +31,7 @@ namespace ControlCasos.Formularios.Casos
             try
             {
                 sp_Doctor_Consultar_Result opcionDefault = new sp_Doctor_Consultar_Result();
-                opcionDefault.Doctor = "Seleccione:";
+                opcionDefault.DoctorCliente = "Seleccione:";
 
                 IList<sp_Doctor_Consultar_Result> fuenteDatos = BLDoctor.consultarDoctores(null);//null es para que consulte todos
                 fuenteDatos.Insert(0, opcionDefault);
@@ -39,7 +39,7 @@ namespace ControlCasos.Formularios.Casos
             }
             catch (Exception)
             {
-                MessageBox.Show("Error al cargar lista desplegable de clientes");
+                MessageBox.Show("Error al cargar lista desplegable de clientes.","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -52,7 +52,7 @@ namespace ControlCasos.Formularios.Casos
             }
             catch (Exception)
             {
-                MessageBox.Show("Error al cargar casos");
+                MessageBox.Show("Error al cargar casos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }
@@ -72,7 +72,12 @@ namespace ControlCasos.Formularios.Casos
                 {
                     cmbPaciente.DataSource = null;
 
-                    var pacientesPorDoctor = listaCasos.Where(x => x.IdDoctor == int.Parse(cmbDoctor.SelectedValue.ToString())).ToList();
+                    //lista completa se filtra por doctor y luego se hace el distinct pacientes (no trae pacientes repetidos)
+                    var pacientesPorDoctor = listaCasos
+                        .Where(x => x.IdDoctor == int.Parse(cmbDoctor.SelectedValue.ToString()))
+                        .Select(x => x.Paciente)
+                        .Distinct()
+                        .ToList();
 
                     if (pacientesPorDoctor.Count != 0)
                     {
@@ -87,9 +92,9 @@ namespace ControlCasos.Formularios.Casos
 
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                MessageBox.Show("Ocurrio un error al cargar los pacientes" + e);
+                MessageBox.Show("Ocurrió un error al cargar los pacientes.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

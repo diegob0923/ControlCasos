@@ -23,7 +23,7 @@ namespace ControlCasos.BL
             return datosColor;
         }
 
-        public void insertarDoctor(string nombre, string apellido1, int idCliente, string cedula = null,
+        public void insertarDoctor(string nombre, string apellido1, int idCliente, string cedula,
                                     string apellido2 = null, string correo = null, string telefono = null)
         {
             modeloBD.sp_Doctor_Insertar(cedula,nombre,apellido1,apellido2,correo,telefono,idCliente);
