@@ -586,15 +586,6 @@ namespace ControlCasos.Modelos
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_ValidarUsuario_Result>("sp_ValidarUsuario", usuarioParameter, contrasenaParameter);
         }
     
-        public virtual ObjectResult<sp_Doctor_Consultar_Result> sp_Doctor_Consultar(string nombreDoctor)
-        {
-            var nombreDoctorParameter = nombreDoctor != null ?
-                new ObjectParameter("NombreDoctor", nombreDoctor) :
-                new ObjectParameter("NombreDoctor", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_Doctor_Consultar_Result>("sp_Doctor_Consultar", nombreDoctorParameter);
-        }
-    
         public virtual ObjectResult<sp_DoctorID_Consultar_Result> sp_DoctorID_Consultar(Nullable<int> id)
         {
             var idParameter = id.HasValue ?
@@ -602,6 +593,15 @@ namespace ControlCasos.Modelos
                 new ObjectParameter("id", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_DoctorID_Consultar_Result>("sp_DoctorID_Consultar", idParameter);
+        }
+    
+        public virtual ObjectResult<sp_Doctor_Consultar_Result> sp_Doctor_Consultar(string nombreDoctor)
+        {
+            var nombreDoctorParameter = nombreDoctor != null ?
+                new ObjectParameter("NombreDoctor", nombreDoctor) :
+                new ObjectParameter("NombreDoctor", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_Doctor_Consultar_Result>("sp_Doctor_Consultar", nombreDoctorParameter);
         }
     }
 }
