@@ -208,15 +208,6 @@
             <Parameter Name="Color" Mode="In" Type="String" />
             <Parameter Name="Guia" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="sp_Doctor_Insertar">
-            <Parameter Name="Cedula" Mode="In" Type="String" />
-            <Parameter Name="Nombre" Mode="In" Type="String" />
-            <Parameter Name="Apellido1" Mode="In" Type="String" />
-            <Parameter Name="Apellido2" Mode="In" Type="String" />
-            <Parameter Name="Correo" Mode="In" Type="String" />
-            <Parameter Name="Telefono" Mode="In" Type="String" />
-            <Parameter Name="IdCliente" Mode="In" Type="Int32" />
-          </FunctionImport>
           <FunctionImport Name="sp_ClienteID_Consultar" ReturnType="Collection(ControlCasosModel.sp_ClienteID_Consultar_Result)">
           <Parameter Name="Id" Mode="In" Type="Int32" />
           </FunctionImport>
@@ -359,7 +350,16 @@
           <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_Doctor_Consultar" ReturnType="Collection(ControlCasosModel.sp_Doctor_Consultar_Result)">
-            <Parameter Name="NombreDoctor" Mode="In" Type="String" />
+          <Parameter Name="NombreDoctor" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Doctor_Insertar">
+            <Parameter Name="Cedula" Mode="In" Type="String" />
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="Apellido1" Mode="In" Type="String" />
+            <Parameter Name="Apellido2" Mode="In" Type="String" />
+            <Parameter Name="Correo" Mode="In" Type="String" />
+            <Parameter Name="Telefono" Mode="In" Type="String" />
+            <Parameter Name="IdCliente" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_Cliente_Consultar_Result">
@@ -507,7 +507,6 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_TipoProducto_Insertar" FunctionName="ControlCasosModel.Store.sp_TipoProducto_Insertar" />
           <FunctionImportMapping FunctionImportName="sp_Color_Insertar" FunctionName="ControlCasosModel.Store.sp_Color_Insertar" />
-          <FunctionImportMapping FunctionImportName="sp_Doctor_Insertar" FunctionName="ControlCasosModel.Store.sp_Doctor_Insertar" />
           <FunctionImportMapping FunctionImportName="sp_ClienteID_Consultar" FunctionName="ControlCasosModel.Store.sp_ClienteID_Consultar">
             <ResultMapping>
               <ComplexTypeMapping TypeName="ControlCasosModel.sp_ClienteID_Consultar_Result">
@@ -676,6 +675,7 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Doctor_Insertar" FunctionName="ControlCasosModel.Store.sp_Doctor_Insertar" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
