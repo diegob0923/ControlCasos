@@ -70,7 +70,7 @@ namespace ControlCasos.Formularios.Mantenimientos
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Error al agregar doctor.\nPosibles causas:\n-Puede que la cédula ingresada ya esté registrada.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error al agregar doctor.\nPosibles causas:\n-Puede que el doctor ya esté registrado para el cliente \""+cmbCliente.Text+"\".", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             } 
         }

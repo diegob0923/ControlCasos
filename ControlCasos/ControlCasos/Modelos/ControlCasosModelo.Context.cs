@@ -96,39 +96,6 @@ namespace ControlCasos.Modelos
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_Color_Insertar", colorParameter, guiaParameter);
         }
     
-        public virtual int sp_Doctor_Insertar(string cedula, string nombre, string apellido1, string apellido2, string correo, string telefono, Nullable<int> idCliente)
-        {
-            var cedulaParameter = cedula != null ?
-                new ObjectParameter("Cedula", cedula) :
-                new ObjectParameter("Cedula", typeof(string));
-    
-            var nombreParameter = nombre != null ?
-                new ObjectParameter("Nombre", nombre) :
-                new ObjectParameter("Nombre", typeof(string));
-    
-            var apellido1Parameter = apellido1 != null ?
-                new ObjectParameter("Apellido1", apellido1) :
-                new ObjectParameter("Apellido1", typeof(string));
-    
-            var apellido2Parameter = apellido2 != null ?
-                new ObjectParameter("Apellido2", apellido2) :
-                new ObjectParameter("Apellido2", typeof(string));
-    
-            var correoParameter = correo != null ?
-                new ObjectParameter("Correo", correo) :
-                new ObjectParameter("Correo", typeof(string));
-    
-            var telefonoParameter = telefono != null ?
-                new ObjectParameter("Telefono", telefono) :
-                new ObjectParameter("Telefono", typeof(string));
-    
-            var idClienteParameter = idCliente.HasValue ?
-                new ObjectParameter("IdCliente", idCliente) :
-                new ObjectParameter("IdCliente", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_Doctor_Insertar", cedulaParameter, nombreParameter, apellido1Parameter, apellido2Parameter, correoParameter, telefonoParameter, idClienteParameter);
-        }
-    
         public virtual ObjectResult<sp_ClienteID_Consultar_Result> sp_ClienteID_Consultar(Nullable<int> id)
         {
             var idParameter = id.HasValue ?
@@ -586,6 +553,15 @@ namespace ControlCasos.Modelos
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_ValidarUsuario_Result>("sp_ValidarUsuario", usuarioParameter, contrasenaParameter);
         }
     
+        public virtual ObjectResult<sp_DoctorID_Consultar_Result> sp_DoctorID_Consultar(Nullable<int> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_DoctorID_Consultar_Result>("sp_DoctorID_Consultar", idParameter);
+        }
+    
         public virtual ObjectResult<sp_Doctor_Consultar_Result> sp_Doctor_Consultar(string nombreDoctor)
         {
             var nombreDoctorParameter = nombreDoctor != null ?
@@ -595,13 +571,37 @@ namespace ControlCasos.Modelos
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_Doctor_Consultar_Result>("sp_Doctor_Consultar", nombreDoctorParameter);
         }
     
-        public virtual ObjectResult<sp_DoctorID_Consultar_Result> sp_DoctorID_Consultar(Nullable<int> id)
+        public virtual int sp_Doctor_Insertar(string cedula, string nombre, string apellido1, string apellido2, string correo, string telefono, Nullable<int> idCliente)
         {
-            var idParameter = id.HasValue ?
-                new ObjectParameter("id", id) :
-                new ObjectParameter("id", typeof(int));
+            var cedulaParameter = cedula != null ?
+                new ObjectParameter("Cedula", cedula) :
+                new ObjectParameter("Cedula", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_DoctorID_Consultar_Result>("sp_DoctorID_Consultar", idParameter);
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("Nombre", nombre) :
+                new ObjectParameter("Nombre", typeof(string));
+    
+            var apellido1Parameter = apellido1 != null ?
+                new ObjectParameter("Apellido1", apellido1) :
+                new ObjectParameter("Apellido1", typeof(string));
+    
+            var apellido2Parameter = apellido2 != null ?
+                new ObjectParameter("Apellido2", apellido2) :
+                new ObjectParameter("Apellido2", typeof(string));
+    
+            var correoParameter = correo != null ?
+                new ObjectParameter("Correo", correo) :
+                new ObjectParameter("Correo", typeof(string));
+    
+            var telefonoParameter = telefono != null ?
+                new ObjectParameter("Telefono", telefono) :
+                new ObjectParameter("Telefono", typeof(string));
+    
+            var idClienteParameter = idCliente.HasValue ?
+                new ObjectParameter("IdCliente", idCliente) :
+                new ObjectParameter("IdCliente", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_Doctor_Insertar", cedulaParameter, nombreParameter, apellido1Parameter, apellido2Parameter, correoParameter, telefonoParameter, idClienteParameter);
         }
     }
 }
