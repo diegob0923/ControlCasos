@@ -410,6 +410,7 @@
     <Content Include="Imagenes\cancelar.png" />
     <None Include="Imagenes\cerrarSesion.png" />
     <Content Include="Imagenes\editar.png" />
+    <Content Include="Imagenes\Icono.ico" />
     <Content Include="Imagenes\LogoCentral.png" />
     <Content Include="Imagenes\MOBARLogo.png" />
     <Content Include="Imagenes\MOBARLogoPeq.png" />
