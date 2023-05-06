@@ -141,6 +141,16 @@ namespace ControlCasos.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Manual_Usuario {
+            get {
+                object obj = ResourceManager.GetObject("Manual_Usuario", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap MOBARLogo {
