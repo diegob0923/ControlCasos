@@ -132,7 +132,8 @@ namespace ControlCasos
         {
             try
             {
-                const string LocalizacionManualUsuario = "\\Documentos\\Manual Usuario.pdf";//ubicación del pdf en el proyecto, luego se añade a la ruta para descargarlo
+                
+                var archivoPDF = Properties.Resources.Manual_Usuario;//archivo guardado en los recursos del proyecto
 
                 SaveFileDialog dialogoGuardar = new SaveFileDialog();
                 dialogoGuardar.FileName = "ManualUsuario.pdf";//nombre predeterminado para el pdf (igual se puede cambiar en el saveDialog)
@@ -140,23 +141,8 @@ namespace ControlCasos
 
                 if (dialogoGuardar.ShowDialog() == DialogResult.OK)
                 {
-                    string nombreArchivo = dialogoGuardar.FileName;//nombre del archivo
+                    File.WriteAllBytes(dialogoGuardar.FileName, archivoPDF);
 
-                    string rutaArchivoEnProyecto = Application.StartupPath;
-
-                    // La ruta de donde arranca el proyecto se ve así por ejemplo: C:\Users\usuario\Documents\ControlCasos\ControlCasos\bin\Debug\
-                    //Procedemos a eliminar lo que está después de \bin\ y asignamos en ese campo donde está el documento en el proyecto es decir \Documentos\Manual Usuario.pdf
-                    //La nueva ruta queda así C:\Users\usuario\Documents\ControlCasos\ControlCasos\Documentos\Manual Usuario.pdf
-                    //Todo eso porque si solo se deja la ruta que viene del Application.StartupPath da error porque no se encuentra el pdf
-
-                    int indice = rutaArchivoEnProyecto.IndexOf("\\bin\\");
-
-                    if (indice != -1)
-                    {
-                        rutaArchivoEnProyecto = rutaArchivoEnProyecto.Substring(0, indice) + LocalizacionManualUsuario;
-                    }
-
-                    File.Copy(rutaArchivoEnProyecto, nombreArchivo, true);
                     MessageBox.Show("Manual de usuario descargado.", "Proceso Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ocultarSubMenu();
                 }
