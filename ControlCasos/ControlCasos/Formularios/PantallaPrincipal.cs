@@ -133,7 +133,7 @@ namespace ControlCasos
             try
             {
                 
-                var archivoPDF = Properties.Resources.Manual_Usuario;//archivo guardado en los recursos del proyecto
+                var archivoPDF = Properties.Resources.ManualUsuario;//archivo guardado en los recursos del proyecto
 
                 SaveFileDialog dialogoGuardar = new SaveFileDialog();
                 dialogoGuardar.FileName = "ManualUsuario.pdf";//nombre predeterminado para el pdf (igual se puede cambiar en el saveDialog)
@@ -143,7 +143,7 @@ namespace ControlCasos
                 {
                     File.WriteAllBytes(dialogoGuardar.FileName, archivoPDF);
 
-                    MessageBox.Show("Manual de usuario descargado.", "Proceso Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Manual de Usuario descargado.", "Proceso Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ocultarSubMenu();
                 }
             }

@@ -143,9 +143,9 @@ namespace ControlCasos.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] Manual_Usuario {
+        internal static byte[] ManualUsuario {
             get {
-                object obj = ResourceManager.GetObject("Manual_Usuario", resourceCulture);
+                object obj = ResourceManager.GetObject("ManualUsuario", resourceCulture);
                 return ((byte[])(obj));
             }
         }
