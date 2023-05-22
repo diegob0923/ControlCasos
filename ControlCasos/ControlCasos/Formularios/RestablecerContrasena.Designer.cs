@@ -67,9 +67,9 @@
             this.label3.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(24, 97);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(186, 22);
+            this.label3.Size = new System.Drawing.Size(238, 27);
             this.label3.TabIndex = 10;
-            this.label3.Text = "Confirmar contraseña";
+            this.label3.Text = "Confirmar Contraseña";
             // 
             // label2
             // 
@@ -77,9 +77,9 @@
             this.label2.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(24, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(156, 22);
+            this.label2.Size = new System.Drawing.Size(198, 27);
             this.label2.TabIndex = 9;
-            this.label2.Text = "Nueva contraseña";
+            this.label2.Text = "Nueva Contraseña";
             // 
             // txtConfirmarContrasena
             // 
@@ -87,7 +87,7 @@
             this.txtConfirmarContrasena.Location = new System.Drawing.Point(28, 132);
             this.txtConfirmarContrasena.Name = "txtConfirmarContrasena";
             this.txtConfirmarContrasena.PasswordChar = '●';
-            this.txtConfirmarContrasena.Size = new System.Drawing.Size(227, 22);
+            this.txtConfirmarContrasena.Size = new System.Drawing.Size(227, 26);
             this.txtConfirmarContrasena.TabIndex = 7;
             this.txtConfirmarContrasena.Validating += new System.ComponentModel.CancelEventHandler(this.txtConfirmarContrasena_Validating);
             // 
@@ -97,7 +97,7 @@
             this.txtNuevaContrasena.Location = new System.Drawing.Point(27, 58);
             this.txtNuevaContrasena.Name = "txtNuevaContrasena";
             this.txtNuevaContrasena.PasswordChar = '●';
-            this.txtNuevaContrasena.Size = new System.Drawing.Size(227, 22);
+            this.txtNuevaContrasena.Size = new System.Drawing.Size(227, 26);
             this.txtNuevaContrasena.TabIndex = 6;
             this.txtNuevaContrasena.Validating += new System.ComponentModel.CancelEventHandler(this.txtNuevaContrasena_Validating);
             // 
@@ -107,7 +107,7 @@
             this.label4.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(24, 171);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 22);
+            this.label4.Size = new System.Drawing.Size(82, 27);
             this.label4.TabIndex = 12;
             this.label4.Text = "Cédula";
             // 
@@ -116,7 +116,7 @@
             this.txtCedula.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCedula.Location = new System.Drawing.Point(27, 206);
             this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(227, 23);
+            this.txtCedula.Size = new System.Drawing.Size(227, 27);
             this.txtCedula.TabIndex = 13;
             this.ttCedula.SetToolTip(this.txtCedula, "La cédula nos ayudará a confirmar su identidad");
             this.txtCedula.Click += new System.EventHandler(this.txtCedula_Click);
@@ -128,7 +128,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(229, 239);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 17);
+            this.label5.Size = new System.Drawing.Size(0, 20);
             this.label5.TabIndex = 15;
             // 
             // lblCedula
@@ -137,7 +137,7 @@
             this.lblCedula.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCedula.Location = new System.Drawing.Point(25, 232);
             this.lblCedula.Name = "lblCedula";
-            this.lblCedula.Size = new System.Drawing.Size(198, 15);
+            this.lblCedula.Size = new System.Drawing.Size(257, 20);
             this.lblCedula.TabIndex = 16;
             this.lblCedula.Text = "(Con ceros, sin guiones ni espacios)";
             this.lblCedula.Visible = false;
@@ -179,7 +179,7 @@
             // 
             // frmRestablecerContrasena
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(282, 310);
             this.Controls.Add(this.label5);

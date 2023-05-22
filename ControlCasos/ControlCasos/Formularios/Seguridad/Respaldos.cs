@@ -24,7 +24,7 @@ namespace ControlCasos.Formularios.Seguridad
             try
             {
                 SaveFileDialog dialogoGuardar = new SaveFileDialog();
-                dialogoGuardar.FileName = "ControlCasos-" + DateTime.Now.ToString("dd-MM-yyyy") + ".bak";//nombre predeterminado (igual se puede cambiar en el saveDialog)
+                dialogoGuardar.FileName = "ControlPacientes-" + DateTime.Now.ToString("dd-MM-yyyy") + ".bak";//nombre predeterminado (igual se puede cambiar en el saveDialog)
                 dialogoGuardar.Filter = "Archivos de respaldo (*.bak)|*.bak";
 
                 if (dialogoGuardar.ShowDialog() == DialogResult.OK)

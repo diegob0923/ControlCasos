@@ -384,7 +384,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ControlCasosModelo.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Documentos\Manual Usuario.pdf" />
+    <None Include="Documentos\ManualUsuario.pdf" />
     <None Include="Modelos\ControlCasosModelo.edmx.diagram">
       <DependentUpon>ControlCasosModelo.edmx</DependentUpon>
     </None>
@@ -398,6 +398,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\ManualUsuario.pdf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -428,5 +429,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
