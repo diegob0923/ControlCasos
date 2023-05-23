@@ -5,16 +5,20 @@ VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlCasos", "ControlCasos\ControlCasos.csproj", "{D30B0049-9B55-4DCC-ADB6-0AE8627D4C3B}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ControlCasosSetup", "ControlCasosSetup\ControlCasosSetup.vdproj", "{2793825F-96B7-4117-B356-AC46D21FC530}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D30B0049-9B55-4DCC-ADB6-0AE8627D4C3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D30B0049-9B55-4DCC-ADB6-0AE8627D4C3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D30B0049-9B55-4DCC-ADB6-0AE8627D4C3B}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{D30B0049-9B55-4DCC-ADB6-0AE8627D4C3B}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{D30B0049-9B55-4DCC-ADB6-0AE8627D4C3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D30B0049-9B55-4DCC-ADB6-0AE8627D4C3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2793825F-96B7-4117-B356-AC46D21FC530}.Debug|Any CPU.ActiveCfg = Debug
+		{2793825F-96B7-4117-B356-AC46D21FC530}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
